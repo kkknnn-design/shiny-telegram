@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>函数图像生成器</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.2.1/math.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  background: #f1f5f9; color: #1e293b;
+  display: flex; justify-content: center;
+  min-height: 100vh; padding: 20px;
+}
+.app {
+  width: 100%; max-width: 960px;
+  display: flex; flex-direction: column; gap: 16px;
+}
+/* ── header ── */
+.header {
+  display: flex; justify-content: space-between; align-items: center;
+}
+.header h1 { font-size: 24px; font-weight: 700; color: #0f172a; }
+.header .btn-export {
+  padding: 8px 18px; border: 1px solid #cbd5e1; border-radius: 8px;
+  background: #fff; color: #475569; cursor: pointer; font-size: 13px;
+  transition: all .15s;
+}
+.header .btn-export:hover { background: #f8fafc; border-color: #94a3b8; }
+/* ── input row ── */
+.input-row {
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.input-row .input-wrap { flex: 1; position: relative; }
+.input-row label {
+  display: block; font-size: 13px; font-weight: 600; color: #475569; margin-bottom: 4px;
+}
+.input-row input {
+  width: 100%; padding: 10px 14px; font-size: 18px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  border: 2px solid #e2e8f0; border-radius: 10px; outline: none;
+  background: #fff; color: #0f172a;
+  transition: border-color .2s;
+}
+.input-row input:focus { border-color: #6366f1; }
+.input-row input.error { border-color: #ef4444; background: #fef2f2; }
+.err-msg {
+  font-size: 12px; color: #ef4444; margin-top: 4px; min-height: 18px;
+}
+.btn-plot {
+  margin-top: 24px; padding: 10px 28px;
+  background: #6366f1; color: #fff; border: none; border-radius: 10px;
+  font-size: 16px; font-weight: 600; cursor: pointer;
+  transition: background .15s; white-space: nowrap;
+}
+.btn-plot:hover { background: #4f46e5; }
+.btn-plot:active { transform: scale(.97); }
+/* ── canvas area ── */
+.canvas-wrap {
+  position: relative; background: #fff; border-radius: 12px;
+  border: 1px solid #e2e8f0; overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,.04);
+  min-height: 420px;
+}
+.canvas-wrap canvas { display: block; width: 100%; height: 100%; cursor: crosshair; }
+.canvas-wrap.panning canvas { cursor: grabbing; }
+.canvas-hint {
+  position: absolute; bottom: 8px; left: 12px;
+  font-size: 11px; color: #94a3b8; pointer-events: none;
+}
+/* ── toolbar ── */
+.toolbar {
+  display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+}
+.toolbar button {
+  padding: 6px 14px; border: 1px solid #cbd5e1; border-radius: 7px;
+  background: #fff; color: #334155; cursor: pointer; font-size: 13px;
+  transition: all .15s;
+}
+.toolbar button:hover { background: #f1f5f9; border-color: #94a3b8; }
+.toolbar button:active { background: #e2e8f0; }
+.toolbar .range-info { font-size: 12px; color: #64748b; margin-left: auto; }
+/* ── properties panel ── */
+.props {
+  background: #fff; border: 1px solid #e2e8f0; border-radius: 12px;
+  padding: 18px 22px;
+  box-shadow: 0 1px 3px rgba(0,0,0,.04);
+}
+.props h3 { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 14px; }
+.props-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px 28px;
+}
+.prop-item { display: flex; gap: 6px; font-size: 13px; line-height: 1.6; }
+.prop-label { font-weight: 600; color: #64748b; white-space: nowrap; min-width: 42px; }
+.prop-value { color: #1e293b; word-break: break-all; }
+.prop-full { grid-column: 1 / -1; }
+.prop-scope {
+  grid-column: 1 / -1; font-size: 11px; color: #94a3b8; margin-top: 6px;
+  padding-top: 8px; border-top: 1px solid #f1f5f9;
+}
+/* ── loading ── */
+.loading-overlay {
+  position: absolute; inset: 0; background: rgba(255,255,255,.7);
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none; opacity: 0; transition: opacity .2s;
+}
+.loading-overlay.show { opacity: 1; }
+.spinner {
+  width: 32px; height: 32px; border: 3px solid #e2e8f0;
+  border-top-color: #6366f1; border-radius: 50%;
+  animation: spin .6s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+/* ── responsive ── */
+@media (max-width: 640px) {
+  .props-grid { grid-template-columns: 1fr; }
+  .input-row { flex-direction: column; }
+  .btn-plot { margin-top: 0; width: 100%; }
+  .canvas-wrap { min-height: 300px; }
+  .header h1 { font-size: 19px; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="header">
+    <h1>函数图像生成器</h1>
+    <button class="btn-export" id="btnExport" title="导出为PNG图片">导出 PNG</button>
+  </div>
+
+  <div class="input-row">
+    <div class="input-wrap">
+      <label for="exprInput">函数表达式 f(x) =</label>
+      <input type="text" id="exprInput" placeholder="例如: sin(x), x^2, 1/x, x^3-3x, sqrt(x), log(x)" autofocus>
+      <div class="err-msg" id="errMsg"></div>
+    </div>
+    <button class="btn-plot" id="btnPlot">绘制</button>
+  </div>
+
+  <div class="canvas-wrap" id="canvasWrap">
+    <canvas id="mainCanvas"></canvas>
+    <div class="canvas-hint">🖱 拖拽平移 &nbsp;|&nbsp; 滚轮缩放 &nbsp;|&nbsp; 右键双击重置</div>
+    <div class="loading-overlay" id="loadingOverlay"><div class="spinner"></div></div>
+  </div>
+
+  <div class="toolbar">
+    <button id="btnZoomIn">🔍 放大</button>
+    <button id="btnZoomOut">🔎 缩小</button>
+    <button id="btnReset">🏠 重置视图</button>
+    <span class="range-info" id="rangeInfo">x: [-10, 10] &nbsp; y: 自动</span>
+  </div>
+
+  <div class="props" id="propsPanel">
+    <h3>函数性质</h3>
+    <div class="props-grid" id="propsGrid">
+      <div class="prop-item"><span class="prop-label">请在下方</span><span class="prop-value">输入函数表达式</span></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+//  Expression Handler
+// ═══════════════════════════════════════════════════════════
+
+const ExprHandler = {
+  compiled: null,
+  derivCompiled: null,
+  deriv2Compiled: null,
+
+  compile(exprStr) {
+    const node = math.parse(exprStr);
+    this.compiled = node.compile();
+
+    try {
+      const derivNode = math.derivative(node, 'x');
+      this.derivCompiled = derivNode.compile();
+    } catch {
+      this.derivCompiled = null;
+    }
+
+    try {
+      if (this.derivCompiled) {
+        const dNode = math.derivative(math.parse(exprStr), 'x');
+        const d2Node = math.derivative(dNode, 'x');
+        this.deriv2Compiled = d2Node.compile();
+      }
+    } catch {
+      this.deriv2Compiled = null;
+    }
+
+    return node;
+  },
+
+  eval(x) {
+    try {
+      return this.compiled.evaluate({ x });
+    } catch {
+      return NaN;
+    }
+  },
+
+  evalDeriv(x) {
+    if (!this.derivCompiled) return NaN;
+    try {
+      return this.derivCompiled.evaluate({ x });
+    } catch {
+      return NaN;
+    }
+  },
+
+  evalDeriv2(x) {
+    if (!this.deriv2Compiled) return NaN;
+    try {
+      return this.deriv2Compiled.evaluate({ x });
+    } catch {
+      return NaN;
+    }
+  }
+};
+
+// ═══════════════════════════════════════════════════════════
+//  State
+// ═══════════════════════════════════════════════════════════
+
+const state = {
+  exprStr: '',
+  xMin: -10, xMax: 10,
+  yMin: -6, yMax: 6,
+  yAuto: true,
+};
+
+// ═══════════════════════════════════════════════════════════
+//  Canvas & Coordinate Helpers
+// ═══════════════════════════════════════════════════════════
+
+const canvas = document.getElementById('mainCanvas');
+const ctx = canvas.getContext('2d');
+const wrap = document.getElementById('canvasWrap');
+
+const MARGIN = { top: 30, right: 40, bottom: 40, left: 55 };
+
+function resizeCanvas() {
+  const dpr = window.devicePixelRatio || 1;
+  const w = wrap.clientWidth;
+  const h = Math.max(wrap.clientHeight, 420);
+  canvas.width = w * dpr;
+  canvas.height = h * dpr;
+  canvas.style.width = w + 'px';
+  canvas.style.height = h + 'px';
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.scale(dpr, dpr);
+}
+
+function plotW() { return wrap.clientWidth - MARGIN.left - MARGIN.right; }
+function plotH() { return Math.max(wrap.clientHeight, 420) - MARGIN.top - MARGIN.bottom; }
+
+function xToPixel(x) { return MARGIN.left + (x - state.xMin) / (state.xMax - state.xMin) * plotW(); }
+function yToPixel(y) { return MARGIN.top + plotH() - (y - state.yMin) / (state.yMax - state.yMin) * plotH(); }
+
+function pixelToX(px) { return state.xMin + (px - MARGIN.left) / plotW() * (state.xMax - state.xMin); }
+function pixelToY(py) {
+  return state.yMin + (MARGIN.top + plotH() - py) / plotH() * (state.yMax - state.yMin);
+}
+
+// ═══════════════════════════════════════════════════════════
+//  Nice step for grid
+// ═══════════════════════════════════════════════════════════
+
+function niceStep(range, targetTicks = 10) {
+  const rough = range / targetTicks;
+  const exp = Math.floor(Math.log10(rough));
+  const frac = rough / Math.pow(10, exp);
+  let nice;
+  if (frac <= 1.5) nice = 1;
+  else if (frac <= 3) nice = 2;
+  else if (frac <= 7) nice = 5;
+  else nice = 10;
+  return nice * Math.pow(10, exp);
+}
+
+// ═══════════════════════════════════════════════════════════
+//  Rendering
+// ═══════════════════════════════════════════════════════════
+
+function render() {
+  resizeCanvas();
+  const W = wrap.clientWidth;
+  const H = Math.max(wrap.clientHeight, 420);
+  ctx.clearRect(0, 0, W, H);
+
+  drawGrid();
+  drawAxes();
+  drawCurve();
+  updateRangeInfo();
+}
+
+function drawGrid() {
+  const xStep = niceStep(state.xMax - state.xMin);
+  const yStep = niceStepInView();
+  const w = plotW(), h = plotH();
+
+  ctx.strokeStyle = '#e2e8f0';
+  ctx.lineWidth = 0.5;
+
+  // vertical grid lines
+  let x0 = Math.ceil(state.xMin / xStep) * xStep;
+  for (let x = x0; x <= state.xMax; x += xStep) {
+    const px = xToPixel(x);
+    ctx.beginPath();
+    ctx.moveTo(px, MARGIN.top);
+    ctx.lineTo(px, MARGIN.top + h);
+    ctx.stroke();
+  }
+
+  // horizontal grid lines
+  let y0 = Math.ceil(state.yMin / yStep) * yStep;
+  for (let y = y0; y <= state.yMax; y += yStep) {
+    const py = yToPixel(y);
+    ctx.beginPath();
+    ctx.moveTo(MARGIN.left, py);
+    ctx.lineTo(MARGIN.left + w, py);
+    ctx.stroke();
+  }
+}
+
+function niceStepInView() {
+  return niceStep(state.yMax - state.yMin);
+}
+
+function drawAxes() {
+  const w = plotW(), h = plotH();
+  ctx.strokeStyle = '#334155';
+  ctx.lineWidth = 1.5;
+  ctx.fillStyle = '#334155';
+  ctx.font = '12px "Segoe UI","Microsoft YaHei",sans-serif';
+  ctx.textAlign = 'center';
+
+  const xStep = niceStep(state.xMax - state.xMin);
+  const yStep = niceStepInView();
+
+  // x-axis at y=0
+  if (state.yMin <= 0 && state.yMax >= 0) {
+    const py = yToPixel(0);
+    ctx.beginPath();
+    ctx.moveTo(MARGIN.left, py);
+    ctx.lineTo(MARGIN.left + w, py);
+    ctx.stroke();
+    // arrow head
+    drawArrow(MARGIN.left + w, py, 1, 0);
+  }
+
+  // y-axis at x=0
+  if (state.xMin <= 0 && state.xMax >= 0) {
+    const px = xToPixel(0);
+    ctx.beginPath();
+    ctx.moveTo(px, MARGIN.top);
+    ctx.lineTo(px, MARGIN.top + h);
+    ctx.stroke();
+    drawArrow(px, MARGIN.top, 0, -1);
+  }
+
+  // x-axis tick marks and labels
+  ctx.fillStyle = '#475569';
+  ctx.textBaseline = 'top';
+  const axisY = yToPixel(Math.max(0, state.yMin));
+  const labelY = Math.min(axisY + 6, MARGIN.top + h + 4);
+
+  let x0 = Math.ceil(state.xMin / xStep) * xStep;
+  for (let x = x0; x <= state.xMax; x += xStep) {
+    if (Math.abs(x) < xStep * 0.01) continue; // skip 0
+    const px = xToPixel(x);
+    ctx.beginPath();
+    ctx.moveTo(px, axisY - 4);
+    ctx.lineTo(px, axisY + 4);
+    ctx.stroke();
+    ctx.fillText(formatNum(x), px, labelY);
+  }
+
+  // y-axis tick marks and labels
+  ctx.textBaseline = 'middle';
+  ctx.textAlign = 'right';
+  const axisX = xToPixel(Math.min(0, state.xMax));
+  const labelX = Math.max(axisX - 6, MARGIN.left - 4);
+
+  let y0 = Math.ceil(state.yMin / yStep) * yStep;
+  for (let y = y0; y <= state.yMax; y += yStep) {
+    if (Math.abs(y) < yStep * 0.01) continue;
+    const py = yToPixel(y);
+    ctx.beginPath();
+    ctx.moveTo(axisX - 4, py);
+    ctx.lineTo(axisX + 4, py);
+    ctx.stroke();
+    ctx.fillText(formatNum(y), labelX, py);
+  }
+
+  // origin label
+  if (state.xMin <= 0 && state.xMax >= 0 && state.yMin <= 0 && state.yMax >= 0) {
+    ctx.textAlign = 'right';
+    ctx.textBaseline = 'top';
+    ctx.fillText('O', xToPixel(0) - 4, yToPixel(0) + 2);
+  }
+
+  // axis labels
+  ctx.fillStyle = '#1e293b';
+  ctx.font = 'italic 14px "Segoe UI","Microsoft YaHei",sans-serif';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'bottom';
+  ctx.fillText('x', MARGIN.left + w - 16, yToPixel(0) - 6);
+  ctx.fillText('y', xToPixel(0) + 6, MARGIN.top + 2);
+}
+
+function drawArrow(x, y, dx, dy) {
+  const len = 8;
+  ctx.beginPath();
+  if (dx === 1 && dy === 0) {
+    ctx.moveTo(x, y);
+    ctx.lineTo(x - len, y - len / 2);
+    ctx.lineTo(x - len, y + len / 2);
+  } else {
+    ctx.moveTo(x, y);
+    ctx.lineTo(x - len / 2, y + len);
+    ctx.lineTo(x + len / 2, y + len);
+  }
+  ctx.closePath();
+  ctx.fillStyle = '#334155';
+  ctx.fill();
+}
+
+function formatNum(n) {
+  if (Math.abs(n) < 1e-12) return '0';
+  if (Math.abs(n) >= 10000 || (Math.abs(n) < 1e-4 && n !== 0)) return n.toExponential(2);
+  // pretty pi-fractions
+  const pi = Math.PI;
+  for (let den = 1; den <= 6; den++) {
+    for (let num = -12; num <= 12; num++) {
+      if (Math.abs(n - num * pi / den) < 1e-10) {
+        if (den === 1) {
+          if (num === 1) return 'π';
+          if (num === -1) return '-π';
+          return num + 'π';
+        }
+        if (num === 1) return 'π/' + den;
+        if (num === -1) return '-π/' + den;
+        return num + 'π/' + den;
+      }
+    }
+  }
+  const abs = Math.abs(n);
+  if (abs >= 1) return +n.toFixed(4);
+  return +n.toPrecision(4);
+}
+
+// ═══════════════════════════════════════════════════════════
+//  Curve rendering
+// ═══════════════════════════════════════════════════════════
+
+function drawCurve() {
+  if (!ExprHandler.compiled) return;
+  const w = plotW();
+  const h = plotH();
+  const numSamples = Math.min(w * 3, 4000);
+  const dx = (state.xMax - state.xMin) / (numSamples - 1);
+
+  ctx.beginPath();
+  ctx.strokeStyle = '#6366f1';
+  ctx.lineWidth = 2.2;
+  ctx.lineJoin = 'round';
+  ctx.lineCap = 'round';
+
+  let drawing = false;
+  let prevPixelY = null;
+  let firstPoint = true;
+
+  for (let i = 0; i < numSamples; i++) {
+    const x = state.xMin + i * dx;
+    const val = ExprHandler.eval(x);
+    if (!isFinite(val)) {
+      if (drawing) { ctx.stroke(); ctx.beginPath(); drawing = false; }
+      prevPixelY = null;
+      continue;
+    }
+    const px = xToPixel(x);
+    const py = yToPixel(val);
+
+    // discontinuity detection
+    if (prevPixelY !== null && Math.abs(py - prevPixelY) > h * 3) {
+      ctx.stroke();
+      ctx.beginPath();
+      drawing = false;
+    }
+
+    if (!drawing) {
+      ctx.moveTo(px, py);
+      drawing = true;
+    } else {
+      ctx.lineTo(px, py);
+    }
+    prevPixelY = py;
+    firstPoint = false;
+  }
+  ctx.stroke();
+
+  // label near the curve
+  if (firstPoint) return;
+  const labelX = state.xMin + (state.xMax - state.xMin) * 0.72;
+  const labelY = ExprHandler.eval(labelX);
+  if (isFinite(labelY)) {
+    const lpx = xToPixel(labelX);
+    const lpy = yToPixel(labelY);
+    ctx.fillStyle = '#6366f1';
+    ctx.font = 'italic 14px "Segoe UI","Microsoft YaHei",sans-serif';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'bottom';
+    ctx.fillText('f(x) = ' + state.exprStr, lpx + 6, lpy - 6);
+  }
+}
+
+// ═══════════════════════════════════════════════════════════
+//  Y-Auto adjustment
+// ═══════════════════════════════════════════════════════════
+
+function autoFitY() {
+  if (!ExprHandler.compiled) return;
+  const N = 800;
+  const dx = (state.xMax - state.xMin) / (N - 1);
+  let yMin = Infinity, yMax = -Infinity;
+  let hasValid = false;
+  for (let i = 0; i < N; i++) {
+    const x = state.xMin + i * dx;
+    const val = ExprHandler.eval(x);
+    if (isFinite(val)) {
+      // clamp extreme values
+      const clamped = Math.max(-1e8, Math.min(1e8, val));
+      if (clamped < yMin) yMin = clamped;
+      if (clamped > yMax) yMax = clamped;
+      hasValid = true;
+    }
+  }
+  if (!hasValid) { state.yMin = -5; state.yMax = 5; return; }
+  if (yMax - yMin < 0.001) { yMax = yMin + 1; yMin = yMin - 1; }
+  const pad = Math.max((yMax - yMin) * 0.2, 0.5);
+  state.yMin = yMin - pad;
+  state.yMax = yMax + pad;
+}
+
+// ═══════════════════════════════════════════════════════════
+//  Interaction
+// ═══════════════════════════════════════════════════════════
+
+let isPanning = false;
+let panStartX = 0, panStartY = 0;
+let panXMin = 0, panXMax = 0, panYMin = 0, panYMax = 0;
+
+canvas.addEventListener('pointerdown', e => {
+  if (e.button === 0) {
+    isPanning = true;
+    panStartX = e.offsetX; panStartY = e.offsetY;
+    panXMin = state.xMin; panXMax = state.xMax;
+    panYMin = state.yMin; panYMax = state.yMax;
+    wrap.classList.add('panning');
+    canvas.setPointerCapture(e.pointerId);
+  }
+});
+
+canvas.addEventListener('pointermove', e => {
+  if (!isPanning) return;
+  const dx = e.offsetX - panStartX;
+  const dy = e.offsetY - panStartY;
+  const sx = (state.xMax - state.xMin) / plotW();
+  const sy = (state.yMax - state.yMin) / plotH();
+  state.xMin = panXMin - dx * sx;
+  state.xMax = panXMax - dx * sx;
+  state.yMin = panYMin + dy * sy;
+  state.yMax = panYMax + dy * sy;
+  state.yAuto = false;
+  render();
+  debouncedAnalyze();
+});
+
+canvas.addEventListener('pointerup', e => {
+  isPanning = false;
+  wrap.classList.remove('panning');
+});
+
+canvas.addEventListener('pointerleave', () => {
+  isPanning = false;
+  wrap.classList.remove('panning');
+});
+
+canvas.addEventListener('wheel', e => {
+  e.preventDefault();
+  const rect = canvas.getBoundingClientRect();
+  const cx = e.clientX - rect.left;
+  const cy = e.clientY - rect.top;
+  const wx = pixelToX(cx);
+  const wy = pixelToY(cy);
+  const factor = e.deltaY < 0 ? 0.85 : 1.18;
+
+  state.xMin = wx - (wx - state.xMin) * factor;
+  state.xMax = wx + (state.xMax - wx) * factor;
+  state.yMin = wy - (wy - state.yMin) * factor;
+  state.yMax = wy + (state.yMax - wy) * factor;
+  state.yAuto = false;
+  render();
+  debouncedAnalyze();
+}, { passive: false });
+
+canvas.addEventListener('contextmenu', e => {
+  e.preventDefault();
+  if (e.detail === 2) resetView();
+});
+
+canvas.addEventListener('dblclick', e => {
+  if (e.button === 2) resetView();
+  else if (e.button === 0) {
+    // left double click: zoom into clicked point
+    const rect = canvas.getBoundingClientRect();
+    const cx = e.clientX - rect.left;
+    const cy = e.clientY - rect.top;
+    const wx = pixelToX(cx);
+    const wy = pixelToY(cy);
+    const factor = 0.5;
+    state.xMin = wx - (wx - state.xMin) * factor;
+    state.xMax = wx + (state.xMax - wx) * factor;
+    state.yMin = wy - (wy - state.yMin) * factor;
+    state.yMax = wy + (state.yMax - wy) * factor;
+    state.yAuto = false;
+    render();
+    debouncedAnalyze();
+  }
+});
+
+// Touch pinch zoom
+let lastPinchDist = 0;
+canvas.addEventListener('touchstart', e => {
+  if (e.touches.length === 2) {
+    lastPinchDist = Math.hypot(
+      e.touches[0].clientX - e.touches[1].clientX,
+      e.touches[0].clientY - e.touches[1].clientY
+    );
+  }
+}, { passive: true });
+
+canvas.addEventListener('touchmove', e => {
+  if (e.touches.length === 2) {
+    const dist = Math.hypot(
+      e.touches[0].clientX - e.touches[1].clientX,
+      e.touches[0].clientY - e.touches[1].clientY
+    );
+    if (lastPinchDist > 0) {
+      const factor = lastPinchDist / dist;
+      const rect = canvas.getBoundingClientRect();
+      const cx = (e.touches[0].clientX + e.touches[1].clientX) / 2 - rect.left;
+      const cy = (e.touches[0].clientY + e.touches[1].clientY) / 2 - rect.top;
+      const wx = pixelToX(cx);
+      const wy = pixelToY(cy);
+      state.xMin = wx - (wx - state.xMin) * factor;
+      state.xMax = wx + (state.xMax - wx) * factor;
+      state.yMin = wy - (wy - state.yMin) * factor;
+      state.yMax = wy + (state.yMax - wy) * factor;
+      state.yAuto = false;
+      render();
+      debouncedAnalyze();
+    }
+    lastPinchDist = dist;
+  }
+}, { passive: true });
+
+canvas.addEventListener('touchend', () => { lastPinchDist = 0; });
+
+// buttons
+document.getElementById('btnZoomIn').addEventListener('click', () => {
+  zoomView(0.7);
+});
+document.getElementById('btnZoomOut').addEventListener('click', () => {
+  zoomView(1 / 0.7);
+});
+document.getElementById('btnReset').addEventListener('click', resetView);
+
+function zoomView(factor) {
+  const cx = (state.xMin + state.xMax) / 2;
+  const cy = (state.yMin + state.yMax) / 2;
+  state.xMin = cx - (cx - state.xMin) * factor;
+  state.xMax = cx + (state.xMax - cx) * factor;
+  state.yMin = cy - (cy - state.yMin) * factor;
+  state.yMax = cy + (state.yMax - cy) * factor;
+  state.yAuto = false;
+  render();
+  debouncedAnalyze();
+}
+
+function resetView() {
+  state.xMin = -10; state.xMax = 10;
+  state.yAuto = true;
+  if (ExprHandler.compiled) {
+    autoFitY();
+  } else {
+    state.yMin = -6; state.yMax = 6;
+  }
+  render();
+  if (ExprHandler.compiled) analyze();
+}
+
+// keyboard shortcuts
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT') {
+    if (e.key === 'Enter') { e.preventDefault(); doPlot(); }
+    return;
+  }
+  if (e.key === '+' || e.key === '=') zoomView(0.7);
+  if (e.key === '-') zoomView(1 / 0.7);
+  if (e.key === '0' && e.ctrlKey) { e.preventDefault(); resetView(); }
+});
+
+function updateRangeInfo() {
+  const xr = `x: [${formatNum(state.xMin)}, ${formatNum(state.xMax)}]`;
+  const yr = state.yAuto ? 'y: 自动' : `y: [${formatNum(state.yMin)}, ${formatNum(state.yMax)}]`;
+  document.getElementById('rangeInfo').textContent = xr + '  ' + yr;
+}
+
+// ═══════════════════════════════════════════════════════════
+//  Property Analyzer
+// ═══════════════════════════════════════════════════════════
+
+function sample(N = 1500) {
+  const pts = [];
+  const dx = (state.xMax - state.xMin) / (N - 1);
+  for (let i = 0; i < N; i++) {
+    const x = state.xMin + i * dx;
+    const val = ExprHandler.eval(x);
+    pts.push({ x, y: val, valid: isFinite(val) });
+  }
+  return pts;
+}
+
+function bisectRoot(a, b, tol = 1e-10, maxIter = 80) {
+  const fa = ExprHandler.eval(a), fb = ExprHandler.eval(b);
+  if (!isFinite(fa) || !isFinite(fb)) return null;
+  if (fa * fb > 0) return null;
+  let la = a, lb = b, lfa = fa, lfb = fb;
+  for (let i = 0; i < maxIter; i++) {
+    const c = (la + lb) / 2;
+    const fc = ExprHandler.eval(c);
+    if (Math.abs(fc) < tol || (lb - la) / 2 < tol) return c;
+    if (lfa * fc < 0) { lb = c; lfb = fc; }
+    else { la = c; lfa = fc; }
+  }
+  return (la + lb) / 2;
+}
+
+// Deduplicate roots that are too close
+function dedupRoots(roots, minDist) {
+  if (roots.length <= 1) return roots;
+  roots.sort((a, b) => a - b);
+  const result = [roots[0]];
+  for (let i = 1; i < roots.length; i++) {
+    if (Math.abs(roots[i] - result[result.length - 1]) >= minDist) {
+      result.push(roots[i]);
+    }
+  }
+  return result;
+}
+
+function analyzeDomain(pts) {
+  const invalidStarts = [];
+  let inInvalid = false;
+  for (let i = 0; i < pts.length; i++) {
+    if (!pts[i].valid && !inInvalid) {
+      invalidStarts.push(pts[i].x);
+      inInvalid = true;
+    } else if (pts[i].valid && inInvalid) {
+      inInvalid = false;
+    }
+  }
+  if (invalidStarts.length === 0) return '(-∞, +∞) [可视范围]';
+  // find singularities: narrow invalid regions
+  const sing = [];
+  for (const x0 of invalidStarts) {
+    sing.push(formatNum(x0));
+  }
+  // Build domain string
+  const parts = [];
+  const sorted = invalidStarts.slice().sort((a, b) => a - b);
+  for (let i = 0; i < sorted.length; i++) {
+    const s = sorted[i];
+    if (i === 0) parts.push('(-∞, ' + formatNum(s) + ')');
+    if (i > 0 && i < sorted.length) {
+      parts.push('(' + formatNum(sorted[i - 1]) + ', ' + formatNum(s) + ')');
+    }
+    if (i === sorted.length - 1) {
+      parts.push('(' + formatNum(s) + ', +∞)');
+    }
+  }
+  return parts.join(' ∪ ') + ' [可视范围]';
+}
+
+function analyzeRange(pts) {
+  const validYs = pts.filter(p => p.valid).map(p => p.y);
+  if (validYs.length === 0) return '无实数值 [可视范围]';
+  const yMin = Math.min(...validYs);
+  const yMax = Math.max(...validYs);
+  return '[' + formatNum(yMin) + ', ' + formatNum(yMax) + '] [可视范围]';
+}
+
+function analyzeIntercepts(pts) {
+  // y-intercept
+  let yInt = null;
+  if (state.xMin <= 0 && state.xMax >= 0) {
+    const val = ExprHandler.eval(0);
+    if (isFinite(val)) yInt = val;
+  }
+  // x-intercepts (zeros)
+  const roots = [];
+  for (let i = 0; i < pts.length - 1; i++) {
+    if (pts[i].valid && pts[i + 1].valid) {
+      if (pts[i].y * pts[i + 1].y < 0) {
+        const r = bisectRoot(pts[i].x, pts[i + 1].x);
+        if (r !== null) roots.push(r);
+      }
+    }
+  }
+  // also check near-zero
+  for (let i = 0; i < pts.length; i++) {
+    if (pts[i].valid && Math.abs(pts[i].y) < 1e-12) {
+      roots.push(pts[i].x);
+    }
+  }
+  const minDist = (state.xMax - state.xMin) / 200;
+  const deduped = dedupRoots(roots, minDist);
+  return { yInt, zeros: deduped };
+}
+
+function analyzeParity(pts) {
+  let evenCount = 0, oddCount = 0, total = 0;
+  for (let i = 0; i < pts.length; i += 3) {
+    const x = pts[i].x;
+    const negX = -x;
+    if (negX < state.xMin || negX > state.xMax) continue;
+    if (!pts[i].valid) continue;
+    const fpx = pts[i].y;
+    const fnx = ExprHandler.eval(negX);
+    if (!isFinite(fnx)) continue;
+    total++;
+    if (Math.abs(fpx - fnx) < 1e-10) evenCount++;
+    if (Math.abs(fpx + fnx) < 1e-10) oddCount++;
+  }
+  if (total < 5) return '无法判断（可视范围不对称）';
+  const evenRatio = evenCount / total;
+  const oddRatio = oddCount / total;
+  if (evenRatio > 0.95) return '偶函数 f(-x) = f(x)';
+  if (oddRatio > 0.95) return '奇函数 f(-x) = -f(x)';
+  return '非奇非偶函数';
+}
+
+function analyzeMonotonicity(pts) {
+  if (!ExprHandler.derivCompiled) return '无法判断（无符号导数）';
+  const intervals = [];
+  let prevSign = 0;
+  let intervalStart = state.xMin;
+  const N = Math.min(pts.length, 2000);
+  const step = (state.xMax - state.xMin) / (N - 1);
+
+  for (let i = 0; i < N; i++) {
+    const x = state.xMin + i * step;
+    const d = ExprHandler.evalDeriv(x);
+    if (!isFinite(d)) continue;
+    const sign = d > 1e-8 ? 1 : d < -1e-8 ? -1 : 0;
+    if (prevSign === 0 && sign !== 0) { intervalStart = x; prevSign = sign; }
+    else if (prevSign !== 0 && sign !== 0 && sign !== prevSign) {
+      intervals.push({ start: intervalStart, end: x, sign: prevSign });
+      intervalStart = x; prevSign = sign;
+    }
+  }
+  if (prevSign !== 0) intervals.push({ start: intervalStart, end: state.xMax, sign: prevSign });
+
+  // merge adjacent same-sign intervals
+  const merged = [];
+  for (const iv of intervals) {
+    if (merged.length > 0 && merged[merged.length - 1].sign === iv.sign &&
+        Math.abs(iv.start - merged[merged.length - 1].end) < (state.xMax - state.xMin) * 0.001) {
+      merged[merged.length - 1].end = iv.end;
+    } else if (iv.end - iv.start > (state.xMax - state.xMin) * 0.002) {
+      merged.push(iv);
+    }
+  }
+
+  const inc = merged.filter(iv => iv.sign === 1).map(iv =>
+    '[' + formatNum(iv.start) + ', ' + formatNum(iv.end) + ']');
+  const dec = merged.filter(iv => iv.sign === -1).map(iv =>
+    '[' + formatNum(iv.start) + ', ' + formatNum(iv.end) + ']');
+
+  let result = '';
+  if (inc.length > 0) result += '↗ 递增: ' + (inc.length > 3 ? inc.slice(0, 3).join(', ') + '...' : inc.join(', '));
+  if (dec.length > 0) result += (result ? '\n' : '') + '↘ 递减: ' + (dec.length > 3 ? dec.slice(0, 3).join(', ') + '...' : dec.join(', '));
+  if (!result) result = '常数或无明显单调区间';
+  return result + ' [可视范围]';
+}
+
+function analyzeExtrema(pts) {
+  if (!ExprHandler.derivCompiled) return '无法判断（无符号导数）';
+  const N = Math.min(pts.length, 2000);
+  const step = (state.xMax - state.xMin) / (N - 1);
+  let prevSign = 0;
+  const critCandidates = [];
+
+  for (let i = 0; i < N; i++) {
+    const x = state.xMin + i * step;
+    const d = ExprHandler.evalDeriv(x);
+    if (!isFinite(d)) { prevSign = 0; continue; }
+    const sign = d > 1e-10 ? 1 : d < -1e-10 ? -1 : 0;
+    if (prevSign !== 0 && sign !== 0 && sign !== prevSign) {
+      critCandidates.push({ a: x - step, b: x });
+    }
+    prevSign = sign;
+  }
+
+  const extrema = [];
+  for (const { a, b } of critCandidates) {
+    const root = bisectRootDeriv(a, b);
+    if (root === null) continue;
+    const fx = ExprHandler.eval(root);
+    if (!isFinite(fx)) continue;
+    const d2 = ExprHandler.evalDeriv2(root);
+    let type = '驻点';
+    if (isFinite(d2)) {
+      if (d2 < -1e-12) type = '极大值';
+      else if (d2 > 1e-12) type = '极小值';
+    } else {
+      // fallback: check values around
+      const eps = (state.xMax - state.xMin) * 0.001;
+      const before = ExprHandler.eval(root - eps);
+      const after = ExprHandler.eval(root + eps);
+      if (isFinite(before) && isFinite(after)) {
+        if (fx > before && fx > after) type = '极大值';
+        else if (fx < before && fx < after) type = '极小值';
+      }
+    }
+    extrema.push({ x: root, y: fx, type });
+  }
+
+  // dedup
+  const minDist = (state.xMax - state.xMin) / 100;
+  const deduped = [];
+  for (const e of extrema) {
+    let tooClose = false;
+    for (const d of deduped) {
+      if (Math.abs(e.x - d.x) < minDist) { tooClose = true; break; }
+    }
+    if (!tooClose) deduped.push(e);
+  }
+
+  if (deduped.length === 0) return '未检测到极值点 [可视范围]';
+  const maxN = 8;
+  const shown = deduped.slice(0, maxN);
+  let result = shown.map(e =>
+    e.type + ': (' + formatNum(e.x) + ', ' + formatNum(e.y) + ')'
+  ).join('  ');
+  if (deduped.length > maxN) result += ' ...等' + deduped.length + '个';
+  return result + ' [可视范围]';
+}
+
+function bisectRootDeriv(a, b, tol = 1e-10, maxIter = 80) {
+  const fa = ExprHandler.evalDeriv(a), fb = ExprHandler.evalDeriv(b);
+  if (!isFinite(fa) || !isFinite(fb)) return null;
+  if (fa * fb > 0) return null;
+  let la = a, lb = b, lfa = fa, lfb = fb;
+  for (let i = 0; i < maxIter; i++) {
+    const c = (la + lb) / 2;
+    const fc = ExprHandler.evalDeriv(c);
+    if (Math.abs(fc) < tol || (lb - la) / 2 < tol) return c;
+    if (lfa * fc < 0) { lb = c; lfb = fc; }
+    else { la = c; lfa = fc; }
+  }
+  return (la + lb) / 2;
+}
+
+function analyzeAsymptotes(pts) {
+  const vert = [];
+  const N = pts.length;
+  // Vertical asymptotes: look for function blowing up
+  for (let i = 0; i < N - 1; i++) {
+    if (pts[i].valid && pts[i + 1].valid) {
+      const dy = Math.abs(pts[i + 1].y - pts[i].y);
+      const dx = pts[i + 1].x - pts[i].x;
+      if (dy > 1e6 && dx < (state.xMax - state.xMin) / 50) {
+        const xAsym = (pts[i].x + pts[i + 1].x) / 2;
+        // confirm: check both sides
+        const left = ExprHandler.eval(xAsym - dx);
+        const right = ExprHandler.eval(xAsym + dx);
+        if (isFinite(left) && isFinite(right) && Math.abs(left) > 1e4 && Math.abs(right) > 1e4) {
+          if (!vert.find(v => Math.abs(v - xAsym) < (state.xMax - state.xMin) / 200)) {
+            vert.push(xAsym);
+          }
+        }
+      }
+    }
+  }
+
+  // Horizontal asymptotes: check extremes
+  const horiz = [];
+  const farLeftX = state.xMin;
+  const farRightX = state.xMax;
+  const farLeft = [];
+  const farRight = [];
+  for (let i = 0; i < Math.min(100, N); i++) {
+    const xL = state.xMin + i * (state.xMax - state.xMin) / 100;
+    const yL = ExprHandler.eval(xL);
+    if (isFinite(yL) && Math.abs(yL) < 1e8) farLeft.push(yL);
+
+    const xR = state.xMax - i * (state.xMax - state.xMin) / 100;
+    const yR = ExprHandler.eval(xR);
+    if (isFinite(yR) && Math.abs(yR) < 1e8) farRight.push(yR);
+  }
+
+  if (farLeft.length >= 10) {
+    const avg = farLeft.reduce((a, b) => a + b, 0) / farLeft.length;
+    const range = Math.max(...farLeft) - Math.min(...farLeft);
+    if (range < Math.abs(avg) * 0.05 + 0.01) horiz.push({ side: 'x → -∞', y: avg });
+  }
+  if (farRight.length >= 10) {
+    const avg = farRight.reduce((a, b) => a + b, 0) / farRight.length;
+    const range = Math.max(...farRight) - Math.min(...farRight);
+    if (range < Math.abs(avg) * 0.05 + 0.01) horiz.push({ side: 'x → +∞', y: avg });
+  }
+
+  let result = '';
+  if (vert.length > 0) result += '垂直: x = ' + vert.map(formatNum).join(', x = ');
+  if (horiz.length > 0) {
+    const hParts = horiz.map(h => h.side + ': y = ' + formatNum(h.y));
+    result += (result ? '\n' : '') + '水平: ' + hParts.join(', ');
+  }
+  return result || '无 [可视范围]';
+}
+
+// ═══════════════════════════════════════════════════════════
+//  Main analysis pipeline
+// ═══════════════════════════════════════════════════════════
+
+function analyze() {
+  if (!ExprHandler.compiled) return;
+  const pts = sample();
+  const domain = analyzeDomain(pts);
+  const range = analyzeRange(pts);
+  const { yInt, zeros } = analyzeIntercepts(pts);
+  const parity = analyzeParity(pts);
+  const mono = analyzeMonotonicity(pts);
+  const extrema = analyzeExtrema(pts);
+  const asymptotes = analyzeAsymptotes(pts);
+
+  updatePropertyUI({ domain, range, yInt, zeros, parity, mono: mono, extrema, asymptotes });
+}
+
+let analyzeTimeout = null;
+function debouncedAnalyze() {
+  if (analyzeTimeout) clearTimeout(analyzeTimeout);
+  analyzeTimeout = setTimeout(analyze, 200);
+}
+
+function updatePropertyUI(props) {
+  const grid = document.getElementById('propsGrid');
+  const zeroStr = props.zeros.length === 0 ? '无 [可视范围]'
+    : props.zeros.length > 12
+      ? props.zeros.slice(0, 12).map(formatNum).join(', ') + ' ...共' + props.zeros.length + '个'
+      : props.zeros.map(formatNum).join(', ');
+  const yIntStr = props.yInt !== null ? formatNum(props.yInt) : '无（x=0 不在可视范围或不可定义）';
+
+  grid.innerHTML = `
+    <div class="prop-item"><span class="prop-label">定义域</span><span class="prop-value">${esc(props.domain)}</span></div>
+    <div class="prop-item"><span class="prop-label">值域</span><span class="prop-value">${esc(props.range)}</span></div>
+    <div class="prop-item"><span class="prop-label">y截距</span><span class="prop-value">${esc(yIntStr)}</span></div>
+    <div class="prop-item"><span class="prop-label">零点</span><span class="prop-value">${esc(zeroStr)}</span></div>
+    <div class="prop-item"><span class="prop-label">奇偶性</span><span class="prop-value">${esc(props.parity)}</span></div>
+    <div class="prop-item prop-full"><span class="prop-label">单调性</span><span class="prop-value" style="white-space:pre-line">${esc(props.mono)}</span></div>
+    <div class="prop-item prop-full"><span class="prop-label">极值点</span><span class="prop-value">${esc(props.extrema)}</span></div>
+    <div class="prop-item prop-full"><span class="prop-label">渐近线</span><span class="prop-value" style="white-space:pre-line">${esc(props.asymptotes)}</span></div>
+    <div class="prop-scope">分析基于当前可视范围: x ∈ [${formatNum(state.xMin)}, ${formatNum(state.xMax)}]，缩放或平移视图以查看更多性质</div>
+  `;
+}
+
+function esc(s) {
+  const div = document.createElement('div');
+  div.textContent = s;
+  return div.innerHTML;
+}
+
+// ═══════════════════════════════════════════════════════════
+//  Plot action
+// ═══════════════════════════════════════════════════════════
+
+let plotDebounce = null;
+
+function doPlot() {
+  const input = document.getElementById('exprInput');
+  const errEl = document.getElementById('errMsg');
+  const raw = input.value.trim();
+
+  if (!raw) {
+    errEl.textContent = '请输入函数表达式';
+    input.classList.add('error');
+    return;
+  }
+
+  // show loading
+  document.getElementById('loadingOverlay').classList.add('show');
+
+  // Use requestAnimationFrame to let the loading overlay render before heavy work
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      try {
+        ExprHandler.compile(raw);
+        state.exprStr = raw;
+        errEl.textContent = '';
+        input.classList.remove('error');
+
+        if (state.yAuto) autoFitY();
+        render();
+        analyze();
+        document.getElementById('loadingOverlay').classList.remove('show');
+      } catch (e) {
+        document.getElementById('loadingOverlay').classList.remove('show');
+        let msg = e.message || String(e);
+        // Translate common errors to Chinese
+        if (msg.includes('Unexpected end of expression')) msg = '表达式不完整';
+        else if (msg.includes('Undefined symbol')) msg = '包含不支持的函数或符号';
+        else if (msg.includes('Unexpected type')) msg = '表达式语法有误';
+        else if (msg.includes('Parenthesis')) msg = '括号不匹配';
+        errEl.textContent = '解析错误: ' + msg;
+        input.classList.add('error');
+      }
+    }, 30);
+  });
+}
+
+// ═══════════════════════════════════════════════════════════
+//  Event bindings
+// ═══════════════════════════════════════════════════════════
+
+document.getElementById('btnPlot').addEventListener('click', doPlot);
+
+document.getElementById('exprInput').addEventListener('input', () => {
+  const input = document.getElementById('exprInput');
+  if (input.classList.contains('error')) {
+    input.classList.remove('error');
+    document.getElementById('errMsg').textContent = '';
+  }
+  if (plotDebounce) clearTimeout(plotDebounce);
+  plotDebounce = setTimeout(doPlot, 400);
+});
+
+// Export PNG
+document.getElementById('btnExport').addEventListener('click', () => {
+  const tmpCanvas = document.createElement('canvas');
+  const tmpCtx = tmpCanvas.getContext('2d');
+  const scale = 2;
+  tmpCanvas.width = wrap.clientWidth * scale;
+  tmpCanvas.height = Math.max(wrap.clientHeight, 420) * scale;
+  tmpCtx.fillStyle = '#ffffff';
+  tmpCtx.fillRect(0, 0, tmpCanvas.width, tmpCanvas.height);
+  tmpCtx.scale(scale, scale);
+  // re-draw onto temp canvas
+  const origCtx = ctx;
+  // temporarily swap contexts
+  const oldCtx = ctx;
+  // We'll just capture the existing canvas
+  const dataUrl = canvas.toDataURL('image/png');
+  const a = document.createElement('a');
+  a.href = dataUrl;
+  a.download = '函数图像_' + (state.exprStr || 'empty').replace(/[^a-zA-Z0-9一-鿿]/g, '_') + '.png';
+  a.click();
+});
+
+// Window resize
+window.addEventListener('resize', () => {
+  if (ExprHandler.compiled) render();
+});
+
+// Initial render
+resizeCanvas();
+render();
+updateRangeInfo();
+</script>
+</body>
+</html>
