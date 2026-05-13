@@ -648,14 +648,29 @@ function updateHistoryUI() {
 // ═══════════════════════════════════════════
 
 function showRandom() {
-  let idx;
   const dailyIdx = getDailyIndex();
-  do {
-    idx = Math.floor(Math.random() * ALBUM_DB.length);
-  } while (idx === currentIndex && ALBUM_DB.length > 1);
+
+  // Exclude all albums already in history
+  const unseen = [];
+  for (let i = 0; i < ALBUM_DB.length; i++) {
+    if (!history.includes(i) && i !== dailyIdx) {
+      unseen.push(i);
+    }
+  }
+
+  // If all unseen, reset history (keep only daily if it was there)
+  let pool = unseen;
+  if (pool.length === 0) {
+    history = history.includes(dailyIdx) ? [dailyIdx] : [];
+    for (let i = 0; i < ALBUM_DB.length; i++) {
+      if (!history.includes(i)) pool.push(i);
+    }
+  }
+
+  const idx = pool[Math.floor(Math.random() * pool.length)];
   currentIndex = idx;
   isDaily = (idx === dailyIdx);
-  if (!history.includes(idx)) history.push(idx);
+  history.push(idx);
   renderAlbum(idx);
 }
 
