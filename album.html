@@ -427,8 +427,14 @@ let isDaily = true;
 let history = []; // stores indices
 
 // ═══════════════════════════════════════════
-//  Cover gradient generator
+//  Cover art — iTunes API + cache + fallback
 // ═══════════════════════════════════════════
+
+const coverCache = new Map(); // album key -> { url, source }
+
+function coverCacheKey(album) {
+  return (album.t + '|' + album.a).toLowerCase().replace(/\s+/g, ' ');
+}
 
 function hashForGradient(str) {
   let h = 0;
@@ -446,13 +452,112 @@ function getGradientCSS(album) {
   return `linear-gradient(135deg, hsl(${hue1},${sat}%,${light1}%) 0%, hsl(${hue2},${sat-10}%,${light2}%) 100%)`;
 }
 
+// Try iTunes Search API first (no key, CORS-friendly, hi-res covers)
+async function fetchITunesCover(album) {
+  const query = encodeURIComponent(album.t + ' ' + album.a);
+  const url = `https://itunes.apple.com/search?term=${query}&entity=album&limit=3`;
+  try {
+    const resp = await fetch(url);
+    if (!resp.ok) return null;
+    const data = await resp.json();
+    if (!data.results || data.results.length === 0) return null;
+    // Find best match — prefer exact artist match
+    let best = data.results[0];
+    const artistLower = album.a.toLowerCase();
+    for (const r of data.results) {
+      if (r.artistName && r.artistName.toLowerCase().includes(artistLower)) {
+        best = r; break;
+      }
+    }
+    const raw = best.artworkUrl100 || '';
+    // Replace 100x100 with 600x600 for high-res
+    return raw.replace(/100x100/, '600x600');
+  } catch {
+    return null;
+  }
+}
+
+// Load cover: cache -> iTunes -> embedded URL -> gradient
+async function loadCover(album) {
+  const key = coverCacheKey(album);
+  if (coverCache.has(key)) return coverCache.get(key);
+
+  // Store promise to avoid concurrent duplicate fetches
+  const promise = (async () => {
+    const gradient = getGradientCSS(album);
+
+    // 1) Try iTunes
+    const itunesUrl = await fetchITunesCover(album);
+    if (itunesUrl) {
+      const ok = await testImage(itunesUrl);
+      if (ok) return { url: itunesUrl, source: 'itunes' };
+    }
+
+    // 2) Try embedded Wikipedia URL
+    if (album.c) {
+      const ok = await testImage(album.c);
+      if (ok) return { url: album.c, source: 'embedded' };
+    }
+
+    // 3) Gradient fallback
+    return { url: null, source: 'gradient' };
+  })();
+
+  coverCache.set(key, promise);
+  return promise;
+}
+
+function testImage(url) {
+  return new Promise(resolve => {
+    const img = new Image();
+    img.onload = () => resolve(true);
+    img.onerror = () => resolve(false);
+    img.src = url;
+    setTimeout(() => resolve(false), 5000); // timeout
+  });
+}
+
+function getCoverElements() {
+  return {
+    img: document.getElementById('coverImg'),
+    fallback: document.getElementById('fallbackCover'),
+    bg: document.getElementById('coverBg'),
+    wrap: document.getElementById('coverWrap')
+  };
+}
+
+function applyFallback(album, gradient, els) {
+  els = els || getCoverElements();
+  els.img.style.display = 'none';
+  els.fallback.style.display = 'flex';
+  els.fallback.querySelector('.album-title').textContent = album.t;
+  els.fallback.querySelector('.album-artist').textContent = album.a;
+  els.fallback.style.background = gradient;
+  els.bg.style.backgroundImage = '';
+  els.bg.style.background = gradient;
+  els.wrap.style.background = gradient;
+}
+
+function applyCover(url, gradient, els) {
+  els = els || getCoverElements();
+  els.img.style.display = 'block';
+  els.fallback.style.display = 'none';
+  els.img.src = url;
+  els.bg.style.backgroundImage = `url(${url})`;
+  els.bg.style.backgroundSize = 'cover';
+  els.bg.style.backgroundPosition = 'center';
+}
+
 // ═══════════════════════════════════════════
 //  Render
 // ═══════════════════════════════════════════
 
+let renderSeq = 0; // prevent stale async cover overwrites
+
 function renderAlbum(index) {
   const album = ALBUM_DB[index];
   if (!album) return;
+  const thisRender = ++renderSeq;
 
   document.getElementById('albumTitle').textContent = album.t;
   document.getElementById('albumArtist').textContent = album.a;
@@ -493,40 +598,17 @@ function renderAlbum(index) {
   btnWiki.href = album.w || '#';
   btnWiki.style.display = album.w ? '' : 'none';
 
-  // Cover
-  const coverImg = document.getElementById('coverImg');
-  const fallbackCover = document.getElementById('fallbackCover');
-  const coverBg = document.getElementById('coverBg');
-  const coverWrap = document.getElementById('coverWrap');
-
+  // Cover — async fetch from iTunes, fallback to embedded URL, then gradient
   const gradient = getGradientCSS(album);
-  coverBg.style.background = gradient;
-  coverWrap.style.background = gradient;
+  const els = getCoverElements();
+  applyFallback(album, gradient, els);
 
-  // show fallback initially
-  coverImg.style.display = 'none';
-  fallbackCover.style.display = 'flex';
-  fallbackCover.querySelector('.album-title').textContent = album.t;
-  fallbackCover.querySelector('.album-artist').textContent = album.a;
-  fallbackCover.style.background = gradient;
-
-  // Try loading real cover
-  if (album.c) {
-    coverImg.onload = () => {
-      coverImg.style.display = 'block';
-      fallbackCover.style.display = 'none';
-      coverBg.style.backgroundImage = `url(${album.c})`;
-      coverBg.style.backgroundSize = 'cover';
-      coverBg.style.backgroundPosition = 'center';
-    };
-    coverImg.onerror = () => {
-      coverImg.style.display = 'none';
-      fallbackCover.style.display = 'flex';
-      coverBg.style.backgroundImage = '';
-      coverBg.style.background = gradient;
-    };
-    coverImg.src = album.c;
-  }
+  loadCover(album).then(result => {
+    if (thisRender !== renderSeq) return; // stale — another render started
+    if (result.url) {
+      applyCover(result.url, gradient, els);
+    }
+  });
 
   // Update footer
   document.getElementById('footerDate').textContent =
