@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="每日专辑">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%231a1a1a' stroke='%236366f1' stroke-width='8'/%3E%3Ccircle cx='50' cy='50' r='16' fill='%230f0f0f' stroke='%236366f1' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='4' fill='%236366f1'/%3E%3Ctext x='50' y='78' text-anchor='middle' fill='%23a5b4fc' font-size='14' font-weight='bold'%3E♪%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%234f46e5'/%3E%3Cstop offset='100%25' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23bg)'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='rgba(255,255,255,0.9)' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='9' fill='%234f46e5'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%23fff'/%3E%3Ccircle cx='50' cy='50' r='18' fill='none' stroke='rgba(255,255,255,0.3)' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='24' fill='none' stroke='rgba(255,255,255,0.2)' stroke-width='0.8'/%3E%3Ctext x='50' y='86' text-anchor='middle' fill='rgba(255,255,255,0.9)' font-family='sans-serif' font-size='11' font-weight='600'%3E%E2%99%AA%3C/text%3E%3C/svg%3E">
 <title>每日专辑推荐</title>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -717,49 +717,65 @@ function generateIcon(size) {
   const c = document.createElement('canvas');
   c.width = c.height = size;
   const x = c.getContext('2d');
+  const s = size; // shorthand
 
-  // background circle
-  x.fillStyle = '#0f0f0f';
-  x.beginPath();
-  x.arc(size/2, size/2, size/2 - 2, 0, Math.PI * 2);
+  // rounded rect background with gradient
+  const grad = x.createLinearGradient(0, 0, s, s);
+  grad.addColorStop(0, '#4f46e5');
+  grad.addColorStop(1, '#7c3aed');
+  x.fillStyle = grad;
+  roundRect(x, 0, 0, s, s, s * 0.22);
   x.fill();
 
+  // vinyl disc
+  const cx = s / 2, cy = s * 0.42, r = s * 0.28;
   // outer ring
-  x.strokeStyle = '#6366f1';
-  x.lineWidth = size * 0.06;
   x.beginPath();
-  x.arc(size/2, size/2, size/2 - size*0.06, 0, Math.PI * 2);
+  x.arc(cx, cy, r, 0, Math.PI * 2);
+  x.strokeStyle = 'rgba(255,255,255,0.85)';
+  x.lineWidth = s * 0.04;
   x.stroke();
-
-  // inner grooves
-  for (let r = size*0.16; r < size*0.38; r += size*0.04) {
-    x.strokeStyle = 'rgba(99,102,241,0.3)';
-    x.lineWidth = size*0.008;
+  // center label
+  x.beginPath();
+  x.arc(cx, cy, r * 0.3, 0, Math.PI * 2);
+  x.fillStyle = '#4f46e5';
+  x.fill();
+  // center dot
+  x.beginPath();
+  x.arc(cx, cy, r * 0.12, 0, Math.PI * 2);
+  x.fillStyle = '#fff';
+  x.fill();
+  // grooves
+  for (let gr = r * 0.45; gr <= r * 0.85; gr += r * 0.12) {
     x.beginPath();
-    x.arc(size/2, size/2, r, 0, Math.PI * 2);
+    x.arc(cx, cy, gr, 0, Math.PI * 2);
+    x.strokeStyle = 'rgba(255,255,255,0.25)';
+    x.lineWidth = s * 0.008;
     x.stroke();
   }
 
-  // center label
-  x.fillStyle = '#6366f1';
-  x.beginPath();
-  x.arc(size/2, size/2, size*0.12, 0, Math.PI * 2);
-  x.fill();
-
-  // center dot
-  x.fillStyle = '#0f0f0f';
-  x.beginPath();
-  x.arc(size/2, size/2, size*0.03, 0, Math.PI * 2);
-  x.fill();
-
-  // musical note
-  x.fillStyle = '#a5b4fc';
-  x.font = `bold ${size*0.14}px "Segoe UI","Microsoft YaHei",sans-serif`;
+  // music note at bottom
+  x.fillStyle = 'rgba(255,255,255,0.9)';
+  x.font = `${s * 0.1}px sans-serif`;
   x.textAlign = 'center';
-  x.textBaseline = 'middle';
-  x.fillText('♪', size/2, size*0.78);
+  x.textBaseline = 'bottom';
+  x.fillText('♪', cx, s * 0.92);
 
   return c.toDataURL('image/png');
+}
+
+function roundRect(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.closePath();
 }
 
 // Build manifest as blob URL
