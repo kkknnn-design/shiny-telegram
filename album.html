@@ -559,17 +559,16 @@ async function fetchITunesCover(album) {
       let as = 0, ts = 0;
       if (ra === artL) as = 5; else if (ra.includes(artL) || artL.includes(ra)) as = 2;
       if (rt === titL) ts = 5; else if (rt.includes(titL) || titL.includes(rt)) ts = 2;
-      return { url: (r.artworkUrl100 || '').replace(/100x100/, '600x600'), score: as + ts };
+      return { url: (r.artworkUrl100 || '').replace(/100x100/, '600x600'), score: as + ts, ts };
     });
     scored.sort((a, b) => b.score - a.score);
 
-    // Try best matches first; if all fail testImage, still return highest-scored URL
+    // Try best matches first; require at least some title similarity
     for (const s of scored) {
-      if (!s.url) continue;
+      if (!s.url || s.ts < 2) continue;
       if (await testImage(s.url)) return s.url;
     }
-    // Last resort: return best URL even if testImage failed (browser may still load it)
-    return scored[0]?.url || null;
+    return null;
   } catch { return null; }
 }
 
