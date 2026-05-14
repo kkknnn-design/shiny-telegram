@@ -508,6 +508,8 @@ let history = []; // stores indices
 // ═══════════════════════════════════════════
 //  Cover — 四源并行 (Promise.any) → 渐变
 // ═══════════════════════════════════════════
+//  Cover — iTunes → NetEase → embedded → gradient
+// ═══════════════════════════════════════════
 
 const coverCache = new Map();
 
@@ -534,116 +536,83 @@ function getGradientCSS(album) {
 function testImage(url) {
   return new Promise(resolve => {
     const img = new Image();
-    img.referrerPolicy = 'no-referrer';
     img.onload = () => resolve(true);
     img.onerror = () => resolve(false);
     img.src = url;
-    setTimeout(() => resolve(false), 1500);
+    setTimeout(() => resolve(false), 4000);
   });
 }
 
-function fetchWithTimeout(url, opts, ms) {
-  return new Promise((resolve, reject) => {
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => { ctrl.abort(); reject(new Error('timeout')); }, ms);
-    fetch(url, { ...opts, signal: ctrl.signal }).then(r => { clearTimeout(timer); resolve(r); }).catch(e => { clearTimeout(timer); reject(e); });
-  });
-}
-
-// ── source 1: 嵌入式 URL (+ weserv.nl 代理救 Wikipedia) ──
-async function fetchEmbedded(album) {
-  if (!album.c) return null;
-  // Try direct first
-  if (await testImage(album.c)) return { url: album.c, source: 'embedded' };
-  // Try via weserv.nl proxy (bypasses hotlink protection)
-  const proxy = 'https://images.weserv.nl/?w=600&url=' + encodeURIComponent(album.c);
-  if (await testImage(proxy)) return { url: proxy, source: 'embedded-proxy' };
-  return null;
-}
-
-// ── source 2: iTunes (CORS-friendly) ──
-async function fetchITunes(album) {
-  const q = encodeURIComponent(album.a + ' ' + album.t);
+// iTunes Search (simple, always works)
+async function fetchITunesCover(album) {
+  const query = encodeURIComponent(album.t + ' ' + album.a);
+  const url = `https://itunes.apple.com/search?term=${query}&entity=album&limit=5`;
   try {
-    const resp = await fetchWithTimeout(`https://itunes.apple.com/search?term=${q}&entity=album&limit=8`, {}, 4000);
+    const resp = await fetch(url);
     if (!resp.ok) return null;
-    const data = await resp.json().catch(() => null);
-    if (!data?.results?.length) return null;
-    const artL = album.a.toLowerCase(), titL = album.t.toLowerCase();
-    const scored = data.results.map(r => {
-      const ra = (r.artistName || '').toLowerCase(), rt = (r.collectionName || '').toLowerCase();
-      let as = 0, ts = 0;
-      if (ra === artL) as = 5; else if (ra.includes(artL) || artL.includes(ra)) as = 2;
-      if (rt === titL) ts = 5; else if (rt.includes(titL) || titL.includes(rt)) ts = 2;
-      if (!ts) return null;
-      return { url: (r.artworkUrl100 || '').replace(/100x100bb/, '600x600bb'), score: as + ts };
-    }).filter(Boolean);
-    scored.sort((a, b) => b.score - a.score);
-    for (const s of scored) { if (s.score > 0 && await testImage(s.url)) return { url: s.url, source: 'itunes' }; }
-    return null;
+    const data = await resp.json();
+    if (!data.results || data.results.length === 0) return null;
+    let best = data.results[0];
+    const artistLower = album.a.toLowerCase();
+    for (const r of data.results) {
+      if (r.artistName && r.artistName.toLowerCase().includes(artistLower)) {
+        best = r; break;
+      }
+    }
+    const raw = best.artworkUrl100 || '';
+    return raw.replace(/100x100/, '600x600');
   } catch { return null; }
 }
 
-// ── source 3: 网易云 ──
-async function fetchNetease(album) {
-  const q = encodeURIComponent(album.a + ' ' + album.t);
+// NetEase (may fail due to CORS, silently skipped)
+async function fetchNeteaseCover(album) {
   try {
-    const resp = await fetchWithTimeout(`https://music.163.com/api/search/get/web?s=${q}&type=10&limit=8`, {}, 4000);
+    const q = encodeURIComponent(album.a + ' ' + album.t);
+    const resp = await fetch(`https://music.163.com/api/search/get/web?s=${q}&type=10&limit=5`);
+    if (!resp.ok) return null;
     const data = await resp.json();
     const albums = data?.result?.albums;
     if (!albums?.length) return null;
-    const artL = album.a.toLowerCase(), titL = album.t.toLowerCase();
-    const scored = albums.map(r => {
+    const artL = album.a.toLowerCase();
+    let best = albums[0];
+    for (const r of albums) {
       const ra = (r.artist?.name || r.artists?.[0]?.name || '').toLowerCase();
-      const rt = (r.name || '').toLowerCase();
-      let as = 0, ts = 0;
-      if (ra === artL) as = 5; else if (ra.includes(artL) || artL.includes(ra)) as = 2;
-      if (rt === titL) ts = 5; else if (rt.includes(titL) || titL.includes(rt)) ts = 2;
-      if (!ts) return null;
-      return { url: (r.picUrl || '').replace(/\?param=\d+y\d+$/, '?param=600y600'), score: as + ts };
-    }).filter(Boolean);
-    scored.sort((a, b) => b.score - a.score);
-    for (const s of scored) { if (s.score > 0 && await testImage(s.url)) return { url: s.url, source: 'netease' }; }
-    return null;
-  } catch { return null; }
-}
-
-// ── source 4: MusicBrainz → Cover Art Archive ──
-async function fetchMBcover(album) {
-  try {
-    const q = encodeURIComponent(`artist:"${album.a}" AND release:"${album.t}"`);
-    const resp = await fetchWithTimeout(`https://musicbrainz.org/ws/2/release/?query=${q}&fmt=json&limit=5`, { headers: { 'User-Agent': 'AlbumApp/1.0' } }, 4000);
-    const data = await resp.json();
-    if (!data.releases?.length) return null;
-    for (const rel of data.releases) {
-      const ok = await testImage(`https://coverartarchive.org/release/${rel.id}/front-500`);
-      if (ok) return { url: `https://coverartarchive.org/release/${rel.id}/front-500`, source: 'musicbrainz' };
+      if (ra.includes(artL) || artL.includes(ra)) { best = r; break; }
     }
-    return null;
+    return (best.picUrl || '').replace(/\?param=\d+y\d+$/, '?param=600y600');
   } catch { return null; }
 }
 
-// ── 主加载: 四源并行, 谁先返回用谁 ──
+// Main cover loader
 async function loadCover(album) {
   const key = coverCacheKey(album);
   if (coverCache.has(key)) return coverCache.get(key);
 
   const promise = (async () => {
-    const tasks = [
-      fetchEmbedded(album).then(r => { console.log('cover:embedded', r ? 'OK' : 'fail'); return r; }),
-      fetchITunes(album).then(r => { console.log('cover:itunes', r ? 'OK' : 'fail'); return r; }),
-      fetchNetease(album).then(r => { console.log('cover:netease', r ? 'OK' : 'fail'); return r; }),
-      fetchMBcover(album).then(r => { console.log('cover:musicbrainz', r ? 'OK' : 'fail'); return r; })
-    ];
-    try {
-      const result = await Promise.any(tasks);
-      if (result) {
-        // Show source in footer
-        const srcEl = document.getElementById('coverSource');
-        if (srcEl) srcEl.textContent = ' · 封面: ' + result.source;
-        return result;
-      }
-    } catch { console.log('cover:all sources failed, using gradient'); }
+    const gradient = getGradientCSS(album);
+
+    // 1) iTunes
+    const itunesUrl = await fetchITunesCover(album);
+    if (itunesUrl) {
+      const ok = await testImage(itunesUrl);
+      if (ok) return { url: itunesUrl, source: 'itunes' };
+    }
+
+    // 2) NetEase
+    const neteaseUrl = await fetchNeteaseCover(album);
+    if (neteaseUrl) {
+      const ok = await testImage(neteaseUrl);
+      if (ok) return { url: neteaseUrl, source: 'netease' };
+    }
+
+    // 3) Embedded Wikipedia URL
+    if (album.c) {
+      const ok = await testImage(album.c);
+      if (ok) return { url: album.c, source: 'embedded' };
+    }
+
+    // 4) Gradient fallback
+    return { url: null, source: 'gradient' };
   })();
 
   coverCache.set(key, promise);
