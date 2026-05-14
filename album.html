@@ -550,11 +550,15 @@ function fetchWithTimeout(url, opts, ms) {
   });
 }
 
-// ── source 1: 嵌入式 URL ──
+// ── source 1: 嵌入式 URL (+ weserv.nl 代理救 Wikipedia) ──
 async function fetchEmbedded(album) {
   if (!album.c) return null;
-  const ok = await testImage(album.c);
-  return ok ? { url: album.c, source: 'embedded' } : null;
+  // Try direct first
+  if (await testImage(album.c)) return { url: album.c, source: 'embedded' };
+  // Try via weserv.nl proxy (bypasses hotlink protection)
+  const proxy = 'https://images.weserv.nl/?w=600&url=' + encodeURIComponent(album.c);
+  if (await testImage(proxy)) return { url: proxy, source: 'embedded-proxy' };
+  return null;
 }
 
 // ── source 2: iTunes (CORS-friendly) ──
@@ -562,8 +566,9 @@ async function fetchITunes(album) {
   const q = encodeURIComponent(album.a + ' ' + album.t);
   try {
     const resp = await fetchWithTimeout(`https://itunes.apple.com/search?term=${q}&entity=album&limit=8`, {}, 4000);
-    const data = await resp.json();
-    if (!data.results?.length) return null;
+    if (!resp.ok) return null;
+    const data = await resp.json().catch(() => null);
+    if (!data?.results?.length) return null;
     const artL = album.a.toLowerCase(), titL = album.t.toLowerCase();
     const scored = data.results.map(r => {
       const ra = (r.artistName || '').toLowerCase(), rt = (r.collectionName || '').toLowerCase();
