@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
 <meta name="theme-color" content="#f2f2f5">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -249,7 +250,7 @@
     <div class="history-list" id="historyList"></div>
   </div>
 
-  <div class="footer" id="footerDate"></div>
+  <div class="footer"><span id="footerDate"></span><span id="coverSource"></span></div>
 
   <div class="mobile-tip" id="mobileTip" style="display:none">
     <strong>手机上安装到主屏幕：</strong><br>
@@ -624,8 +625,20 @@ async function loadCover(album) {
 
   const promise = (async () => {
     const tasks = [
-      fetchEmbedded(album),
-      fetchITunes(album),
+      fetchEmbedded(album).then(r => { console.log('cover:embedded', r ? 'OK' : 'fail'); return r; }),
+      fetchITunes(album).then(r => { console.log('cover:itunes', r ? 'OK' : 'fail'); return r; }),
+      fetchNetease(album).then(r => { console.log('cover:netease', r ? 'OK' : 'fail'); return r; }),
+      fetchMBcover(album).then(r => { console.log('cover:musicbrainz', r ? 'OK' : 'fail'); return r; })
+    ];
+    try {
+      const result = await Promise.any(tasks);
+      if (result) {
+        // Show source in footer
+        const srcEl = document.getElementById('coverSource');
+        if (srcEl) srcEl.textContent = ' · 封面: ' + result.source;
+        return result;
+      }
+    } catch { console.log('cover:all sources failed, using gradient'); }
       fetchNetease(album),
       fetchMBcover(album)
     ];
