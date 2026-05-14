@@ -74,7 +74,7 @@
 	.cover-bg {
 	  position: absolute; inset: 0;
 	  background-size: cover; background-position: center;
-	  filter: blur(50px) brightness(.55) saturate(1.1);
+	  filter: blur(50px) brightness(.78) saturate(1.05);
 	  transform: scale(1.25);
 	}
 	.cover-img-wrap {
@@ -82,7 +82,7 @@
 	  width: 230px; height: 230px; border-radius: 6px;
 	  overflow: hidden;
 	  box-shadow: 0 12px 36px rgba(0,0,0,.18), 0 0 0 1px rgba(0,0,0,0.05);
-	  background: #e8e8ed;
+	  background: #f0f0f5;
 	}
 	.cover-img-wrap img {
 	  width: 100%; height: 100%; object-fit: cover; display: block;
@@ -574,6 +574,45 @@ async function fetchITunesCover(album) {
   return null;
 }
 
+// ── NetEase Cloud Music ──
+async function fetchNeteaseCover(album) {
+  const queries = [
+    encodeURIComponent(album.a + ' ' + album.t),
+    encodeURIComponent(album.t + ' ' + album.a)
+  ];
+  for (const query of queries) {
+    const url = `https://music.163.com/api/search/get/web?s=${query}&type=10&limit=8`;
+    try {
+      const resp = await fetch(url);
+      if (!resp.ok) continue;
+      const data = await resp.json();
+      const albums = data?.result?.albums;
+      if (!albums || albums.length === 0) continue;
+
+      const artistLower = album.a.toLowerCase();
+      const titleLower = album.t.toLowerCase();
+
+      const scored = albums.map(r => {
+        let score = 0;
+        const rArtist = (r.artist?.name || r.artists?.[0]?.name || '').toLowerCase();
+        const rTitle = (r.name || '').toLowerCase();
+        if (rArtist === artistLower) score += 5;
+        else if (rArtist.includes(artistLower) || artistLower.includes(rArtist)) score += 2;
+        if (rTitle === titleLower) score += 5;
+        else if (rTitle.includes(titleLower) || titleLower.includes(rTitle)) score += 2;
+        return { url: (r.picUrl || '').replace(/\?param=\d+y\d+$/, '?param=600y600'), score };
+      });
+
+      scored.sort((a, b) => b.score - a.score);
+      for (const s of scored) {
+        if (!s.url || s.score < 1) continue;
+        if (await testImage(s.url)) return s.url;
+      }
+    } catch { continue; }
+  }
+  return null;
+}
+
 // ── MusicBrainz → Cover Art Archive ──
 async function fetchMBcover(album) {
   try {
@@ -602,20 +641,24 @@ async function loadCover(album) {
   const promise = (async () => {
     const gradient = getGradientCSS(album);
 
-    // 1) iTunes — try scored results until one loads
+    // 1) iTunes
     const itunesUrl = await fetchITunesCover(album);
     if (itunesUrl) return { url: itunesUrl, source: 'itunes' };
 
-    // 2) MusicBrainz + Cover Art Archive
+    // 2) NetEase Cloud Music
+    const neteaseUrl = await fetchNeteaseCover(album);
+    if (neteaseUrl) return { url: neteaseUrl, source: 'netease' };
+
+    // 3) MusicBrainz + Cover Art Archive
     const mbcUrl = await fetchMBcover(album);
     if (mbcUrl) return { url: mbcUrl, source: 'musicbrainz' };
 
-    // 3) Embedded URL (Wikipedia etc.)
+    // 4) Embedded URL
     if (album.c) {
       if (await testImage(album.c)) return { url: album.c, source: 'embedded' };
     }
 
-    // 4) Gradient fallback
+    // 5) Gradient fallback
     return { url: null, source: 'gradient' };
   })();
 
