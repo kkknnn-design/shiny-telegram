@@ -639,14 +639,6 @@ async function loadCover(album) {
         return result;
       }
     } catch { console.log('cover:all sources failed, using gradient'); }
-      fetchNetease(album),
-      fetchMBcover(album)
-    ];
-    try {
-      const result = await Promise.any(tasks);
-      if (result) return result;
-    } catch { /* all failed */ }
-    return { url: null, source: 'gradient' };
   })();
 
   coverCache.set(key, promise);
