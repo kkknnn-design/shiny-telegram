@@ -538,7 +538,7 @@ async function fetchITunesCover(album) {
     encodeURIComponent(album.a + ' ' + album.t)
   ];
   for (const query of queries) {
-    const url = `https://itunes.apple.com/search?term=${query}&entity=album&limit=8`;
+    const url = `https://itunes.apple.com/search?term=${query}&entity=album&limit=10`;
     try {
       const resp = await fetch(url);
       if (!resp.ok) continue;
@@ -548,22 +548,21 @@ async function fetchITunesCover(album) {
       const artistLower = album.a.toLowerCase();
       const titleLower = album.t.toLowerCase();
 
-      // Score and sort all results
       const scored = data.results.map(r => {
-        let score = 0;
+        let artScore = 0, titScore = 0;
         const rArtist = (r.artistName || '').toLowerCase();
         const rTitle = (r.collectionName || '').toLowerCase();
         const rYear = r.releaseDate ? new Date(r.releaseDate).getFullYear() : 0;
-        if (rArtist === artistLower) score += 5;
-        else if (rArtist.includes(artistLower) || artistLower.includes(rArtist)) score += 2;
-        if (rTitle === titleLower) score += 5;
-        else if (rTitle.includes(titleLower) || titleLower.includes(rTitle)) score += 2;
-        if (rYear === album.y) score += 2;
-        if (r.collectionExplicitness === 'notExplicit' || r.trackCount > 3) score += 0; // prefer real albums
+        if (rArtist === artistLower) artScore = 5;
+        else if (rArtist.includes(artistLower) || artistLower.includes(rArtist)) artScore = 2;
+        if (rTitle === titleLower) titScore = 5;
+        else if (rTitle.includes(titleLower) || titleLower.includes(rTitle)) titScore = 2;
+        const score = artScore + titScore + (rYear === album.y ? 2 : 0);
+        // Require at least some title match — reject artist-only matches like "The Wall" for "DSOTM"
+        if (titScore === 0) return { url: null, score: -1 };
         return { url: (r.artworkUrl100 || '').replace(/100x100bb/, '600x600bb'), score };
       });
 
-      // Try each result in score order until one loads
       scored.sort((a, b) => b.score - a.score);
       for (const s of scored) {
         if (!s.url || s.score < 1) continue;
@@ -574,41 +573,52 @@ async function fetchITunesCover(album) {
   return null;
 }
 
-// ── NetEase Cloud Music ──
+// ── NetEase Cloud Music (with CORS proxy fallback) ──
 async function fetchNeteaseCover(album) {
   const queries = [
     encodeURIComponent(album.a + ' ' + album.t),
     encodeURIComponent(album.t + ' ' + album.a)
   ];
+  // CORS proxies to try if direct access fails
+  const proxyFns = [
+    // 1) Direct (works in some browser contexts)
+    (q) => `https://music.163.com/api/search/get/web?s=${q}&type=10&limit=8`,
+    // 2) allorigins proxy
+    (q) => `https://api.allorigins.win/raw?url=${encodeURIComponent('https://music.163.com/api/search/get/web?s=' + q + '&type=10&limit=8')}`,
+  ];
+
   for (const query of queries) {
-    const url = `https://music.163.com/api/search/get/web?s=${query}&type=10&limit=8`;
-    try {
-      const resp = await fetch(url);
-      if (!resp.ok) continue;
-      const data = await resp.json();
-      const albums = data?.result?.albums;
-      if (!albums || albums.length === 0) continue;
+    for (const buildUrl of proxyFns) {
+      const url = buildUrl(query);
+      try {
+        const resp = await fetch(url);
+        if (!resp.ok) continue;
+        const data = await resp.json();
+        const albums = data?.result?.albums || data?.albums;
+        if (!albums || albums.length === 0) continue;
 
-      const artistLower = album.a.toLowerCase();
-      const titleLower = album.t.toLowerCase();
+        const artistLower = album.a.toLowerCase();
+        const titleLower = album.t.toLowerCase();
 
-      const scored = albums.map(r => {
-        let score = 0;
-        const rArtist = (r.artist?.name || r.artists?.[0]?.name || '').toLowerCase();
-        const rTitle = (r.name || '').toLowerCase();
-        if (rArtist === artistLower) score += 5;
-        else if (rArtist.includes(artistLower) || artistLower.includes(rArtist)) score += 2;
-        if (rTitle === titleLower) score += 5;
-        else if (rTitle.includes(titleLower) || titleLower.includes(rTitle)) score += 2;
-        return { url: (r.picUrl || '').replace(/\?param=\d+y\d+$/, '?param=600y600'), score };
-      });
+        const scored = albums.map(r => {
+          let artScore = 0, titScore = 0;
+          const rArtist = (r.artist?.name || r.artists?.[0]?.name || '').toLowerCase();
+          const rTitle = (r.name || '').toLowerCase();
+          if (rArtist === artistLower) artScore = 5;
+          else if (rArtist.includes(artistLower) || artistLower.includes(rArtist)) artScore = 2;
+          if (rTitle === titleLower) titScore = 5;
+          else if (rTitle.includes(titleLower) || titleLower.includes(rTitle)) titScore = 2;
+          if (titScore === 0) return { url: null, score: -1 };
+          return { url: (r.picUrl || '').replace(/\?param=\d+y\d+$/, '?param=600y600'), score: artScore + titScore };
+        });
 
-      scored.sort((a, b) => b.score - a.score);
-      for (const s of scored) {
-        if (!s.url || s.score < 1) continue;
-        if (await testImage(s.url)) return s.url;
-      }
-    } catch { continue; }
+        scored.sort((a, b) => b.score - a.score);
+        for (const s of scored) {
+          if (!s.url || s.score < 1) continue;
+          if (await testImage(s.url)) return s.url;
+        }
+      } catch { continue; }
+    }
   }
   return null;
 }
@@ -641,22 +651,22 @@ async function loadCover(album) {
   const promise = (async () => {
     const gradient = getGradientCSS(album);
 
-    // 1) iTunes
-    const itunesUrl = await fetchITunesCover(album);
-    if (itunesUrl) return { url: itunesUrl, source: 'itunes' };
-
-    // 2) NetEase Cloud Music
-    const neteaseUrl = await fetchNeteaseCover(album);
-    if (neteaseUrl) return { url: neteaseUrl, source: 'netease' };
-
-    // 3) MusicBrainz + Cover Art Archive
-    const mbcUrl = await fetchMBcover(album);
-    if (mbcUrl) return { url: mbcUrl, source: 'musicbrainz' };
-
-    // 4) Embedded URL
+    // 1) Embedded URL (most accurate, try first)
     if (album.c) {
       if (await testImage(album.c)) return { url: album.c, source: 'embedded' };
     }
+
+    // 2) NetEase Cloud Music (best for Chinese/international catalog)
+    const neteaseUrl = await fetchNeteaseCover(album);
+    if (neteaseUrl) return { url: neteaseUrl, source: 'netease' };
+
+    // 3) iTunes
+    const itunesUrl = await fetchITunesCover(album);
+    if (itunesUrl) return { url: itunesUrl, source: 'itunes' };
+
+    // 4) MusicBrainz + Cover Art Archive
+    const mbcUrl = await fetchMBcover(album);
+    if (mbcUrl) return { url: mbcUrl, source: 'musicbrainz' };
 
     // 5) Gradient fallback
     return { url: null, source: 'gradient' };
