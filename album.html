@@ -3,179 +3,216 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0f0f0f">
+<meta name="theme-color" content="#f2f2f5">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="每日专辑">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%234f46e5'/%3E%3Cstop offset='100%25' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23bg)'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='rgba(255,255,255,0.9)' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='9' fill='%234f46e5'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%23fff'/%3E%3Ccircle cx='50' cy='50' r='18' fill='none' stroke='rgba(255,255,255,0.3)' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='24' fill='none' stroke='rgba(255,255,255,0.2)' stroke-width='0.8'/%3E%3Ctext x='50' y='86' text-anchor='middle' fill='rgba(255,255,255,0.9)' font-family='sans-serif' font-size='11' font-weight='600'%3E%E2%99%AA%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23e8b44b'/%3E%3Cstop offset='100%25' stop-color='%23d4875e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23bg)'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='rgba(255,255,255,0.9)' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='9' fill='%23e8b44b'/%3E%3Ccircle cx='50' cy='50' r='5' fill='%23fff'/%3E%3Ccircle cx='50' cy='50' r='18' fill='none' stroke='rgba(255,255,255,0.3)' stroke-width='1'/%3E%3Ccircle cx='50' cy='50' r='24' fill='none' stroke='rgba(255,255,255,0.2)' stroke-width='0.8'/%3E%3Ctext x='50' y='86' text-anchor='middle' fill='rgba(255,255,255,0.9)' font-family='sans-serif' font-size='11' font-weight='600'%3E%E2%99%AA%3C/text%3E%3C/svg%3E">
 <title>每日专辑推荐</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: 'Segoe UI','Microsoft YaHei',sans-serif;
-  background: #0f0f0f; color: #e0e0e0;
-  display: flex; justify-content: center; align-items: center;
-  min-height: 100vh; padding: 20px;
-}
-.app {
-  width: 100%; max-width: 720px; position: relative;
-}
-/* ── header ── */
-.header {
-  text-align: center; margin-bottom: 28px;
-}
-.header h1 {
-  font-size: 22px; font-weight: 700; color: #fff; letter-spacing: 1px;
-}
-.header .subtitle {
-  font-size: 12px; color: #888; margin-top: 4px;
-}
-.btn-install {
-  margin-top: 12px; padding: 8px 20px; background: #6366f1; color: #fff;
-  border: none; border-radius: 8px; font-size: 13px; font-weight: 600;
-  cursor: pointer; transition: all .15s;
-}
-.btn-install:hover { background: #4f46e5; }
-.btn-install:active { transform: scale(.96); }
-.mobile-tip {
-  margin-top: 30px; padding: 16px 20px;
-  background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px;
-  font-size: 12px; color: #888; line-height: 1.8; text-align: center;
-}
-.mobile-tip strong { color: #a5b4fc; }
-/* ── card ── */
-.card {
-  background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px;
-  overflow: hidden; transition: opacity .3s, transform .3s;
-}
-.card.switching { opacity: 0; transform: translateY(12px); }
-/* ── cover section ── */
-.cover-section {
-  position: relative; width: 100%; height: 320px;
-  display: flex; align-items: center; justify-content: center;
-  overflow: hidden;
-}
-.cover-bg {
-  position: absolute; inset: 0;
-  background-size: cover; background-position: center;
-  filter: blur(40px) brightness(.35);
-  transform: scale(1.2);
-}
-.cover-img-wrap {
-  position: relative; z-index: 1;
-  width: 220px; height: 220px; border-radius: 4px;
-  overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,.6);
-  background: #222;
-}
-.cover-img-wrap img {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-}
-.cover-img-wrap .fallback-cover {
-  width: 100%; height: 100%; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; padding: 20px;
-  text-align: center;
-}
-.fallback-cover .album-title {
-  font-size: 16px; font-weight: 700; color: #fff; line-height: 1.3;
-}
-.fallback-cover .album-artist {
-  font-size: 12px; color: rgba(255,255,255,.7); margin-top: 8px;
-}
-/* ── info section ── */
-.info-section { padding: 24px 28px 28px; }
-.album-title-main {
-  font-size: 26px; font-weight: 700; color: #fff; line-height: 1.2;
-}
-.album-artist-main {
-  font-size: 16px; color: #aaa; margin-top: 4px;
-}
-/* ── meta badges ── */
-.meta-row {
-  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px;
-}
-.badge {
-  padding: 5px 12px; border-radius: 6px; font-size: 11px; font-weight: 600;
-  white-space: nowrap;
-}
-.badge-genre { background: rgba(99,102,241,.2); color: #a5b4fc; }
-.badge-year  { background: rgba(255,255,255,.06); color: #ccc; }
-/* ── ratings ── */
-.ratings {
-  display: flex; gap: 20px; flex-wrap: wrap;
-  margin-top: 18px; padding: 16px;
-  background: rgba(255,255,255,.03); border-radius: 10px;
-}
-.rating-item { text-align: center; min-width: 80px; }
-.rating-source { font-size: 10px; color: #888; text-transform: uppercase; letter-spacing: .5px; }
-.rating-score { font-size: 22px; font-weight: 700; margin-top: 4px; }
-.rating-max  { font-size: 11px; color: #666; }
-.rating-pf   { color: #f472b6; } /* Pitchfork pink */
-.rating-rym  { color: #38bdf8; } /* RYM blue */
-.rating-rs   { color: #fbbf24; } /* Rolling Stone gold */
-/* ── artist bio ── */
-.bio-section { margin-top: 18px; }
-.bio-title {
-  font-size: 13px; font-weight: 600; color: #888;
-  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px;
-}
-.bio-text {
-  font-size: 13px; color: #bbb; line-height: 1.8; text-align: justify;
-}
-/* ── actions ── */
-.actions {
-  display: flex; gap: 10px; margin-top: 22px; flex-wrap: wrap;
-}
-.btn {
-  padding: 10px 22px; border: none; border-radius: 10px; font-size: 14px;
-  font-weight: 600; cursor: pointer; transition: all .15s;
-}
-.btn-primary {
-  background: #6366f1; color: #fff;
-}
-.btn-primary:hover { background: #4f46e5; }
-.btn-primary:active { transform: scale(.96); }
-.btn-secondary {
-  background: transparent; color: #999; border: 1px solid #333;
-}
-.btn-secondary:hover { color: #fff; border-color: #555; }
-/* ── history ── */
-.history {
-  margin-top: 28px; padding-top: 16px;
-  border-top: 1px solid #222;
-}
-.history-title {
-  font-size: 11px; color: #666; text-transform: uppercase;
-  letter-spacing: 1px; margin-bottom: 10px;
-}
-.history-list {
-  display: flex; flex-wrap: wrap; gap: 6px;
-}
-.history-tag {
-  font-size: 11px; padding: 4px 10px; border-radius: 5px;
-  background: #222; color: #999; cursor: pointer; transition: all .15s;
-}
-.history-tag:hover { background: #333; color: #fff; }
-/* ── footer ── */
-.footer {
-  text-align: center; margin-top: 24px;
-  font-size: 10px; color: #555; line-height: 1.6;
-}
-/* ── responsive ── */
-@media (max-width: 540px) {
-  .cover-section { height: 240px; }
-  .cover-img-wrap { width: 160px; height: 160px; }
-  .album-title-main { font-size: 21px; }
-  .info-section { padding: 18px 18px 22px; }
-  .ratings { gap: 12px; justify-content: space-around; }
-  .rating-score { font-size: 18px; }
-}
-</style>
+	* { margin: 0; padding: 0; box-sizing: border-box; }
+	:root {
+	  --bg: #f2f2f5; --card: #ffffff; --card-border: #e4e4ea;
+	  --accent: #d4875e; --accent2: #c7783c; --accent-glow: rgba(212,135,94,0.2);
+	  --text: #2d2d3a; --text-dim: #6e6e7c; --text-muted: #9d9dad;
+	  --surface: rgba(0,0,0,0.03); --surface-hover: rgba(0,0,0,0.06);
+	  --pf-pink: #d4527c; --rym-cyan: #1a9cb8; --rs-gold: #c7783c;
+	  --radius: 18px; --radius-sm: 10px;
+	}
+	body {
+	  font-family: 'Segoe UI','Microsoft YaHei',-apple-system,sans-serif;
+	  background-color: var(--bg); color: var(--text);
+	  display: flex; justify-content: center; align-items: center;
+	  min-height: 100vh; padding: 20px;
+	}
+	.app {
+	  width: 100%; max-width: 720px; position: relative;
+	}
+	/* header */
+	.header {
+	  text-align: center; margin-bottom: 28px;
+	}
+	.header h1 {
+	  font-size: 24px; font-weight: 700; color: #1a1a2e; letter-spacing: 2px;
+	}
+	.header .subtitle {
+	  font-size: 12px; color: var(--text-dim); margin-top: 6px; letter-spacing: 0.3px;
+	}
+	.btn-install {
+	  margin-top: 14px; padding: 9px 24px;
+	  background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff;
+	  border: none; border-radius: 24px; font-size: 13px; font-weight: 700;
+	  cursor: pointer; transition: all .2s; letter-spacing: 0.3px;
+	  box-shadow: 0 2px 10px var(--accent-glow);
+	}
+	.btn-install:hover { transform: translateY(-1px); box-shadow: 0 4px 18px var(--accent-glow); }
+	.btn-install:active { transform: scale(.96); }
+	.mobile-tip {
+	  margin-top: 30px; padding: 16px 20px;
+	  background: var(--card); border: 1px solid var(--card-border); border-radius: var(--radius-sm);
+	  font-size: 12px; color: var(--text-dim); line-height: 1.8; text-align: center;
+	}
+	.mobile-tip strong { color: var(--accent); }
+	/* card */
+	.card {
+	  background: var(--card); border: 1px solid var(--card-border); border-radius: var(--radius);
+	  overflow: hidden; transition: opacity .35s, transform .35s;
+	  box-shadow: 0 2px 20px rgba(0,0,0,0.06), 0 0 0 1px rgba(0,0,0,0.02);
+	}
+	.card.switching { opacity: 0; transform: translateY(14px); }
+	/* cover section */
+	.cover-section {
+	  position: relative; width: 100%; height: 340px;
+	  display: flex; align-items: center; justify-content: center;
+	  overflow: hidden;
+	}
+	.cover-section::after {
+	  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60px;
+	  background: linear-gradient(to top, var(--card), transparent);
+	  z-index: 2; pointer-events: none;
+	}
+	.cover-bg {
+	  position: absolute; inset: 0;
+	  background-size: cover; background-position: center;
+	  filter: blur(50px) brightness(.55) saturate(1.1);
+	  transform: scale(1.25);
+	}
+	.cover-img-wrap {
+	  position: relative; z-index: 1;
+	  width: 230px; height: 230px; border-radius: 6px;
+	  overflow: hidden;
+	  box-shadow: 0 12px 36px rgba(0,0,0,.18), 0 0 0 1px rgba(0,0,0,0.05);
+	  background: #e8e8ed;
+	}
+	.cover-img-wrap img {
+	  width: 100%; height: 100%; object-fit: cover; display: block;
+	}
+	.cover-img-wrap .fallback-cover {
+	  width: 100%; height: 100%; display: flex; flex-direction: column;
+	  align-items: center; justify-content: center; padding: 20px;
+	  text-align: center;
+	}
+	.fallback-cover .album-title {
+	  font-size: clamp(11px, 3vw, 16px); font-weight: 700; color: #fff;
+	  line-height: 1.3; word-break: break-word; overflow-wrap: break-word;
+	  padding: 0 8px; text-shadow: 0 1px 4px rgba(0,0,0,.3);
+	}
+	.fallback-cover .album-artist {
+	  font-size: clamp(10px, 2.5vw, 12px); color: rgba(255,255,255,.85);
+	  margin-top: 8px; padding: 0 8px; overflow: hidden;
+	  text-overflow: ellipsis; white-space: nowrap; max-width: 100%;
+	  text-shadow: 0 1px 4px rgba(0,0,0,.3);
+	}
+	/* info section */
+	.info-section { padding: 28px 32px 32px; }
+	.album-title-main {
+	  font-size: clamp(18px, 5vw, 28px); font-weight: 700; color: #1a1a2e;
+	  line-height: 1.3; word-break: break-word; overflow-wrap: break-word;
+	  max-width: 100%; letter-spacing: -0.3px;
+	}
+	.album-artist-main {
+	  font-size: clamp(13px, 3vw, 16px); color: var(--text-dim); margin-top: 6px;
+	  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+	  max-width: 100%; font-weight: 500;
+	}
+	/* meta badges */
+	.meta-row {
+	  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px;
+	}
+	.badge {
+	  padding: 5px 13px; border-radius: 20px; font-size: 11px; font-weight: 600;
+	  white-space: nowrap; letter-spacing: 0.2px;
+	}
+	.badge-genre {
+	  background: rgba(212,135,94,0.1); color: #b06030;
+	  border: 1px solid rgba(212,135,94,0.18);
+	}
+	.badge-year  {
+	  background: var(--surface); color: var(--text-dim);
+	  border: 1px solid rgba(0,0,0,0.06);
+	}
+	/* ratings */
+	.ratings {
+	  display: flex; gap: 24px; flex-wrap: wrap;
+	  margin-top: 20px; padding: 18px 20px;
+	  background: var(--surface); border-radius: var(--radius-sm);
+	  border: 1px solid rgba(0,0,0,0.04);
+	}
+	.rating-item { text-align: center; min-width: 80px; flex: 1; }
+	.rating-source { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+	.rating-score { font-size: 24px; font-weight: 700; margin-top: 6px; }
+	.rating-max  { font-size: 11px; color: var(--text-muted); margin-top: 1px; }
+	.rating-pf   { color: var(--pf-pink); }
+	.rating-rym  { color: var(--rym-cyan); }
+	.rating-rs   { color: var(--rs-gold); }
+	/* bio */
+	.bio-section { margin-top: 20px; }
+	.bio-title {
+	  font-size: 12px; font-weight: 700; color: var(--text-muted);
+	  text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px;
+	}
+	.bio-text {
+	  font-size: 13px; color: var(--text); line-height: 1.8; text-align: justify;
+	  opacity: 0.85;
+	}
+	/* actions */
+	.actions {
+	  display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap;
+	}
+	.btn {
+	  padding: 11px 24px; border: none; border-radius: 24px; font-size: 14px;
+	  font-weight: 600; cursor: pointer; transition: all .2s; letter-spacing: 0.3px;
+	}
+	.btn-primary {
+	  background: linear-gradient(135deg, var(--accent), var(--accent2)); color: #fff;
+	  box-shadow: 0 2px 10px var(--accent-glow);
+	}
+	.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 18px var(--accent-glow); }
+	.btn-primary:active { transform: scale(.96); }
+	.btn-secondary {
+	  background: transparent; color: var(--text-dim); border: 1px solid var(--card-border);
+	}
+	.btn-secondary:hover { color: var(--text); border-color: #c0c0cc; background: var(--surface-hover); }
+	/* history */
+	.history {
+	  margin-top: 28px; padding-top: 18px;
+	  border-top: 1px solid var(--card-border);
+	}
+	.history-title {
+	  font-size: 11px; color: var(--text-muted); text-transform: uppercase;
+	  letter-spacing: 1.5px; margin-bottom: 12px; font-weight: 700;
+	}
+	.history-list {
+	  display: flex; flex-wrap: wrap; gap: 8px;
+	}
+	.history-tag {
+	  font-size: 11px; padding: 5px 12px; border-radius: 16px;
+	  background: var(--surface); color: var(--text-dim);
+	  cursor: pointer; transition: all .2s; border: 1px solid transparent;
+	}
+	.history-tag:hover { background: var(--surface-hover); color: var(--text); border-color: rgba(0,0,0,0.08); }
+	/* footer */
+	.footer {
+	  text-align: center; margin-top: 24px;
+	  font-size: 10px; color: var(--text-muted); line-height: 1.6; opacity: 0.7;
+	}
+	/* responsive */
+	@media (max-width: 540px) {
+	  .cover-section { height: 260px; }
+	  .cover-img-wrap { width: 170px; height: 170px; }
+	  .album-title-main { font-size: clamp(16px, 6vw, 22px); }
+	  .info-section { padding: 20px 18px 24px; }
+	  .ratings { gap: 12px; justify-content: space-around; padding: 14px 12px; }
+	  .rating-score { font-size: 20px; }
+	  .btn { padding: 10px 18px; font-size: 13px; }
+	}
+	</style>
 </head>
 <body>
 <div class="app">
   <div class="header">
     <h1>每日专辑推荐</h1>
-    <div class="subtitle">数据整合自 Pitchfork · RateYourMusic · Rolling Stone</div>
+    <div class="subtitle">数据整合自 Pitchfork · RateYourMusic · Rolling Stone 2023</div>
     <button class="btn-install" id="btnInstall" style="display:none" title="安装到桌面">安装应用</button>
   </div>
 
@@ -230,165 +267,206 @@ body {
 
 const ALBUMS = [
   {t:"OK Computer",a:"Radiohead",y:1997,g:["另类摇滚","艺术摇滚","前卫"],pf:10,ry:4.24,rs:{r:1,ry:2003},c:"https://upload.wikimedia.org/wikipedia/en/b/ba/Radioheadokcomputer.png",bio:"Radiohead 是英国牛津郡组建的摇滚乐队，由 Thom Yorke（主唱）、Jonny Greenwood（主音吉他）、Ed O'Brien（节奏吉他）、Colin Greenwood（贝斯）、Philip Selway（鼓）五人组成。他们以不断突破摇滚音乐边界著称，从早期《Pablo Honey》的另类摇滚，到《OK Computer》的前卫实验，再到《Kid A》的电子转向，Radiohead 始终是现代音乐最具影响力的力量之一。",w:"https://zh.wikipedia.org/wiki/OK_Computer"},
-  {t:"The Dark Side of the Moon",a:"Pink Floyd",y:1973,g:["前卫摇滚","迷幻摇滚","艺术摇滚"],pf:10,ry:4.21,rs:{r:43,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",bio:"Pink Floyd 是英国传奇前卫摇滚乐队，以哲学性歌词、宏大的概念专辑和实验性音效著称。《The Dark Side of the Moon》是他们最著名的作品，连续在 Billboard 200 榜单停留 741 周，是有史以来销量最高的专辑之一。专辑探讨了时间、金钱、精神疾病和死亡等主题。",w:"https://zh.wikipedia.org/wiki/The_Dark_Side_of_the_Moon"},
-  {t:"To Pimp a Butterfly",a:"Kendrick Lamar",y:2015,g:["嘻哈","爵士说唱","意识说唱","放克"],pf:9.3,ry:4.14,rs:{r:19,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/f/f6/Kendrick_Lamar_-_To_Pimp_a_Butterfly.png",bio:"Kendrick Lamar 是美国当代最重要的说唱歌手之一，来自加州康普顿。他以深刻的歌词、复杂的故事讲述和对黑人身份认同的探讨而闻名。《To Pimp a Butterfly》融合了爵士、放克和口语诗，被广泛认为是 2010 年代最重要的专辑，也是历史上第一张获得普利策音乐奖的说唱专辑。",w:"https://zh.wikipedia.org/wiki/To_Pimp_a_Butterfly"},
-  {t:"Nevermind",a:"Nirvana",y:1991,g:["垃圾摇滚","另类摇滚"],pf:10,ry:3.88,rs:{r:6,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg",bio:"Nirvana 是美国垃圾摇滚（Grunge）乐队，由 Kurt Cobain（主唱/吉他）、Krist Novoselic（贝斯）、Dave Grohl（鼓）组成。他们重塑了 90 年代的摇滚景观，将朋克的原始能量与流行旋律结合。《Nevermind》中的主打歌《Smells Like Teen Spirit》被誉为'一代人的国歌'。Kurt Cobain 于 1994 年去世，年仅 27 岁。",w:"https://zh.wikipedia.org/wiki/Nevermind"},
-  {t:"Pet Sounds",a:"The Beach Boys",y:1966,g:["巴洛克流行","迷幻流行"],pf:10,ry:4.14,rs:{r:2,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/b/bb/PetSoundsCover.jpg",bio:"The Beach Boys 由 Brian Wilson 领导，是 1960 年代美国最具影响力的流行乐队之一。《Pet Sounds》是 Brian Wilson 的艺术巅峰，他受到 The Beatles《Rubber Soul》启发，运用复杂的和声编排、非传统乐器和多层录音技术创作了这张概念专辑。虽然当时商业成绩不及预期，如今被公认为流行音乐史上最伟大的专辑之一。",w:"https://zh.wikipedia.org/wiki/Pet_Sounds"},
-  {t:"What's Going On",a:"Marvin Gaye",y:1971,g:["灵魂乐","R&B","前卫灵魂"],pf:10,ry:4.17,rs:{r:1,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/8/84/MarvinGayeWhat%27sGoingOnalbumcover.jpg",bio:"Marvin Gaye 是美国灵魂乐传奇歌手、词曲作者和制作人。他在 Motown 唱片公司开创了自己独特的音乐道路。《What's Going On》是他突破性的概念专辑，以越战老兵视角探讨社会问题、环境破坏和灵性追寻。这张专辑开启了灵魂乐的全新方向，被滚石杂志 2020 年评选为史上最伟大 500 张专辑之首。",w:"https://zh.wikipedia.org/wiki/What%27s_Going_On"},
-  {t:"Revolver",a:"The Beatles",y:1966,g:["迷幻摇滚","流行摇滚","艺术摇滚"],pf:10,ry:4.24,rs:{r:11,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/1/16/Revolver.jpg",bio:"The Beatles 无需过多介绍——来自利物浦的四人组合彻底改变了流行音乐。《Revolver》是他们从现场表演转向录音室实验的转折点。在这张专辑中，他们探索了倒放录音、印度音乐、弦乐四重奏和早期迷幻音效。从《Eleanor Rigby》到《Tomorrow Never Knows》，《Revolver》展示了流行音乐可以走多远。",w:"https://zh.wikipedia.org/wiki/Revolver_(%E4%B8%93%E8%BE%91)"},
-  {t:"The Velvet Underground & Nico",a:"The Velvet Underground",y:1967,g:["艺术摇滚","原型朋克","前卫摇滚"],pf:10,ry:4.18,rs:{r:23,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/0/0c/Velvet_Underground_and_Nico.jpg",bio:"The Velvet Underground 是 Andy Warhol 工厂场景中最具影响力的乐队。由 Lou Reed 和 John Cale 领衔，他们在 1960 年代创造了一种与当时流行文化格格不入的暗黑、粗粝的声音。首张专辑虽然最初销量惨淡，但 Brian Eno 有句名言：'虽然只有几千人买了这张专辑，但每个买了的人都组建了乐队。'",w:"https://zh.wikipedia.org/wiki/The_Velvet_Underground_%26_Nico"},
-  {t:"Kind of Blue",a:"Miles Davis",y:1959,g:["爵士","调式爵士","酷爵士"],pf:10,ry:4.20,rs:{r:12,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/9/9c/MilesDavisKindofBlue.jpg",bio:"Miles Davis 是爵士乐历史上最具创新精神的小号手和乐队领袖。《Kind of Blue》录制于 1959 年，以调式爵士（Modal Jazz）为基础，完全即兴创作。参与录制的音乐家包括 John Coltrane、Cannonball Adderley、Bill Evans 等爵士巨匠。这张专辑至今仍是历史上销量最高的爵士专辑。",w:"https://zh.wikipedia.org/wiki/Kind_of_Blue"},
-  {t:"Abbey Road",a:"The Beatles",y:1969,g:["摇滚","流行","前卫"],pf:10,ry:4.18,rs:{r:5,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg",bio:"The Beatles 的最后一张录音室专辑（虽然《Let It Be》后发行），以著名的斑马线封面闻名于世。《Abbey Road》展现了四位成员成熟的创作能力和完美的录音室技术，尤其是 B 面长达 16 分钟的组曲。《Come Together》、《Something》、《Here Comes the Sun》等歌曲至今被无数人翻唱。",w:"https://zh.wikipedia.org/wiki/Abbey_Road"},
-  {t:"Illmatic",a:"Nas",y:1994,g:["东海岸嘻哈","硬核说唱","爵士说唱"],pf:10,ry:4.09,rs:{r:44,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/2/27/IllmaticNas.jpg",bio:"Nas 是纽约皇后桥出身的传奇说唱歌手。《Illmatic》是他的首张专辑，年仅 20 岁就创作了这张东海岸嘻哈里程碑。专辑邀请了 DJ Premier、Pete Rock、Q-Tip 等顶级制作人，以生动的街头叙事和复杂的押韵技巧描绘了纽约街头生活。它被普遍认为是有史以来最伟大的嘻哈专辑。",w:"https://zh.wikipedia.org/wiki/Illmatic"},
-  {t:"In the Aeroplane Over the Sea",a:"Neutral Milk Hotel",y:1998,g:["独立民谣","迷幻民谣","低保真"],pf:8.8,ry:4.09,rs:{r:136,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/8/83/In_the_aeroplane_over_the_sea_album_cover_copy.jpg",bio:"Neutral Milk Hotel 是美国独立乐队，由 Jeff Mangum 主创。这张专辑融合了民谣、管弦乐和超现实主义歌词，灵感源自《安妮日记》中 Anne Frank 的故事。虽然发行时并未引起轰动，但逐渐成为独立音乐的 cult 经典，影响了整整一代独立音乐人。",w:"https://zh.wikipedia.org/wiki/In_the_Aeroplane_Over_the_Sea"},
-  {t:"The Rise and Fall of Ziggy Stardust",a:"David Bowie",y:1972,g:["华丽摇滚","艺术摇滚","流行"],pf:10,ry:4.14,rs:{r:40,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/0/01/ZiggyStardust.jpg",bio:"David Bowie 是英国最具影响力的音乐家、演员和文化符号之一。他是音乐变色龙，不断重塑自己的形象和声音。《Ziggy Stardust》是他最著名的概念专辑，讲述了一个雌雄同体的外星摇滚明星的故事，融合了科幻、性别政治和戏剧性表演，彻底改变了流行音乐和时尚。",w:"https://zh.wikipedia.org/wiki/The_Rise_and_Fall_of_Ziggy_Stardust_and_the_Spiders_from_Mars"},
-  {t:"Blue",a:"Joni Mitchell",y:1971,g:["民谣","创作歌手","忏悔民谣"],pf:10,ry:4.13,rs:{r:3,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/e/e1/Blue_%28Joni_Mitchell_album%29.jpg",bio:"Joni Mitchell 是加拿大创作歌手和画家，被公认为有史以来最伟大的词曲作者之一。《Blue》以极简的编曲（主要是钢琴、吉他和人声）记录了爱情、失落和自由。她发明了独特的吉他调弦方式，创造出前所未有的和声色彩。这张专辑深深影响了从 Bob Dylan 到 Taylor Swift 等无数音乐人。",w:"https://zh.wikipedia.org/wiki/Blue_(Joni_Mitchell_%E4%B8%93%E8%BE%91)"},
-  {t:"Purple Rain",a:"Prince",y:1984,g:["流行","放克","摇滚","R&B"],pf:10,ry:3.98,rs:{r:8,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/9/9c/Princepurplerain.jpg",bio:"Prince 是美国音乐天才，精通多种乐器，以跨越流行、放克、摇滚和 R&B 的风格著称。《Purple Rain》是他事业的巅峰，同名电影和专辑使他成为 80 年代的超级巨星。Prince 以高超的吉他技术、极具感染力的舞台表演和挑战性别规范的着装风格闻名。他于 2016 年逝世，享年 57 岁。",w:"https://zh.wikipedia.org/wiki/Purple_Rain_(%E4%B8%93%E8%BE%91)"},
-  {t:"Loveless",a:"My Bloody Valentine",y:1991,g:["自赏摇滚","噪音流行","实验摇滚"],pf:10,ry:4.17,rs:{r:222,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/4/44/Loveless_%28My_Bloody_Valentine_album%29_cover.jpg",bio:"My Bloody Valentine 是爱尔兰-英国乐队，由 Kevin Shields 领导。《Loveless》花了两年时间录制，预算几乎让 Creation 唱片公司破产。专辑以层层叠加的扭曲吉他和若隐若现的人声创造出独特的'声音墙'效果，成为自赏摇滚（Shoegaze）流派的定义性作品。",w:"https://zh.wikipedia.org/wiki/Loveless_(My_Bloody_Valentine_%E4%B8%93%E8%BE%91)"},
-  {t:"Thriller",a:"Michael Jackson",y:1982,g:["流行","R&B","放克","迪斯科"],pf:9.5,ry:3.79,rs:{r:12,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png",bio:"Michael Jackson 是'流行音乐之王'，有史以来最具影响力的艺人之一。《Thriller》是历史上销量最高的专辑，全球销量超过 7000 万张。它打破了种族界限，以前所未有的 MTV 音乐录影带改变了音乐产业。专辑中 9 首歌中有 7 首成为 Top 10 单曲。",w:"https://zh.wikipedia.org/wiki/Thriller"},
-  {t:"The Queen Is Dead",a:"The Smiths",y:1986,g:["独立摇滚","后朋克","Jangle Pop"],pf:9.8,ry:4.06,rs:{r:113,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/e/ed/The-Queen-is-Dead-cover.png",bio:"The Smiths 是英国独立摇滚乐队，由歌手 Morrissey 和吉他手 Johnny Marr 组成。他们以 Marr 精致的吉他编织和 Morrissey 尖锐、自嘲的歌词著称。《The Queen Is Dead》是他们最具代表性的作品，融合了黑色幽默与社会批判，深刻影响了后来的英伦摇滚运动。",w:"https://zh.wikipedia.org/wiki/The_Queen_Is_Dead"},
-  {t:"Remain in Light",a:"Talking Heads",y:1980,g:["新浪潮","后朋克","放克","世界音乐"],pf:10,ry:4.16,rs:{r:39,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/2/2d/TalkingHeadsRemaininLight.jpg",bio:"Talking Heads 是美国新浪潮乐队，由 David Byrne 领衔。《Remain in Light》是一次非洲节奏与西方电子音乐的融合实验，大量使用多节奏（polyrhythm）和采样循环。专辑封面以数字失真处理的乐队成员肖像为特色，与音乐的前卫性相得益彰。Brian Eno 参与了制作。",w:"https://zh.wikipedia.org/wiki/Remain_in_Light"},
-  {t:"Kid A",a:"Radiohead",y:2000,g:["电子","实验摇滚","氛围","后摇滚"],pf:10,ry:4.06,rs:{r:20,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/2/24/Kid_A_cover_art.jpg",bio:"Radiohead 在《OK Computer》的巨大成功之后，拒绝了走老路的期待，转向电子和实验方向。《Kid A》大量使用合成器、鼓机和声音处理，几乎没有吉他独奏。虽然风格截然不同，但依然获得了评论界的一致好评，被认为是新世纪最具前瞻性的专辑之一。",w:"https://zh.wikipedia.org/wiki/Kid_A"},
-  {t:"London Calling",a:"The Clash",y:1979,g:["朋克摇滚","雷鬼","摇滚","Ska"],pf:10,ry:4.10,rs:{r:16,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/0/00/TheClashLondonCallingalbumcover.jpg",bio:"The Clash 是英国朋克摇滚乐队，被誉为'唯一重要的朋克乐队'。《London Calling》是一张双专辑，跨越朋克、雷鬼、Ska、摇滚和爵士等多种风格。从专辑封面（贝斯手 Paul Simonon 砸烂贝斯的瞬间）到歌词（探讨失业、种族主义和核战争威胁），它完美捕捉了 70 年代末的时代精神。",w:"https://zh.wikipedia.org/wiki/London_Calling"},
-  {t:"Homogenic",a:"Björk",y:1997,g:["电子","艺术流行","实验","Trip-Hop"],pf:10,ry:4.03,rs:{r:202,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/a/a8/Bj%C3%B6rk_-_Homogenic.png",bio:"Björk 是冰岛创作歌手、制作人和多媒体艺术家，以独特的声音和不断创新的音乐风格著称。《Homogenic》融合了电子节拍和管弦乐，构成她所说的'冰岛之声'——'粗糙的火山节奏配上温柔的弦乐'。专辑探索了爱情、爱国和自然的力量。",w:"https://zh.wikipedia.org/wiki/Homogenic"},
-  {t:"Enter the Wu-Tang (36 Chambers)",a:"Wu-Tang Clan",y:1993,g:["东海岸嘻哈","硬核说唱"],pf:9.8,ry:4.13,rs:{r:27,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/f/f4/Wu-TangClanEntertheWu-Tang36Chambersalbumcover.jpg",bio:"Wu-Tang Clan 是纽约史坦顿岛的说唱团体，由 RZA、GZA、Method Man、Raekwon、Ghostface Killah、Inspectah Deck、U-God、Masta Killa 和 Ol' Dirty Bastard 九人组成。他们以武术电影采样、粗糙的节拍和成员各自独特的风格重新定义了东海岸嘻哈。《Enter the Wu-Tang》彻底改变了说唱游戏。",w:"https://zh.wikipedia.org/wiki/Enter_the_Wu-Tang_(36_Chambers)"},
-  {t:"Hounds of Love",a:"Kate Bush",y:1985,g:["艺术流行","前卫流行","合成器流行"],pf:9.5,ry:3.96,rs:{r:68,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/b/ba/Kate_Bush_-_Hounds_of_Love.png",bio:"Kate Bush 是英国创作歌手、制作人和舞者，19 岁就以《Wuthering Heights》登上排行榜首位。《Hounds of Love》是她的第五张专辑，采用了创新的概念结构——A 面为流行歌曲，B 面为关于一个溺水女子的概念组曲《The Ninth Wave》。她以文学性歌词、戏剧性表演和独特的制作手法闻名。",w:"https://zh.wikipedia.org/wiki/Hounds_of_Love"},
-  {t:"Sgt. Pepper's Lonely Hearts Club Band",a:"The Beatles",y:1967,g:["迷幻摇滚","艺术摇滚","流行"],pf:10,ry:4.07,rs:{r:24,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/5/50/Sgt._Pepper%27s_Lonely_Hearts_Club_Band.jpg",bio:"这张专辑被广泛认为是第一张'概念专辑'，也是录音室作为创作工具的里程碑。《Sgt. Pepper's》运用了当时最先进的四轨录音技术，创造了前所未有的声音景观。从著名的封面设计（汇集了众多历史名人）到《A Day in the Life》的管弦乐高潮，它代表了 1960 年代迷幻文化的巅峰。",w:"https://zh.wikipedia.org/wiki/Sgt._Pepper%27s_Lonely_Hearts_Club_Band"},
-  {t:"Blonde on Blonde",a:"Bob Dylan",y:1966,g:["民谣摇滚","蓝调","摇滚"],pf:10,ry:4.12,rs:{r:38,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/1/18/Bob_Dylan_-_Blonde_on_Blonde.jpg",bio:"Bob Dylan 是美国最具影响力的创作歌手，2016 年获得诺贝尔文学奖。《Blonde on Blonde》是摇滚史上第一张重要的双专辑，录制于纳什维尔。它包含了《Visions of Johanna》、《Just Like a Woman》等经典歌曲，将超现实主义诗歌与蓝调摇滚结合，代表了 Dylan 1960 年代创作巅峰。",w:"https://zh.wikipedia.org/wiki/Blonde_on_Blonde"},
-  {t:"My Beautiful Dark Twisted Fantasy",a:"Kanye West",y:2010,g:["嘻哈","前卫流行","巴洛克流行"],pf:10,ry:4.04,rs:{r:17,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/b/bc/My_Beautiful_Dark_Twisted_Fantasy.jpg",bio:"Kanye West 是美国说唱歌手、制作人和时尚设计师。《MBDTF》是他在一系列争议之后的重磅回归之作，以宏伟的制作、邀请众多巨星合作和深刻的自我审视著称。专辑融合了嘻哈、古典、摇滚和电子元素，被 Pitchfork 评为 10 分满分，是 2010 年代最具野心的专辑之一。",w:"https://zh.wikipedia.org/wiki/My_Beautiful_Dark_Twisted_Fantasy"},
-  {t:"In Rainbows",a:"Radiohead",y:2007,g:["另类摇滚","艺术摇滚","电子"],pf:9.3,ry:4.04,rs:{r:387,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/2/2e/In_Rainbows_Official_Cover.jpg",bio:"Radiohead 的第七张录音室专辑，最出名的是'随你付'（pay-what-you-want）发行模式——粉丝可以自己决定付多少钱下载。这一创新颠覆了音乐产业的发行规则。《In Rainbows》在《Kid A》的电子实验之后重新拥抱温暖的旋律和人性化的主题，被认为是一张'光芒四射'的作品。",w:"https://zh.wikipedia.org/wiki/In_Rainbows"},
-  {t:"Spiderland",a:"Slint",y:1991,g:["后摇滚","数学摇滚","慢核"],pf:10,ry:4.12,rs:{r:275,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/5/5c/Slint_-_Spiderland.jpg",bio:"Slint 是美国路易斯维尔的后摇滚/数学摇滚先驱乐队。《Spiderland》在发行时几乎没有引起注意，但随着时间推移，它被认为催生了整个后摇滚（Post-Rock）流派。专辑以极端的动态对比、口语化的人声和黑暗的叙事著称，影响了一大批后来的乐队如 Mogwai、Godspeed You! Black Emperor 等。",w:"https://zh.wikipedia.org/wiki/Spiderland"},
-  {t:"Funeral",a:"Arcade Fire",y:2004,g:["独立摇滚","室内流行","艺术摇滚"],pf:9.7,ry:3.96,rs:{r:151,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/4/4d/ArcadeFireFuneral.jpg",bio:"Arcade Fire 是加拿大蒙特利尔的独立摇滚乐队，由 Win Butler 和 Régine Chassagne 夫妇领导。《Funeral》是他们的首张专辑，以家庭成员去世为主题，却充满了生命力。乐队以庞大的合奏阵容（包括小提琴、法国号、手风琴等多种乐器）创造了宏大而亲密的声音，唤起了青春、失落和希望的情感。",w:"https://zh.wikipedia.org/wiki/Funeral_(Arcade_Fire_%E4%B8%93%E8%BE%91)"},
-  {t:"Madvillainy",a:"Madvillain",y:2004,g:["抽象嘻哈","地下说唱","实验"],pf:9.4,ry:4.18,rs:{r:365,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/5/5e/Madvillainy_cover.png",bio:"Madvillain 是制作人 Madlib 和说唱歌手 MF DOOM 的合作项目。《Madvillainy》是一张奇特而迷人的专辑——短小精悍的歌曲、不规则的节奏、大量采样和 DOOM 标志性的复杂押韵。专辑几乎没有任何副歌或传统的歌曲结构，但它的创造力使之成为地下嘻哈的圣经。",w:"https://zh.wikipedia.org/wiki/Madvillainy"},
-  {t:"The Downward Spiral",a:"Nine Inch Nails",y:1994,g:["工业摇滚","另类摇滚","电子"],pf:9.3,ry:3.88,rs:{r:122,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/2/2d/Nine_Inch_Nails_-_The_Downward_Spiral.png",bio:"Nine Inch Nails 是 Trent Reznor 的个人项目，他是工业摇滚和电子音乐的重要创新者。《The Downward Spiral》是一张概念专辑，讲述了一个人自我毁灭的过程。专辑将工业噪音与流行旋律融为一体，包含了《Closer》和《Hurt》等名曲（后者后来被 Johnny Cash 翻唱成为经典）。",w:"https://zh.wikipedia.org/wiki/The_Downward_Spiral"},
-  {t:"Disintegration",a:"The Cure",y:1989,g:["后朋克","哥特摇滚","另类摇滚"],pf:9.3,ry:4.05,rs:{r:116,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/6/63/The_Cure_-_Disintegration.png",bio:"The Cure 是英国后朋克/哥特摇滚乐队，由 Robert Smith 领导。《Disintegration》被认为是他们最伟大的作品，以丰富的合成器层次和强烈的情感深度著称。Robert Smith 在创作期间经历了抑郁和精神危机，专辑中的歌曲弥漫着失落、衰老和绝望的氛围，但同时也异常美丽动人。",w:"https://zh.wikipedia.org/wiki/Disintegration"},
+  {t:"The Dark Side of the Moon",a:"Pink Floyd",y:1973,g:["前卫摇滚","迷幻摇滚","艺术摇滚"],pf:10,ry:4.21,rs:{r:43,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/3/3b/Dark_Side_of_the_Moon.png",bio:"Pink Floyd 是英国传奇前卫摇滚乐队，以哲学性歌词、宏大的概念专辑和实验性音效著称。《The Dark Side of the Moon》是他们最著名的作品，连续在 Billboard 200 榜单停留 741 周，是有史以来销量最高的专辑之一。专辑探讨了时间、金钱、精神疾病和死亡等主题。",w:"https://zh.wikipedia.org/wiki/The_Dark_Side_of_the_Moon"},
+  {t:"To Pimp a Butterfly",a:"Kendrick Lamar",y:2015,g:["嘻哈","爵士说唱","意识说唱","放克"],pf:9.3,ry:4.14,rs:{r:19,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/f/f6/Kendrick_Lamar_-_To_Pimp_a_Butterfly.png",bio:"Kendrick Lamar 是美国当代最重要的说唱歌手之一，来自加州康普顿。他以深刻的歌词、复杂的故事讲述和对黑人身份认同的探讨而闻名。《To Pimp a Butterfly》融合了爵士、放克和口语诗，被广泛认为是 2010 年代最重要的专辑，也是历史上第一张获得普利策音乐奖的说唱专辑。",w:"https://zh.wikipedia.org/wiki/To_Pimp_a_Butterfly"},
+  {t:"Nevermind",a:"Nirvana",y:1991,g:["垃圾摇滚","另类摇滚"],pf:10,ry:3.88,rs:{r:6,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg",bio:"Nirvana 是美国垃圾摇滚（Grunge）乐队，由 Kurt Cobain（主唱/吉他）、Krist Novoselic（贝斯）、Dave Grohl（鼓）组成。他们重塑了 90 年代的摇滚景观，将朋克的原始能量与流行旋律结合。《Nevermind》中的主打歌《Smells Like Teen Spirit》被誉为'一代人的国歌'。Kurt Cobain 于 1994 年去世，年仅 27 岁。",w:"https://zh.wikipedia.org/wiki/Nevermind"},
+  {t:"Pet Sounds",a:"The Beach Boys",y:1966,g:["巴洛克流行","迷幻流行"],pf:10,ry:4.14,rs:{r:2,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/b/bb/PetSoundsCover.jpg",bio:"The Beach Boys 由 Brian Wilson 领导，是 1960 年代美国最具影响力的流行乐队之一。《Pet Sounds》是 Brian Wilson 的艺术巅峰，他受到 The Beatles《Rubber Soul》启发，运用复杂的和声编排、非传统乐器和多层录音技术创作了这张概念专辑。虽然当时商业成绩不及预期，如今被公认为流行音乐史上最伟大的专辑之一。",w:"https://zh.wikipedia.org/wiki/Pet_Sounds"},
+  {t:"What's Going On",a:"Marvin Gaye",y:1971,g:["灵魂乐","R&B","前卫灵魂"],pf:10,ry:4.17,rs:{r:1,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/8/84/MarvinGayeWhat%27sGoingOnalbumcover.jpg",bio:"Marvin Gaye 是美国灵魂乐传奇歌手、词曲作者和制作人。他在 Motown 唱片公司开创了自己独特的音乐道路。《What's Going On》是他突破性的概念专辑，以越战老兵视角探讨社会问题、环境破坏和灵性追寻。这张专辑开启了灵魂乐的全新方向，被滚石杂志 2023 年评选为史上最伟大 500 张专辑之首。",w:"https://zh.wikipedia.org/wiki/What%27s_Going_On"},
+  {t:"Revolver",a:"The Beatles",y:1966,g:["迷幻摇滚","流行摇滚","艺术摇滚"],pf:10,ry:4.24,rs:{r:11,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/1/16/Revolver.jpg",bio:"The Beatles 无需过多介绍——来自利物浦的四人组合彻底改变了流行音乐。《Revolver》是他们从现场表演转向录音室实验的转折点。在这张专辑中，他们探索了倒放录音、印度音乐、弦乐四重奏和早期迷幻音效。从《Eleanor Rigby》到《Tomorrow Never Knows》，《Revolver》展示了流行音乐可以走多远。",w:"https://zh.wikipedia.org/wiki/Revolver_(%E4%B8%93%E8%BE%91)"},
+  {t:"The Velvet Underground & Nico",a:"The Velvet Underground",y:1967,g:["艺术摇滚","原型朋克","前卫摇滚"],pf:10,ry:4.18,rs:{r:23,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/0/0c/Velvet_Underground_and_Nico.jpg",bio:"The Velvet Underground 是 Andy Warhol 工厂场景中最具影响力的乐队。由 Lou Reed 和 John Cale 领衔，他们在 1960 年代创造了一种与当时流行文化格格不入的暗黑、粗粝的声音。首张专辑虽然最初销量惨淡，但 Brian Eno 有句名言：'虽然只有几千人买了这张专辑，但每个买了的人都组建了乐队。'",w:"https://zh.wikipedia.org/wiki/The_Velvet_Underground_%26_Nico"},
+  {t:"Kind of Blue",a:"Miles Davis",y:1959,g:["爵士","调式爵士","酷爵士"],pf:10,ry:4.20,rs:{r:12,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/9/9c/MilesDavisKindofBlue.jpg",bio:"Miles Davis 是爵士乐历史上最具创新精神的小号手和乐队领袖。《Kind of Blue》录制于 1959 年，以调式爵士（Modal Jazz）为基础，完全即兴创作。参与录制的音乐家包括 John Coltrane、Cannonball Adderley、Bill Evans 等爵士巨匠。这张专辑至今仍是历史上销量最高的爵士专辑。",w:"https://zh.wikipedia.org/wiki/Kind_of_Blue"},
+  {t:"Abbey Road",a:"The Beatles",y:1969,g:["摇滚","流行","前卫"],pf:10,ry:4.18,rs:{r:5,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/42/Beatles_-_Abbey_Road.jpg",bio:"The Beatles 的最后一张录音室专辑（虽然《Let It Be》后发行），以著名的斑马线封面闻名于世。《Abbey Road》展现了四位成员成熟的创作能力和完美的录音室技术，尤其是 B 面长达 16 分钟的组曲。《Come Together》、《Something》、《Here Comes the Sun》等歌曲至今被无数人翻唱。",w:"https://zh.wikipedia.org/wiki/Abbey_Road"},
+  {t:"Illmatic",a:"Nas",y:1994,g:["东海岸嘻哈","硬核说唱","爵士说唱"],pf:10,ry:4.09,rs:{r:44,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/27/IllmaticNas.jpg",bio:"Nas 是纽约皇后桥出身的传奇说唱歌手。《Illmatic》是他的首张专辑，年仅 20 岁就创作了这张东海岸嘻哈里程碑。专辑邀请了 DJ Premier、Pete Rock、Q-Tip 等顶级制作人，以生动的街头叙事和复杂的押韵技巧描绘了纽约街头生活。它被普遍认为是有史以来最伟大的嘻哈专辑。",w:"https://zh.wikipedia.org/wiki/Illmatic"},
+  {t:"In the Aeroplane Over the Sea",a:"Neutral Milk Hotel",y:1998,g:["独立民谣","迷幻民谣","低保真"],pf:8.8,ry:4.09,rs:{r:136,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/8/83/In_the_aeroplane_over_the_sea_album_cover_copy.jpg",bio:"Neutral Milk Hotel 是美国独立乐队，由 Jeff Mangum 主创。这张专辑融合了民谣、管弦乐和超现实主义歌词，灵感源自《安妮日记》中 Anne Frank 的故事。虽然发行时并未引起轰动，但逐渐成为独立音乐的 cult 经典，影响了整整一代独立音乐人。",w:"https://zh.wikipedia.org/wiki/In_the_Aeroplane_Over_the_Sea"},
+  {t:"The Rise and Fall of Ziggy Stardust",a:"David Bowie",y:1972,g:["华丽摇滚","艺术摇滚","流行"],pf:10,ry:4.14,rs:{r:40,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/0/01/ZiggyStardust.jpg",bio:"David Bowie 是英国最具影响力的音乐家、演员和文化符号之一。他是音乐变色龙，不断重塑自己的形象和声音。《Ziggy Stardust》是他最著名的概念专辑，讲述了一个雌雄同体的外星摇滚明星的故事，融合了科幻、性别政治和戏剧性表演，彻底改变了流行音乐和时尚。",w:"https://zh.wikipedia.org/wiki/The_Rise_and_Fall_of_Ziggy_Stardust_and_the_Spiders_from_Mars"},
+  {t:"Blue",a:"Joni Mitchell",y:1971,g:["民谣","创作歌手","忏悔民谣"],pf:10,ry:4.13,rs:{r:3,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/e/e1/Blue_%28Joni_Mitchell_album%29.jpg",bio:"Joni Mitchell 是加拿大创作歌手和画家，被公认为有史以来最伟大的词曲作者之一。《Blue》以极简的编曲（主要是钢琴、吉他和人声）记录了爱情、失落和自由。她发明了独特的吉他调弦方式，创造出前所未有的和声色彩。这张专辑深深影响了从 Bob Dylan 到 Taylor Swift 等无数音乐人。",w:"https://zh.wikipedia.org/wiki/Blue_(Joni_Mitchell_%E4%B8%93%E8%BE%91)"},
+  {t:"Purple Rain",a:"Prince",y:1984,g:["流行","放克","摇滚","R&B"],pf:10,ry:3.98,rs:{r:8,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/9/9c/Princepurplerain.jpg",bio:"Prince 是美国音乐天才，精通多种乐器，以跨越流行、放克、摇滚和 R&B 的风格著称。《Purple Rain》是他事业的巅峰，同名电影和专辑使他成为 80 年代的超级巨星。Prince 以高超的吉他技术、极具感染力的舞台表演和挑战性别规范的着装风格闻名。他于 2016 年逝世，享年 57 岁。",w:"https://zh.wikipedia.org/wiki/Purple_Rain_(%E4%B8%93%E8%BE%91)"},
+  {t:"Loveless",a:"My Bloody Valentine",y:1991,g:["自赏摇滚","噪音流行","实验摇滚"],pf:10,ry:4.17,rs:{r:222,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/44/Loveless_%28My_Bloody_Valentine_album%29_cover.jpg",bio:"My Bloody Valentine 是爱尔兰-英国乐队，由 Kevin Shields 领导。《Loveless》花了两年时间录制，预算几乎让 Creation 唱片公司破产。专辑以层层叠加的扭曲吉他和若隐若现的人声创造出独特的'声音墙'效果，成为自赏摇滚（Shoegaze）流派的定义性作品。",w:"https://zh.wikipedia.org/wiki/Loveless_(My_Bloody_Valentine_%E4%B8%93%E8%BE%91)"},
+  {t:"Thriller",a:"Michael Jackson",y:1982,g:["流行","R&B","放克","迪斯科"],pf:9.5,ry:3.79,rs:{r:12,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/55/Michael_Jackson_-_Thriller.png",bio:"Michael Jackson 是'流行音乐之王'，有史以来最具影响力的艺人之一。《Thriller》是历史上销量最高的专辑，全球销量超过 7000 万张。它打破了种族界限，以前所未有的 MTV 音乐录影带改变了音乐产业。专辑中 9 首歌中有 7 首成为 Top 10 单曲。",w:"https://zh.wikipedia.org/wiki/Thriller"},
+  {t:"The Queen Is Dead",a:"The Smiths",y:1986,g:["独立摇滚","后朋克","Jangle Pop"],pf:9.8,ry:4.06,rs:{r:113,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/e/ed/The-Queen-is-Dead-cover.png",bio:"The Smiths 是英国独立摇滚乐队，由歌手 Morrissey 和吉他手 Johnny Marr 组成。他们以 Marr 精致的吉他编织和 Morrissey 尖锐、自嘲的歌词著称。《The Queen Is Dead》是他们最具代表性的作品，融合了黑色幽默与社会批判，深刻影响了后来的英伦摇滚运动。",w:"https://zh.wikipedia.org/wiki/The_Queen_Is_Dead"},
+  {t:"Remain in Light",a:"Talking Heads",y:1980,g:["新浪潮","后朋克","放克","世界音乐"],pf:10,ry:4.16,rs:{r:39,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/2d/TalkingHeadsRemaininLight.jpg",bio:"Talking Heads 是美国新浪潮乐队，由 David Byrne 领衔。《Remain in Light》是一次非洲节奏与西方电子音乐的融合实验，大量使用多节奏（polyrhythm）和采样循环。专辑封面以数字失真处理的乐队成员肖像为特色，与音乐的前卫性相得益彰。Brian Eno 参与了制作。",w:"https://zh.wikipedia.org/wiki/Remain_in_Light"},
+  {t:"Kid A",a:"Radiohead",y:2000,g:["电子","实验摇滚","氛围","后摇滚"],pf:10,ry:4.06,rs:{r:20,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/24/Kid_A_cover_art.jpg",bio:"Radiohead 在《OK Computer》的巨大成功之后，拒绝了走老路的期待，转向电子和实验方向。《Kid A》大量使用合成器、鼓机和声音处理，几乎没有吉他独奏。虽然风格截然不同，但依然获得了评论界的一致好评，被认为是新世纪最具前瞻性的专辑之一。",w:"https://zh.wikipedia.org/wiki/Kid_A"},
+  {t:"London Calling",a:"The Clash",y:1979,g:["朋克摇滚","雷鬼","摇滚","Ska"],pf:10,ry:4.10,rs:{r:16,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/0/00/TheClashLondonCallingalbumcover.jpg",bio:"The Clash 是英国朋克摇滚乐队，被誉为'唯一重要的朋克乐队'。《London Calling》是一张双专辑，跨越朋克、雷鬼、Ska、摇滚和爵士等多种风格。从专辑封面（贝斯手 Paul Simonon 砸烂贝斯的瞬间）到歌词（探讨失业、种族主义和核战争威胁），它完美捕捉了 70 年代末的时代精神。",w:"https://zh.wikipedia.org/wiki/London_Calling"},
+  {t:"Homogenic",a:"Björk",y:1997,g:["电子","艺术流行","实验","Trip-Hop"],pf:10,ry:4.03,rs:{r:202,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/a/a8/Bj%C3%B6rk_-_Homogenic.png",bio:"Björk 是冰岛创作歌手、制作人和多媒体艺术家，以独特的声音和不断创新的音乐风格著称。《Homogenic》融合了电子节拍和管弦乐，构成她所说的'冰岛之声'——'粗糙的火山节奏配上温柔的弦乐'。专辑探索了爱情、爱国和自然的力量。",w:"https://zh.wikipedia.org/wiki/Homogenic"},
+  {t:"Enter the Wu-Tang (36 Chambers)",a:"Wu-Tang Clan",y:1993,g:["东海岸嘻哈","硬核说唱"],pf:9.8,ry:4.13,rs:{r:27,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/f/f4/Wu-TangClanEntertheWu-Tang36Chambersalbumcover.jpg",bio:"Wu-Tang Clan 是纽约史坦顿岛的说唱团体，由 RZA、GZA、Method Man、Raekwon、Ghostface Killah、Inspectah Deck、U-God、Masta Killa 和 Ol' Dirty Bastard 九人组成。他们以武术电影采样、粗糙的节拍和成员各自独特的风格重新定义了东海岸嘻哈。《Enter the Wu-Tang》彻底改变了说唱游戏。",w:"https://zh.wikipedia.org/wiki/Enter_the_Wu-Tang_(36_Chambers)"},
+  {t:"Hounds of Love",a:"Kate Bush",y:1985,g:["艺术流行","前卫流行","合成器流行"],pf:9.5,ry:3.96,rs:{r:68,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/b/ba/Kate_Bush_-_Hounds_of_Love.png",bio:"Kate Bush 是英国创作歌手、制作人和舞者，19 岁就以《Wuthering Heights》登上排行榜首位。《Hounds of Love》是她的第五张专辑，采用了创新的概念结构——A 面为流行歌曲，B 面为关于一个溺水女子的概念组曲《The Ninth Wave》。她以文学性歌词、戏剧性表演和独特的制作手法闻名。",w:"https://zh.wikipedia.org/wiki/Hounds_of_Love"},
+  {t:"Sgt. Pepper's Lonely Hearts Club Band",a:"The Beatles",y:1967,g:["迷幻摇滚","艺术摇滚","流行"],pf:10,ry:4.07,rs:{r:24,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/50/Sgt._Pepper%27s_Lonely_Hearts_Club_Band.jpg",bio:"这张专辑被广泛认为是第一张'概念专辑'，也是录音室作为创作工具的里程碑。《Sgt. Pepper's》运用了当时最先进的四轨录音技术，创造了前所未有的声音景观。从著名的封面设计（汇集了众多历史名人）到《A Day in the Life》的管弦乐高潮，它代表了 1960 年代迷幻文化的巅峰。",w:"https://zh.wikipedia.org/wiki/Sgt._Pepper%27s_Lonely_Hearts_Club_Band"},
+  {t:"Blonde on Blonde",a:"Bob Dylan",y:1966,g:["民谣摇滚","蓝调","摇滚"],pf:10,ry:4.12,rs:{r:38,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/1/18/Bob_Dylan_-_Blonde_on_Blonde.jpg",bio:"Bob Dylan 是美国最具影响力的创作歌手，2016 年获得诺贝尔文学奖。《Blonde on Blonde》是摇滚史上第一张重要的双专辑，录制于纳什维尔。它包含了《Visions of Johanna》、《Just Like a Woman》等经典歌曲，将超现实主义诗歌与蓝调摇滚结合，代表了 Dylan 1960 年代创作巅峰。",w:"https://zh.wikipedia.org/wiki/Blonde_on_Blonde"},
+  {t:"My Beautiful Dark Twisted Fantasy",a:"Kanye West",y:2010,g:["嘻哈","前卫流行","巴洛克流行"],pf:10,ry:4.04,rs:{r:17,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/b/bc/My_Beautiful_Dark_Twisted_Fantasy.jpg",bio:"Kanye West 是美国说唱歌手、制作人和时尚设计师。《MBDTF》是他在一系列争议之后的重磅回归之作，以宏伟的制作、邀请众多巨星合作和深刻的自我审视著称。专辑融合了嘻哈、古典、摇滚和电子元素，被 Pitchfork 评为 10 分满分，是 2010 年代最具野心的专辑之一。",w:"https://zh.wikipedia.org/wiki/My_Beautiful_Dark_Twisted_Fantasy"},
+  {t:"In Rainbows",a:"Radiohead",y:2007,g:["另类摇滚","艺术摇滚","电子"],pf:9.3,ry:4.04,rs:{r:387,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/2e/In_Rainbows_Official_Cover.jpg",bio:"Radiohead 的第七张录音室专辑，最出名的是'随你付'（pay-what-you-want）发行模式——粉丝可以自己决定付多少钱下载。这一创新颠覆了音乐产业的发行规则。《In Rainbows》在《Kid A》的电子实验之后重新拥抱温暖的旋律和人性化的主题，被认为是一张'光芒四射'的作品。",w:"https://zh.wikipedia.org/wiki/In_Rainbows"},
+  {t:"Spiderland",a:"Slint",y:1991,g:["后摇滚","数学摇滚","慢核"],pf:10,ry:4.12,rs:{r:275,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/5c/Slint_-_Spiderland.jpg",bio:"Slint 是美国路易斯维尔的后摇滚/数学摇滚先驱乐队。《Spiderland》在发行时几乎没有引起注意，但随着时间推移，它被认为催生了整个后摇滚（Post-Rock）流派。专辑以极端的动态对比、口语化的人声和黑暗的叙事著称，影响了一大批后来的乐队如 Mogwai、Godspeed You! Black Emperor 等。",w:"https://zh.wikipedia.org/wiki/Spiderland"},
+  {t:"Funeral",a:"Arcade Fire",y:2004,g:["独立摇滚","室内流行","艺术摇滚"],pf:9.7,ry:3.96,rs:{r:151,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/4d/ArcadeFireFuneral.jpg",bio:"Arcade Fire 是加拿大蒙特利尔的独立摇滚乐队，由 Win Butler 和 Régine Chassagne 夫妇领导。《Funeral》是他们的首张专辑，以家庭成员去世为主题，却充满了生命力。乐队以庞大的合奏阵容（包括小提琴、法国号、手风琴等多种乐器）创造了宏大而亲密的声音，唤起了青春、失落和希望的情感。",w:"https://zh.wikipedia.org/wiki/Funeral_(Arcade_Fire_%E4%B8%93%E8%BE%91)"},
+  {t:"Madvillainy",a:"Madvillain",y:2004,g:["抽象嘻哈","地下说唱","实验"],pf:9.4,ry:4.18,rs:{r:365,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/5e/Madvillainy_cover.png",bio:"Madvillain 是制作人 Madlib 和说唱歌手 MF DOOM 的合作项目。《Madvillainy》是一张奇特而迷人的专辑——短小精悍的歌曲、不规则的节奏、大量采样和 DOOM 标志性的复杂押韵。专辑几乎没有任何副歌或传统的歌曲结构，但它的创造力使之成为地下嘻哈的圣经。",w:"https://zh.wikipedia.org/wiki/Madvillainy"},
+  {t:"The Downward Spiral",a:"Nine Inch Nails",y:1994,g:["工业摇滚","另类摇滚","电子"],pf:9.3,ry:3.88,rs:{r:122,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/2d/Nine_Inch_Nails_-_The_Downward_Spiral.png",bio:"Nine Inch Nails 是 Trent Reznor 的个人项目，他是工业摇滚和电子音乐的重要创新者。《The Downward Spiral》是一张概念专辑，讲述了一个人自我毁灭的过程。专辑将工业噪音与流行旋律融为一体，包含了《Closer》和《Hurt》等名曲（后者后来被 Johnny Cash 翻唱成为经典）。",w:"https://zh.wikipedia.org/wiki/The_Downward_Spiral"},
+  {t:"Disintegration",a:"The Cure",y:1989,g:["后朋克","哥特摇滚","另类摇滚"],pf:9.3,ry:4.05,rs:{r:116,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/6/63/The_Cure_-_Disintegration.png",bio:"The Cure 是英国后朋克/哥特摇滚乐队，由 Robert Smith 领导。《Disintegration》被认为是他们最伟大的作品，以丰富的合成器层次和强烈的情感深度著称。Robert Smith 在创作期间经历了抑郁和精神危机，专辑中的歌曲弥漫着失落、衰老和绝望的氛围，但同时也异常美丽动人。",w:"https://zh.wikipedia.org/wiki/Disintegration"},
   {t:"Souvlaki",a:"Slowdive",y:1993,g:["自赏摇滚","梦幻流行","氛围"],pf:8.9,ry:3.94,rs:null,c:"https://upload.wikimedia.org/wikipedia/en/f/f0/Slowdive_-_Souvlaki.jpg",bio:"Slowdive 是英国自赏摇滚/梦幻流行乐队。《Souvlaki》发行时遇到了 Britpop 浪潮的冲击，评论不佳，但多年后被重新评价为梦幻流行的里程碑。专辑以层叠的吉他延迟、飘渺的人声和朦胧的音景创造了一种梦幻般的听感体验。乐队后来重组，证明了这张专辑的持久影响力。",w:"https://zh.wikipedia.org/wiki/Souvlaki"},
-  {t:"Selected Ambient Works 85-92",a:"Aphex Twin",y:1992,g:["氛围电子","IDM","实验电子"],pf:9.4,ry:4.11,rs:{r:366,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/1/1b/Aphex_Twin_-_Selected_Ambient_Works_85-92.png",bio:"Aphex Twin（Richard D. James）是英国电子音乐家，被誉为 IDM（智能舞曲）的先驱。《Selected Ambient Works 85-92》据称是他 14 岁时就开始创作的早期作品合集。专辑以简约的设备创造出温暖而富有情感的电子音景，证明了电子音乐可以像任何传统乐器一样打动人心。",w:"https://zh.wikipedia.org/wiki/Selected_Ambient_Works_85-92"},
-  {t:"A Love Supreme",a:"John Coltrane",y:1965,g:["爵士","调式爵士","自由爵士","灵性爵士"],pf:10,ry:4.19,rs:{r:66,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/5/5f/John_Coltrane_-_A_Love_Supreme.jpg",bio:"John Coltrane 是爵士乐历史上最重要的萨克斯演奏家之一。《A Love Supreme》是他灵性觉醒后的作品，一首四乐章的对上帝的赞美诗。专辑以四音符的低音动机为基础展开即兴探索，是爵士乐史上最具精神性的作品之一。Coltrane 于 1967 年因肝癌去世，年仅 40 岁。",w:"https://zh.wikipedia.org/wiki/A_Love_Supreme"},
-  {t:"Rumours",a:"Fleetwood Mac",y:1977,g:["软摇滚","流行摇滚","民谣摇滚"],pf:9.2,ry:3.72,rs:{r:7,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/f/fb/FMacRumours.PNG",bio:"Fleetwood Mac 最初是英国蓝调乐队，但在 Lindsey Buckingham 和 Stevie Nicks 加入后转型为流行摇滚。《Rumours》诞生于乐队成员关系最混乱的时期——两对情侣同时分手、酗酒和药物问题——但正是这些痛苦转化为了永恒的音乐。专辑中的《Go Your Own Way》、《Dreams》等每首歌几乎都是经典。",w:"https://zh.wikipedia.org/wiki/Rumours"},
-  {t:"Channel Orange",a:"Frank Ocean",y:2012,g:["R&B","新灵魂乐","前卫流行"],pf:9.5,ry:3.86,rs:{r:148,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/2/28/Channel_ORANGE.jpg",bio:"Frank Ocean 是美国 R&B 创作歌手，Odd Future 团体成员。《Channel Orange》是首张主流厂牌发行的专辑，被誉为本世纪最具影响力的 R&B 专辑之一。专辑以橙色调的慵懒氛围展开，歌曲在奢华与空虚、爱情与身份之间游走，开创了另类 R&B 的新方向。",w:"https://zh.wikipedia.org/wiki/Channel_Orange"},
-  {t:"Unknown Pleasures",a:"Joy Division",y:1979,g:["后朋克","哥特摇滚"],pf:10,ry:4.10,rs:{r:211,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/b/b8/Joy_Division_-_Unknown_Pleasures.jpg",bio:"Joy Division 是英国后朋克乐队，由 Ian Curtis（主唱）、Bernard Sumner（吉他）、Peter Hook（贝斯）、Stephen Morris（鼓）组成。Ian Curtis 患有癫痫和抑郁症，在乐队首次美国巡演前夕自杀，年仅 23 岁。《Unknown Pleasures》以其标志性的脉冲星波形封面和 Curtis 空洞的男中音成为后朋克的里程碑。",w:"https://zh.wikipedia.org/wiki/Unknown_Pleasures"},
-  {t:"Electric Ladyland",a:"The Jimi Hendrix Experience",y:1968,g:["迷幻摇滚","蓝调摇滚","硬摇滚"],pf:10,ry:4.10,rs:{r:53,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/f/f8/Jimi_Hendrix_-_Electric_Ladyland.jpg",bio:"Jimi Hendrix 被广泛认为是有史以来最伟大的电吉他手。他在短短 4 年的主流音乐生涯中彻底改变了电吉他的演奏方式和声音可能性。《Electric Ladyland》是他的第三张也是最后一张录音室专辑，包含史诗级作品《Voodoo Child》和翻唱 Bob Dylan 的《All Along the Watchtower》。Hendrix 于 1970 年去世，年仅 27 岁。",w:"https://zh.wikipedia.org/wiki/Electric_Ladyland"},
-  {t:"Discovery",a:"Daft Punk",y:2001,g:["电子","法国浩室","迪斯科"],pf:9.2,ry:3.92,rs:{r:236,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/0/0d/Daft_Punk_-_Discovery.jpg",bio:"Daft Punk 是法国电子音乐二人组，以机器人头盔造型和精心制作的电子音乐闻名。《Discovery》将 70-80 年代的迪斯科、放克和摇滚采样与未来主义的电子节拍融合，创造了一种既怀旧又超前的独特声音。专辑还配套了一部完整的动画电影《Interstella 5555》，展现了他们将音乐与视觉艺术结合的野心。",w:"https://zh.wikipedia.org/wiki/Discovery_(Daft_Punk_%E4%B8%93%E8%BE%91)"},
-  {t:"The Miseducation of Lauryn Hill",a:"Lauryn Hill",y:1998,g:["新灵魂乐","嘻哈","R&B","雷鬼"],pf:9.5,ry:4.01,rs:{r:10,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/5/55/LaurynHillTheMiseducationofLaurynHillalbumcover.jpg",bio:"Lauryn Hill 是美国创作歌手和说唱歌手，曾是 Fugees 成员。《The Miseducation...》是她的首张个人专辑，融合了嘻哈、灵魂和雷鬼元素。专辑深刻地探讨了爱情、母性和灵性主题，获得了 5 项格莱美奖。这是有史以来最受好评的女性嘻哈/灵魂专辑之一。",w:"https://zh.wikipedia.org/wiki/The_Miseducation_of_Lauryn_Hill"},
-  {t:"Blackstar",a:"David Bowie",y:2016,g:["艺术摇滚","实验","爵士"],pf:8.5,ry:3.85,rs:{r:318,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/3/33/Blackstar_%28album%29.png",bio:"《Blackstar》是 David Bowie 的第 25 张也是最后一张录音室专辑，发行于他 69 岁生日当天，两天后他因肝癌去世。这张专辑成为他献给世界最后的艺术礼物——歌词充满了对死亡和遗产的沉思，音乐上融入了实验爵士元素。在生命的终点，Bowie 仍然在推动艺术的边界。",w:"https://zh.wikipedia.org/wiki/Blackstar"},
-  {t:"Is This It",a:"The Strokes",y:2001,g:["独立摇滚","车库摇滚复兴","后朋克"],pf:9.1,ry:3.78,rs:{r:114,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/0/09/The_Strokes_-_Is_This_It_cover.png",bio:"The Strokes 是纽约五人独立摇滚乐队。他们的首张专辑《Is This It》仅花了几周时间在地下室录制完成，却引发了全球范围的车库摇滚和后朋克复兴运动。专辑的极简风格——简短的歌曲、粗粝的声音和 Julian Casablancas 慵懒的唱腔——直接对抗了当时盛行的 Nu-Metal 和说唱摇滚。",w:"https://zh.wikipedia.org/wiki/Is_This_It"},
-  {t:"Dummy",a:"Portishead",y:1994,g:["Trip-Hop","电子","慢核"],pf:9.0,ry:3.97,rs:{r:131,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/a/a6/Portishead_-_Dummy.png",bio:"Portishead 是英国布里斯托尔的 Trip-Hop 三人组。《Dummy》融合了爵士采样、电影性氛围和 Beth Gibbons 灵魂般的声音，是 Trip-Hop 流派最重要的专辑之一。专辑中弥漫着黑暗、紧张和忧郁的气质，重新定义了 1990 年代电子音乐的可能性。",w:"https://zh.wikipedia.org/wiki/Dummy_(Portishead_%E4%B8%93%E8%BE%91)"},
-  {t:"In Utero",a:"Nirvana",y:1993,g:["垃圾摇滚","另类摇滚","噪音摇滚"],pf:9.0,ry:3.87,rs:{r:173,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/e/e3/In_Utero_%28Nirvana%29_album_cover.jpg",bio:"《In Utero》是 Nirvana 的最后一张录音室专辑。在《Nevermind》的巨大成功之后，Kurt Cobain 刻意选择了更粗糙、更不商业化的声音，邀请噪音摇滚制作人 Steve Albini 录制。专辑比前作更黑暗、更愤怒，直接反映了 Cobain 内心深处的痛苦和挣扎。封面的解剖模型人体由 Cobain 亲自设计。",w:"https://zh.wikipedia.org/wiki/In_Utero"},
-  {t:"The Low End Theory",a:"A Tribe Called Quest",y:1991,g:["爵士说唱","另类嘻哈","东海岸"],pf:10,ry:4.01,rs:{r:43,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/4/42/A_Tribe_Called_Quest_-_The_Low_End_Theory.jpg",bio:"A Tribe Called Quest 是纽约皇后区的说唱团体，由 Q-Tip、Phife Dawg、Ali Shaheed Muhammad 和 Jarobi 组成。他们以爵士采样和正面、趣味性的歌词著称。《The Low End Theory》将爵士贝斯律动与嘻哈节拍无缝融合，是对毒品、暴力和商业化说唱的一种有意识的反叛。",w:"https://zh.wikipedia.org/wiki/The_Low_End_Theory"},
-  {t:"Songs in the Key of Life",a:"Stevie Wonder",y:1976,g:["灵魂乐","放克","R&B","流行"],pf:10,ry:4.02,rs:{r:4,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/5/5d/Stevie_Wonder_-_Songs_in_the_Key_of_Life.jpg",bio:"Stevie Wonder 是美国音乐传奇，尽管天生失明，却是流行音乐史上最多产的创作天才之一。《Songs in the Key of Life》是一张双专辑，时长超过 100 分钟，涵盖了爱情、社会正义、灵性和欢乐等各种主题。从《Isn't She Lovely》到《Sir Duke》，每首歌都闪烁着生命的光芒。",w:"https://zh.wikipedia.org/wiki/Songs_in_the_Key_of_Life"},
-  {t:"Daydream Nation",a:"Sonic Youth",y:1988,g:["另类摇滚","噪音摇滚","实验摇滚"],pf:10,ry:4.08,rs:{r:89,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/2/2f/Sonic_Youth_-_Daydream_Nation_cover.jpg",bio:"Sonic Youth 是美国纽约的另类摇滚/噪音摇滚乐队，以非常规的吉他调弦和实验性反馈噪音著称。《Daydream Nation》是一张双专辑，被认为是他们最伟大的作品，也是连接 80 年代地下摇滚和 90 年代另类摇滚的重要桥梁。专辑封面的烛光画作成为了独立摇滚的标志性图像。",w:"https://zh.wikipedia.org/wiki/Daydream_Nation"},
-  {t:"Blond",a:"Frank Ocean",y:2016,g:["R&B","前卫流行","艺术流行"],pf:9.0,ry:3.93,rs:{r:79,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/a/a0/Blonde_-_Frank_Ocean.jpeg",bio:"《Blond》是 Frank Ocean 的第二张录音室专辑，在长达四年的等待后发行。专辑以极简的制作、氛围化的声音和坦诚的歌词探讨了男性气质、童年记忆和现代爱情。它的发行方式同样富有创意——通过视觉专辑《Endless》和限时 pop-up 杂志完成。",w:"https://zh.wikipedia.org/wiki/Blond"},
-  {t:"Led Zeppelin IV",a:"Led Zeppelin",y:1971,g:["硬摇滚","蓝调摇滚","民谣摇滚"],pf:9.1,ry:3.99,rs:{r:58,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/2/26/Led_Zeppelin_-_Led_Zeppelin_IV.jpg",bio:"Led Zeppelin 是英国硬摇滚乐队，由 Jimmy Page（吉他）、Robert Plant（主唱）、John Paul Jones（贝斯/键盘）、John Bonham（鼓）组成。《Led Zeppelin IV》没有标题，只有四个神秘符号。专辑包含了摇滚史上最著名的歌曲《Stairway to Heaven》和《Black Dog》，代表了 70 年代硬摇滚的绝对巅峰。",w:"https://zh.wikipedia.org/wiki/Led_Zeppelin_IV"},
-  {t:"Merriweather Post Pavilion",a:"Animal Collective",y:2009,g:["新迷幻","电子流行","实验","独立"],pf:9.6,ry:3.88,rs:{r:327,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/9/9b/Merriweather_Post_Pavilion.jpg",bio:"Animal Collective 是美国实验/独立乐队，以不断变化的风格和创新的声音著称。《Merriweather Post Pavilion》是他们最易于接近的作品，将迷幻元素与电子节拍完美结合。专辑封面是动态错视艺术，与音乐中层层叠加、令人眩晕的声音构造相呼应。",w:"https://zh.wikipedia.org/wiki/Merriweather_Post_Pavilion"},
-  {t:"Ready to Die",a:"The Notorious B.I.G.",y:1994,g:["东海岸嘻哈","硬核说唱","匪帮说唱"],pf:9.2,ry:3.98,rs:{r:22,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/9/97/Ready_to_Die.jpg",bio:"The Notorious B.I.G.（Christopher Wallace）是纽约布鲁克林出身的最伟大的说唱歌手之一。《Ready to Die》是他的首张专辑，以生动的叙事描绘了街头生活的残酷。虽然 Biggie 以硬核形象出现，但他的讲故事能力、幽默感和流畅的韵律技巧使他超越了匪帮说唱的标签。他于 1997 年被枪杀，年仅 24 岁。",w:"https://zh.wikipedia.org/wiki/Ready_to_Die"},
-  {t:"Innervisions",a:"Stevie Wonder",y:1973,g:["灵魂乐","放克","R&B"],pf:10,ry:3.99,rs:{r:34,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/0/02/Innervisions.jpg",bio:"《Innervisions》是 Stevie Wonder 经典时期的巅峰之作之一，整张专辑由他一人演奏几乎所有乐器。它以《Living for the City》等叙事歌曲探讨了美国社会问题，同时在《Higher Ground》中展现了灵性的追求。专辑发行后不久，Stevie 遭遇严重车祸几乎丧命，使这张专辑的主题更添一层深度。",w:"https://zh.wikipedia.org/wiki/Innervisions"},
-  {t:"Bitches Brew",a:"Miles Davis",y:1970,g:["融合爵士","爵士放克","实验"],pf:9.6,ry:3.94,rs:{r:87,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/1/1f/Miles_Davis-Bitches_Brew.jpg",bio:"《Bitches Brew》是 Miles Davis 最具争议性也最有影响力的专辑之一。他将爵士与摇滚、放克和电子乐器融合，创造了'融合爵士'（Jazz Fusion）流派。专辑以录音室即兴为基础，后期通过磁带剪辑重组，打破了爵士乐的形式限制。虽然当时的爵士纯化论者批评它，但它开启了爵士乐的新纪元。",w:"https://zh.wikipedia.org/wiki/Bitches_Brew"},
-  {t:"Marquee Moon",a:"Television",y:1977,g:["艺术朋克","后朋克","摇滚"],pf:9.3,ry:4.11,rs:{r:107,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/4/47/Television_-_Marquee_Moon.jpg",bio:"Television 是纽约 CBGB 俱乐部场景中的艺术朋克/后朋克先驱乐队。《Marquee Moon》以 Tom Verlaine 和 Richard Lloyd 双吉他的精妙对话为特色，将朋克的能量与复杂的吉他编排结合。同名标题曲长达 10 分钟，是现代吉他音乐的巅峰之作。这张专辑证明了朋克不一定是粗俗的。",w:"https://zh.wikipedia.org/wiki/Marquee_Moon"},
+  {t:"Selected Ambient Works 85-92",a:"Aphex Twin",y:1992,g:["氛围电子","IDM","实验电子"],pf:9.4,ry:4.11,rs:{r:366,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/1/1b/Aphex_Twin_-_Selected_Ambient_Works_85-92.png",bio:"Aphex Twin（Richard D. James）是英国电子音乐家，被誉为 IDM（智能舞曲）的先驱。《Selected Ambient Works 85-92》据称是他 14 岁时就开始创作的早期作品合集。专辑以简约的设备创造出温暖而富有情感的电子音景，证明了电子音乐可以像任何传统乐器一样打动人心。",w:"https://zh.wikipedia.org/wiki/Selected_Ambient_Works_85-92"},
+  {t:"A Love Supreme",a:"John Coltrane",y:1965,g:["爵士","调式爵士","自由爵士","灵性爵士"],pf:10,ry:4.19,rs:{r:66,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/5f/John_Coltrane_-_A_Love_Supreme.jpg",bio:"John Coltrane 是爵士乐历史上最重要的萨克斯演奏家之一。《A Love Supreme》是他灵性觉醒后的作品，一首四乐章的对上帝的赞美诗。专辑以四音符的低音动机为基础展开即兴探索，是爵士乐史上最具精神性的作品之一。Coltrane 于 1967 年因肝癌去世，年仅 40 岁。",w:"https://zh.wikipedia.org/wiki/A_Love_Supreme"},
+  {t:"Rumours",a:"Fleetwood Mac",y:1977,g:["软摇滚","流行摇滚","民谣摇滚"],pf:9.2,ry:3.72,rs:{r:7,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/f/fb/FMacRumours.PNG",bio:"Fleetwood Mac 最初是英国蓝调乐队，但在 Lindsey Buckingham 和 Stevie Nicks 加入后转型为流行摇滚。《Rumours》诞生于乐队成员关系最混乱的时期——两对情侣同时分手、酗酒和药物问题——但正是这些痛苦转化为了永恒的音乐。专辑中的《Go Your Own Way》、《Dreams》等每首歌几乎都是经典。",w:"https://zh.wikipedia.org/wiki/Rumours"},
+  {t:"Channel Orange",a:"Frank Ocean",y:2012,g:["R&B","新灵魂乐","前卫流行"],pf:9.5,ry:3.86,rs:{r:148,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/28/Channel_ORANGE.jpg",bio:"Frank Ocean 是美国 R&B 创作歌手，Odd Future 团体成员。《Channel Orange》是首张主流厂牌发行的专辑，被誉为本世纪最具影响力的 R&B 专辑之一。专辑以橙色调的慵懒氛围展开，歌曲在奢华与空虚、爱情与身份之间游走，开创了另类 R&B 的新方向。",w:"https://zh.wikipedia.org/wiki/Channel_Orange"},
+  {t:"Unknown Pleasures",a:"Joy Division",y:1979,g:["后朋克","哥特摇滚"],pf:10,ry:4.10,rs:{r:211,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/b/b8/Joy_Division_-_Unknown_Pleasures.jpg",bio:"Joy Division 是英国后朋克乐队，由 Ian Curtis（主唱）、Bernard Sumner（吉他）、Peter Hook（贝斯）、Stephen Morris（鼓）组成。Ian Curtis 患有癫痫和抑郁症，在乐队首次美国巡演前夕自杀，年仅 23 岁。《Unknown Pleasures》以其标志性的脉冲星波形封面和 Curtis 空洞的男中音成为后朋克的里程碑。",w:"https://zh.wikipedia.org/wiki/Unknown_Pleasures"},
+  {t:"Electric Ladyland",a:"The Jimi Hendrix Experience",y:1968,g:["迷幻摇滚","蓝调摇滚","硬摇滚"],pf:10,ry:4.10,rs:{r:53,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/f/f8/Jimi_Hendrix_-_Electric_Ladyland.jpg",bio:"Jimi Hendrix 被广泛认为是有史以来最伟大的电吉他手。他在短短 4 年的主流音乐生涯中彻底改变了电吉他的演奏方式和声音可能性。《Electric Ladyland》是他的第三张也是最后一张录音室专辑，包含史诗级作品《Voodoo Child》和翻唱 Bob Dylan 的《All Along the Watchtower》。Hendrix 于 1970 年去世，年仅 27 岁。",w:"https://zh.wikipedia.org/wiki/Electric_Ladyland"},
+  {t:"Discovery",a:"Daft Punk",y:2001,g:["电子","法国浩室","迪斯科"],pf:9.2,ry:3.92,rs:{r:236,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/0/0d/Daft_Punk_-_Discovery.jpg",bio:"Daft Punk 是法国电子音乐二人组，以机器人头盔造型和精心制作的电子音乐闻名。《Discovery》将 70-80 年代的迪斯科、放克和摇滚采样与未来主义的电子节拍融合，创造了一种既怀旧又超前的独特声音。专辑还配套了一部完整的动画电影《Interstella 5555》，展现了他们将音乐与视觉艺术结合的野心。",w:"https://zh.wikipedia.org/wiki/Discovery_(Daft_Punk_%E4%B8%93%E8%BE%91)"},
+  {t:"The Miseducation of Lauryn Hill",a:"Lauryn Hill",y:1998,g:["新灵魂乐","嘻哈","R&B","雷鬼"],pf:9.5,ry:4.01,rs:{r:10,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/55/LaurynHillTheMiseducationofLaurynHillalbumcover.jpg",bio:"Lauryn Hill 是美国创作歌手和说唱歌手，曾是 Fugees 成员。《The Miseducation...》是她的首张个人专辑，融合了嘻哈、灵魂和雷鬼元素。专辑深刻地探讨了爱情、母性和灵性主题，获得了 5 项格莱美奖。这是有史以来最受好评的女性嘻哈/灵魂专辑之一。",w:"https://zh.wikipedia.org/wiki/The_Miseducation_of_Lauryn_Hill"},
+  {t:"Blackstar",a:"David Bowie",y:2016,g:["艺术摇滚","实验","爵士"],pf:8.5,ry:3.85,rs:{r:318,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/3/33/Blackstar_%28album%29.png",bio:"《Blackstar》是 David Bowie 的第 25 张也是最后一张录音室专辑，发行于他 69 岁生日当天，两天后他因肝癌去世。这张专辑成为他献给世界最后的艺术礼物——歌词充满了对死亡和遗产的沉思，音乐上融入了实验爵士元素。在生命的终点，Bowie 仍然在推动艺术的边界。",w:"https://zh.wikipedia.org/wiki/Blackstar"},
+  {t:"Is This It",a:"The Strokes",y:2001,g:["独立摇滚","车库摇滚复兴","后朋克"],pf:9.1,ry:3.78,rs:{r:114,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/0/09/The_Strokes_-_Is_This_It_cover.png",bio:"The Strokes 是纽约五人独立摇滚乐队。他们的首张专辑《Is This It》仅花了几周时间在地下室录制完成，却引发了全球范围的车库摇滚和后朋克复兴运动。专辑的极简风格——简短的歌曲、粗粝的声音和 Julian Casablancas 慵懒的唱腔——直接对抗了当时盛行的 Nu-Metal 和说唱摇滚。",w:"https://zh.wikipedia.org/wiki/Is_This_It"},
+  {t:"Dummy",a:"Portishead",y:1994,g:["Trip-Hop","电子","慢核"],pf:9.0,ry:3.97,rs:{r:131,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/a/a6/Portishead_-_Dummy.png",bio:"Portishead 是英国布里斯托尔的 Trip-Hop 三人组。《Dummy》融合了爵士采样、电影性氛围和 Beth Gibbons 灵魂般的声音，是 Trip-Hop 流派最重要的专辑之一。专辑中弥漫着黑暗、紧张和忧郁的气质，重新定义了 1990 年代电子音乐的可能性。",w:"https://zh.wikipedia.org/wiki/Dummy_(Portishead_%E4%B8%93%E8%BE%91)"},
+  {t:"In Utero",a:"Nirvana",y:1993,g:["垃圾摇滚","另类摇滚","噪音摇滚"],pf:9.0,ry:3.87,rs:{r:173,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/e/e3/In_Utero_%28Nirvana%29_album_cover.jpg",bio:"《In Utero》是 Nirvana 的最后一张录音室专辑。在《Nevermind》的巨大成功之后，Kurt Cobain 刻意选择了更粗糙、更不商业化的声音，邀请噪音摇滚制作人 Steve Albini 录制。专辑比前作更黑暗、更愤怒，直接反映了 Cobain 内心深处的痛苦和挣扎。封面的解剖模型人体由 Cobain 亲自设计。",w:"https://zh.wikipedia.org/wiki/In_Utero"},
+  {t:"The Low End Theory",a:"A Tribe Called Quest",y:1991,g:["爵士说唱","另类嘻哈","东海岸"],pf:10,ry:4.01,rs:{r:43,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/42/A_Tribe_Called_Quest_-_The_Low_End_Theory.jpg",bio:"A Tribe Called Quest 是纽约皇后区的说唱团体，由 Q-Tip、Phife Dawg、Ali Shaheed Muhammad 和 Jarobi 组成。他们以爵士采样和正面、趣味性的歌词著称。《The Low End Theory》将爵士贝斯律动与嘻哈节拍无缝融合，是对毒品、暴力和商业化说唱的一种有意识的反叛。",w:"https://zh.wikipedia.org/wiki/The_Low_End_Theory"},
+  {t:"Songs in the Key of Life",a:"Stevie Wonder",y:1976,g:["灵魂乐","放克","R&B","流行"],pf:10,ry:4.02,rs:{r:4,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/5d/Stevie_Wonder_-_Songs_in_the_Key_of_Life.jpg",bio:"Stevie Wonder 是美国音乐传奇，尽管天生失明，却是流行音乐史上最多产的创作天才之一。《Songs in the Key of Life》是一张双专辑，时长超过 100 分钟，涵盖了爱情、社会正义、灵性和欢乐等各种主题。从《Isn't She Lovely》到《Sir Duke》，每首歌都闪烁着生命的光芒。",w:"https://zh.wikipedia.org/wiki/Songs_in_the_Key_of_Life"},
+  {t:"Daydream Nation",a:"Sonic Youth",y:1988,g:["另类摇滚","噪音摇滚","实验摇滚"],pf:10,ry:4.08,rs:{r:89,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/2f/Sonic_Youth_-_Daydream_Nation_cover.jpg",bio:"Sonic Youth 是美国纽约的另类摇滚/噪音摇滚乐队，以非常规的吉他调弦和实验性反馈噪音著称。《Daydream Nation》是一张双专辑，被认为是他们最伟大的作品，也是连接 80 年代地下摇滚和 90 年代另类摇滚的重要桥梁。专辑封面的烛光画作成为了独立摇滚的标志性图像。",w:"https://zh.wikipedia.org/wiki/Daydream_Nation"},
+  {t:"Blond",a:"Frank Ocean",y:2016,g:["R&B","前卫流行","艺术流行"],pf:9.0,ry:3.93,rs:{r:79,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/a/a0/Blonde_-_Frank_Ocean.jpeg",bio:"《Blond》是 Frank Ocean 的第二张录音室专辑，在长达四年的等待后发行。专辑以极简的制作、氛围化的声音和坦诚的歌词探讨了男性气质、童年记忆和现代爱情。它的发行方式同样富有创意——通过视觉专辑《Endless》和限时 pop-up 杂志完成。",w:"https://zh.wikipedia.org/wiki/Blond"},
+  {t:"Led Zeppelin IV",a:"Led Zeppelin",y:1971,g:["硬摇滚","蓝调摇滚","民谣摇滚"],pf:9.1,ry:3.99,rs:{r:58,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/26/Led_Zeppelin_-_Led_Zeppelin_IV.jpg",bio:"Led Zeppelin 是英国硬摇滚乐队，由 Jimmy Page（吉他）、Robert Plant（主唱）、John Paul Jones（贝斯/键盘）、John Bonham（鼓）组成。《Led Zeppelin IV》没有标题，只有四个神秘符号。专辑包含了摇滚史上最著名的歌曲《Stairway to Heaven》和《Black Dog》，代表了 70 年代硬摇滚的绝对巅峰。",w:"https://zh.wikipedia.org/wiki/Led_Zeppelin_IV"},
+  {t:"Merriweather Post Pavilion",a:"Animal Collective",y:2009,g:["新迷幻","电子流行","实验","独立"],pf:9.6,ry:3.88,rs:{r:327,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/9/9b/Merriweather_Post_Pavilion.jpg",bio:"Animal Collective 是美国实验/独立乐队，以不断变化的风格和创新的声音著称。《Merriweather Post Pavilion》是他们最易于接近的作品，将迷幻元素与电子节拍完美结合。专辑封面是动态错视艺术，与音乐中层层叠加、令人眩晕的声音构造相呼应。",w:"https://zh.wikipedia.org/wiki/Merriweather_Post_Pavilion"},
+  {t:"Ready to Die",a:"The Notorious B.I.G.",y:1994,g:["东海岸嘻哈","硬核说唱","匪帮说唱"],pf:9.2,ry:3.98,rs:{r:22,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/9/97/Ready_to_Die.jpg",bio:"The Notorious B.I.G.（Christopher Wallace）是纽约布鲁克林出身的最伟大的说唱歌手之一。《Ready to Die》是他的首张专辑，以生动的叙事描绘了街头生活的残酷。虽然 Biggie 以硬核形象出现，但他的讲故事能力、幽默感和流畅的韵律技巧使他超越了匪帮说唱的标签。他于 1997 年被枪杀，年仅 24 岁。",w:"https://zh.wikipedia.org/wiki/Ready_to_Die"},
+  {t:"Innervisions",a:"Stevie Wonder",y:1973,g:["灵魂乐","放克","R&B"],pf:10,ry:3.99,rs:{r:34,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/0/02/Innervisions.jpg",bio:"《Innervisions》是 Stevie Wonder 经典时期的巅峰之作之一，整张专辑由他一人演奏几乎所有乐器。它以《Living for the City》等叙事歌曲探讨了美国社会问题，同时在《Higher Ground》中展现了灵性的追求。专辑发行后不久，Stevie 遭遇严重车祸几乎丧命，使这张专辑的主题更添一层深度。",w:"https://zh.wikipedia.org/wiki/Innervisions"},
+  {t:"Bitches Brew",a:"Miles Davis",y:1970,g:["融合爵士","爵士放克","实验"],pf:9.6,ry:3.94,rs:{r:87,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/1/1f/Miles_Davis-Bitches_Brew.jpg",bio:"《Bitches Brew》是 Miles Davis 最具争议性也最有影响力的专辑之一。他将爵士与摇滚、放克和电子乐器融合，创造了'融合爵士'（Jazz Fusion）流派。专辑以录音室即兴为基础，后期通过磁带剪辑重组，打破了爵士乐的形式限制。虽然当时的爵士纯化论者批评它，但它开启了爵士乐的新纪元。",w:"https://zh.wikipedia.org/wiki/Bitches_Brew"},
+  {t:"Marquee Moon",a:"Television",y:1977,g:["艺术朋克","后朋克","摇滚"],pf:9.3,ry:4.11,rs:{r:107,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/47/Television_-_Marquee_Moon.jpg",bio:"Television 是纽约 CBGB 俱乐部场景中的艺术朋克/后朋克先驱乐队。《Marquee Moon》以 Tom Verlaine 和 Richard Lloyd 双吉他的精妙对话为特色，将朋克的能量与复杂的吉他编排结合。同名标题曲长达 10 分钟，是现代吉他音乐的巅峰之作。这张专辑证明了朋克不一定是粗俗的。",w:"https://zh.wikipedia.org/wiki/Marquee_Moon"},
   {t:"Symbolic",a:"Death",y:1995,g:["死亡金属","前卫金属","技术死亡金属"],pf:9.0,ry:4.06,rs:null,c:"https://upload.wikimedia.org/wikipedia/en/7/7d/Death_-_Symbolic.jpg",bio:"Death 是美国死亡金属的先驱乐队，由 Chuck Schuldiner（被誉为'死亡金属之父'）领导。《Symbolic》是他们最具前卫性的作品，在极端金属的框架内融入复杂的编曲、旋律化的吉他独奏和哲理性的歌词。Chuck Schuldiner 于 2001 年因脑癌去世，年仅 34 岁。",w:"https://zh.wikipedia.org/wiki/Symbolic_(Death_%E4%B8%93%E8%BE%91)"},
   {t:"The Glow Pt. 2",a:"The Microphones",y:2001,g:["低保真","独立民谣","噪音流行","实验"],pf:9.3,ry:4.12,rs:null,c:"https://upload.wikimedia.org/wikipedia/en/2/2e/The_Glow_Pt._2.jpg",bio:"The Microphones 是 Phil Elverum 的个人项目（他后来以 Mount Eerie 名义活动）。《The Glow Pt. 2》是一张低保真杰作，在简单的民谣基础上叠加暴烈的噪音、田野录音和片段式的编曲。专辑探讨了自然、孤独和情感的脆弱性，以极其私密的录音风格让人感觉像是在听一个人的内心独白。",w:"https://zh.wikipedia.org/wiki/The_Glow_Pt._2"},
-  {t:"Good Kid, M.A.A.D City",a:"Kendrick Lamar",y:2012,g:["西海岸嘻哈","匪帮说唱","意识说唱"],pf:9.5,ry:4.00,rs:{r:115,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/8/84/Kendrick_Lamar_-_Good_Kid%2C_M.A.A.D_City.jpg",bio:"《good kid, m.A.A.d city》是 Kendrick Lamar 的主流首张专辑，以一个青少年在康普顿街头一天的经历为主线展开的概念专辑。它既是一部生动的自传，也是对美国帮派文化、家庭和信仰的深刻反思。专辑巧妙地在商业性和艺术性之间取得平衡，重新定义了当代主流嘻哈的叙事可能性。",w:"https://zh.wikipedia.org/wiki/Good_Kid,_M.A.A.D_City"},
-  {t:"Paranoid",a:"Black Sabbath",y:1970,g:["重金属","硬摇滚","厄运金属"],pf:9.0,ry:4.03,rs:{r:139,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/6/64/Black_Sabbath_-_Paranoid.jpg",bio:"Black Sabbath 是来自英国伯明翰的重金属先驱，由 Ozzy Osbourne（主唱）、Tony Iommi（吉他）、Geezer Butler（贝斯）、Bill Ward（鼓）组成。《Paranoid》是他们的第二张专辑，包含了《War Pigs》、《Paranoid》和《Iron Man》等定义了重金属流派的经典曲目。他们创造了一种全新的、比之前任何摇滚音乐都更黑暗更沉重的音乐。",w:"https://zh.wikipedia.org/wiki/Paranoid_(%E4%B8%93%E8%BE%91)"},
+  {t:"Good Kid, M.A.A.D City",a:"Kendrick Lamar",y:2012,g:["西海岸嘻哈","匪帮说唱","意识说唱"],pf:9.5,ry:4.00,rs:{r:115,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/8/84/Kendrick_Lamar_-_Good_Kid%2C_M.A.A.D_City.jpg",bio:"《good kid, m.A.A.d city》是 Kendrick Lamar 的主流首张专辑，以一个青少年在康普顿街头一天的经历为主线展开的概念专辑。它既是一部生动的自传，也是对美国帮派文化、家庭和信仰的深刻反思。专辑巧妙地在商业性和艺术性之间取得平衡，重新定义了当代主流嘻哈的叙事可能性。",w:"https://zh.wikipedia.org/wiki/Good_Kid,_M.A.A.D_City"},
+  {t:"Paranoid",a:"Black Sabbath",y:1970,g:["重金属","硬摇滚","厄运金属"],pf:9.0,ry:4.03,rs:{r:139,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/6/64/Black_Sabbath_-_Paranoid.jpg",bio:"Black Sabbath 是来自英国伯明翰的重金属先驱，由 Ozzy Osbourne（主唱）、Tony Iommi（吉他）、Geezer Butler（贝斯）、Bill Ward（鼓）组成。《Paranoid》是他们的第二张专辑，包含了《War Pigs》、《Paranoid》和《Iron Man》等定义了重金属流派的经典曲目。他们创造了一种全新的、比之前任何摇滚音乐都更黑暗更沉重的音乐。",w:"https://zh.wikipedia.org/wiki/Paranoid_(%E4%B8%93%E8%BE%91)"},
   {t:"Marvin's Marvelous Mechanical Museum",a:"Tally Hall",y:2005,g:["另类摇滚","独立流行","前卫流行","荒诞主义"],pf:7.8,ry:3.55,rs:null,c:"https://upload.wikimedia.org/wikipedia/en/9/92/Marvin%27s_Marvelous_Mechanical_Museum.jpg",bio:"Tally Hall 是密歇根大学的五人独立乐队，以穿着彩色领带的怪诞形象和风格多变的音乐著称。《Marvin's Marvelous Mechanical Museum》像是在游乐园和万花筒之间穿梭，一首歌是 Beatles 式的流行，下一首就变成了说唱或百老汇音乐剧。虽然从未成为主流，但他们建立起了一个狂热的 cult 粉丝群。",w:"https://zh.wikipedia.org/wiki/Marvin%27s_Marvelous_Mechanical_Museum"},
-  {t:"Lift Your Skinny Fists...",a:"Godspeed You! Black Emperor",y:2000,g:["后摇滚","氛围","实验","当代古典"],pf:9.2,ry:4.15,rs:{r:287,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/5/5c/Godspeed_You_Black_Emperor_-_Lift_Your_Skinny_Fists_Like_Antennas_to_Heaven.jpg",bio:"Godspeed You! Black Emperor 是加拿大蒙特利尔的九人后摇滚乐团。他们的音乐以宏大的编曲、田野录音采样和缓慢积累的叙事性段落为特征。《Lift Your Skinny Fists...》是一张双专辑，四个乐章宛如四部无声电影配乐，探讨了城市衰败、资本主义批判和末日前的人性。",w:"https://zh.wikipedia.org/wiki/Lift_Your_Skinny_Fists_Like_Antennas_to_Heaven"},
-  {t:"Highway 61 Revisited",a:"Bob Dylan",y:1965,g:["民谣摇滚","蓝调摇滚"],pf:10,ry:4.14,rs:{r:56,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/9/95/Bob_Dylan_-_Highway_61_Revisited.jpg",bio:"《Highway 61 Revisited》是 Bob Dylan 全面转向电声乐器的标志性专辑。开篇曲《Like a Rolling Stone》长达 6 分钟，以尖刻的歌词和轰鸣的电吉他彻底改变了流行歌曲的形式。这张专辑将超现实主义诗歌与蓝调摇滚结合，确立了摇滚乐作为一种严肃艺术形式的地位。",w:"https://zh.wikipedia.org/wiki/Highway_61_Revisited"},
-  {t:"The Wall",a:"Pink Floyd",y:1979,g:["前卫摇滚","艺术摇滚","概念专辑"],pf:8.8,ry:3.87,rs:{r:129,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/1/13/PinkFloydWallCoverOriginalNoText.jpg",bio:"《The Wall》是 Pink Floyd 最具野心的概念专辑，讲述了一个摇滚明星 Pink 在创伤经历中逐渐筑起心理高墙的故事。专辑包含了《Another Brick in the Wall Part 2》、《Comfortably Numb》等经典歌曲，并被改编成同名电影。Roger Waters 的半自传式叙事探讨了战争、教育、母爱和疯狂等主题。",w:"https://zh.wikipedia.org/wiki/The_Wall"},
-  {t:"Voodoo",a:"D'Angelo",y:2000,g:["新灵魂乐","放克","R&B","慢核"],pf:9.0,ry:4.03,rs:{r:483,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/c/c3/D%27Angelo_-_Voodoo.jpg",bio:"D'Angelo 是美国新灵魂乐运动的领军人物。《Voodoo》花了五年时间录制，以松散、即兴的录音室合奏方式捕捉了灵魂乐的精髓。专辑以厚重的律动、性感的假声和 Questlove 的精湛鼓技著称。D'Angelo 在专辑发行后隐退长达 14 年，使《Voodoo》的神秘感愈发强烈。",w:"https://zh.wikipedia.org/wiki/Voodoo_(D%27Angelo_%E4%B8%93%E8%BE%91)"},
-  {t:"Aquemini",a:"OutKast",y:1998,g:["南方嘻哈","放克","灵魂乐","迷幻"],pf:9.4,ry:4.03,rs:{r:49,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/2/2d/OutKast_-_Aquemini.jpg",bio:"OutKast 是亚特兰大二人组 André 3000 和 Big Boi，他们彻底改变了南方嘻哈的面貌。《Aquemini》将嘻哈与放克、灵魂、雷鬼甚至迷幻摇滚融合，拓展了说唱音乐的边界。专辑标题取自两人的星座——André 是双子座（Gemini），Big Boi 是水瓶座（Aquarius），象征两种截然不同风格的完美融合。",w:"https://zh.wikipedia.org/wiki/Aquemini"},
-  {t:"Closer",a:"Joy Division",y:1980,g:["后朋克","哥特摇滚","电子"],pf:10,ry:3.97,rs:{r:309,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/5/54/Joy_Division_-_Closer.jpg",bio:"《Closer》是 Joy Division 的第二张也是最后一张专辑，发行于 Ian Curtis 去世两个月后。专辑比首专更加黑暗和电子化，Curtis 的歌词直面自己的精神状态和死亡预感。封面是一张墓地的照片，与专辑主题形成了令人不安的呼应。剩余的成员后来组建了 New Order。",w:"https://zh.wikipedia.org/wiki/Closer_(Joy_Division_%E4%B8%93%E8%BE%91)"},
-  {t:"Titanic Rising",a:"Weyes Blood",y:2019,g:["室内流行","巴洛克流行","艺术流行","软摇滚"],pf:8.7,ry:3.72,rs:{r:466,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/e/e7/Weyes_blood_titanic_rising.jpg",bio:"Weyes Blood（Natalie Mering）是美国创作歌手，以复古美学的艺术流行著称。《Titanic Rising》以 70 年代软摇滚为基调，融入管弦乐编曲和存在主义歌词。专辑封面是她漂浮在一个被水淹没的卧室中，呼应了专辑对气候变化、情感失落和新世代的迷失感的思考。",w:"https://zh.wikipedia.org/wiki/Titanic_Rising"},
-  {t:"The Bends",a:"Radiohead",y:1995,g:["另类摇滚","英伦摇滚"],pf:8.6,ry:3.82,rs:{r:276,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/5/55/Radioheadthebends.png",bio:"《The Bends》是 Radiohead 的第二张专辑，从首专《Pablo Honey》的《Creep》光环中成功转型。专辑展示了他们在旋律和情感表达上的非凡才能，从《Fake Plastic Trees》的脆弱美到《Street Spirit》的绝望感。虽然不如后续专辑实验，但《The Bends》中的歌曲创作被认为是当代摇滚的范本。",w:"https://zh.wikipedia.org/wiki/The_Bends"},
-  {t:"Random Access Memories",a:"Daft Punk",y:2013,g:["迪斯科","放克","电子"],pf:8.8,ry:3.68,rs:{r:295,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/2/26/Random_Access_Memories.jpg",bio:"《Random Access Memories》是 Daft Punk 的最后一张录音室专辑，也是他们的终极宣言。专辑放弃了采样，转而邀请 70-80 年代的传奇录音室音乐家参与录制，真实还原了迪斯科和放克的黄金时代声音。主打歌《Get Lucky》成为了全球现象。专辑获得了 5 项格莱美奖，包括年度最佳专辑。",w:"https://zh.wikipedia.org/wiki/Random_Access_Memories"},
+  {t:"Lift Your Skinny Fists...",a:"Godspeed You! Black Emperor",y:2000,g:["后摇滚","氛围","实验","当代古典"],pf:9.2,ry:4.15,rs:{r:287,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/5c/Godspeed_You_Black_Emperor_-_Lift_Your_Skinny_Fists_Like_Antennas_to_Heaven.jpg",bio:"Godspeed You! Black Emperor 是加拿大蒙特利尔的九人后摇滚乐团。他们的音乐以宏大的编曲、田野录音采样和缓慢积累的叙事性段落为特征。《Lift Your Skinny Fists...》是一张双专辑，四个乐章宛如四部无声电影配乐，探讨了城市衰败、资本主义批判和末日前的人性。",w:"https://zh.wikipedia.org/wiki/Lift_Your_Skinny_Fists_Like_Antennas_to_Heaven"},
+  {t:"Highway 61 Revisited",a:"Bob Dylan",y:1965,g:["民谣摇滚","蓝调摇滚"],pf:10,ry:4.14,rs:{r:56,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/9/95/Bob_Dylan_-_Highway_61_Revisited.jpg",bio:"《Highway 61 Revisited》是 Bob Dylan 全面转向电声乐器的标志性专辑。开篇曲《Like a Rolling Stone》长达 6 分钟，以尖刻的歌词和轰鸣的电吉他彻底改变了流行歌曲的形式。这张专辑将超现实主义诗歌与蓝调摇滚结合，确立了摇滚乐作为一种严肃艺术形式的地位。",w:"https://zh.wikipedia.org/wiki/Highway_61_Revisited"},
+  {t:"The Wall",a:"Pink Floyd",y:1979,g:["前卫摇滚","艺术摇滚","概念专辑"],pf:8.8,ry:3.87,rs:{r:129,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/1/13/PinkFloydWallCoverOriginalNoText.jpg",bio:"《The Wall》是 Pink Floyd 最具野心的概念专辑，讲述了一个摇滚明星 Pink 在创伤经历中逐渐筑起心理高墙的故事。专辑包含了《Another Brick in the Wall Part 2》、《Comfortably Numb》等经典歌曲，并被改编成同名电影。Roger Waters 的半自传式叙事探讨了战争、教育、母爱和疯狂等主题。",w:"https://zh.wikipedia.org/wiki/The_Wall"},
+  {t:"Voodoo",a:"D'Angelo",y:2000,g:["新灵魂乐","放克","R&B","慢核"],pf:9.0,ry:4.03,rs:{r:483,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/c/c3/D%27Angelo_-_Voodoo.jpg",bio:"D'Angelo 是美国新灵魂乐运动的领军人物。《Voodoo》花了五年时间录制，以松散、即兴的录音室合奏方式捕捉了灵魂乐的精髓。专辑以厚重的律动、性感的假声和 Questlove 的精湛鼓技著称。D'Angelo 在专辑发行后隐退长达 14 年，使《Voodoo》的神秘感愈发强烈。",w:"https://zh.wikipedia.org/wiki/Voodoo_(D%27Angelo_%E4%B8%93%E8%BE%91)"},
+  {t:"Aquemini",a:"OutKast",y:1998,g:["南方嘻哈","放克","灵魂乐","迷幻"],pf:9.4,ry:4.03,rs:{r:49,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/2d/OutKast_-_Aquemini.jpg",bio:"OutKast 是亚特兰大二人组 André 3000 和 Big Boi，他们彻底改变了南方嘻哈的面貌。《Aquemini》将嘻哈与放克、灵魂、雷鬼甚至迷幻摇滚融合，拓展了说唱音乐的边界。专辑标题取自两人的星座——André 是双子座（Gemini），Big Boi 是水瓶座（Aquarius），象征两种截然不同风格的完美融合。",w:"https://zh.wikipedia.org/wiki/Aquemini"},
+  {t:"Closer",a:"Joy Division",y:1980,g:["后朋克","哥特摇滚","电子"],pf:10,ry:3.97,rs:{r:309,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/54/Joy_Division_-_Closer.jpg",bio:"《Closer》是 Joy Division 的第二张也是最后一张专辑，发行于 Ian Curtis 去世两个月后。专辑比首专更加黑暗和电子化，Curtis 的歌词直面自己的精神状态和死亡预感。封面是一张墓地的照片，与专辑主题形成了令人不安的呼应。剩余的成员后来组建了 New Order。",w:"https://zh.wikipedia.org/wiki/Closer_(Joy_Division_%E4%B8%93%E8%BE%91)"},
+  {t:"Titanic Rising",a:"Weyes Blood",y:2019,g:["室内流行","巴洛克流行","艺术流行","软摇滚"],pf:8.7,ry:3.72,rs:{r:466,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/e/e7/Weyes_blood_titanic_rising.jpg",bio:"Weyes Blood（Natalie Mering）是美国创作歌手，以复古美学的艺术流行著称。《Titanic Rising》以 70 年代软摇滚为基调，融入管弦乐编曲和存在主义歌词。专辑封面是她漂浮在一个被水淹没的卧室中，呼应了专辑对气候变化、情感失落和新世代的迷失感的思考。",w:"https://zh.wikipedia.org/wiki/Titanic_Rising"},
+  {t:"The Bends",a:"Radiohead",y:1995,g:["另类摇滚","英伦摇滚"],pf:8.6,ry:3.82,rs:{r:276,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/55/Radioheadthebends.png",bio:"《The Bends》是 Radiohead 的第二张专辑，从首专《Pablo Honey》的《Creep》光环中成功转型。专辑展示了他们在旋律和情感表达上的非凡才能，从《Fake Plastic Trees》的脆弱美到《Street Spirit》的绝望感。虽然不如后续专辑实验，但《The Bends》中的歌曲创作被认为是当代摇滚的范本。",w:"https://zh.wikipedia.org/wiki/The_Bends"},
+  {t:"Random Access Memories",a:"Daft Punk",y:2013,g:["迪斯科","放克","电子"],pf:8.8,ry:3.68,rs:{r:295,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/26/Random_Access_Memories.jpg",bio:"《Random Access Memories》是 Daft Punk 的最后一张录音室专辑，也是他们的终极宣言。专辑放弃了采样，转而邀请 70-80 年代的传奇录音室音乐家参与录制，真实还原了迪斯科和放克的黄金时代声音。主打歌《Get Lucky》成为了全球现象。专辑获得了 5 项格莱美奖，包括年度最佳专辑。",w:"https://zh.wikipedia.org/wiki/Random_Access_Memories"},
   {t:"Ziggy Stardust",a:"David Bowie",y:1972,g:["华丽摇滚","艺术摇滚"],pf:10,ry:4.13,rs:null,c:"https://upload.wikimedia.org/wikipedia/en/0/01/ZiggyStardust.jpg",bio:"同前 David Bowie 条目的《The Rise and Fall of Ziggy Stardust》",w:"https://zh.wikipedia.org/wiki/David_Bowie"},
-  {t:"Exile on Main St.",a:"The Rolling Stones",y:1972,g:["摇滚","蓝调摇滚","根摇滚","灵魂"],pf:10,ry:4.09,rs:{r:14,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/c/ca/Exile_main_street.jpg",bio:"The Rolling Stones 是英国传奇摇滚乐队，由 Mick Jagger（主唱）和 Keith Richards（吉他）领衔，活跃超过 60 年。《Exile on Main St.》录制于法国南部的一栋别墅中，在毒品、混乱和高温中创造了摇滚史上最伟大的双专辑之一。专辑融合了蓝调、灵魂、乡村和福音元素，充满了原始的生命力和粗粝的质感。",w:"https://zh.wikipedia.org/wiki/Exile_on_Main_St."},
+  {t:"Exile on Main St.",a:"The Rolling Stones",y:1972,g:["摇滚","蓝调摇滚","根摇滚","灵魂"],pf:10,ry:4.09,rs:{r:14,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/c/ca/Exile_main_street.jpg",bio:"The Rolling Stones 是英国传奇摇滚乐队，由 Mick Jagger（主唱）和 Keith Richards（吉他）领衔，活跃超过 60 年。《Exile on Main St.》录制于法国南部的一栋别墅中，在毒品、混乱和高温中创造了摇滚史上最伟大的双专辑之一。专辑融合了蓝调、灵魂、乡村和福音元素，充满了原始的生命力和粗粝的质感。",w:"https://zh.wikipedia.org/wiki/Exile_on_Main_St."},
   {t:"Money Store",a:"Death Grips",y:2012,g:["实验嘻哈","工业嘻哈","噪音"],pf:8.7,ry:3.66,rs:null,c:"https://upload.wikimedia.org/wikipedia/en/0/0b/The_Money_Store_%28album%29_cover.jpg",bio:"Death Grips 是加州萨克拉门托的实验嘻哈三人组，以极端的声音和对抗性的美学著称。《The Money Store》是他们最具影响力的作品，将 MC Ride 的狂躁嘶吼与 Zach Hill 的爆炸性鼓点和 Andy Morin 的电子制作融合。其音乐强度之大，像是对听众感官的蓄意攻击——但这正是他们的艺术目的。",w:"https://zh.wikipedia.org/wiki/The_Money_Store"},
-  {t:"The College Dropout",a:"Kanye West",y:2004,g:["嘻哈","灵魂乐采样","意识说唱"],pf:9.0,ry:3.85,rs:{r:74,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/8/84/Kanyewest_collegedropout.jpg",bio:"《The College Dropout》是 Kanye West 的首张专辑，彻底改变了嘻哈的方向。在匪帮说唱主导的年代，Kanye 以一个戴着粉色 Polo、唱着自己大学辍学经历的'书呆子'形象出现。专辑大量使用加速的灵魂人声采样，讨论了教育、宗教、家庭和消费主义。这张专辑开启了 Kanye 成为一代文化偶像的旅程。",w:"https://zh.wikipedia.org/wiki/The_College_Dropout"},
-  {t:"Vespertine",a:"Björk",y:2001,g:["电子","艺术流行","氛围","实验"],pf:9.2,ry:3.96,rs:{r:334,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/7/7f/Bj%C3%B6rk_-_Vespertine.png",bio:"《Vespertine》是 Björk 最私密也最精致的专辑，主题围绕家庭生活和性爱展开。她使用音乐盒、竖琴、冰岛合唱团和电子节拍（由电子二人组 Matmos 制作），创造了一个晶莹剔透的冬日声音世界。专辑的声音素材部分来自日常生活中的细微声音——洗牌声、雪地行走声——放大了私人空间的亲密感。",w:"https://zh.wikipedia.org/wiki/Vespertine"},
-  {t:"Blood on the Tracks",a:"Bob Dylan",y:1975,g:["民谣摇滚","创作歌手"],pf:9.4,ry:4.08,rs:{r:9,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/5/53/Bob_Dylan_-_Blood_on_the_Tracks.jpg",bio:"《Blood on the Tracks》被普遍认为是 Bob Dylan 最伟大的个人情感表达，创作于他与第一任妻子 Sara 婚姻破裂的时期。虽然 Dylan 否认专辑是自传性的，但《Tangled Up in Blue》、《Simple Twist of Fate》等歌曲中流淌的悲伤和悔恨几乎无法伪装。专辑的标志性声音来自开放调弦的吉他弹奏。",w:"https://zh.wikipedia.org/wiki/Blood_on_the_Tracks"},
-  {t:"Endtroducing.....",a:"DJ Shadow",y:1996,g:["器乐嘻哈","Trip-Hop","采样"],pf:10,ry:4.01,rs:{r:329,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/7/77/DJShadowEndtroducing.jpg",bio:"DJ Shadow（Josh Davis）是美国制作人，以纯采样的方式创作了音乐史上前所未有的作品。《Endtroducing.....》据称是第一张完全由采样组成的专辑，使用了一台 AKAI MPC60 采样器、一台唱机和无数旧唱片。他将被遗忘的声音碎片重新编织成电影般的器乐景观，证明了采样本身就是一种艺术形式。",w:"https://zh.wikipedia.org/wiki/Endtroducing....."},
-  {t:"Master of Puppets",a:"Metallica",y:1986,g:["激流金属","重金属"],pf:9.3,ry:4.06,rs:{r:97,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/b/b2/Metallica_-_Master_of_Puppets_cover.jpg",bio:"Metallica 是美国激流金属'四巨头'之一。《Master of Puppets》是他们在贝斯手 Cliff Burton 去世前完成的最后一张专辑，也是激流金属的绝对高峰。专辑以技术精湛的演奏、复杂的曲式结构和严肃的歌词（涉及药物成瘾、战争和精神控制）超越了金属乐的类型限制。Burton 在专辑发行后不久因车祸去世，年仅 24 岁。",w:"https://zh.wikipedia.org/wiki/Master_of_Puppets"},
-  {t:"Off the Wall",a:"Michael Jackson",y:1979,g:["迪斯科","放克","R&B","流行"],pf:10,ry:3.93,rs:{r:36,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/6/62/Michael_Jackson_-_Off_the_Wall.jpg",bio:"《Off the Wall》是 Michael Jackson 成年后的首张个人专辑，也是他与制作人 Quincy Jones 合作的开始。在从 Jackson 5 的童星身份过渡到独立艺术家之后，这张专辑展示了他惊人的歌唱才能和舞蹈律动。从《Don't Stop 'Til You Get Enough》到《Rock with You》，它定义了一种无与伦比的欢愉感。",w:"https://zh.wikipedia.org/wiki/Off_the_Wall"},
-  {t:"Flower Boy",a:"Tyler, the Creator",y:2017,g:["另类嘻哈","新灵魂乐","爵士说唱"],pf:8.5,ry:3.76,rs:{r:370,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/4/4e/Tyler%2C_the_Creator_-_Flower_Boy.png",bio:"Tyler, the Creator 是美国说唱歌手、制作人和设计师，Odd Future 团体的创始人。《Flower Boy》标志着他从早年的挑衅性风格转向更真诚、更具音乐性的方向。专辑以花朵和蜜蜂的意象探讨了孤独、身份认同和初恋，制作上融合了爵士和弦与灵魂和声，展现了他作为音乐人的巨大成长。",w:"https://zh.wikipedia.org/wiki/Flower_Boy"},
-  {t:"All Things Must Pass",a:"George Harrison",y:1970,g:["摇滚","民谣摇滚","灵性"],pf:9.0,ry:3.96,rs:{r:368,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/2/2a/All_Things_Must_Pass_%28album_cover%29.jpg",bio:"George Harrison 是 The Beatles 的吉他手，长期以来在 Lennon-McCartney 的创作阴影下积累了大量未发表的歌曲。《All Things Must Pass》是他的首张三专辑个人作品，也是所有 Beatles 成员个人专辑中最成功的一张。主打歌《My Sweet Lord》的灵性主题和滑棒吉他演奏成为了 Harrison 的标志。",w:"https://zh.wikipedia.org/wiki/All_Things_Must_Pass"},
+  {t:"The College Dropout",a:"Kanye West",y:2004,g:["嘻哈","灵魂乐采样","意识说唱"],pf:9.0,ry:3.85,rs:{r:74,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/8/84/Kanyewest_collegedropout.jpg",bio:"《The College Dropout》是 Kanye West 的首张专辑，彻底改变了嘻哈的方向。在匪帮说唱主导的年代，Kanye 以一个戴着粉色 Polo、唱着自己大学辍学经历的'书呆子'形象出现。专辑大量使用加速的灵魂人声采样，讨论了教育、宗教、家庭和消费主义。这张专辑开启了 Kanye 成为一代文化偶像的旅程。",w:"https://zh.wikipedia.org/wiki/The_College_Dropout"},
+  {t:"Vespertine",a:"Björk",y:2001,g:["电子","艺术流行","氛围","实验"],pf:9.2,ry:3.96,rs:{r:334,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/7/7f/Bj%C3%B6rk_-_Vespertine.png",bio:"《Vespertine》是 Björk 最私密也最精致的专辑，主题围绕家庭生活和性爱展开。她使用音乐盒、竖琴、冰岛合唱团和电子节拍（由电子二人组 Matmos 制作），创造了一个晶莹剔透的冬日声音世界。专辑的声音素材部分来自日常生活中的细微声音——洗牌声、雪地行走声——放大了私人空间的亲密感。",w:"https://zh.wikipedia.org/wiki/Vespertine"},
+  {t:"Blood on the Tracks",a:"Bob Dylan",y:1975,g:["民谣摇滚","创作歌手"],pf:9.4,ry:4.08,rs:{r:9,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/53/Bob_Dylan_-_Blood_on_the_Tracks.jpg",bio:"《Blood on the Tracks》被普遍认为是 Bob Dylan 最伟大的个人情感表达，创作于他与第一任妻子 Sara 婚姻破裂的时期。虽然 Dylan 否认专辑是自传性的，但《Tangled Up in Blue》、《Simple Twist of Fate》等歌曲中流淌的悲伤和悔恨几乎无法伪装。专辑的标志性声音来自开放调弦的吉他弹奏。",w:"https://zh.wikipedia.org/wiki/Blood_on_the_Tracks"},
+  {t:"Endtroducing.....",a:"DJ Shadow",y:1996,g:["器乐嘻哈","Trip-Hop","采样"],pf:10,ry:4.01,rs:{r:329,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/7/77/DJShadowEndtroducing.jpg",bio:"DJ Shadow（Josh Davis）是美国制作人，以纯采样的方式创作了音乐史上前所未有的作品。《Endtroducing.....》据称是第一张完全由采样组成的专辑，使用了一台 AKAI MPC60 采样器、一台唱机和无数旧唱片。他将被遗忘的声音碎片重新编织成电影般的器乐景观，证明了采样本身就是一种艺术形式。",w:"https://zh.wikipedia.org/wiki/Endtroducing....."},
+  {t:"Master of Puppets",a:"Metallica",y:1986,g:["激流金属","重金属"],pf:9.3,ry:4.06,rs:{r:97,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/b/b2/Metallica_-_Master_of_Puppets_cover.jpg",bio:"Metallica 是美国激流金属'四巨头'之一。《Master of Puppets》是他们在贝斯手 Cliff Burton 去世前完成的最后一张专辑，也是激流金属的绝对高峰。专辑以技术精湛的演奏、复杂的曲式结构和严肃的歌词（涉及药物成瘾、战争和精神控制）超越了金属乐的类型限制。Burton 在专辑发行后不久因车祸去世，年仅 24 岁。",w:"https://zh.wikipedia.org/wiki/Master_of_Puppets"},
+  {t:"Off the Wall",a:"Michael Jackson",y:1979,g:["迪斯科","放克","R&B","流行"],pf:10,ry:3.93,rs:{r:36,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/6/62/Michael_Jackson_-_Off_the_Wall.jpg",bio:"《Off the Wall》是 Michael Jackson 成年后的首张个人专辑，也是他与制作人 Quincy Jones 合作的开始。在从 Jackson 5 的童星身份过渡到独立艺术家之后，这张专辑展示了他惊人的歌唱才能和舞蹈律动。从《Don't Stop 'Til You Get Enough》到《Rock with You》，它定义了一种无与伦比的欢愉感。",w:"https://zh.wikipedia.org/wiki/Off_the_Wall"},
+  {t:"Flower Boy",a:"Tyler, the Creator",y:2017,g:["另类嘻哈","新灵魂乐","爵士说唱"],pf:8.5,ry:3.76,rs:{r:370,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/4e/Tyler%2C_the_Creator_-_Flower_Boy.png",bio:"Tyler, the Creator 是美国说唱歌手、制作人和设计师，Odd Future 团体的创始人。《Flower Boy》标志着他从早年的挑衅性风格转向更真诚、更具音乐性的方向。专辑以花朵和蜜蜂的意象探讨了孤独、身份认同和初恋，制作上融合了爵士和弦与灵魂和声，展现了他作为音乐人的巨大成长。",w:"https://zh.wikipedia.org/wiki/Flower_Boy"},
+  {t:"All Things Must Pass",a:"George Harrison",y:1970,g:["摇滚","民谣摇滚","灵性"],pf:9.0,ry:3.96,rs:{r:368,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/2a/All_Things_Must_Pass_%28album_cover%29.jpg",bio:"George Harrison 是 The Beatles 的吉他手，长期以来在 Lennon-McCartney 的创作阴影下积累了大量未发表的歌曲。《All Things Must Pass》是他的首张三专辑个人作品，也是所有 Beatles 成员个人专辑中最成功的一张。主打歌《My Sweet Lord》的灵性主题和滑棒吉他演奏成为了 Harrison 的标志。",w:"https://zh.wikipedia.org/wiki/All_Things_Must_Pass"},
   // ── 扩充: 经典摇滚 / 民谣 / 根源 ──
-  {t:"Born to Run",a:"Bruce Springsteen",y:1975,g:["摇滚","心跳摇滚","根源摇滚"],pf:10,ry:3.96,rs:{r:21,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/7/7a/Born_to_Run.jpg",bio:"Bruce Springsteen 是美国新泽西州的创作歌手，被称为'The Boss'。《Born to Run》是他的突破性专辑，将 Phil Spector 式的声音墙、Roy Orbison 式的情感民谣和 60 年代摇滚的能量融为一体。他歌唱的是小镇青年对自由的渴望、逃离平庸的强烈冲动和美国梦背后隐藏的苦涩。",w:"https://zh.wikipedia.org/wiki/Born_to_Run"},
-  {t:"Who's Next",a:"The Who",y:1971,g:["硬摇滚","摇滚"],pf:9.5,ry:4.02,rs:{r:77,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/4/44/Who%27s_Next.jpg",bio:"The Who 是英国最具爆炸性现场能量的摇滚乐队之一，由 Pete Townshend（吉他）、Roger Daltrey（主唱）、John Entwistle（贝斯）、Keith Moon（鼓）组成。《Who's Next》源于 Townshend 未完成的概念项目《Lifehouse》，包含了《Baba O'Riley》、《Behind Blue Eyes》等不朽名曲。",w:"https://zh.wikipedia.org/wiki/Who%27s_Next"},
-  {t:"Astral Weeks",a:"Van Morrison",y:1968,g:["民谣爵士","创作歌手","灵魂"],pf:10,ry:4.19,rs:{r:60,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/2/20/AstralWeeks.jpg",bio:"Van Morrison 是北爱尔兰创作歌手。《Astral Weeks》录制仅用了两天，却成为了有史以来最具灵性的专辑之一。它融合了民谣、布鲁斯和爵士即兴，Morrison 的歌声在半唱半吟间游走。专辑的歌词流淌着对童年、死亡和重生的意识流冥想，是一张不折不扣的天才之作。",w:"https://zh.wikipedia.org/wiki/Astral_Weeks"},
-  {t:"After the Gold Rush",a:"Neil Young",y:1970,g:["民谣摇滚","创作歌手","乡村摇滚"],pf:9.0,ry:3.93,rs:{r:90,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/f/f9/After_the_Gold_Rush.jpg",bio:"Neil Young 是加拿大创作歌手和吉他手，以尖锐的吉他音色和脆弱真诚的歌词著称。他曾是 Buffalo Springfield 和 Crosby, Stills, Nash & Young 成员。《After the Gold Rush》以极简的钢琴和吉他编曲，唱着环保、毒品和爱，是他最温柔的专辑之一。",w:"https://zh.wikipedia.org/wiki/After_the_Gold_Rush"},
-  {t:"Harvest",a:"Neil Young",y:1972,g:["民谣摇滚","乡村摇滚"],pf:9.3,ry:3.86,rs:{r:170,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/4/4b/Neil_Young_-_Harvest.jpg",bio:"《Harvest》是 Neil Young 最畅销的专辑，包含了《Heart of Gold》和《Old Man》等经典。虽然 Young 因背伤困扰无法弹奏电吉他，但这反而促使他创作了这张以原声为主的温暖专辑，充满了对家乡、爱人和时间流逝的沉思。",w:"https://zh.wikipedia.org/wiki/Harvest_(Neil_Young_%E4%B8%93%E8%BE%91)"},
-  {t:"Bridge Over Troubled Water",a:"Simon & Garfunkel",y:1970,g:["民谣摇滚","软摇滚","流行"],pf:9.4,ry:3.62,rs:{r:172,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/3/31/Simon_and_Garfunkel_-_Bridge_Over_Troubled_Water.jpg",bio:"Simon & Garfunkel 是美国民谣二人组，Paul Simon 的词曲创作和 Art Garfunkel 的天使般嗓音定义了 60 年代的声音。《Bridge Over Troubled Water》是他们最后一张录音室专辑，以福音风格的标题曲开场，展示了两人在解散前的艺术巅峰。",w:"https://zh.wikipedia.org/wiki/Bridge_Over_Troubled_Water"},
-  {t:"Graceland",a:"Paul Simon",y:1986,g:["世界音乐","民谣摇滚","非洲流行"],pf:9.2,ry:3.78,rs:{r:46,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/3/3f/Graceland_%28Paul_Simon_album%29.jpg",bio:"Paul Simon 打破文化隔离，在南非种族隔离时期前往约翰内斯堡与当地音乐家合作录制了《Graceland》。他将美国的民谣传统与南非的 Mbaqanga、Isicathamiya 等风格融合，创造了前所未有的世界音乐融合。这张专辑也引发了关于文化挪用的争议。",w:"https://zh.wikipedia.org/wiki/Graceland_(%E4%B8%93%E8%BE%91)"},
+  {t:"Born to Run",a:"Bruce Springsteen",y:1975,g:["摇滚","心跳摇滚","根源摇滚"],pf:10,ry:3.96,rs:{r:21,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/7/7a/Born_to_Run.jpg",bio:"Bruce Springsteen 是美国新泽西州的创作歌手，被称为'The Boss'。《Born to Run》是他的突破性专辑，将 Phil Spector 式的声音墙、Roy Orbison 式的情感民谣和 60 年代摇滚的能量融为一体。他歌唱的是小镇青年对自由的渴望、逃离平庸的强烈冲动和美国梦背后隐藏的苦涩。",w:"https://zh.wikipedia.org/wiki/Born_to_Run"},
+  {t:"Who's Next",a:"The Who",y:1971,g:["硬摇滚","摇滚"],pf:9.5,ry:4.02,rs:{r:77,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/44/Who%27s_Next.jpg",bio:"The Who 是英国最具爆炸性现场能量的摇滚乐队之一，由 Pete Townshend（吉他）、Roger Daltrey（主唱）、John Entwistle（贝斯）、Keith Moon（鼓）组成。《Who's Next》源于 Townshend 未完成的概念项目《Lifehouse》，包含了《Baba O'Riley》、《Behind Blue Eyes》等不朽名曲。",w:"https://zh.wikipedia.org/wiki/Who%27s_Next"},
+  {t:"Astral Weeks",a:"Van Morrison",y:1968,g:["民谣爵士","创作歌手","灵魂"],pf:10,ry:4.19,rs:{r:60,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/20/AstralWeeks.jpg",bio:"Van Morrison 是北爱尔兰创作歌手。《Astral Weeks》录制仅用了两天，却成为了有史以来最具灵性的专辑之一。它融合了民谣、布鲁斯和爵士即兴，Morrison 的歌声在半唱半吟间游走。专辑的歌词流淌着对童年、死亡和重生的意识流冥想，是一张不折不扣的天才之作。",w:"https://zh.wikipedia.org/wiki/Astral_Weeks"},
+  {t:"After the Gold Rush",a:"Neil Young",y:1970,g:["民谣摇滚","创作歌手","乡村摇滚"],pf:9.0,ry:3.93,rs:{r:90,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/f/f9/After_the_Gold_Rush.jpg",bio:"Neil Young 是加拿大创作歌手和吉他手，以尖锐的吉他音色和脆弱真诚的歌词著称。他曾是 Buffalo Springfield 和 Crosby, Stills, Nash & Young 成员。《After the Gold Rush》以极简的钢琴和吉他编曲，唱着环保、毒品和爱，是他最温柔的专辑之一。",w:"https://zh.wikipedia.org/wiki/After_the_Gold_Rush"},
+  {t:"Harvest",a:"Neil Young",y:1972,g:["民谣摇滚","乡村摇滚"],pf:9.3,ry:3.86,rs:{r:170,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/4b/Neil_Young_-_Harvest.jpg",bio:"《Harvest》是 Neil Young 最畅销的专辑，包含了《Heart of Gold》和《Old Man》等经典。虽然 Young 因背伤困扰无法弹奏电吉他，但这反而促使他创作了这张以原声为主的温暖专辑，充满了对家乡、爱人和时间流逝的沉思。",w:"https://zh.wikipedia.org/wiki/Harvest_(Neil_Young_%E4%B8%93%E8%BE%91)"},
+  {t:"Bridge Over Troubled Water",a:"Simon & Garfunkel",y:1970,g:["民谣摇滚","软摇滚","流行"],pf:9.4,ry:3.62,rs:{r:172,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/3/31/Simon_and_Garfunkel_-_Bridge_Over_Troubled_Water.jpg",bio:"Simon & Garfunkel 是美国民谣二人组，Paul Simon 的词曲创作和 Art Garfunkel 的天使般嗓音定义了 60 年代的声音。《Bridge Over Troubled Water》是他们最后一张录音室专辑，以福音风格的标题曲开场，展示了两人在解散前的艺术巅峰。",w:"https://zh.wikipedia.org/wiki/Bridge_Over_Troubled_Water"},
+  {t:"Graceland",a:"Paul Simon",y:1986,g:["世界音乐","民谣摇滚","非洲流行"],pf:9.2,ry:3.78,rs:{r:46,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/3/3f/Graceland_%28Paul_Simon_album%29.jpg",bio:"Paul Simon 打破文化隔离，在南非种族隔离时期前往约翰内斯堡与当地音乐家合作录制了《Graceland》。他将美国的民谣传统与南非的 Mbaqanga、Isicathamiya 等风格融合，创造了前所未有的世界音乐融合。这张专辑也引发了关于文化挪用的争议。",w:"https://zh.wikipedia.org/wiki/Graceland_(%E4%B8%93%E8%BE%91)"},
   // ── 扩充: 爵士 / 灵魂 / 放克 ──
-  {t:"Mingus Ah Um",a:"Charles Mingus",y:1959,g:["爵士","后波普","先锋爵士"],pf:10,ry:4.13,rs:{r:180,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/9/9e/Mingus_Ah_Um.jpg",bio:"Charles Mingus 是爵士乐历史上最伟大的低音大提琴手和作曲家之一。《Mingus Ah Um》是他献给爵士乐先驱的杰作——《Goodbye Pork Pie Hat》献给 Lester Young，《Open Letter to Duke》向 Ellington 致敬。Mingus 的音乐融合了蓝调、福音和古典，充满了个性化的愤怒与温柔。",w:"https://zh.wikipedia.org/wiki/Mingus_Ah_Um"},
-  {t:"Giant Steps",a:"John Coltrane",y:1960,g:["爵士","硬波普","调式爵士"],pf:10,ry:4.13,rs:{r:103,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/1/16/Giant_Steps.jpg",bio:"John Coltrane 在《Giant Steps》中展示了前所未有的和声探索。标题曲的和弦变化如此复杂（被称为'Coltrane 变化'），以至于许多爵士乐手至今仍将其视为即兴演奏的终极挑战。这张专辑奠定了 Coltrane 从传统爵士向自由即兴转变的技术基础。",w:"https://zh.wikipedia.org/wiki/Giant_Steps"},
-  {t:"Head Hunters",a:"Herbie Hancock",y:1973,g:["融合爵士","爵士放克"],pf:9.5,ry:3.99,rs:{r:254,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/4/4d/Herbie_Hancock_-_Head_Hunters.jpg",bio:"Herbie Hancock 是爵士钢琴大师，从 Miles Davis 乐队起步。《Head Hunters》打破了人们对爵士钢琴家的所有预期——大胆转向放克律动和合成器，专辑中的《Chameleon》成为爵士放克的里程碑。这是爵士融合时代最具影响力的专辑之一。",w:"https://zh.wikipedia.org/wiki/Head_Hunters"},
-  {t:"I Never Loved a Man...",a:"Aretha Franklin",y:1967,g:["灵魂乐","R&B","南方灵魂"],pf:10,ry:3.96,rs:{r:13,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/4/42/Aretha_Franklin_-_I_Never_Loved_a_Man_the_Way_I_Love_You.jpg",bio:"Aretha Franklin 是'灵魂乐女王'，有史以来最伟大的歌手之一。《I Never Loved a Man...》是她在 Atlantic 唱片的首张专辑，包含了经典歌曲《Respect》——一首将 Otis Redding 的原曲彻底改写为女性权力和民权运动宣言的传世之作。",w:"https://zh.wikipedia.org/wiki/I_Never_Loved_a_Man_the_Way_I_Love_You"},
-  {t:"Pastel Blues",a:"Nina Simone",y:1965,g:["灵魂乐","爵士","蓝调"],pf:9.5,ry:4.02,rs:{r:146,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/9/9a/Pastel_Blues.jpg",bio:"Nina Simone 是美国创作歌手、钢琴家和民权运动活动家。她拥有独一无二的低沉嗓音，能将爵士、蓝调、古典和灵魂融为一体。《Pastel Blues》中的《Sinnerman》长达 10 分钟，是她最具标志性的表演之一，以暴风雨般累积的钢琴和节奏呼应了对救赎的绝望寻求。",w:"https://zh.wikipedia.org/wiki/Nina_Simone"},
-  {t:"Here, My Dear",a:"Marvin Gaye",y:1978,g:["灵魂乐","放克","R&B"],pf:9.1,ry:3.94,rs:{r:425,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/9/9c/Here_My_Dear.jpg",bio:"《Here, My Dear》是 Marvin Gaye 史上最私密的专辑，本质上是一张拥有 15 首歌的离婚协议。与第一任妻子 Anna Gordy 离婚时，法庭判决专辑的部分版税归她——Marvin 就创作了这张赤裸裸记录婚姻破裂过程的双专辑作为回应。它是灵魂乐史上最痛苦也最动人的作品之一。",w:"https://zh.wikipedia.org/wiki/Here,_My_Dear"},
+  {t:"Mingus Ah Um",a:"Charles Mingus",y:1959,g:["爵士","后波普","先锋爵士"],pf:10,ry:4.13,rs:{r:180,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/9/9e/Mingus_Ah_Um.jpg",bio:"Charles Mingus 是爵士乐历史上最伟大的低音大提琴手和作曲家之一。《Mingus Ah Um》是他献给爵士乐先驱的杰作——《Goodbye Pork Pie Hat》献给 Lester Young，《Open Letter to Duke》向 Ellington 致敬。Mingus 的音乐融合了蓝调、福音和古典，充满了个性化的愤怒与温柔。",w:"https://zh.wikipedia.org/wiki/Mingus_Ah_Um"},
+  {t:"Giant Steps",a:"John Coltrane",y:1960,g:["爵士","硬波普","调式爵士"],pf:10,ry:4.13,rs:{r:103,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/1/16/Giant_Steps.jpg",bio:"John Coltrane 在《Giant Steps》中展示了前所未有的和声探索。标题曲的和弦变化如此复杂（被称为'Coltrane 变化'），以至于许多爵士乐手至今仍将其视为即兴演奏的终极挑战。这张专辑奠定了 Coltrane 从传统爵士向自由即兴转变的技术基础。",w:"https://zh.wikipedia.org/wiki/Giant_Steps"},
+  {t:"Head Hunters",a:"Herbie Hancock",y:1973,g:["融合爵士","爵士放克"],pf:9.5,ry:3.99,rs:{r:254,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/4d/Herbie_Hancock_-_Head_Hunters.jpg",bio:"Herbie Hancock 是爵士钢琴大师，从 Miles Davis 乐队起步。《Head Hunters》打破了人们对爵士钢琴家的所有预期——大胆转向放克律动和合成器，专辑中的《Chameleon》成为爵士放克的里程碑。这是爵士融合时代最具影响力的专辑之一。",w:"https://zh.wikipedia.org/wiki/Head_Hunters"},
+  {t:"I Never Loved a Man...",a:"Aretha Franklin",y:1967,g:["灵魂乐","R&B","南方灵魂"],pf:10,ry:3.96,rs:{r:13,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/42/Aretha_Franklin_-_I_Never_Loved_a_Man_the_Way_I_Love_You.jpg",bio:"Aretha Franklin 是'灵魂乐女王'，有史以来最伟大的歌手之一。《I Never Loved a Man...》是她在 Atlantic 唱片的首张专辑，包含了经典歌曲《Respect》——一首将 Otis Redding 的原曲彻底改写为女性权力和民权运动宣言的传世之作。",w:"https://zh.wikipedia.org/wiki/I_Never_Loved_a_Man_the_Way_I_Love_You"},
+  {t:"Pastel Blues",a:"Nina Simone",y:1965,g:["灵魂乐","爵士","蓝调"],pf:9.5,ry:4.02,rs:{r:146,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/9/9a/Pastel_Blues.jpg",bio:"Nina Simone 是美国创作歌手、钢琴家和民权运动活动家。她拥有独一无二的低沉嗓音，能将爵士、蓝调、古典和灵魂融为一体。《Pastel Blues》中的《Sinnerman》长达 10 分钟，是她最具标志性的表演之一，以暴风雨般累积的钢琴和节奏呼应了对救赎的绝望寻求。",w:"https://zh.wikipedia.org/wiki/Nina_Simone"},
+  {t:"Here, My Dear",a:"Marvin Gaye",y:1978,g:["灵魂乐","放克","R&B"],pf:9.1,ry:3.94,rs:{r:425,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/9/9c/Here_My_Dear.jpg",bio:"《Here, My Dear》是 Marvin Gaye 史上最私密的专辑，本质上是一张拥有 15 首歌的离婚协议。与第一任妻子 Anna Gordy 离婚时，法庭判决专辑的部分版税归她——Marvin 就创作了这张赤裸裸记录婚姻破裂过程的双专辑作为回应。它是灵魂乐史上最痛苦也最动人的作品之一。",w:"https://zh.wikipedia.org/wiki/Here,_My_Dear"},
   // ── 扩充: 嘻哈 ──
-  {t:"Donuts",a:"J Dilla",y:2006,g:["器乐嘻哈","采样","实验"],pf:9.1,ry:4.08,rs:{r:386,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/1/1b/J_Dilla_-_Donuts.jpg",bio:"J Dilla（James Yancey）是美国嘻哈制作人，被誉为'制作人的制作人'。《Donuts》在他生命最后几个月内完成，在医院病床上用采样器和唱机创作，于他去世前三天发行。专辑由 31 首短小的器乐片段组成，展示了 Dilla 独特的节奏感——刻意不精准的鼓点（'醉鼓'风格），成为无数后来者的灵感来源。",w:"https://zh.wikipedia.org/wiki/Donuts_(J_Dilla_%E4%B8%93%E8%BE%91)"},
-  {t:"Paul's Boutique",a:"Beastie Boys",y:1989,g:["嘻哈","采样","说唱摇滚"],pf:9.5,ry:3.89,rs:{r:125,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/b/b7/Beastie_Boys_-_Paul%27s_Boutique.jpg",bio:"Beastie Boys 最初是白人硬核朋克乐队，后转型为嘻哈三人组。《Paul's Boutique》是采样艺术的巅峰之作，由 Dust Brothers 制作，在一张专辑中使用了超过 100 个采样来源。尽管最初商业成绩不佳，但它后来被公认为嘻哈史上最具创造力的专辑之一。",w:"https://zh.wikipedia.org/wiki/Paul%27s_Boutique"},
-  {t:"Liquid Swords",a:"GZA",y:1995,g:["东海岸嘻哈","硬核说唱"],pf:9.5,ry:4.00,rs:{r:264,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/6/6a/GZA-Liquid_Swords.jpg",bio:"GZA 是 Wu-Tang Clan 中最具哲学性的成员，被称为'The Genius'。《Liquid Swords》以武术电影和象棋比喻为基础，构建了一个冷酷而智慧的街头世界。RZA 的制作以阴郁的钢琴采样和暗黑的节拍著称，这张专辑是 Wu-Tang 单飞作品中最受好评的一张。",w:"https://zh.wikipedia.org/wiki/Liquid_Swords"},
-  {t:"Things Fall Apart",a:"The Roots",y:1999,g:["嘻哈","新灵魂乐","爵士说唱"],pf:9.4,ry:3.84,rs:{r:288,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/6/67/The_Roots_-_Things_Fall_Apart.jpg",bio:"The Roots 是费城的嘻哈乐队，以现场乐器演奏而非采样著称，是当今最具音乐性的说唱团体之一。鼓手 Questlove 和说唱歌手 Black Thought 是核心成员。《Things Fall Apart》命名自 Chinua Achebe 的小说，探讨了黑人身份认同和社群稳定性。",w:"https://zh.wikipedia.org/wiki/Things_Fall_Apart_(The_Roots_%E4%B8%93%E8%BE%91)"},
-  {t:"The Score",a:"Fugees",y:1996,g:["嘻哈","新灵魂乐","雷鬼"],pf:9.3,ry:3.77,rs:{r:134,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/3/3e/The_Score_%28album%29.png",bio:"Fugees 是 Wyclef Jean、Lauryn Hill 和 Pras Michel 三人组成说唱/灵魂乐团体。《The Score》是他们最成功的作品，将嘻哈与雷鬼、灵魂乐融合，翻唱 Roberta Flack 的《Killing Me Softly》成为全球热门。专辑探讨了贫民区生活、警察暴力和黑人身份等议题。",w:"https://zh.wikipedia.org/wiki/The_Score_(Fugees_%E4%B8%93%E8%BE%91)"},
+  {t:"Donuts",a:"J Dilla",y:2006,g:["器乐嘻哈","采样","实验"],pf:9.1,ry:4.08,rs:{r:386,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/1/1b/J_Dilla_-_Donuts.jpg",bio:"J Dilla（James Yancey）是美国嘻哈制作人，被誉为'制作人的制作人'。《Donuts》在他生命最后几个月内完成，在医院病床上用采样器和唱机创作，于他去世前三天发行。专辑由 31 首短小的器乐片段组成，展示了 Dilla 独特的节奏感——刻意不精准的鼓点（'醉鼓'风格），成为无数后来者的灵感来源。",w:"https://zh.wikipedia.org/wiki/Donuts_(J_Dilla_%E4%B8%93%E8%BE%91)"},
+  {t:"Paul's Boutique",a:"Beastie Boys",y:1989,g:["嘻哈","采样","说唱摇滚"],pf:9.5,ry:3.89,rs:{r:125,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/b/b7/Beastie_Boys_-_Paul%27s_Boutique.jpg",bio:"Beastie Boys 最初是白人硬核朋克乐队，后转型为嘻哈三人组。《Paul's Boutique》是采样艺术的巅峰之作，由 Dust Brothers 制作，在一张专辑中使用了超过 100 个采样来源。尽管最初商业成绩不佳，但它后来被公认为嘻哈史上最具创造力的专辑之一。",w:"https://zh.wikipedia.org/wiki/Paul%27s_Boutique"},
+  {t:"Liquid Swords",a:"GZA",y:1995,g:["东海岸嘻哈","硬核说唱"],pf:9.5,ry:4.00,rs:{r:264,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/6/6a/GZA-Liquid_Swords.jpg",bio:"GZA 是 Wu-Tang Clan 中最具哲学性的成员，被称为'The Genius'。《Liquid Swords》以武术电影和象棋比喻为基础，构建了一个冷酷而智慧的街头世界。RZA 的制作以阴郁的钢琴采样和暗黑的节拍著称，这张专辑是 Wu-Tang 单飞作品中最受好评的一张。",w:"https://zh.wikipedia.org/wiki/Liquid_Swords"},
+  {t:"Things Fall Apart",a:"The Roots",y:1999,g:["嘻哈","新灵魂乐","爵士说唱"],pf:9.4,ry:3.84,rs:{r:288,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/6/67/The_Roots_-_Things_Fall_Apart.jpg",bio:"The Roots 是费城的嘻哈乐队，以现场乐器演奏而非采样著称，是当今最具音乐性的说唱团体之一。鼓手 Questlove 和说唱歌手 Black Thought 是核心成员。《Things Fall Apart》命名自 Chinua Achebe 的小说，探讨了黑人身份认同和社群稳定性。",w:"https://zh.wikipedia.org/wiki/Things_Fall_Apart_(The_Roots_%E4%B8%93%E8%BE%91)"},
+  {t:"The Score",a:"Fugees",y:1996,g:["嘻哈","新灵魂乐","雷鬼"],pf:9.3,ry:3.77,rs:{r:134,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/3/3e/The_Score_%28album%29.png",bio:"Fugees 是 Wyclef Jean、Lauryn Hill 和 Pras Michel 三人组成说唱/灵魂乐团体。《The Score》是他们最成功的作品，将嘻哈与雷鬼、灵魂乐融合，翻唱 Roberta Flack 的《Killing Me Softly》成为全球热门。专辑探讨了贫民区生活、警察暴力和黑人身份等议题。",w:"https://zh.wikipedia.org/wiki/The_Score_(Fugees_%E4%B8%93%E8%BE%91)"},
   // ── 扩充: 电子 / 实验 / 氛围 ──
-  {t:"Mezzanine",a:"Massive Attack",y:1998,g:["Trip-Hop","电子","暗潮"],pf:9.1,ry:3.92,rs:{r:217,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/e/e9/Massive_Attack_-_Mezzanine.png",bio:"Massive Attack 是英国布里斯托尔的 Trip-Hop 先驱。《Mezzanine》将以往的柔和氛围放逐到了暗处——以黑暗、沉重、偏执的节奏和扭曲的吉他为基础，创造了一种令人窒息的性感声音。专辑封面的甲虫图像同样令人不安，与音乐中的病态美感完美呼应。",w:"https://zh.wikipedia.org/wiki/Mezzanine_(%E4%B8%93%E8%BE%91)"},
-  {t:"Music Has the Right to Children",a:"Boards of Canada",y:1998,g:["电子","IDM","氛围","迷幻"],pf:9.0,ry:4.00,rs:{r:256,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/1/1c/Boards_of_Canada_-_Music_Has_the_Right_to_Children.jpg",bio:"Boards of Canada 是苏格兰电子二人组，以怀旧、温暖的模拟合成器声音掩盖着不安的底色著称。《Music Has the Right to Children》模糊了童年记忆与迷幻电子之间的边界——音乐听起来像一台被遗忘的 70 年代电视机播放着已经无法辨认的节目。",w:"https://zh.wikipedia.org/wiki/Music_Has_the_Right_to_Children"},
-  {t:"Since I Left You",a:"The Avalanches",y:2000,g:["采样","电子","舞曲","拼贴"],pf:9.5,ry:3.86,rs:{r:343,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/6/64/The_Avalanches_-_Since_I_Left_You.png",bio:"The Avalanches 是澳大利亚电子音乐团体。《Since I Left You》花了数年时间从数千张旧唱片中采样，编织成一张无缝的舞曲拼贴——据估计使用了超过 3500 个不同的采样。专辑像是穿越时空的电台，一首首歌曲融化进入彼此，营造出一种梦幻般的旅行感。",w:"https://zh.wikipedia.org/wiki/Since_I_Left_You"},
-  {t:"Screamadelica",a:"Primal Scream",y:1991,g:["另类舞曲","迷幻摇滚","酸浩室"],pf:10,ry:3.99,rs:{r:138,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/5/51/Primal_Scream_-_Screamadelica.jpg",bio:"Primal Scream 是苏格兰乐队，在独立摇滚和锐舞文化之间架起了桥梁。《Screamadelica》是他们从俗气的摇滚转向迷幻舞曲的突破之作。专辑将 Acid House 的律动、福音的灵性、摇滚的反叛和迷幻的氛围融为一体，精确捕捉了 90 年代初英国青年文化的狂喜与自由。",w:"https://zh.wikipedia.org/wiki/Screamadelica"},
-  {t:"Trans Europe Express",a:"Kraftwerk",y:1977,g:["电子","Krautrock","合成器流行"],pf:9.3,ry:4.00,rs:{r:196,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/7/75/Kraftwerk_-_Trans-Europe_Express.jpg",bio:"Kraftwerk 是德国杜塞尔多夫的电子音乐先驱，可以说是所有现代电子音乐的共同祖先。《Trans Europe Express》以冰冷的合成器音色和机器人般的节奏描绘了横跨欧洲的火车旅行。他们创造了一种全新的、纯粹电子化的音乐语言，影响了后来的 Techno、Hip-Hop 和 Synth-Pop 等无数流派。",w:"https://zh.wikipedia.org/wiki/Trans-Europe_Express_(%E4%B8%93%E8%BE%91)"},
+  {t:"Mezzanine",a:"Massive Attack",y:1998,g:["Trip-Hop","电子","暗潮"],pf:9.1,ry:3.92,rs:{r:217,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/e/e9/Massive_Attack_-_Mezzanine.png",bio:"Massive Attack 是英国布里斯托尔的 Trip-Hop 先驱。《Mezzanine》将以往的柔和氛围放逐到了暗处——以黑暗、沉重、偏执的节奏和扭曲的吉他为基础，创造了一种令人窒息的性感声音。专辑封面的甲虫图像同样令人不安，与音乐中的病态美感完美呼应。",w:"https://zh.wikipedia.org/wiki/Mezzanine_(%E4%B8%93%E8%BE%91)"},
+  {t:"Music Has the Right to Children",a:"Boards of Canada",y:1998,g:["电子","IDM","氛围","迷幻"],pf:9.0,ry:4.00,rs:{r:256,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/1/1c/Boards_of_Canada_-_Music_Has_the_Right_to_Children.jpg",bio:"Boards of Canada 是苏格兰电子二人组，以怀旧、温暖的模拟合成器声音掩盖着不安的底色著称。《Music Has the Right to Children》模糊了童年记忆与迷幻电子之间的边界——音乐听起来像一台被遗忘的 70 年代电视机播放着已经无法辨认的节目。",w:"https://zh.wikipedia.org/wiki/Music_Has_the_Right_to_Children"},
+  {t:"Since I Left You",a:"The Avalanches",y:2000,g:["采样","电子","舞曲","拼贴"],pf:9.5,ry:3.86,rs:{r:343,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/6/64/The_Avalanches_-_Since_I_Left_You.png",bio:"The Avalanches 是澳大利亚电子音乐团体。《Since I Left You》花了数年时间从数千张旧唱片中采样，编织成一张无缝的舞曲拼贴——据估计使用了超过 3500 个不同的采样。专辑像是穿越时空的电台，一首首歌曲融化进入彼此，营造出一种梦幻般的旅行感。",w:"https://zh.wikipedia.org/wiki/Since_I_Left_You"},
+  {t:"Screamadelica",a:"Primal Scream",y:1991,g:["另类舞曲","迷幻摇滚","酸浩室"],pf:10,ry:3.99,rs:{r:138,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/51/Primal_Scream_-_Screamadelica.jpg",bio:"Primal Scream 是苏格兰乐队，在独立摇滚和锐舞文化之间架起了桥梁。《Screamadelica》是他们从俗气的摇滚转向迷幻舞曲的突破之作。专辑将 Acid House 的律动、福音的灵性、摇滚的反叛和迷幻的氛围融为一体，精确捕捉了 90 年代初英国青年文化的狂喜与自由。",w:"https://zh.wikipedia.org/wiki/Screamadelica"},
+  {t:"Trans Europe Express",a:"Kraftwerk",y:1977,g:["电子","Krautrock","合成器流行"],pf:9.3,ry:4.00,rs:{r:196,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/7/75/Kraftwerk_-_Trans-Europe_Express.jpg",bio:"Kraftwerk 是德国杜塞尔多夫的电子音乐先驱，可以说是所有现代电子音乐的共同祖先。《Trans Europe Express》以冰冷的合成器音色和机器人般的节奏描绘了横跨欧洲的火车旅行。他们创造了一种全新的、纯粹电子化的音乐语言，影响了后来的 Techno、Hip-Hop 和 Synth-Pop 等无数流派。",w:"https://zh.wikipedia.org/wiki/Trans-Europe_Express_(%E4%B8%93%E8%BE%91)"},
   // ── 扩充: 金属 / 硬摇滚 ──
-  {t:"Ride the Lightning",a:"Metallica",y:1984,g:["激流金属","重金属"],pf:9.0,ry:3.93,rs:{r:188,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/f/f7/Ridethelightning.jpg",bio:"《Ride the Lightning》是 Metallica 的第二张专辑，也是激流金属从地下走向主流的里程碑。专辑展示了比首专更成熟的音乐理念——从《Fade to Black》的旋律化忧郁到《Creeping Death》的史诗级激流暴力。专辑最后以器乐曲《The Call of Ktulu》收尾，显露出他们的前卫金属野心。",w:"https://zh.wikipedia.org/wiki/Ride_the_Lightning"},
-  {t:"Reign in Blood",a:"Slayer",y:1986,g:["激流金属","极端金属"],pf:8.8,ry:4.02,rs:{r:202,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/2/2e/Slayer_-_Reign_in_Blood.jpg",bio:"Slayer 是美国激流金属四巨头之一，以极端的速度、暴烈的歌词和撒旦主义意象著称。《Reign in Blood》全长不到 29 分钟，却重新定义了金属乐的速度与强度极限。专辑中的《Angel of Death》以纳粹医生 Josef Mengele 为主题引发了巨大争议。",w:"https://zh.wikipedia.org/wiki/Reign_in_Blood"},
-  {t:"Dirt",a:"Alice in Chains",y:1992,g:["垃圾摇滚","另类金属","重金属"],pf:8.9,ry:3.86,rs:{r:156,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/1/11/Alice_in_Chains_-_Dirt.jpg",bio:"Alice in Chains 是西雅图垃圾摇滚场景中的一员，但他们的声音比同行更沉重、更金属化。《Dirt》是一张直达黑暗内心的专辑，主唱 Layne Staley 以赤裸的歌词描绘了海洛因成瘾、抑郁和绝望。Jerry Cantrell 的沉重吉他 Riff 和 Staley 的鬼魅和声创造了不可替代的声音。Staley 于 2002 年因药物过量去世。",w:"https://zh.wikipedia.org/wiki/Dirt_(Alice_in_Chains_%E4%B8%93%E8%BE%91)"},
+  {t:"Ride the Lightning",a:"Metallica",y:1984,g:["激流金属","重金属"],pf:9.0,ry:3.93,rs:{r:188,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/f/f7/Ridethelightning.jpg",bio:"《Ride the Lightning》是 Metallica 的第二张专辑，也是激流金属从地下走向主流的里程碑。专辑展示了比首专更成熟的音乐理念——从《Fade to Black》的旋律化忧郁到《Creeping Death》的史诗级激流暴力。专辑最后以器乐曲《The Call of Ktulu》收尾，显露出他们的前卫金属野心。",w:"https://zh.wikipedia.org/wiki/Ride_the_Lightning"},
+  {t:"Reign in Blood",a:"Slayer",y:1986,g:["激流金属","极端金属"],pf:8.8,ry:4.02,rs:{r:202,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/2e/Slayer_-_Reign_in_Blood.jpg",bio:"Slayer 是美国激流金属四巨头之一，以极端的速度、暴烈的歌词和撒旦主义意象著称。《Reign in Blood》全长不到 29 分钟，却重新定义了金属乐的速度与强度极限。专辑中的《Angel of Death》以纳粹医生 Josef Mengele 为主题引发了巨大争议。",w:"https://zh.wikipedia.org/wiki/Reign_in_Blood"},
+  {t:"Dirt",a:"Alice in Chains",y:1992,g:["垃圾摇滚","另类金属","重金属"],pf:8.9,ry:3.86,rs:{r:156,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/1/11/Alice_in_Chains_-_Dirt.jpg",bio:"Alice in Chains 是西雅图垃圾摇滚场景中的一员，但他们的声音比同行更沉重、更金属化。《Dirt》是一张直达黑暗内心的专辑，主唱 Layne Staley 以赤裸的歌词描绘了海洛因成瘾、抑郁和绝望。Jerry Cantrell 的沉重吉他 Riff 和 Staley 的鬼魅和声创造了不可替代的声音。Staley 于 2002 年因药物过量去世。",w:"https://zh.wikipedia.org/wiki/Dirt_(Alice_in_Chains_%E4%B8%93%E8%BE%91)"},
   // ── 扩充: 独立 / 另类摇滚 ──
-  {t:"Surfer Rosa",a:"Pixies",y:1988,g:["另类摇滚","独立摇滚","噪音流行"],pf:9.5,ry:3.94,rs:{r:279,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/9/93/Pixies_-_Surfer_Rosa.jpg",bio:"Pixies 是美国波士顿的另类摇滚乐队，被广泛认为是 90 年代另类摇滚爆发的催化剂。《Surfer Rosa》由 Steve Albini 录制，以极端的动态对比——安静到爆炸性的巨大声响（Joey Santiago 称之为'安静/吵闹/安静'模式）——和 Black Francis 的超现实主义歌词彻底改变了摇滚的走向。",w:"https://zh.wikipedia.org/wiki/Surfer_Rosa"},
-  {t:"Doolittle",a:"Pixies",y:1989,g:["另类摇滚","独立摇滚","噪音流行"],pf:10,ry:4.17,rs:{r:141,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/6/6b/Pixies-Doolittle.jpg",bio:"《Doolittle》是 Pixies 的第二张专辑，被认为是他们最具影响力的作品。歌曲主题从圣经故事到超现实主义电影，从性暴力到海洋生物，充满了不安和幽默的奇异混合。Kurt Cobain 曾承认《Smells Like Teen Spirit》是试图写一首 Pixies 式的歌。",w:"https://zh.wikipedia.org/wiki/Doolittle_(%E4%B8%93%E8%BE%91)"},
-  {t:"Crooked Rain, Crooked Rain",a:"Pavement",y:1994,g:["独立摇滚","低保真","慢核"],pf:10,ry:4.00,rs:{r:169,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/2/25/Pavement_-_Crooked_Rain%2C_Crooked_Rain.jpg",bio:"Pavement 是加州 Stockton 的独立摇滚/低保真传奇。他们的音乐以突然的转折、看似随意的歌词和慵懒的声音著称，表面看是漫不经心的玩笑，仔细听却是精心设计的智慧。《Crooked Rain...》包含了《Cut Your Hair》等经典，是 90 年代独立摇滚的圣经。",w:"https://zh.wikipedia.org/wiki/Crooked_Rain,_Crooked_Rain"},
-  {t:"Either/Or",a:"Elliott Smith",y:1997,g:["独立民谣","创作歌手","低保真"],pf:9.5,ry:3.96,rs:{r:216,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/5/5a/Elliott_Smith_-_Either-Or.jpg",bio:"Elliott Smith 是美国创作歌手，以轻柔的耳语式唱腔和精妙的吉他指弹著称。《Either/Or》以双关语命名（取自 Søren Kierkegaard 的哲学著作），是他从低保真录音转向更精细制作的转折点。他的歌曲表面温柔，下面却藏着抑郁、药物依赖和绝望的暗流。Smith 于 2003 年去世，年仅 34 岁。",w:"https://zh.wikipedia.org/wiki/Either/Or_(Elliott_Smith_%E4%B8%93%E8%BE%91)"},
-  {t:"Moon & Antarctica",a:"Modest Mouse",y:2000,g:["独立摇滚","后摇滚","低保真"],pf:9.0,ry:3.79,rs:{r:316,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/8/8a/The_Moon_%26_Antarctica.jpg",bio:"Modest Mouse 是华盛顿州的独立摇滚乐队，由 Isaac Brock 领导。《The Moon & Antarctica》是他们的主要厂牌首张专辑，也是最具哲学深度的作品。专辑以宇宙和存在的荒谬感为主题，Brock 以独特的嗓音和扭曲的吉他声质问人类在浩瀚宇宙中的位置。",w:"https://zh.wikipedia.org/wiki/The_Moon_%26_Antarctica"},
-  {t:"You Forgot It in People",a:"Broken Social Scene",y:2002,g:["独立摇滚","室内流行","后摇滚"],pf:9.2,ry:3.81,rs:{r:450,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/f/f7/You_Forgot_It_in_People.jpg",bio:"Broken Social Scene 是加拿大多伦多的独立摇滚超级团体，有时多达十几位成员同时参与。（Feist、Metric 等乐队的成员都曾参与其中。）《You Forgot It in People》以宏大的合奏——多层吉他、号角和男女声和声——创造了令人振奋的集体主义声音，是对孤独和连接需求的一封情书。",w:"https://zh.wikipedia.org/wiki/You_Forgot_It_in_People"},
+  {t:"Surfer Rosa",a:"Pixies",y:1988,g:["另类摇滚","独立摇滚","噪音流行"],pf:9.5,ry:3.94,rs:{r:279,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/9/93/Pixies_-_Surfer_Rosa.jpg",bio:"Pixies 是美国波士顿的另类摇滚乐队，被广泛认为是 90 年代另类摇滚爆发的催化剂。《Surfer Rosa》由 Steve Albini 录制，以极端的动态对比——安静到爆炸性的巨大声响（Joey Santiago 称之为'安静/吵闹/安静'模式）——和 Black Francis 的超现实主义歌词彻底改变了摇滚的走向。",w:"https://zh.wikipedia.org/wiki/Surfer_Rosa"},
+  {t:"Doolittle",a:"Pixies",y:1989,g:["另类摇滚","独立摇滚","噪音流行"],pf:10,ry:4.17,rs:{r:141,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/6/6b/Pixies-Doolittle.jpg",bio:"《Doolittle》是 Pixies 的第二张专辑，被认为是他们最具影响力的作品。歌曲主题从圣经故事到超现实主义电影，从性暴力到海洋生物，充满了不安和幽默的奇异混合。Kurt Cobain 曾承认《Smells Like Teen Spirit》是试图写一首 Pixies 式的歌。",w:"https://zh.wikipedia.org/wiki/Doolittle_(%E4%B8%93%E8%BE%91)"},
+  {t:"Crooked Rain, Crooked Rain",a:"Pavement",y:1994,g:["独立摇滚","低保真","慢核"],pf:10,ry:4.00,rs:{r:169,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/25/Pavement_-_Crooked_Rain%2C_Crooked_Rain.jpg",bio:"Pavement 是加州 Stockton 的独立摇滚/低保真传奇。他们的音乐以突然的转折、看似随意的歌词和慵懒的声音著称，表面看是漫不经心的玩笑，仔细听却是精心设计的智慧。《Crooked Rain...》包含了《Cut Your Hair》等经典，是 90 年代独立摇滚的圣经。",w:"https://zh.wikipedia.org/wiki/Crooked_Rain,_Crooked_Rain"},
+  {t:"Either/Or",a:"Elliott Smith",y:1997,g:["独立民谣","创作歌手","低保真"],pf:9.5,ry:3.96,rs:{r:216,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/5a/Elliott_Smith_-_Either-Or.jpg",bio:"Elliott Smith 是美国创作歌手，以轻柔的耳语式唱腔和精妙的吉他指弹著称。《Either/Or》以双关语命名（取自 Søren Kierkegaard 的哲学著作），是他从低保真录音转向更精细制作的转折点。他的歌曲表面温柔，下面却藏着抑郁、药物依赖和绝望的暗流。Smith 于 2003 年去世，年仅 34 岁。",w:"https://zh.wikipedia.org/wiki/Either/Or_(Elliott_Smith_%E4%B8%93%E8%BE%91)"},
+  {t:"Moon & Antarctica",a:"Modest Mouse",y:2000,g:["独立摇滚","后摇滚","低保真"],pf:9.0,ry:3.79,rs:{r:316,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/8/8a/The_Moon_%26_Antarctica.jpg",bio:"Modest Mouse 是华盛顿州的独立摇滚乐队，由 Isaac Brock 领导。《The Moon & Antarctica》是他们的主要厂牌首张专辑，也是最具哲学深度的作品。专辑以宇宙和存在的荒谬感为主题，Brock 以独特的嗓音和扭曲的吉他声质问人类在浩瀚宇宙中的位置。",w:"https://zh.wikipedia.org/wiki/The_Moon_%26_Antarctica"},
+  {t:"You Forgot It in People",a:"Broken Social Scene",y:2002,g:["独立摇滚","室内流行","后摇滚"],pf:9.2,ry:3.81,rs:{r:450,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/f/f7/You_Forgot_It_in_People.jpg",bio:"Broken Social Scene 是加拿大多伦多的独立摇滚超级团体，有时多达十几位成员同时参与。（Feist、Metric 等乐队的成员都曾参与其中。）《You Forgot It in People》以宏大的合奏——多层吉他、号角和男女声和声——创造了令人振奋的集体主义声音，是对孤独和连接需求的一封情书。",w:"https://zh.wikipedia.org/wiki/You_Forgot_It_in_People"},
   // ── 扩充: 朋克 / 后朋克 / 新浪潮 ──
-  {t:"Horses",a:"Patti Smith",y:1975,g:["朋克摇滚","艺术朋克","原型朋克"],pf:9.4,ry:3.93,rs:{r:26,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/5/5a/Patti_Smith_-_Horses.jpg",bio:"Patti Smith 是'朋克教母'，诗人和艺术家。《Horses》是她的首张专辑，开场白'Jesus died for somebody's sins, but not mine'直接宣告了一个新时代的来临。她将法国象征主义诗歌的严肃性嫁接到车库摇滚的原始能量上，模糊了摇滚与高雅艺术之间的界限。",w:"https://zh.wikipedia.org/wiki/Horses_(%E4%B8%93%E8%BE%91)"},
-  {t:"Entertainment!",a:"Gang of Four",y:1979,g:["后朋克","Funk 朋克","艺术朋克"],pf:9.5,ry:4.01,rs:{r:274,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/1/1b/Gang_of_Four_-_Entertainment%21.jpg",bio:"Gang of Four 是英国利兹的后朋克乐队，将马克思主义政治批判与舞蹈节奏结合。Andy Gill 的吉他像刀片一样锋利，节奏部分像放克一样紧绷——他们证明了政治音乐不一定是沉闷的。《Entertainment!》以其对消费主义、异化和性别政治的直接批判，影响了从 R.E.M. 到 Red Hot Chili Peppers 的无数乐队。",w:"https://zh.wikipedia.org/wiki/Entertainment!"},
-  {t:"Power, Corruption & Lies",a:"New Order",y:1983,g:["新浪潮","合成器流行","后朋克"],pf:9.3,ry:3.89,rs:{r:182,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/f/fd/New_Order_-_Power_Corruption_%26_Lies.jpg",bio:"New Order 诞生于 Joy Division 的悲剧——Ian Curtis 去世后，剩余成员组建新乐队并转向电子音乐方向。《Power, Corruption & Lies》包含了里程碑式的《Blue Monday》，将后朋克的情感重量与合成器和鼓机结合。封面的 Henri Fantin-Latour 静物画与电子音乐之间的对比本身就是一种艺术宣言。",w:"https://zh.wikipedia.org/wiki/Power,_Corruption_%26_Lies"},
+  {t:"Horses",a:"Patti Smith",y:1975,g:["朋克摇滚","艺术朋克","原型朋克"],pf:9.4,ry:3.93,rs:{r:26,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/5a/Patti_Smith_-_Horses.jpg",bio:"Patti Smith 是'朋克教母'，诗人和艺术家。《Horses》是她的首张专辑，开场白'Jesus died for somebody's sins, but not mine'直接宣告了一个新时代的来临。她将法国象征主义诗歌的严肃性嫁接到车库摇滚的原始能量上，模糊了摇滚与高雅艺术之间的界限。",w:"https://zh.wikipedia.org/wiki/Horses_(%E4%B8%93%E8%BE%91)"},
+  {t:"Entertainment!",a:"Gang of Four",y:1979,g:["后朋克","Funk 朋克","艺术朋克"],pf:9.5,ry:4.01,rs:{r:274,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/1/1b/Gang_of_Four_-_Entertainment%21.jpg",bio:"Gang of Four 是英国利兹的后朋克乐队，将马克思主义政治批判与舞蹈节奏结合。Andy Gill 的吉他像刀片一样锋利，节奏部分像放克一样紧绷——他们证明了政治音乐不一定是沉闷的。《Entertainment!》以其对消费主义、异化和性别政治的直接批判，影响了从 R.E.M. 到 Red Hot Chili Peppers 的无数乐队。",w:"https://zh.wikipedia.org/wiki/Entertainment!"},
+  {t:"Power, Corruption & Lies",a:"New Order",y:1983,g:["新浪潮","合成器流行","后朋克"],pf:9.3,ry:3.89,rs:{r:182,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/f/fd/New_Order_-_Power_Corruption_%26_Lies.jpg",bio:"New Order 诞生于 Joy Division 的悲剧——Ian Curtis 去世后，剩余成员组建新乐队并转向电子音乐方向。《Power, Corruption & Lies》包含了里程碑式的《Blue Monday》，将后朋克的情感重量与合成器和鼓机结合。封面的 Henri Fantin-Latour 静物画与电子音乐之间的对比本身就是一种艺术宣言。",w:"https://zh.wikipedia.org/wiki/Power,_Corruption_%26_Lies"},
   // ── 扩充: 流行 / 创作歌手 ──
-  {t:"Tapestry",a:"Carole King",y:1971,g:["创作歌手","软摇滚","流行"],pf:8.7,ry:3.66,rs:{r:25,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/a/aa/Carole_King_-_Tapestry.jpg",bio:"Carole King 是最成功的女性创作歌手之一，在个人生涯之前她已是 Brill Building 的词曲工厂核心，为无数艺人创作热门歌曲。《Tapestry》以亲密的钢琴和真诚的嗓音记录了日常生活、爱情和友谊，是有史以来最畅销的专辑之一。",w:"https://zh.wikipedia.org/wiki/Tapestry_(Carole_King_%E4%B8%93%E8%BE%91)"},
-  {t:"Back to Black",a:"Amy Winehouse",y:2006,g:["灵魂乐","R&B","新灵魂乐"],pf:8.7,ry:3.86,rs:{r:33,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/b/bb/Amy_Winehouse_-_Back_to_Black.jpg",bio:"Amy Winehouse 是英国灵魂乐和 R&B 歌手，拥有一种深沉的、令人心碎的声音。《Back to Black》由 Mark Ronson 和 Salaam Remi 制作，将 60 年代女子组合和 Motown 的影响与关于心碎、成瘾和自我毁灭的现代歌词融合。专辑的巨大成功最终被 Winehouse 于 2011 年因酒精中毒去世的悲剧所吞噬，年仅 27 岁。",w:"https://zh.wikipedia.org/wiki/Back_to_Black"},
-  {t:"When the Pawn...",a:"Fiona Apple",y:1999,g:["艺术流行","另类","创作歌手"],pf:10,ry:3.92,rs:{r:108,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/3/35/Fiona_Apple_-_When_the_Pawn....jpg",bio:"Fiona Apple 是美国创作歌手，以不妥协的艺术态度和深刻的歌词著称。《When the Pawn...》的完整标题是一首 90 字的诗。专辑由 Jon Brion 制作，以钢琴为中心，但对和声和编曲做出了大胆的实验。虽然只有 22 岁，Apple 已经创作出了情感上极为成熟的杰作。",w:"https://zh.wikipedia.org/wiki/When_the_Pawn..."},
+  {t:"Tapestry",a:"Carole King",y:1971,g:["创作歌手","软摇滚","流行"],pf:8.7,ry:3.66,rs:{r:25,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/a/aa/Carole_King_-_Tapestry.jpg",bio:"Carole King 是最成功的女性创作歌手之一，在个人生涯之前她已是 Brill Building 的词曲工厂核心，为无数艺人创作热门歌曲。《Tapestry》以亲密的钢琴和真诚的嗓音记录了日常生活、爱情和友谊，是有史以来最畅销的专辑之一。",w:"https://zh.wikipedia.org/wiki/Tapestry_(Carole_King_%E4%B8%93%E8%BE%91)"},
+  {t:"Back to Black",a:"Amy Winehouse",y:2006,g:["灵魂乐","R&B","新灵魂乐"],pf:8.7,ry:3.86,rs:{r:33,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/b/bb/Amy_Winehouse_-_Back_to_Black.jpg",bio:"Amy Winehouse 是英国灵魂乐和 R&B 歌手，拥有一种深沉的、令人心碎的声音。《Back to Black》由 Mark Ronson 和 Salaam Remi 制作，将 60 年代女子组合和 Motown 的影响与关于心碎、成瘾和自我毁灭的现代歌词融合。专辑的巨大成功最终被 Winehouse 于 2011 年因酒精中毒去世的悲剧所吞噬，年仅 27 岁。",w:"https://zh.wikipedia.org/wiki/Back_to_Black"},
+  {t:"When the Pawn...",a:"Fiona Apple",y:1999,g:["艺术流行","另类","创作歌手"],pf:10,ry:3.92,rs:{r:108,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/3/35/Fiona_Apple_-_When_the_Pawn....jpg",bio:"Fiona Apple 是美国创作歌手，以不妥协的艺术态度和深刻的歌词著称。《When the Pawn...》的完整标题是一首 90 字的诗。专辑由 Jon Brion 制作，以钢琴为中心，但对和声和编曲做出了大胆的实验。虽然只有 22 岁，Apple 已经创作出了情感上极为成熟的杰作。",w:"https://zh.wikipedia.org/wiki/When_the_Pawn..."},
   // ── 扩充: 新世纪 / 当代 ──
-  {t:"Currents",a:"Tame Impala",y:2015,g:["新迷幻","合成器流行","独立"],pf:9.3,ry:3.78,rs:{r:382,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/9/9b/Tame_Impala_-_Currents.png",bio:"Tame Impala 是 Kevin Parker 的个人项目。从吉他驱动的迷幻摇滚转向合成器主导的迪斯科流行，《Currents》是一次彻底的声音重塑。专辑以关于个人变化、心碎和时间流逝的诚实歌词为内核，包裹在闪闪发光的合成器和舞曲律动中。",w:"https://zh.wikipedia.org/wiki/Currents_(Tame_Impala_%E4%B8%93%E8%BE%91)"},
-  {t:"Melodrama",a:"Lorde",y:2017,g:["艺术流行","电子流行","独立流行"],pf:8.8,ry:3.52,rs:{r:460,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/3/32/Lorde_-_Melodrama.png",bio:"Lorde 是新西兰创作歌手和制作人。她的第二张专辑《Melodrama》以一场家庭派对的结构来叙述一段分手的过程——从开场的狂喜到最后一首歌的独处时刻。专辑用极简的电子制作和丰富的声音细节描绘了年轻女性的情感世界，被评论界誉为十年来最佳流行专辑之一。",w:"https://zh.wikipedia.org/wiki/Melodrama_(Lorde_%E4%B8%93%E8%BE%91)"},
-  {t:"Norman Fucking Rockwell!",a:"Lana Del Rey",y:2019,g:["室内流行","巴洛克流行","软摇滚","民谣"],pf:9.4,ry:3.78,rs:{r:321,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/b/bf/Lana_Del_Rey_-_Norman_Fucking_Rockwell.png",bio:"Lana Del Rey 是美国创作歌手，以好莱坞黄金时代的怀旧美学和现代虚无主义的融合著称。《NFR!》是她最具野心的作品，长达十分钟的《Venice Bitch》是一场迷幻漂流。Jack Antonoff 制作的专辑以 70 年代软摇滚为基础，歌词探讨了美国梦的衰败、气候变化焦虑和现代爱情的复杂性。",w:"https://zh.wikipedia.org/wiki/Norman_Fucking_Rockwell!"},
-  {t:"When We All Fall Asleep",a:"Billie Eilish",y:2019,g:["流行","电子流行","暗潮流行","工业"],pf:9.0,ry:3.56,rs:{r:397,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/7/76/Billie_Eilish_-_When_We_All_Fall_Asleep,_Where_Do_We_Go%3F.png",bio:"Billie Eilish 与她的哥哥 FINNEAS 在家中卧室录制了《When We All Fall Asleep...》，这张专辑彻底改变了流行音乐的声音。以其极端简约的制作——耳语般的人声、深邃的低音、ASMR 元素——和关于恐惧、心理健康的黑暗青少年叙事，17 岁的 Eilish 横扫格莱美，赢得了包括年度专辑在内的所有四大奖项。",w:"https://zh.wikipedia.org/wiki/When_We_All_Fall_Asleep,_Where_Do_We_Go%3F"},
+  {t:"Currents",a:"Tame Impala",y:2015,g:["新迷幻","合成器流行","独立"],pf:9.3,ry:3.78,rs:{r:382,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/9/9b/Tame_Impala_-_Currents.png",bio:"Tame Impala 是 Kevin Parker 的个人项目。从吉他驱动的迷幻摇滚转向合成器主导的迪斯科流行，《Currents》是一次彻底的声音重塑。专辑以关于个人变化、心碎和时间流逝的诚实歌词为内核，包裹在闪闪发光的合成器和舞曲律动中。",w:"https://zh.wikipedia.org/wiki/Currents_(Tame_Impala_%E4%B8%93%E8%BE%91)"},
+  {t:"Melodrama",a:"Lorde",y:2017,g:["艺术流行","电子流行","独立流行"],pf:8.8,ry:3.52,rs:{r:460,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/3/32/Lorde_-_Melodrama.png",bio:"Lorde 是新西兰创作歌手和制作人。她的第二张专辑《Melodrama》以一场家庭派对的结构来叙述一段分手的过程——从开场的狂喜到最后一首歌的独处时刻。专辑用极简的电子制作和丰富的声音细节描绘了年轻女性的情感世界，被评论界誉为十年来最佳流行专辑之一。",w:"https://zh.wikipedia.org/wiki/Melodrama_(Lorde_%E4%B8%93%E8%BE%91)"},
+  {t:"Norman Fucking Rockwell!",a:"Lana Del Rey",y:2019,g:["室内流行","巴洛克流行","软摇滚","民谣"],pf:9.4,ry:3.78,rs:{r:321,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/b/bf/Lana_Del_Rey_-_Norman_Fucking_Rockwell.png",bio:"Lana Del Rey 是美国创作歌手，以好莱坞黄金时代的怀旧美学和现代虚无主义的融合著称。《NFR!》是她最具野心的作品，长达十分钟的《Venice Bitch》是一场迷幻漂流。Jack Antonoff 制作的专辑以 70 年代软摇滚为基础，歌词探讨了美国梦的衰败、气候变化焦虑和现代爱情的复杂性。",w:"https://zh.wikipedia.org/wiki/Norman_Fucking_Rockwell!"},
+  {t:"When We All Fall Asleep",a:"Billie Eilish",y:2019,g:["流行","电子流行","暗潮流行","工业"],pf:9.0,ry:3.56,rs:{r:397,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/7/76/Billie_Eilish_-_When_We_All_Fall_Asleep,_Where_Do_We_Go%3F.png",bio:"Billie Eilish 与她的哥哥 FINNEAS 在家中卧室录制了《When We All Fall Asleep...》，这张专辑彻底改变了流行音乐的声音。以其极端简约的制作——耳语般的人声、深邃的低音、ASMR 元素——和关于恐惧、心理健康的黑暗青少年叙事，17 岁的 Eilish 横扫格莱美，赢得了包括年度专辑在内的所有四大奖项。",w:"https://zh.wikipedia.org/wiki/When_We_All_Fall_Asleep,_Where_Do_We_Go%3F"},
   // ── 扩充: 世界音乐 ──
-  {t:"Buena Vista Social Club",a:"Buena Vista Social Club",y:1997,g:["古巴音乐","Son Cubano","Bolero","世界音乐"],pf:9.0,ry:3.98,rs:{r:309,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/8/84/Buena_Vista_Social_Club_%28album%29.jpg",bio:"Buena Vista Social Club 是 Ry Cooder 与一群年迈的古巴音乐家合作的成果。这些音乐家曾在 1940-50 年代哈瓦那的 Buena Vista 社交俱乐部演出，但多数人早已退休甚至放弃了音乐。专辑让这些被遗忘的天才重新得到世界认可，他们的 Son Cubano 和 Bolero 演奏传达了跨越世代和国界的情感。",w:"https://zh.wikipedia.org/wiki/Buena_Vista_Social_Club_(%E4%B8%93%E8%BE%91)"},
-  {t:"Getz / Gilberto",a:"Stan Getz & João Gilberto",y:1964,g:["Bossa Nova","爵士","巴西音乐"],pf:9.1,ry:3.84,rs:{r:111,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/9/9a/Getz_Gilberto.jpg",bio:"《Getz/Gilberto》是 Bossa Nova 历史上最重要的专辑，由美国爵士萨克斯手 Stan Getz 与巴西吉他手/歌手 João Gilberto 合作。专辑包含了世界名曲《The Girl from Ipanema》（由 Gilberto 的妻子 Astrud Gilberto 意外献唱），将巴西的轻盈节奏带入了全球爵士和流行音乐的主流。",w:"https://zh.wikipedia.org/wiki/Getz/Gilberto"},
+  {t:"Buena Vista Social Club",a:"Buena Vista Social Club",y:1997,g:["古巴音乐","Son Cubano","Bolero","世界音乐"],pf:9.0,ry:3.98,rs:{r:309,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/8/84/Buena_Vista_Social_Club_%28album%29.jpg",bio:"Buena Vista Social Club 是 Ry Cooder 与一群年迈的古巴音乐家合作的成果。这些音乐家曾在 1940-50 年代哈瓦那的 Buena Vista 社交俱乐部演出，但多数人早已退休甚至放弃了音乐。专辑让这些被遗忘的天才重新得到世界认可，他们的 Son Cubano 和 Bolero 演奏传达了跨越世代和国界的情感。",w:"https://zh.wikipedia.org/wiki/Buena_Vista_Social_Club_(%E4%B8%93%E8%BE%91)"},
+  {t:"Getz / Gilberto",a:"Stan Getz & João Gilberto",y:1964,g:["Bossa Nova","爵士","巴西音乐"],pf:9.1,ry:3.84,rs:{r:111,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/9/9a/Getz_Gilberto.jpg",bio:"《Getz/Gilberto》是 Bossa Nova 历史上最重要的专辑，由美国爵士萨克斯手 Stan Getz 与巴西吉他手/歌手 João Gilberto 合作。专辑包含了世界名曲《The Girl from Ipanema》（由 Gilberto 的妻子 Astrud Gilberto 意外献唱），将巴西的轻盈节奏带入了全球爵士和流行音乐的主流。",w:"https://zh.wikipedia.org/wiki/Getz/Gilberto"},
   // ── 扩充: 乡村 / 蓝草 / 根源 ──
-  {t:"At Folsom Prison",a:"Johnny Cash",y:1968,g:["乡村","摇滚","叛道乡村"],pf:9.5,ry:3.83,rs:{r:164,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/6/65/Johnny_Cash_-_At_Folsom_Prison.jpg",bio:"Johnny Cash 是美国音乐传奇，'黑衣人'。“Hello, I'm Johnny Cash”的开场白之后是他对加州 Folsom 州立监狱囚犯们的现场演出。在铁窗后面，Cash 为杀人犯、小偷和终身监禁者歌唱——他唱的是他们能感同身受的歌曲：后悔、监狱、自由和救赎。这是有史以来最伟大的现场专辑之一。",w:"https://zh.wikipedia.org/wiki/At_Folsom_Prison"},
-  {t:"Red",a:"Taylor Swift",y:2012,g:["流行","乡村流行","摇滚"],pf:9.0,ry:3.62,rs:{r:99,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/e/e8/Taylor_Swift_-_Red.png",bio:"Taylor Swift 是美国创作歌手，以从乡村到流行的跨界成功著称。《Red》是她从乡村向流行过渡的转折点。以红色象征热烈而破碎的感情，专辑中的《All Too Well》被歌迷认为是最伟大的分手歌曲之一。Swift 拥有罕见的天赋——将极度私人的经验转化为数百万人共鸣的集体情感。",w:"https://zh.wikipedia.org/wiki/Red_(Taylor_Swift_%E4%B8%93%E8%BE%91)"},
+  {t:"At Folsom Prison",a:"Johnny Cash",y:1968,g:["乡村","摇滚","叛道乡村"],pf:9.5,ry:3.83,rs:{r:164,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/6/65/Johnny_Cash_-_At_Folsom_Prison.jpg",bio:"Johnny Cash 是美国音乐传奇，'黑衣人'。“Hello, I'm Johnny Cash”的开场白之后是他对加州 Folsom 州立监狱囚犯们的现场演出。在铁窗后面，Cash 为杀人犯、小偷和终身监禁者歌唱——他唱的是他们能感同身受的歌曲：后悔、监狱、自由和救赎。这是有史以来最伟大的现场专辑之一。",w:"https://zh.wikipedia.org/wiki/At_Folsom_Prison"},
+  {t:"Red",a:"Taylor Swift",y:2012,g:["流行","乡村流行","摇滚"],pf:9.0,ry:3.62,rs:{r:99,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/e/e8/Taylor_Swift_-_Red.png",bio:"Taylor Swift 是美国创作歌手，以从乡村到流行的跨界成功著称。《Red》是她从乡村向流行过渡的转折点。以红色象征热烈而破碎的感情，专辑中的《All Too Well》被歌迷认为是最伟大的分手歌曲之一。Swift 拥有罕见的天赋——将极度私人的经验转化为数百万人共鸣的集体情感。",w:"https://zh.wikipedia.org/wiki/Red_(Taylor_Swift_%E4%B8%93%E8%BE%91)"},
   // ── 扩充: 重摇滚 / 前卫 ──
-  {t:"Moving Pictures",a:"Rush",y:1981,g:["前卫摇滚","硬摇滚"],pf:9.0,ry:4.01,rs:{r:379,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/f/f6/Rush_Moving_Pictures.jpg",bio:"Rush 是加拿大的前卫摇滚三人组，以出众的乐器技术和智力性歌词著称。Geddy Lee（贝斯/主唱/键盘）、Alex Lifeson（吉他）和 Neil Peart（鼓/歌词）三人的演奏至今仍是技术型摇滚的标杆。《Moving Pictures》包含着名的器乐曲《YYZ》和电台热门《Tom Sawyer》。",w:"https://zh.wikipedia.org/wiki/Moving_Pictures_(Rush_%E4%B8%93%E8%BE%91)"},
-  {t:"Aja",a:"Steely Dan",y:1977,g:["爵士摇滚","软摇滚","流行"],pf:9.4,ry:3.88,rs:{r:59,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/1/10/Aja_album_cover.jpg",bio:"Steely Dan 是 Donald Fagen 和 Walter Becker 的录音室项目，以完美主义著称。《Aja》是他们录音技巧的巅峰——邀请了数十位顶级录音室音乐家参与，每首歌都像爵士专辑一样精雕细琢。专辑获得了格莱美奖，至今仍被用作高端音响设备的试音碟。",w:"https://zh.wikipedia.org/wiki/Aja_(%E4%B8%93%E8%BE%91)"},
+  {t:"Moving Pictures",a:"Rush",y:1981,g:["前卫摇滚","硬摇滚"],pf:9.0,ry:4.01,rs:{r:379,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/f/f6/Rush_Moving_Pictures.jpg",bio:"Rush 是加拿大的前卫摇滚三人组，以出众的乐器技术和智力性歌词著称。Geddy Lee（贝斯/主唱/键盘）、Alex Lifeson（吉他）和 Neil Peart（鼓/歌词）三人的演奏至今仍是技术型摇滚的标杆。《Moving Pictures》包含着名的器乐曲《YYZ》和电台热门《Tom Sawyer》。",w:"https://zh.wikipedia.org/wiki/Moving_Pictures_(Rush_%E4%B8%93%E8%BE%91)"},
+  {t:"Aja",a:"Steely Dan",y:1977,g:["爵士摇滚","软摇滚","流行"],pf:9.4,ry:3.88,rs:{r:59,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/1/10/Aja_album_cover.jpg",bio:"Steely Dan 是 Donald Fagen 和 Walter Becker 的录音室项目，以完美主义著称。《Aja》是他们录音技巧的巅峰——邀请了数十位顶级录音室音乐家参与，每首歌都像爵士专辑一样精雕细琢。专辑获得了格莱美奖，至今仍被用作高端音响设备的试音碟。",w:"https://zh.wikipedia.org/wiki/Aja_(%E4%B8%93%E8%BE%91)"},
   // ── 扩充: 氛围 / 当代古典 / 后摇滚 ──
-  {t:"Ágætis byrjun",a:"Sigur Rós",y:1999,g:["后摇滚","氛围","自赏"],pf:9.4,ry:4.01,rs:{r:278,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/3/30/Sigur_R%C3%B3s_-_%C3%81g%C3%A6tis_byrjun.jpg",bio:"Sigur Rós 是冰岛的四人后摇滚/氛围乐队。主唱 Jónsi 以独特的假声和用大提琴弓拉电吉他著称。《Ágætis byrjun》（意为'一个好的开始'）以电影般的幅度和情感的深度征服了世界。Jónsi 用他自己发明的语言'Vonlenska'（希望语）演唱部分歌曲，强调声音本身的表达力超越了具体语义。",w:"https://zh.wikipedia.org/wiki/%C3%81g%C3%A6tis_byrjun"},
+  {t:"Ágætis byrjun",a:"Sigur Rós",y:1999,g:["后摇滚","氛围","自赏"],pf:9.4,ry:4.01,rs:{r:278,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/3/30/Sigur_R%C3%B3s_-_%C3%81g%C3%A6tis_byrjun.jpg",bio:"Sigur Rós 是冰岛的四人后摇滚/氛围乐队。主唱 Jónsi 以独特的假声和用大提琴弓拉电吉他著称。《Ágætis byrjun》（意为'一个好的开始'）以电影般的幅度和情感的深度征服了世界。Jónsi 用他自己发明的语言'Vonlenska'（希望语）演唱部分歌曲，强调声音本身的表达力超越了具体语义。",w:"https://zh.wikipedia.org/wiki/%C3%81g%C3%A6tis_byrjun"},
   {t:"The Earth Is Not a Cold Dead Place",a:"Explosions in the Sky",y:2003,g:["后摇滚","器乐摇滚","氛围"],pf:8.5,ry:3.78,rs:null,c:"https://upload.wikimedia.org/wikipedia/en/2/2b/The_Earth_Is_Not_a_Cold_Dead_Place.jpg",bio:"Explosions in the Sky 是德克萨斯州的器乐后摇滚四人组。他们仅用三把吉他和一套鼓创造了宏大、情感充沛的音乐叙事。《The Earth Is Not a Cold Dead Place》是一张关于爱与希望的专辑，尽管没有一个字的人声，却传达出了最深沉的人类情感。",w:"https://zh.wikipedia.org/wiki/The_Earth_Is_Not_a_Cold_Dead_Place"},
   // ── 扩充: R&B / 灵魂 / 当代 ──
-  {t:"Ctrl",a:"SZA",y:2017,g:["R&B","新灵魂乐","另类R&B"],pf:8.4,ry:3.57,rs:{r:472,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/4/4c/SZA_-_Ctrl.png",bio:"SZA 是美国 R&B 创作歌手。《Ctrl》是一个年轻女性对爱情、不安全感和自我控制的坦诚记录。她的歌词以罕见的诚实探讨了现代关系中的矛盾和焦虑，同时融合了 R&B、独立和嘻哈的多元音乐背景。专辑引发了无数年轻听众的共鸣，被视为新世纪 R&B 的里程碑。",w:"https://zh.wikipedia.org/wiki/Ctrl_(SZA_%E4%B8%93%E8%BE%91)"},
-  {t:"A Seat at the Table",a:"Solange",y:2016,g:["R&B","新灵魂乐","艺术流行"],pf:8.7,ry:3.64,rs:{r:312,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/1/13/Solange_-_A_Seat_at_the_Table.png",bio:"Solange 是 Beyoncé 的妹妹，但她以完全不同的方式定义了自己的艺术身份。《A Seat at the Table》是一张关于黑人身份、尊严和疗愈的专辑。她轻盈的R&B和流行声音包裹着不妥协的政治信息，专辑中穿插的口语诗片段来自 Master P 等黑人文化人物的沉思。",w:"https://zh.wikipedia.org/wiki/A_Seat_at_the_Table"},
+  {t:"Ctrl",a:"SZA",y:2017,g:["R&B","新灵魂乐","另类R&B"],pf:8.4,ry:3.57,rs:{r:472,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/4c/SZA_-_Ctrl.png",bio:"SZA 是美国 R&B 创作歌手。《Ctrl》是一个年轻女性对爱情、不安全感和自我控制的坦诚记录。她的歌词以罕见的诚实探讨了现代关系中的矛盾和焦虑，同时融合了 R&B、独立和嘻哈的多元音乐背景。专辑引发了无数年轻听众的共鸣，被视为新世纪 R&B 的里程碑。",w:"https://zh.wikipedia.org/wiki/Ctrl_(SZA_%E4%B8%93%E8%BE%91)"},
+  {t:"A Seat at the Table",a:"Solange",y:2016,g:["R&B","新灵魂乐","艺术流行"],pf:8.7,ry:3.64,rs:{r:312,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/1/13/Solange_-_A_Seat_at_the_Table.png",bio:"Solange 是 Beyoncé 的妹妹，但她以完全不同的方式定义了自己的艺术身份。《A Seat at the Table》是一张关于黑人身份、尊严和疗愈的专辑。她轻盈的R&B和流行声音包裹着不妥协的政治信息，专辑中穿插的口语诗片段来自 Master P 等黑人文化人物的沉思。",w:"https://zh.wikipedia.org/wiki/A_Seat_at_the_Table"},
   // ── 扩充: 前卫 / 实验摇滚 ──
-  {t:"In the Court of the Crimson King",a:"King Crimson",y:1969,g:["前卫摇滚","艺术摇滚","实验"],pf:9.0,ry:4.09,rs:{r:45,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/8/89/In_the_Court_of_the_Crimson_King_-_40th_Anniversary_Box_Set.jpg",bio:"King Crimson 是英国前卫摇滚的先驱，由吉他手 Robert Fripp 领导。《In the Court of the Crimson King》是他们的首张专辑，也是前卫摇滚流派的奠基之作。专辑以爵士般的即兴、古典式的编曲和 Mellotron 弦乐采样创造了一个宏伟而令人不安的声音世界。标志性的封面画作完美捕捉了音乐中的疯狂与美丽。",w:"https://zh.wikipedia.org/wiki/In_the_Court_of_the_Crimson_King"},
-  {t:"Close to the Edge",a:"Yes",y:1972,g:["前卫摇滚","交响摇滚"],pf:9.3,ry:4.00,rs:{r:189,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/9/9e/Yes_-_Close_to_the_Edge.jpg",bio:"Yes 是英国前卫摇滚的代表性乐队。《Close to the Edge》标题曲长达 18 分钟，占满整个 A 面——一首受 Hermann Hesse 小说启发的史诗级前卫组曲，融合了复杂的多声部和声、爵士融合的节奏和古典式的编曲。它代表了前卫摇滚在不牺牲音乐性前提下的最大野心。",w:"https://zh.wikipedia.org/wiki/Close_to_the_Edge"},
+  {t:"In the Court of the Crimson King",a:"King Crimson",y:1969,g:["前卫摇滚","艺术摇滚","实验"],pf:9.0,ry:4.09,rs:{r:45,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/8/89/In_the_Court_of_the_Crimson_King_-_40th_Anniversary_Box_Set.jpg",bio:"King Crimson 是英国前卫摇滚的先驱，由吉他手 Robert Fripp 领导。《In the Court of the Crimson King》是他们的首张专辑，也是前卫摇滚流派的奠基之作。专辑以爵士般的即兴、古典式的编曲和 Mellotron 弦乐采样创造了一个宏伟而令人不安的声音世界。标志性的封面画作完美捕捉了音乐中的疯狂与美丽。",w:"https://zh.wikipedia.org/wiki/In_the_Court_of_the_Crimson_King"},
+  {t:"Close to the Edge",a:"Yes",y:1972,g:["前卫摇滚","交响摇滚"],pf:9.3,ry:4.00,rs:{r:189,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/9/9e/Yes_-_Close_to_the_Edge.jpg",bio:"Yes 是英国前卫摇滚的代表性乐队。《Close to the Edge》标题曲长达 18 分钟，占满整个 A 面——一首受 Hermann Hesse 小说启发的史诗级前卫组曲，融合了复杂的多声部和声、爵士融合的节奏和古典式的编曲。它代表了前卫摇滚在不牺牲音乐性前提下的最大野心。",w:"https://zh.wikipedia.org/wiki/Close_to_the_Edge"},
   // ── 扩充: 蓝调 / 根源摇滚 ──
-  {t:"Texas Flood",a:"Stevie Ray Vaughan",y:1983,g:["蓝调摇滚","德克萨斯蓝调"],pf:9.0,ry:3.87,rs:{r:384,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/4/48/Stevie_Ray_Vaughan_-_Texas_Flood.jpg",bio:"Stevie Ray Vaughan 是蓝调摇滚复兴的标志性吉他手，与他的乐队 Double Trouble 重新点燃了 80 年代对蓝调的热情。《Texas Flood》是他的首张专辑，展示了惊人的吉他技术和深情演唱。Vaughan 于 1990 年因直升机坠毁去世，年仅 35 岁。",w:"https://zh.wikipedia.org/wiki/Texas_Flood"},
-  {t:"The Doors",a:"The Doors",y:1967,g:["迷幻摇滚","蓝调摇滚","酸性摇滚"],pf:8.9,ry:3.78,rs:{r:86,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/3/33/The_Doors_-_The_Doors.jpg",bio:"The Doors 是美国迷幻摇滚乐队，由诗人歌手 Jim Morrison、键盘手 Ray Manzarek、吉他手 Robby Krieger 和鼓手 John Densmore 组成。他们的首张专辑包含了《Light Your Fire》、《Break on Through》和长达 12 分钟的《The End》。Morrison 的诗歌背景和酒神式的舞台人格使 The Doors 成为 60 年代最具魅力和最危险的乐队之一。",w:"https://zh.wikipedia.org/wiki/The_Doors_(%E4%B8%93%E8%BE%91)"},
+  {t:"Texas Flood",a:"Stevie Ray Vaughan",y:1983,g:["蓝调摇滚","德克萨斯蓝调"],pf:9.0,ry:3.87,rs:{r:384,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/48/Stevie_Ray_Vaughan_-_Texas_Flood.jpg",bio:"Stevie Ray Vaughan 是蓝调摇滚复兴的标志性吉他手，与他的乐队 Double Trouble 重新点燃了 80 年代对蓝调的热情。《Texas Flood》是他的首张专辑，展示了惊人的吉他技术和深情演唱。Vaughan 于 1990 年因直升机坠毁去世，年仅 35 岁。",w:"https://zh.wikipedia.org/wiki/Texas_Flood"},
+  {t:"The Doors",a:"The Doors",y:1967,g:["迷幻摇滚","蓝调摇滚","酸性摇滚"],pf:8.9,ry:3.78,rs:{r:86,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/3/33/The_Doors_-_The_Doors.jpg",bio:"The Doors 是美国迷幻摇滚乐队，由诗人歌手 Jim Morrison、键盘手 Ray Manzarek、吉他手 Robby Krieger 和鼓手 John Densmore 组成。他们的首张专辑包含了《Light Your Fire》、《Break on Through》和长达 12 分钟的《The End》。Morrison 的诗歌背景和酒神式的舞台人格使 The Doors 成为 60 年代最具魅力和最危险的乐队之一。",w:"https://zh.wikipedia.org/wiki/The_Doors_(%E4%B8%93%E8%BE%91)"},
   // ── 扩充: 电子 / 舞曲 ──
-  {t:"Cosmogramma",a:"Flying Lotus",y:2010,g:["电子","实验嘻哈","IDM","融合爵士"],pf:8.8,ry:3.87,rs:{r:398,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/7/73/Flying_Lotus_-_Cosmogramma.jpg",bio:"Flying Lotus（Steven Ellison）是美国电子音乐制作人，John Coltrane 的侄孙。《Cosmogramma》将嘻哈节拍、爵士即兴、电子游戏音效和宇宙般的氛围以令人目不暇接的方式融合。他在专辑内页中写道：'这张专辑是一张太空歌剧，关于生死、平行宇宙和你从未听过的声音。'",w:"https://zh.wikipedia.org/wiki/Cosmogramma"},
-  {t:"Untrue",a:"Burial",y:2007,g:["Dubstep","Future Garage","氛围","电子"],pf:9.0,ry:4.10,rs:{r:193,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/d/d2/Burial_-_Untrue.png",bio:"Burial 是英国匿名电子音乐制作人，他的身份在很长时间内是音乐界的一个谜。《Untrue》以深夜伦敦为背景——雨声、地铁广播、打火机的咔嗒声和失真的 2-Step 节拍创造了一种孤独的都市氛围。专辑的声音听起来就像凌晨三点一个人在公交车站戴着耳机听的那些声音。",w:"https://zh.wikipedia.org/wiki/Untrue_(%E4%B8%93%E8%BE%91)"},
+  {t:"Cosmogramma",a:"Flying Lotus",y:2010,g:["电子","实验嘻哈","IDM","融合爵士"],pf:8.8,ry:3.87,rs:{r:398,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/7/73/Flying_Lotus_-_Cosmogramma.jpg",bio:"Flying Lotus（Steven Ellison）是美国电子音乐制作人，John Coltrane 的侄孙。《Cosmogramma》将嘻哈节拍、爵士即兴、电子游戏音效和宇宙般的氛围以令人目不暇接的方式融合。他在专辑内页中写道：'这张专辑是一张太空歌剧，关于生死、平行宇宙和你从未听过的声音。'",w:"https://zh.wikipedia.org/wiki/Cosmogramma"},
+  {t:"Untrue",a:"Burial",y:2007,g:["Dubstep","Future Garage","氛围","电子"],pf:9.0,ry:4.10,rs:{r:193,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/d/d2/Burial_-_Untrue.png",bio:"Burial 是英国匿名电子音乐制作人，他的身份在很长时间内是音乐界的一个谜。《Untrue》以深夜伦敦为背景——雨声、地铁广播、打火机的咔嗒声和失真的 2-Step 节拍创造了一种孤独的都市氛围。专辑的声音听起来就像凌晨三点一个人在公交车站戴着耳机听的那些声音。",w:"https://zh.wikipedia.org/wiki/Untrue_(%E4%B8%93%E8%BE%91)"},
   // ── 最后一批: 经典中的经典 ──
-  {t:"The Chronic",a:"Dr. Dre",y:1992,g:["西海岸嘻哈","G-Funk","匪帮说唱"],pf:9.6,ry:3.88,rs:{r:37,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/1/19/Dr.DreTheChronic.jpg",bio:"Dr. Dre 是美国最具影响力的嘻哈制作人之一，也是 Beats 耳机的联合创始人。《The Chronic》是西海岸 G-Funk 的定义性专辑——以慢速的放克律动、厚重的低音和合成器旋律重新定义了说唱的声音。这张专辑也向世界介绍了 Snoop Dogg。",w:"https://zh.wikipedia.org/wiki/The_Chronic"},
-  {t:"Boy in da Corner",a:"Dizzee Rascal",y:2003,g:["Grime","UK Garage","说唱"],pf:9.1,ry:3.81,rs:{r:224,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/a/ae/Dizzee_Rascal_-_Boy_in_da_Corner.jpg",bio:"Dizzee Rascal 是英国 Grime 运动的先驱，18 岁时就凭借《Boy in da Corner》获得水星音乐奖。这张专辑以极简的电子节拍、游戏机音效和尖锐的伦敦东区口音，记录了青少年在世界最繁华城市之一的底层生活的暴力、恐惧和梦想。",w:"https://zh.wikipedia.org/wiki/Boy_in_da_Corner"},
-  {t:"Fetch the Bolt Cutters",a:"Fiona Apple",y:2020,g:["艺术流行","实验","前卫"],pf:10,ry:3.76,rs:{r:315,ry:2020},c:"https://upload.wikimedia.org/wikipedia/en/6/6d/Fiona_Apple_-_Fetch_the_Bolt_Cutters.png",bio:"《Fetch the Bolt Cutters》是 Fiona Apple 时隔八年的回归之作，Pitchfork 在十年后终于再次给出了 10 分满分。这张专辑几乎没有传统的歌曲结构——她使用手鼓、狗的叫声、拍手和家庭物品作为打击乐器，创作了一系列关于女性愤怒、自由和突破牢笼的原始呐喊。",w:"https://zh.wikipedia.org/wiki/Fetch_the_Bolt_Cutters"},
+  {t:"The Chronic",a:"Dr. Dre",y:1992,g:["西海岸嘻哈","G-Funk","匪帮说唱"],pf:9.6,ry:3.88,rs:{r:37,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/1/19/Dr.DreTheChronic.jpg",bio:"Dr. Dre 是美国最具影响力的嘻哈制作人之一，也是 Beats 耳机的联合创始人。《The Chronic》是西海岸 G-Funk 的定义性专辑——以慢速的放克律动、厚重的低音和合成器旋律重新定义了说唱的声音。这张专辑也向世界介绍了 Snoop Dogg。",w:"https://zh.wikipedia.org/wiki/The_Chronic"},
+  {t:"Boy in da Corner",a:"Dizzee Rascal",y:2003,g:["Grime","UK Garage","说唱"],pf:9.1,ry:3.81,rs:{r:224,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/a/ae/Dizzee_Rascal_-_Boy_in_da_Corner.jpg",bio:"Dizzee Rascal 是英国 Grime 运动的先驱，18 岁时就凭借《Boy in da Corner》获得水星音乐奖。这张专辑以极简的电子节拍、游戏机音效和尖锐的伦敦东区口音，记录了青少年在世界最繁华城市之一的底层生活的暴力、恐惧和梦想。",w:"https://zh.wikipedia.org/wiki/Boy_in_da_Corner"},
+  {t:"Fetch the Bolt Cutters",a:"Fiona Apple",y:2020,g:["艺术流行","实验","前卫"],pf:10,ry:3.76,rs:{r:315,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/6/6d/Fiona_Apple_-_Fetch_the_Bolt_Cutters.png",bio:"《Fetch the Bolt Cutters》是 Fiona Apple 时隔八年的回归之作，Pitchfork 在十年后终于再次给出了 10 分满分。这张专辑几乎没有传统的歌曲结构——她使用手鼓、狗的叫声、拍手和家庭物品作为打击乐器，创作了一系列关于女性愤怒、自由和突破牢笼的原始呐喊。",w:"https://zh.wikipedia.org/wiki/Fetch_the_Bolt_Cutters"},
+  // ── 2024 扩充: 当代经典 / 新锐之作 ──
+  {t:"Ants From Up There",a:"Black Country, New Road",y:2022,g:["艺术摇滚","后摇滚","室内流行"],pf:9.2,ry:3.92,rs:{r:482,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/8/8c/Black_Country%2C_New_Road_-_Ants_From_Up_There.png",bio:"Black Country, New Road 是英国剑桥的七人实验摇滚乐队。他们以极快的进化速度著称——首专和第二张专辑之间仅相隔一年，风格却完全不同。《Ants From Up There》融合了后摇滚、室内流行和独立摇滚，主唱 Isaac Wood 在专辑发行前离队，使得这张作品成为这个阵容的绝唱。",w:"https://zh.wikipedia.org/wiki/Ants_From_Up_There"},
+  {t:"Dragon New Warm Mountain I Believe in You",a:"Big Thief",y:2022,g:["独立民谣","独立摇滚","美国根源"],pf:9.0,ry:3.72,rs:{r:429,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/0/0e/Big_Thief_-_Dragon_New_Warm_Mountain_I_Believe_in_You.png",bio:"Big Thief 是美国布鲁克林的独立民谣/摇滚四人组，由 Adrianne Lenker 领衔。《Dragon New Warm Mountain...》是一张长达 80 分钟的双专辑，游走在温柔的乡村民谣、爆炸性的独立摇滚和迷幻实验之间。Lenker 的歌曲创作既根植于自然，又充满了超现实主义的奇想。",w:"https://zh.wikipedia.org/wiki/Dragon_New_Warm_Mountain_I_Believe_in_You"},
+  {t:"Punisher",a:"Phoebe Bridgers",y:2020,g:["独立民谣","独立摇滚","创作歌手"],pf:8.7,ry:3.65,rs:{r:452,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/8/8b/Phoebe_Bridgers_-_Punisher.png",bio:"Phoebe Bridgers 是洛杉矶的独立创作歌手，以黑色幽默和极度私密的歌词著称。《Punisher》以关于死亡、抑郁和偶像崇拜的歌曲构建了一个既脆弱又坚强的声音世界。专辑中她甚至幻想与自己的音乐偶像 Elliott Smith 对话——'如果我能把话说完，他会喜欢我的歌吗？'",w:"https://zh.wikipedia.org/wiki/Punisher"},
+  {t:"IGOR",a:"Tyler, the Creator",y:2019,g:["另类嘻哈","新灵魂乐","合成器放克"],pf:8.0,ry:3.69,rs:{r:438,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/51/Igor_-_Tyler%2C_the_Creator.png",bio:"《IGOR》是 Tyler 的第五张专辑，完全由他自己创作、制作和编曲。专辑讲述了一个三角恋故事，Tyler 以变调的人声和复古合成器创造了一种既像 70 年代灵魂乐又像未来主义的独特声音。这张专辑使他首次获得格莱美最佳说唱专辑奖——尽管他本人认为这根本不是一张说唱专辑。",w:"https://zh.wikipedia.org/wiki/Igor_(%E4%B8%93%E8%BE%91)"},
+  {t:"Heaven or Las Vegas",a:"Cocteau Twins",y:1990,g:["梦幻流行","自赏","另类"],pf:9.0,ry:3.86,rs:{r:245,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/6/6f/Cocteau_Twins_-_Heaven_or_Las_Vegas.jpg",bio:"Cocteau Twins 是苏格兰梦幻流行（Dream Pop）三人组，Elizabeth Fraser 的歌声是他们的标志——她经常以无意义的音节演唱，将人声纯粹作为一种乐器使用。《Heaven or Las Vegas》是他们最温暖、最易于接近的专辑，Fraser 的光芒与 Robin Guthrie 的层叠吉他相得益彰。",w:"https://zh.wikipedia.org/wiki/Heaven_or_Las_Vegas"},
+  {t:"Pink Moon",a:"Nick Drake",y:1972,g:["民谣","创作歌手","室内民谣"],pf:10,ry:4.07,rs:{r:137,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/f/fd/Nick_Drake_-_Pink_Moon.jpg",bio:"Nick Drake 是英国民谣歌手，生前几乎不为人知。1974 年，26 岁的他因抗抑郁药物过量去世。他的三张录音室专辑在他在世时总共只卖出了几千张，但几十年后，他的音乐被重新发现并成为传奇。《Pink Moon》只有 28 分钟——仅有 Drake 的声音和吉他，像一封来自深夜的私人信件。",w:"https://zh.wikipedia.org/wiki/Pink_Moon"},
+  {t:"Grace",a:"Jeff Buckley",y:1994,g:["另类摇滚","创作歌手","民谣摇滚"],pf:9.0,ry:3.92,rs:{r:147,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/5b/Jeff_Buckley_-_Grace.jpg",bio:"Jeff Buckley 是美国创作歌手，拥有天使般的嗓音和惊人的音域。《Grace》是他的首张也是唯一完成的一张录音室专辑。主打歌《Hallelujah》（翻唱 Leonard Cohen）几乎重新定义了这首歌。Buckley 于 1997 年在密西西比河游泳时意外溺亡，年仅 30 岁。这张专辑成为了一代听众心中不朽的传奇。",w:"https://zh.wikipedia.org/wiki/Grace_(Jeff_Buckley_%E4%B8%93%E8%BE%91)"},
+  {t:"Siamese Dream",a:"The Smashing Pumpkins",y:1993,g:["另类摇滚","垃圾摇滚","自赏"],pf:9.4,ry:3.81,rs:{r:190,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/20/Smashing_Pumpkins_-_Siamese_Dream.jpg",bio:"The Smashing Pumpkins 是芝加哥的另类摇滚乐队，由 Billy Corgan 领导。在垃圾摇滚席卷一切的年代，《Siamese Dream》以层层叠加的吉他音墙和梦幻般的制作脱颖而出。Corgan 以近乎偏执的完美主义亲自录制了大部分吉他和贝斯部分，结果是一张兼具力量与美感的杰作。",w:"https://zh.wikipedia.org/wiki/Siamese_Dream"},
+  {t:"Ten",a:"Pearl Jam",y:1991,g:["垃圾摇滚","另类摇滚","硬摇滚"],pf:8.5,ry:3.64,rs:{r:160,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/51/Pearl_Jam_-_Ten.jpg",bio:"Pearl Jam 是西雅图垃圾摇滚四巨头之一。《Ten》是他们的首张专辑，也是垃圾摇滚商业化最成功的作品之一。Eddie Vedder 深沉的男中音和乐队富有感染力的摇滚旋律让《Alive》、《Jeremy》和《Black》成为了 90 年代摇滚电台的常客。",w:"https://zh.wikipedia.org/wiki/Ten_(Pearl_Jam_%E4%B8%93%E8%BE%91)"},
+  {t:"Automatic for the People",a:"R.E.M.",y:1992,g:["另类摇滚","民谣摇滚","室内流行"],pf:9.3,ry:3.72,rs:{r:96,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/1/1f/Automatic_for_the_People.jpg",bio:"R.E.M. 是美国另类摇滚的先驱，从 80 年代的地下乐队成长为 90 年代全球最成功的乐队之一。《Automatic for the People》是他们最具深度和情感的作品，由 John Paul Jones（Led Zeppelin）编曲的弦乐贯穿整张专辑。充满关于死亡、衰老和南方的沉思——'这是一张关于垂死的专辑'，但同时也异常温暖。",w:"https://zh.wikipedia.org/wiki/Automatic_for_the_People"},
+  {t:"Carrie & Lowell",a:"Sufjan Stevens",y:2015,g:["独立民谣","创作歌手","低保真"],pf:9.3,ry:3.87,rs:{r:322,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/22/Sufjan_Stevens_-_Carrie_%26_Lowell.jpg",bio:"Sufjan Stevens 是美国独立音乐最多产、最不可预测的创作人之一。《Carrie & Lowell》以他已故的母亲和继父命名，是一张关于童年、遗弃、信仰和死亡的极简主义杰作。Stevens 抛弃了之前作品中的管弦乐编排，仅以轻柔的指弹吉他和耳语般的人声，创造了最私密也最令人心碎的作品。",w:"https://zh.wikipedia.org/wiki/Carrie_%26_Lowell"},
+  {t:"A Moon Shaped Pool",a:"Radiohead",y:2016,g:["艺术摇滚","电子","氛围","室内流行"],pf:9.1,ry:3.75,rs:{r:256,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/4f/A_Moon_Shaped_Pool.jpg",bio:"《A Moon Shaped Pool》是 Radiohead 的第九张录音室专辑，也是他们最温暖、最具管弦乐色彩的作品。Jonny Greenwood 的弦乐编曲和 London Contemporary Orchestra 的演奏为专辑披上了一层银色光泽。多首歌曲是在多年前创作的——《True Love Waits》等了二十年才找到它的最终形态。",w:"https://zh.wikipedia.org/wiki/A_Moon_Shaped_Pool"},
+  {t:"The Soft Bulletin",a:"The Flaming Lips",y:1999,g:["新迷幻","室内流行","实验流行"],pf:10,ry:3.91,rs:{r:128,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/b/bb/Flaming_Lips_-_The_Soft_Bulletin.jpg",bio:"The Flaming Lips 是俄克拉荷马的迷幻摇滚乐队，以奇特的现场表演（主唱 Wayne Coyne 曾在巨型塑料气泡中滚过观众）著称。《The Soft Bulletin》放弃了传统的吉他摇滚，拥抱了管弦乐和合成器，创作了一系列关于生命、死亡和科学的宏大歌曲。'这两只头在科学面前感到无能为力。'",w:"https://zh.wikipedia.org/wiki/The_Soft_Bulletin"},
+  {t:"Whatever People Say I Am...",a:"Arctic Monkeys",y:2006,g:["独立摇滚","车库摇滚","后朋克"],pf:8.9,ry:3.56,rs:{r:371,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/2c/Arctic_Monkeys_-_Whatever_People_Say_I_Am%2C_That%27s_What_I%27m_Not.png",bio:"Arctic Monkeys 是英国谢菲尔德的独立摇滚乐队。首张专辑是当时英国历史上销售最快的首张专辑，以 Alex Turner 的机智歌词和对夜间生活的生动描绘著称。歌曲讲述了出租车长队、酒吧斗殴和被警察追捕的夜晚，成为了一代英国青年的文化快照。",w:"https://zh.wikipedia.org/wiki/Whatever_People_Say_I_Am%2C_That%27s_What_I%27m_Not"},
+  {t:"For Emma, Forever Ago",a:"Bon Iver",y:2007,g:["独立民谣","低保真","室内流行"],pf:8.5,ry:3.68,rs:{r:362,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/c/c9/Bon_Iver_-_For_Emma%2C_Forever_Ago.png",bio:"Bon Iver 是 Justin Vernon 的个人项目。在乐队解散、单核细胞增多症和分手的三重打击之后，Vernon 躲进了威斯康星州北部他父亲的狩猎小屋。在那里，他独自度过了整个冬天，用一台老式录音设备录制了《For Emma, Forever Ago》。专辑中的假声和孤独的吉他是寒冷、疗愈和重生的声音。",w:"https://zh.wikipedia.org/wiki/For_Emma%2C_Forever_Ago"},
+  {t:"Helplessness Blues",a:"Fleet Foxes",y:2011,g:["独立民谣","室内流行","巴洛克流行"],pf:8.8,ry:3.76,rs:{r:394,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/3/39/Fleet_Foxes_-_Helplessness_Blues.jpg",bio:"Fleet Foxes 是西雅图的独立民谣乐队，以精致的人声和声和文学性歌词著称。主唱 Robin Pecknold 在《Helplessness Blues》中质疑了现代社会中个体自我的位置——'我曾经是个雪豹，在树林间穿梭'。专辑融合了 60 年代民谣的温暖与现代独立音乐的敏感。",w:"https://zh.wikipedia.org/wiki/Helplessness_Blues"},
+  {t:"Teen Dream",a:"Beach House",y:2010,g:["梦幻流行","独立流行","自赏"],pf:9.0,ry:3.66,rs:{r:449,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/6/69/Beach_House_-_Teen_Dream.jpg",bio:"Beach House 是巴尔的摩的二人梦幻流行乐队。Victoria Legrand 的低沉嗓音和 Alex Scally 的闪烁吉他创造了独属于他们的朦胧声音世界。《Teen Dream》是他们从低保真走向更广阔制作的突破之作，每首歌都像是一个夏日黄昏的慢镜头。",w:"https://zh.wikipedia.org/wiki/Teen_Dream"},
+  {t:"xx",a:"The xx",y:2009,g:["独立流行","梦幻流行","极简电子"],pf:8.7,ry:3.62,rs:{r:423,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/47/The_xx_-_xx.jpg",bio:"The xx 是伦敦的三人独立流行乐队。他们的首张专辑《xx》以极简主义为核心——两个声音之间的对话、干净的单音符吉他线和空间感极强的电子节拍。在流行音乐愈发花哨的 2000 年代末，The xx 用'少即是多'证明了沉默和留白本身也是最动人的音乐元素。",w:"https://zh.wikipedia.org/wiki/Xx_(%E4%B8%93%E8%BE%91)"},
+  {t:"Folklore",a:"Taylor Swift",y:2020,g:["独立民谣","室内流行","另类"],pf:8.0,ry:3.48,rs:{r:170,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/f/f8/Taylor_Swift_-_Folklore.png",bio:"在疫情隔离期间，Taylor Swift 抛弃了流行巨星的制作模式，与 The National 的 Aaron Dessner 合作创作了一张安静、文学性的独立民谣专辑。《Folklore》中她开始讲述虚构角色的故事——一个三角恋、一个二战老兵、一个被社会遗弃的女继承人。这张专辑呈现了 Swift 作为词曲作者最成熟的面向。",w:"https://zh.wikipedia.org/wiki/Folklore_(Taylor_Swift_%E4%B8%93%E8%BE%91)"},
+  {t:"Pinata",a:"Freddie Gibbs & Madlib",y:2014,g:["嘻哈","匪帮说唱","实验嘻哈"],pf:8.8,ry:3.88,rs:{r:444,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/6/64/Freddie_Gibbs_%26_Madlib_-_Pi%C3%B1ata.jpg",bio:"Freddie Gibbs 是印第安纳州加里出身的说唱歌手，以流畅的技巧和真实的街头歌词著称。制作人 Madlib 则来自完全不同的世界——加州的地下实验嘻哈。两人看似不搭的组合却创造了奇妙的化学反应。《Pinata》充满了 70 年代 Blaxploitation 电影的氛围和 Gibbs 的硬核叙事。",w:"https://zh.wikipedia.org/wiki/Pi%C3%B1ata_(Freddie_Gibbs_and_Madlib_%E4%B8%93%E8%BE%91)"},
+  {t:"Atrocity Exhibition",a:"Danny Brown",y:2016,g:["实验嘻哈","硬核说唱","工业嘻哈"],pf:8.9,ry:3.80,rs:{r:387,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/7/7a/Danny_Brown_-_Atrocity_Exhibition.jpg",bio:"Danny Brown 是底特律最独特的说唱歌手之一——他的声音可以像卡通人物一样尖锐，也可以低沉地讲述街头暴力和药物成瘾。《Atrocity Exhibition》以 Joy Division 和 Talking Heads 为灵感，在工业噪音和后朋克节拍上编织了关于精神崩溃和自我毁灭的恐怖叙事。",w:"https://zh.wikipedia.org/wiki/Atrocity_Exhibition_(%E4%B8%93%E8%BE%91)"},
+  {t:"Some Rap Songs",a:"Earl Sweatshirt",y:2018,g:["抽象嘻哈","低保真说唱","实验"],pf:8.8,ry:3.72,rs:{r:448,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/6/6f/Earl_Sweatshirt_-_Some_Rap_Songs.jpg",bio:"Earl Sweatshirt 是 Odd Future 团体中最具文学性的成员。《Some Rap Songs》全长仅 24 分钟，15 首歌曲像碎片一样拼接在一起——短促、模糊、循环的采样和 Earl 低声的呢喃。这张专辑是在他父亲去世和经历抑郁后创作的，听起来像是一个人在拼凑破碎的思绪。",w:"https://zh.wikipedia.org/wiki/Some_Rap_Songs"},
+  {t:"El Mal Querer",a:"Rosalía",y:2018,g:["弗拉门戈流行","另类R&B","实验"],pf:8.8,ry:3.67,rs:{r:340,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/46/Rosal%C3%ADa_-_El_Mal_Querer.png",bio:"Rosalía 是西班牙弗拉门戈歌手，将传统弗拉门戈与现代 R&B、电子和流行音乐大胆融合。《El Mal Querer》以 13 世纪奥克语小说《Flamenca》为概念蓝本，每首歌代表一段有毒关系的章节。专辑将拍手声、吉他扫弦和合成器低音完美地编织在一起，创造了一种全新的全球流行音乐语言。",w:"https://zh.wikipedia.org/wiki/El_Mal_Querer"},
+  {t:"Clube da Esquina",a:"Milton Nascimento & Lô Borges",y:1972,g:["巴西流行","MPB","前卫民谣","迷幻"],pf:9.5,ry:4.10,rs:{r:301,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/5e/Clube_da_Esquina_%28album%29.jpg",bio:"Milton Nascimento 是巴西最伟大的音乐家之一，拥有令人难以置信的宽广音域。《Clube da Esquina》是他与 Lô Borges 以及一群来自米纳斯吉拉斯州贝洛奥里藏特的年轻音乐家合作的作品。专辑融合了 Beatles 式的流行、巴西节奏、爵士和声和迷幻元素，被认为是巴西流行音乐史上最伟大的专辑。",w:"https://zh.wikipedia.org/wiki/Clube_da_Esquina"},
+  {t:"Richard D. James Album",a:"Aphex Twin",y:1996,g:["IDM","电子","实验","Drill 'n' Bass"],pf:9.2,ry:3.95,rs:{r:376,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/26/Aphex_Twin_-_Richard_D._James_Album.jpg",bio:"《Richard D. James Album》是 Aphex Twin 最私人也最异想天开的作品之一。在极速的 Drill 'n' Bass 鼓点和扭曲的合成器之间，James 将自己的面孔放在了封面上，并用多首短小精悍的曲目展示了他同时驾驭优美旋律和极端节奏的能力。专辑中的《Girl/Boy Song》是被采样最多的电子作品之一。",w:"https://zh.wikipedia.org/wiki/Richard_D._James_Album"},
+  {t:"Sound of Silver",a:"LCD Soundsystem",y:2007,g:["舞曲朋克","电子","独立"],pf:9.2,ry:3.84,rs:{r:233,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/6/6a/LCD_Soundsystem_-_Sound_of_Silver.jpg",bio:"LCD Soundsystem 是 James Murphy 领导的纽约舞曲朋克项目。《Sound of Silver》将 Talking Heads 的艺术朋克、Kraftwerk 的电子脉冲和 David Bowie 的柏林时期融合，创作了关于变老、友谊和在纽约生存的歌曲。《All My Friends》是 2000 年代最受好评的歌曲之一——以不断加速的钢琴动机唱出了对流逝时光的挽歌。",w:"https://zh.wikipedia.org/wiki/Sound_of_Silver"},
+  {t:"Renaissance",a:"Beyoncé",y:2022,g:["舞曲","浩室","迪斯科","R&B"],pf:8.8,ry:3.65,rs:{r:89,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/5/5f/Beyonc%C3%A9_-_Renaissance.png",bio:"《Renaissance》是 Beyoncé 向黑人酷儿舞曲文化致敬的作品。专辑穿梭于 70 年代迪斯科、80 年代浩室和 90 年代 Ballroom 文化之间，采样了众多黑人舞曲和电子音乐的先驱。这是一次对自由、解放和舞池疗愈力量的庆祝。'不要试图理解它，去感受它。'",w:"https://zh.wikipedia.org/wiki/Renaissance_(Beyonc%C3%A9_%E4%B8%93%E8%BE%91)"},
+  {t:"After Hours",a:"The Weeknd",y:2020,g:["合成器流行","R&B","新浪潮"],pf:7.9,ry:3.42,rs:{r:439,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/c/c1/The_Weeknd_-_After_Hours.png",bio:"The Weeknd 是加拿大的 R&B 巨星。在《After Hours》中，他塑造了一个身穿红色西装、面部缠满绷带的反派形象，讲述了一段迷失在拉斯维加斯夜晚的自毁式爱情故事。主打歌《Blinding Lights》在全球排行榜上停留了创纪录的时间，将 80 年代的合成器声音重新带回了流行音乐的主流。",w:"https://zh.wikipedia.org/wiki/After_Hours_(The_Weeknd_%E4%B8%93%E8%BE%91)"},
+  {t:"Hellfire",a:"black midi",y:2022,g:["实验摇滚","前卫摇滚","噪音摇滚","爵士融合"],pf:9.0,ry:3.72,rs:null,c:"https://upload.wikimedia.org/wikipedia/en/9/92/Black_Midi_-_Hellfire.png",bio:"black midi 是伦敦最令人兴奋的年轻实验摇滚乐队之一。《Hellfire》是一张以地狱为主题的概念专辑——每首歌描绘一个不同的罪人。乐队以 Jazz 般的即兴能力、数学摇滚式的复杂节拍和说书人式的叙事著称。主唱 Geordie Greep 的戏剧化演唱方式让每首歌都像一场微型歌剧。",w:"https://zh.wikipedia.org/wiki/Hellfire_(black_midi_%E4%B8%93%E8%BE%91)"},
+  {t:"Twin Fantasy",a:"Car Seat Headrest",y:2018,g:["独立摇滚","低保真","另类"],pf:8.6,ry:3.68,rs:{r:466,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/8/8e/Car_Seat_Headrest_-_Twin_Fantasy.png",bio:"Car Seat Headrest 是 Will Toledo 的个人项目，他在大学期间将整张专辑上传到 Bandcamp。《Twin Fantasy》最初于 2011 年在业余条件下录制，2018 年又用专业设备重录了整张专辑。这是一个关于同性恋爱、自我认同和青少年焦虑的故事，Toledo 的诚实将个人经验转化为了一代人的集体记忆。",w:"https://zh.wikipedia.org/wiki/Twin_Fantasy"},
+  {t:"Different Class",a:"Pulp",y:1995,g:["英伦摇滚","艺术摇滚","新浪潮"],pf:8.9,ry:3.75,rs:{r:169,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/8/8a/Pulp_-_Different_Class.jpg",bio:"Pulp 是英国谢菲尔德的 Britpop 乐队，由魅力十足的主唱 Jarvis Cocker 领导。当 Oasis 和 Blur 在为排行榜第一名争斗时，Pulp 创作了《Different Class》——一张关于阶级、性和英国社会不平等的锋利专辑。《Common People》成为了 Britpop 时代的标志性歌曲——一个富家女想要'像普通人一样生活'的故事。",w:"https://zh.wikipedia.org/wiki/Different_Class"},
+  {t:"Superunknown",a:"Soundgarden",y:1994,g:["垃圾摇滚","另类金属","重金属"],pf:8.5,ry:3.70,rs:{r:305,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/3/3d/Soundgarden_-_Superunknown.jpg",bio:"Soundgarden 是西雅图垃圾摇滚四人组，由 Chris Cornell 领衔——他的音域跨越四个八度，是有史以来最伟大的摇滚歌手之一。《Superunknown》是他们的突破之作，从沉重的 Black Sabbath 式 Riff 到 Beatles 式的迷幻旋律，展示了乐队惊人的音乐广度。《Black Hole Sun》的超现实主义 MV 成为了 MTV 时代的标志。",w:"https://zh.wikipedia.org/wiki/Superunknown"},
+  {t:"If You're Feeling Sinister",a:"Belle and Sebastian",y:1996,g:["独立流行","室内流行","Twee Pop"],pf:9.2,ry:3.79,rs:{r:386,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/3/33/Belle_and_Sebastian_-_If_You%27re_Feeling_Sinister.jpg",bio:"Belle and Sebastian 是格拉斯哥的独立流行乐队，由 Stuart Murdoch 领导。他们的音乐充满了文学气息——歌曲中的人物读着犹太作家、在教堂里偷情、思考自杀但最终选择活下去。《If You're Feeling Sinister》以 60 年代法国流行乐和独立民谣为底色，是独立音乐中最温柔也最机智的作品之一。",w:"https://zh.wikipedia.org/wiki/If_You%27re_Feeling_Sinister"},
+  {t:"The Lonesome Crowded West",a:"Modest Mouse",y:1997,g:["独立摇滚","低保真","情绪硬核"],pf:9.0,ry:3.87,rs:{r:338,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/4/42/Modest_Mouse_-_The_Lonesome_Crowded_West.jpg",bio:"《The Lonesome Crowded West》是 Modest Mouse 的第二张专辑，也是 90 年代独立摇滚最愤怒、最沮丧但也最具活力的作品之一。Isaac Brock 对着购物中心、郊区蔓延和美国消费主义发出绝望的嘶吼。吉他在极端的动态中扭曲和尖啸，仿佛高速公路和停车场正在吞噬整个美洲大陆。",w:"https://zh.wikipedia.org/wiki/The_Lonesome_Crowded_West"},
+  {t:"Transa",a:"Caetano Veloso",y:1972,g:["MPB","Tropicália","迷幻民谣"],pf:9.3,ry:3.95,rs:{r:229,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/1/1b/Caetano_Veloso_-_Transa.jpg",bio:"Caetano Veloso 是巴西 Tropicália 运动的核心人物之一。在 1969 年被巴西军政府驱逐后，他在伦敦流亡期间录制了《Transa》。专辑以葡萄牙语和英语演唱，将巴西节奏、迷幻摇滚和实验音乐融为一体，是对故土的深切思念和流亡者的无处安放。",w:"https://zh.wikipedia.org/wiki/Transa"},
+  {t:"1999",a:"Joey Bada$$",y:2012,g:["东海岸嘻哈","爵士说唱","Boom Bap"],pf:8.1,ry:3.51,rs:null,c:"https://upload.wikimedia.org/wikipedia/en/f/f9/Joey_Bada%24%24_-_1999.jpg",bio:"Joey Bada$$ 发布《1999》时只有 17 岁，但这张混音带听起来像是 90 年代纽约嘻哈黄金时代的复活。Pro Era 团体的制作人们提供了温暖的爵士采样和 Boom Bap 鼓点，而年轻的 Joey 展示了他超出年龄的押韵技巧和街头智慧。它提醒了世界：传统嘻哈精神从未消亡。",w:"https://zh.wikipedia.org/wiki/1999_(Joey_Bada$$_%E4%B8%93%E8%BE%91)"},
+  {t:"Debut",a:"Björk",y:1993,g:["电子","艺术流行","Trip-Hop","House"],pf:9.0,ry:3.78,rs:{r:347,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/2c/Bj%C3%B6rk_-_Debut.png",bio:"尽管名为《Debut》（首张专辑），这实际上是 Björk 的第三张个人作品——但这张专辑真正向世界介绍了她独一无二的音乐人格。从 90 年代早期的 House 和 Trip-Hop 节奏中汲取灵感，Björk 将冰岛的广袤自然与伦敦的俱乐部文化融合，创造了一种全球化之前就已经是全球化的声音。",w:"https://zh.wikipedia.org/wiki/Debut_(Bj%C3%B6rk_%E4%B8%93%E8%BE%91)"},
+  {t:"Bryter Layter",a:"Nick Drake",y:1970,g:["民谣","室内流行","创作歌手"],pf:9.5,ry:4.02,rs:{r:245,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/f/f1/Nick_Drake_-_Bryter_Layter.jpg",bio:"Nick Drake 的第二张专辑比首专《Five Leaves Left》更加明亮、更有编排——加入了钢琴、弦乐和长笛。但 Drake 的歌声依然是那不可模仿的沉静忧郁。专辑中的《Northern Sky》被誉为民谣音乐中最完美的情歌之一。然而专辑仅售出了不到 3000 张，Drake 对此深感失望。",w:"https://zh.wikipedia.org/wiki/Bryter_Layter"},
+  {t:"Violator",a:"Depeche Mode",y:1990,g:["合成器流行","另类舞曲","暗潮"],pf:8.8,ry:3.79,rs:{r:167,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/2/25/Depeche_Mode_-_Violator.png",bio:"Depeche Mode 是英国合成器流行/暗潮乐队。《Violator》是他们商业上最成功的作品，将黑暗的电子节拍与摇滚吉他和哥特式的情感融合——《Personal Jesus》的蓝调 Riff 和《Enjoy the Silence》的极简主义流行在 90 年代初定义了另类舞曲的方向。",w:"https://zh.wikipedia.org/wiki/Violator_(%E4%B8%93%E8%BE%91)"},
+  {t:"Psychocandy",a:"The Jesus and Mary Chain",y:1985,g:["噪音流行","自赏","另类摇滚"],pf:9.3,ry:3.93,rs:{r:385,ry:2023},c:"https://upload.wikimedia.org/wikipedia/en/6/63/The_Jesus_and_Mary_Chain_-_Psychocandy.jpg",bio:"The Jesus and Mary Chain 是苏格兰兄弟二人组。他们将 Beach Boys 式的甜美流行旋律埋在了一堵刺耳的吉他反馈噪音墙之下。《Psychocandy》的首场演出仅持续了 15 分钟就引发了骚乱——观众不知道该如何应对这种既温柔又暴力的声音。但这种矛盾和冲突正是他们的艺术核心。",w:"https://zh.wikipedia.org/wiki/Psychocandy"},
 ];
 
 // Remove duplicates (by title+artist)
@@ -427,10 +505,10 @@ let isDaily = true;
 let history = []; // stores indices
 
 // ═══════════════════════════════════════════
-//  Cover art — iTunes API + cache + fallback
+//  Cover art — multi-source: iTunes → MusicBrainz → embedded → gradient
 // ═══════════════════════════════════════════
 
-const coverCache = new Map(); // album key -> { url, source }
+const coverCache = new Map();
 
 function coverCacheKey(album) {
   return (album.t + '|' + album.a).toLowerCase().replace(/\s+/g, ' ');
@@ -445,61 +523,99 @@ function hashForGradient(str) {
 function getGradientCSS(album) {
   const h = hashForGradient(album.t + album.a);
   const hue1 = h % 360;
-  const hue2 = (hue1 + 40 + (h % 60)) % 360;
+  const hue2 = (hue1 + 35 + (h % 50)) % 360;
   const sat = 50 + (h % 30);
-  const light1 = 22 + (h % 12);
-  const light2 = 12 + ((h >> 8) % 10);
-  return `linear-gradient(135deg, hsl(${hue1},${sat}%,${light1}%) 0%, hsl(${hue2},${sat-10}%,${light2}%) 100%)`;
+  const light1 = 40 + (h % 12);
+  const light2 = 22 + ((h >> 8) % 10);
+  return `linear-gradient(135deg, hsl(${hue1},${sat}%,${light1}%) 0%, hsl(${hue2},${sat-5}%,${light2}%) 100%)`;
 }
 
-// Try iTunes Search API first (no key, CORS-friendly, hi-res covers)
+// ── iTunes Search — score + try multiple results ──
 async function fetchITunesCover(album) {
-  const query = encodeURIComponent(album.t + ' ' + album.a);
-  const url = `https://itunes.apple.com/search?term=${query}&entity=album&limit=3`;
+  const queries = [
+    encodeURIComponent(album.a + ' ' + album.t + ' ' + album.y),
+    encodeURIComponent(album.t + ' ' + album.a),
+    encodeURIComponent(album.a + ' ' + album.t)
+  ];
+  for (const query of queries) {
+    const url = `https://itunes.apple.com/search?term=${query}&entity=album&limit=8`;
+    try {
+      const resp = await fetch(url);
+      if (!resp.ok) continue;
+      const data = await resp.json();
+      if (!data.results || data.results.length === 0) continue;
+
+      const artistLower = album.a.toLowerCase();
+      const titleLower = album.t.toLowerCase();
+
+      // Score and sort all results
+      const scored = data.results.map(r => {
+        let score = 0;
+        const rArtist = (r.artistName || '').toLowerCase();
+        const rTitle = (r.collectionName || '').toLowerCase();
+        const rYear = r.releaseDate ? new Date(r.releaseDate).getFullYear() : 0;
+        if (rArtist === artistLower) score += 5;
+        else if (rArtist.includes(artistLower) || artistLower.includes(rArtist)) score += 2;
+        if (rTitle === titleLower) score += 5;
+        else if (rTitle.includes(titleLower) || titleLower.includes(rTitle)) score += 2;
+        if (rYear === album.y) score += 2;
+        if (r.collectionExplicitness === 'notExplicit' || r.trackCount > 3) score += 0; // prefer real albums
+        return { url: (r.artworkUrl100 || '').replace(/100x100bb/, '600x600bb'), score };
+      });
+
+      // Try each result in score order until one loads
+      scored.sort((a, b) => b.score - a.score);
+      for (const s of scored) {
+        if (!s.url || s.score < 1) continue;
+        if (await testImage(s.url)) return s.url;
+      }
+    } catch { continue; }
+  }
+  return null;
+}
+
+// ── MusicBrainz → Cover Art Archive ──
+async function fetchMBcover(album) {
   try {
-    const resp = await fetch(url);
+    const query = encodeURIComponent(`artist:"${album.a}" AND release:"${album.t}"`);
+    const mbUrl = `https://musicbrainz.org/ws/2/release/?query=${query}&fmt=json&limit=5`;
+    const resp = await fetch(mbUrl, { headers: { 'User-Agent': 'AlbumApp/1.0' } });
     if (!resp.ok) return null;
     const data = await resp.json();
-    if (!data.results || data.results.length === 0) return null;
-    // Find best match — prefer exact artist match
-    let best = data.results[0];
-    const artistLower = album.a.toLowerCase();
-    for (const r of data.results) {
-      if (r.artistName && r.artistName.toLowerCase().includes(artistLower)) {
-        best = r; break;
-      }
+    if (!data.releases || data.releases.length === 0) return null;
+
+    // Try each release's cover art
+    for (const rel of data.releases) {
+      const mbid = rel.id;
+      const caaUrl = `https://coverartarchive.org/release/${mbid}/front-500`;
+      if (await testImage(caaUrl)) return caaUrl;
     }
-    const raw = best.artworkUrl100 || '';
-    // Replace 100x100 with 600x600 for high-res
-    return raw.replace(/100x100/, '600x600');
-  } catch {
     return null;
-  }
+  } catch { return null; }
 }
 
-// Load cover: cache -> iTunes -> embedded URL -> gradient
+// ── Main cover loader ──
 async function loadCover(album) {
   const key = coverCacheKey(album);
   if (coverCache.has(key)) return coverCache.get(key);
 
-  // Store promise to avoid concurrent duplicate fetches
   const promise = (async () => {
     const gradient = getGradientCSS(album);
 
-    // 1) Try iTunes
+    // 1) iTunes — try scored results until one loads
     const itunesUrl = await fetchITunesCover(album);
-    if (itunesUrl) {
-      const ok = await testImage(itunesUrl);
-      if (ok) return { url: itunesUrl, source: 'itunes' };
-    }
+    if (itunesUrl) return { url: itunesUrl, source: 'itunes' };
 
-    // 2) Try embedded Wikipedia URL
+    // 2) MusicBrainz + Cover Art Archive
+    const mbcUrl = await fetchMBcover(album);
+    if (mbcUrl) return { url: mbcUrl, source: 'musicbrainz' };
+
+    // 3) Embedded URL (Wikipedia etc.)
     if (album.c) {
-      const ok = await testImage(album.c);
-      if (ok) return { url: album.c, source: 'embedded' };
+      if (await testImage(album.c)) return { url: album.c, source: 'embedded' };
     }
 
-    // 3) Gradient fallback
+    // 4) Gradient fallback
     return { url: null, source: 'gradient' };
   })();
 
@@ -513,7 +629,7 @@ function testImage(url) {
     img.onload = () => resolve(true);
     img.onerror = () => resolve(false);
     img.src = url;
-    setTimeout(() => resolve(false), 5000); // timeout
+    setTimeout(() => resolve(false), 2500);
   });
 }
 
@@ -538,10 +654,14 @@ function applyFallback(album, gradient, els) {
   els.wrap.style.background = gradient;
 }
 
-function applyCover(url, gradient, els) {
+function applyCover(url, gradient, els, album) {
   els = els || getCoverElements();
   els.img.style.display = 'block';
   els.fallback.style.display = 'none';
+  els.img.referrerPolicy = 'no-referrer';
+  els.img.onerror = function() {
+    if (album) applyFallback(album, gradient, els);
+  };
   els.img.src = url;
   els.bg.style.backgroundImage = `url(${url})`;
   els.bg.style.backgroundSize = 'cover';
@@ -606,7 +726,7 @@ function renderAlbum(index) {
   loadCover(album).then(result => {
     if (thisRender !== renderSeq) return; // stale — another render started
     if (result.url) {
-      applyCover(result.url, gradient, els);
+      applyCover(result.url, gradient, els, album);
     }
   });
 
@@ -721,8 +841,8 @@ function generateIcon(size) {
 
   // rounded rect background with gradient
   const grad = x.createLinearGradient(0, 0, s, s);
-  grad.addColorStop(0, '#4f46e5');
-  grad.addColorStop(1, '#7c3aed');
+  grad.addColorStop(0, '#e8b44b');
+  grad.addColorStop(1, '#d4875e');
   x.fillStyle = grad;
   roundRect(x, 0, 0, s, s, s * 0.22);
   x.fill();
@@ -738,7 +858,7 @@ function generateIcon(size) {
   // center label
   x.beginPath();
   x.arc(cx, cy, r * 0.3, 0, Math.PI * 2);
-  x.fillStyle = '#4f46e5';
+  x.fillStyle = '#e8b44b';
   x.fill();
   // center dot
   x.beginPath();
@@ -786,8 +906,8 @@ function createManifest() {
     description: '每日推荐一张高分专辑 — 数据来自 Pitchfork、RateYourMusic、Rolling Stone',
     start_url: location.href,
     display: 'standalone',
-    background_color: '#0f0f0f',
-    theme_color: '#0f0f0f',
+    background_color: '#f2f2f5',
+    theme_color: '#f2f2f5',
     orientation: 'any',
     icons: [
       { src: generateIcon(192), sizes: '192x192', type: 'image/png' },
