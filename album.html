@@ -710,9 +710,29 @@ function renderAlbum(index) {
   // Bio
   document.getElementById('bioText').textContent = album.bio;
 
-  // NetEase link: search as fallback, direct album page when ID available
+  // NetEase link: orpheus:// for app, https:// as fallback
   const btnNetease = document.getElementById('btnNetease');
-  btnNetease.href = 'https://music.163.com/#/search/m/?s=' + encodeURIComponent(album.a + ' ' + album.t) + '&type=10';
+  const searchUrl = 'https://music.163.com/#/search/m/?s=' + encodeURIComponent(album.a + ' ' + album.t) + '&type=10';
+  let albumUrl = searchUrl;
+  btnNetease.href = searchUrl;
+
+  btnNetease.onclick = function(e) {
+    e.preventDefault();
+    // 先尝试用 orpheus 协议唤起 App
+    if (albumUrl !== searchUrl) {
+      const orpheusUrl = 'orpheus://album/' + albumUrl.split('id=')[1];
+      window.location.href = orpheusUrl;
+      // 2 秒后没反应就跳网页
+      var timer = setTimeout(function() {
+        window.location.href = albumUrl;
+      }, 2000);
+      window.addEventListener('blur', function() {
+        clearTimeout(timer);
+      });
+    } else {
+      window.location.href = searchUrl;
+    }
+  };
 
   // Cover — async fetch from iTunes, fallback to embedded URL, then gradient
   const gradient = getGradientCSS(album);
@@ -725,7 +745,8 @@ function renderAlbum(index) {
       applyCover(result.url, gradient, els, album);
     }
     if (result.neteaseId) {
-      btnNetease.href = 'https://music.163.com/#/album?id=' + result.neteaseId;
+      albumUrl = 'https://music.163.com/#/album?id=' + result.neteaseId;
+      btnNetease.href = albumUrl;
     }
   });
 
