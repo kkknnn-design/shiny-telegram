@@ -712,9 +712,8 @@ function renderAlbum(index) {
 
   // NetEase link
   const btnNetease = document.getElementById('btnNetease');
-  const searchUrl = 'https://music.163.com/search/m/?s=' + encodeURIComponent(album.a + ' ' + album.t) + '&type=10';
+  const searchUrl = 'https://music.163.com/#/search/m/?s=' + encodeURIComponent(album.a + ' ' + album.t) + '&type=10';
   btnNetease.href = searchUrl;
-  btnNetease.target = '_blank';
 
   // Cover — async fetch from iTunes, fallback to embedded URL, then gradient
   const gradient = getGradientCSS(album);
@@ -727,7 +726,7 @@ function renderAlbum(index) {
       applyCover(result.url, gradient, els, album);
     }
     if (result.neteaseId) {
-      const albumUrl = 'https://music.163.com/album/' + result.neteaseId;
+      const albumUrl = 'https://music.163.com/#/album?id=' + result.neteaseId;
       btnNetease.href = albumUrl;
     }
   });
