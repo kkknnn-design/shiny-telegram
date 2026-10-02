@@ -1,0 +1,2670 @@
+{
+  "Radiohead|OK Computer": {
+    "source": "Apple Music / iTunes",
+    "title": "OK Computer",
+    "artist": "Radiohead",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/07/60/ba/0760ba0f-148c-b18f-d0ff-169ee96f3af5/634904078164.png/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/ok-computer/1097861387?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Kendrick Lamar|To Pimp a Butterfly": {
+    "source": "Apple Music / iTunes",
+    "title": "To Pimp a Butterfly",
+    "artist": "Kendrick Lamar",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/b5/a6/91/b5a69171-5232-3d5b-9c15-8963802f83dd/15UMGIM15814.rgb.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/to-pimp-a-butterfly/1440871877?uo=4",
+    "checked": "2026-10-03"
+  },
+  "The Beach Boys|Pet Sounds": {
+    "source": "Apple Music / iTunes",
+    "title": "Pet Sounds",
+    "artist": "The Beach Boys",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/35/bb/c4/35bbc4eb-9387-97b0-b138-64b7a949ea43/13UABIM03512.rgb.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/pet-sounds/1440841241?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Nirvana|Nevermind": {
+    "source": "existing Wikimedia artwork",
+    "url": "https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg",
+    "checked": "2026-10-03"
+  },
+  "Marvin Gaye|What's Going On": {
+    "source": "Apple Music / iTunes",
+    "title": "What's Going On",
+    "artist": "Marvin Gaye",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/76/36/2d/76362d74-cb7a-8ef9-104e-cde1d858e9a9/20UMGIM95279.rgb.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/whats-going-on/1538081586?uo=4",
+    "checked": "2026-10-03"
+  },
+  "The Beatles|Revolver": {
+    "source": "Apple Music / iTunes",
+    "title": "Revolver",
+    "artist": "The Beatles",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/58/4a/10/584a1058-de0a-6a6b-d0bd-da09a028b8bc/00602567705499.rgb.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/revolver/1441164670?uo=4",
+    "checked": "2026-10-03"
+  },
+  "The Velvet Underground|The Velvet Underground & Nico": {
+    "source": "Apple Music / iTunes",
+    "title": "The Velvet Underground & Nico (45th Anniversary Edition)",
+    "artist": "The Velvet Underground & Nico",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/92/93/39/9293397f-a707-237e-ec7e-0ca613a67e3c/06UMGIM04143.rgb.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/the-velvet-underground-nico-45th-anniversary-edition/1440851613?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Nas|Illmatic": {
+    "source": "Apple Music / iTunes",
+    "title": "Illmatic",
+    "artist": "Nas",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/b9/eb/cc/b9ebccbc-5ba4-2cdb-5332-b065739abd9a/886444567619.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/illmatic/856131729?uo=4",
+    "checked": "2026-10-03"
+  },
+  "The Beatles|Abbey Road": {
+    "source": "Apple Music / iTunes",
+    "title": "Abbey Road (2019 Mix)",
+    "artist": "The Beatles",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/48/53/43/485343e3-dd6a-0034-faec-f4b6403f8108/13UMGIM63890.rgb.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/abbey-road-2019-mix/1474815798?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Miles Davis|Kind of Blue": {
+    "source": "Apple Music / iTunes",
+    "title": "Kind of Blue",
+    "artist": "Miles Davis",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music/7f/9f/d6/mzi.vtnaewef.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/kind-of-blue/268443092?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Neutral Milk Hotel|In the Aeroplane Over the Sea": {
+    "source": "Apple Music / iTunes",
+    "title": "In the Aeroplane Over the Sea",
+    "artist": "Neutral Milk Hotel",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/12/e3/5c/12e35c39-de5c-b501-3ef0-00f19fb3d513/56627.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/in-the-aeroplane-over-the-sea/1839077554?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Joni Mitchell|Blue": {
+    "source": "Apple Music / iTunes",
+    "title": "Blue",
+    "artist": "Joni Mitchell",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/00/a2/43/00a24363-cf69-bfd2-a26a-a042d57ab141/075992719926.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/blue/1492263092?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Prince|Purple Rain": {
+    "source": "Apple Music / iTunes",
+    "title": "Purple Rain",
+    "artist": "Prince & The Revolution",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/00/17/f2/0017f24f-e580-b77a-71a8-1bc7b75881bf/603497822065.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/purple-rain/1746833068?uo=4",
+    "checked": "2026-10-03"
+  },
+  "David Bowie|The Rise and Fall of Ziggy Stardust": {
+    "source": "Apple Music / iTunes",
+    "title": "The Rise and Fall of Ziggy Stardust and the Spiders from Mars (2012 Remaster)",
+    "artist": "David Bowie",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/5f/fa/56/5ffa56c2-ea1f-7a17-6bad-192ff9b6476d/825646124206.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/the-rise-and-fall-of-ziggy-stardust-and-the/1039796877?uo=4",
+    "checked": "2026-10-03"
+  },
+  "The Smiths|The Queen Is Dead": {
+    "source": "Apple Music / iTunes",
+    "title": "The Queen Is Dead",
+    "artist": "The Smiths",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/1a/e8/70/1ae870c3-b402-096b-c4c4-8022af5a2ed9/745099189662.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/the-queen-is-dead/800092985?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Talking Heads|Remain in Light": {
+    "source": "Apple Music / iTunes",
+    "title": "Remain In Light",
+    "artist": "Talking Heads",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music/87/5f/5b/mzi.zzquknhm.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/remain-in-light/300948043?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Michael Jackson|Thriller": {
+    "source": "Apple Music / iTunes",
+    "title": "Thriller",
+    "artist": "Michael Jackson",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/32/4f/fd/324ffda2-9e51-8f6a-0c2d-c6fd2b41ac55/074643811224.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/thriller/269572838?uo=4",
+    "checked": "2026-10-03"
+  },
+  "The Clash|London Calling": {
+    "source": "Apple Music / iTunes",
+    "title": "London Calling (Expanded Edition)",
+    "artist": "The Clash",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/93/cb/20/93cb201b-154b-7b74-a10b-48fbef9b3281/888880348937.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/london-calling-expanded-edition/267986379?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Björk|Homogenic": {
+    "source": "Apple Music / iTunes",
+    "title": "Homogenic (Live)",
+    "artist": "Björk",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/12/38/d0/1238d076-0a43-5758-1876-5ab6d256d648/5016958995157.png/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/homogenic-live/1726654860?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Radiohead|Kid A": {
+    "source": "Apple Music / iTunes",
+    "title": "Kid A",
+    "artist": "Radiohead",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/bd/8e/13/bd8e1358-b367-a689-cb84-cebd0b067dc4/634904078263.png/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/kid-a/1097862870?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Kate Bush|Hounds of Love": {
+    "source": "Apple Music / iTunes",
+    "title": "Hounds of Love",
+    "artist": "Kate Bush",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/2c/3e/c9/2c3ec991-0f6e-bec3-7eff-750f50c5b3a6/cover.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/hounds-of-love/1675375084?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Wu-Tang Clan|Enter the Wu-Tang (36 Chambers)": {
+    "source": "Apple Music / iTunes",
+    "title": "Enter the Wu-Tang (36 Chambers)",
+    "artist": "Wu-Tang Clan",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8c/20/1f/8c201f03-7617-2d8b-3d8d-e0ba2d55041b/196872123784.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/enter-the-wu-tang-36-chambers/1746566237?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Bob Dylan|Blonde on Blonde": {
+    "source": "Apple Music / iTunes",
+    "title": "Blonde On Blonde",
+    "artist": "Bob Dylan",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/20/9d/bf/209dbf58-f698-7181-33de-0c29480beba0/074640084126.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/blonde-on-blonde/178049863?uo=4",
+    "checked": "2026-10-03"
+  },
+  "The Beatles|Sgt. Pepper's Lonely Hearts Club Band": {
+    "source": "Apple Music / iTunes",
+    "title": "Sgt. Pepper's Lonely Hearts Club Band",
+    "artist": "The Beatles",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/6f/79/8d/6f798d84-7475-8525-fc91-f7b51b2b5a9b/00602567725428.rgb.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/sgt-peppers-lonely-hearts-club-band/1441164604?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Kanye West|My Beautiful Dark Twisted Fantasy": {
+    "source": "Apple Music / iTunes",
+    "title": "My Beautiful Dark Twisted Fantasy",
+    "artist": "Kanye West",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/d1/74/da/d174dacf-5782-dfe2-19f7-ce037dcd0237/00602527584935.rgb.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/my-beautiful-dark-twisted-fantasy/1443160553?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Radiohead|In Rainbows": {
+    "source": "Apple Music / iTunes",
+    "title": "In Rainbows",
+    "artist": "Radiohead",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/dd/50/c7/dd50c790-99ac-d3d0-5ab8-e3891fb8fd52/634904032463.png/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/in-rainbows/1109714933?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Slint|Spiderland": {
+    "source": "Apple Music / iTunes",
+    "title": "Spiderland",
+    "artist": "Slint",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a1/d0/8b/a1d08b04-058e-c82a-06b2-2b722ee50574/mzi.ufdnaayh.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/spiderland/295785324?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Arcade Fire|Funeral": {
+    "source": "Apple Music / iTunes",
+    "title": "Funeral",
+    "artist": "Arcade Fire",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/2b/09/6e/2b096e8c-ae65-fc42-a4b1-19abb4100433/886446576442.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/funeral/1249417623?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Madvillain|Madvillainy": {
+    "source": "Apple Music / iTunes",
+    "title": "Madvillainy Instrumentals",
+    "artist": "Madvillain",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/18/b4/9a/18b49ad5-6407-7169-27f4-d1c8bcb5504b/s05.nqwebndj.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/madvillainy-instrumentals/41655332?uo=4",
+    "checked": "2026-10-03"
+  },
+  "The Cure|Disintegration": {
+    "source": "Apple Music / iTunes",
+    "title": "Disintegration (2010 Remaster)",
+    "artist": "The Cure",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music/93/3c/2c/mzi.ujtdsknz.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/disintegration-2010-remaster/372100016?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Slowdive|Souvlaki": {
+    "source": "Apple Music / iTunes",
+    "title": "Souvlaki",
+    "artist": "Slowdive",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/c2/a0/a4/c2a0a495-ec33-27f1-c6db-0dff1c3ba15d/dj.pzrqoswp.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/souvlaki/399211729?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Aphex Twin|Selected Ambient Works 85-92": {
+    "source": "Apple Music / iTunes",
+    "title": "Selected Ambient Works 85-92",
+    "artist": "Aphex Twin",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/5f/b3/e0/5fb3e08d-c2cd-3da4-6ad7-c5dc61803683/cover.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/selected-ambient-works-85-92/1668862636?uo=4",
+    "checked": "2026-10-03"
+  },
+  "John Coltrane|A Love Supreme": {
+    "source": "Apple Music / iTunes",
+    "title": "A Love Supreme",
+    "artist": "John Coltrane",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/e5/24/aa/e524aacd-467b-66f3-8931-0fcd6750a4b9/08UMGIM07914.rgb.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/a-love-supreme/1440713018?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Joy Division|Unknown Pleasures": {
+    "source": "Apple Music / iTunes",
+    "title": "Unknown Pleasures (2019 Digital Master)",
+    "artist": "Joy Division",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/13/90/c0/1390c072-4249-3739-7b3d-fd73ee4a5698/825646562831.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/unknown-pleasures-2019-digital-master/1476702180?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Fleetwood Mac|Rumours": {
+    "source": "Apple Music / iTunes",
+    "title": "Rumours",
+    "artist": "Fleetwood Mac",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/4d/13/ba/4d13bac3-d3d5-7581-2c74-034219eadf2b/081227970949.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/rumours/594061854?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Daft Punk|Discovery": {
+    "source": "Apple Music / iTunes",
+    "title": "Discovery",
+    "artist": "Daft Punk",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/fd/4a/77/fd4a77db-0ebc-d043-41a2-f32fa1bb0fb4/dj.qrikkdwj.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/discovery/697194953?uo=4",
+    "checked": "2026-10-03"
+  },
+  "The Jimi Hendrix Experience|Electric Ladyland": {
+    "source": "Apple Music / iTunes",
+    "title": "Electric Ladyland",
+    "artist": "The Jimi Hendrix Experience",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a6/b8/45/a6b84589-6ff7-a462-9ff9-170b724980d5/dj.wjkdwlks.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/electric-ladyland/357652252?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Frank Ocean|Channel Orange": {
+    "source": "existing Wikimedia artwork",
+    "url": "https://upload.wikimedia.org/wikipedia/en/2/28/Channel_ORANGE.jpg",
+    "checked": "2026-10-03"
+  },
+  "The Strokes|Is This It": {
+    "source": "existing Wikimedia artwork",
+    "url": "https://upload.wikimedia.org/wikipedia/en/0/09/The_Strokes_-_Is_This_It_cover.png",
+    "checked": "2026-10-03"
+  },
+  "Lauryn Hill|The Miseducation of Lauryn Hill": {
+    "source": "Apple Music / iTunes",
+    "title": "The Miseducation of Lauryn Hill",
+    "artist": "Lauryn Hill",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/09/6b/55/096b55c4-ee8f-23bd-df8f-0ca0821f3028/886446727189.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/the-miseducation-of-lauryn-hill/1276760743?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Stevie Wonder|Songs in the Key of Life": {
+    "source": "Apple Music / iTunes",
+    "title": "Songs in the Key of Life",
+    "artist": "Stevie Wonder",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/eb/1f/12/eb1f12ec-474c-63aa-43af-09282f423b9d/00602537004737.rgb.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/songs-in-the-key-of-life/1440788438?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Sonic Youth|Daydream Nation": {
+    "source": "Apple Music / iTunes",
+    "title": "Daydream Nation (Deluxe Edition)",
+    "artist": "Sonic Youth",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/9a/55/3b/9a553bab-12a5-a385-31b7-720087fa3130/818756010958_cover.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/daydream-nation-deluxe-edition/520335802?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Portishead|Dummy": {
+    "source": "Apple Music / iTunes",
+    "title": "Dummy",
+    "artist": "Portishead",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/c1/71/93/c1719342-df7d-e9c5-c87c-53dae5afb289/00042282855329.rgb.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/dummy/1440653096?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Frank Ocean|Blond": {
+    "source": "existing Wikimedia artwork",
+    "url": "https://upload.wikimedia.org/wikipedia/en/a/a0/Blonde_-_Frank_Ocean.jpeg",
+    "checked": "2026-10-03"
+  },
+  "Miles Davis|Bitches Brew": {
+    "source": "Apple Music / iTunes",
+    "title": "Bitches Brew",
+    "artist": "Miles Davis",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/9b/e1/63/9be1630c-486d-760c-76cf-04282174700a/074646577424.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/bitches-brew/168376392?uo=4",
+    "checked": "2026-10-03"
+  },
+  "The Notorious B.I.G.|Ready to Die": {
+    "source": "Apple Music / iTunes",
+    "title": "Ready To Die the Remaster",
+    "artist": "The Notorious B.I.G.",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f8/6a/3d/f86a3db0-d518-cd49-c0c9-25e767ae0a6d/075679456861.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/ready-to-die-the-remaster/204669415?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Pink Floyd|The Dark Side of the Moon": {
+    "source": "Deezer",
+    "title": "The Dark Side of the Moon",
+    "artist": "Pink Floyd",
+    "url": "https://cdn-images.dzcdn.net/images/cover/e635a8510c1a74bc089b3566ebbb9cb8/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/12114240",
+    "checked": "2026-10-03"
+  },
+  "My Bloody Valentine|Loveless": {
+    "source": "Deezer",
+    "title": "loveless",
+    "artist": "my bloody valentine",
+    "url": "https://cdn-images.dzcdn.net/images/cover/217f6c70913d113d09a561cb17b64f6e/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/212636922",
+    "checked": "2026-10-03"
+  },
+  "Nine Inch Nails|The Downward Spiral": {
+    "source": "Deezer",
+    "title": "The Downward Spiral",
+    "artist": "Nine Inch Nails",
+    "url": "https://cdn-images.dzcdn.net/images/cover/89d401ea7aecb97639fa86c81213de51/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/125584",
+    "checked": "2026-10-03"
+  },
+  "David Bowie|Blackstar": {
+    "source": "Deezer",
+    "title": "Blackstar",
+    "artist": "David Bowie",
+    "url": "https://cdn-images.dzcdn.net/images/cover/e7f5c20601c7c30cd34968ab44e6f55c/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/415407217",
+    "checked": "2026-10-03"
+  },
+  "A Tribe Called Quest|The Low End Theory": {
+    "source": "Deezer",
+    "title": "The Low End Theory",
+    "artist": "A Tribe Called Quest",
+    "url": "https://cdn-images.dzcdn.net/images/cover/08793909075a6d5f812fdfab902f03b0/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/242316",
+    "checked": "2026-10-03"
+  },
+  "Nirvana|In Utero": {
+    "source": "Deezer",
+    "title": "In Utero",
+    "artist": "Nirvana",
+    "url": "https://cdn-images.dzcdn.net/images/cover/4d0dfaf6d522f5323aebcc85903d92ac/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/6916355",
+    "checked": "2026-10-03"
+  },
+  "Led Zeppelin|Led Zeppelin IV": {
+    "source": "Deezer",
+    "title": "Led Zeppelin IV (Remaster)",
+    "artist": "Led Zeppelin",
+    "url": "https://cdn-images.dzcdn.net/images/cover/2047754dc07232def42ec26a9a854544/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/11591214",
+    "checked": "2026-10-03"
+  },
+  "Animal Collective|Merriweather Post Pavilion": {
+    "source": "Deezer",
+    "title": "Merriweather Post Pavilion",
+    "artist": "Animal Collective",
+    "url": "https://cdn-images.dzcdn.net/images/cover/57660f9ee356337b3802fd2cf9276198/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/401359",
+    "checked": "2026-10-03"
+  },
+  "Stevie Wonder|Innervisions": {
+    "source": "Deezer",
+    "title": "Innervisions",
+    "artist": "Stevie Wonder",
+    "url": "https://cdn-images.dzcdn.net/images/cover/1cf2b7972e30a477b82f03302ec5453d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/230976",
+    "checked": "2026-10-03"
+  },
+  "Television|Marquee Moon": {
+    "source": "Deezer",
+    "title": "Marquee Moon",
+    "artist": "Television",
+    "url": "https://cdn-images.dzcdn.net/images/cover/ee22cb01343143b8d78c63e2aa53c2b3/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/85859",
+    "checked": "2026-10-03"
+  },
+  "The Microphones|The Glow Pt. 2": {
+    "source": "Deezer",
+    "title": "The Glow, Pt. 2",
+    "artist": "The Microphones",
+    "url": "https://cdn-images.dzcdn.net/images/cover/e47336dd3c966a82e6537089851b0fda/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/6120834",
+    "checked": "2026-10-03"
+  },
+  "Death|Symbolic": {
+    "source": "Deezer",
+    "title": "Symbolic",
+    "artist": "Death",
+    "url": "https://cdn-images.dzcdn.net/images/cover/61ffa435bf2ff7a38426eb3c370d5303/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/611395",
+    "checked": "2026-10-03"
+  },
+  "Kendrick Lamar|Good Kid, M.A.A.D City": {
+    "source": "Deezer",
+    "title": "good kid, m.A.A.d city (Deluxe)",
+    "artist": "Kendrick Lamar",
+    "url": "https://cdn-images.dzcdn.net/images/cover/b5be27644d505bad7bdb516fe4165475/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/6651488",
+    "checked": "2026-10-03"
+  },
+  "Black Sabbath|Paranoid": {
+    "source": "Deezer",
+    "title": "Paranoid",
+    "artist": "Black Sabbath",
+    "url": "https://cdn-images.dzcdn.net/images/cover/bb3b4d0378c91d2fca5204bac48f5e71/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/902085772",
+    "checked": "2026-10-03"
+  },
+  "Tally Hall|Marvin's Marvelous Mechanical Museum": {
+    "source": "Deezer",
+    "title": "Marvin's Marvelous Mechanical Museum",
+    "artist": "Tally Hall",
+    "url": "https://cdn-images.dzcdn.net/images/cover/cadb7940af1b6ae8363ae0af8441dffa/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/9708146",
+    "checked": "2026-10-03"
+  },
+  "Bob Dylan|Highway 61 Revisited": {
+    "source": "Deezer",
+    "title": "Highway 61 Revisited",
+    "artist": "Bob Dylan",
+    "url": "https://cdn-images.dzcdn.net/images/cover/96193f14db0501c035bd43ab93960317/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/1329897",
+    "checked": "2026-10-03"
+  },
+  "Pink Floyd|The Wall": {
+    "source": "Deezer",
+    "title": "The Wall",
+    "artist": "Pink Floyd",
+    "url": "https://cdn-images.dzcdn.net/images/cover/2bea643b92a8fc6b19a23756f718cbd4/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/12114248",
+    "checked": "2026-10-03"
+  },
+  "D'Angelo|Voodoo": {
+    "source": "Deezer",
+    "title": "Voodoo",
+    "artist": "D'Angelo",
+    "url": "https://cdn-images.dzcdn.net/images/cover/5d18f588dbadfae952e81b274052f7e4/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/14949665",
+    "checked": "2026-10-03"
+  },
+  "OutKast|Aquemini": {
+    "source": "Deezer",
+    "title": "Aquemini",
+    "artist": "Outkast",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9aed5495a46ad76c9202589463133991/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/107860",
+    "checked": "2026-10-03"
+  },
+  "Weyes Blood|Titanic Rising": {
+    "source": "Deezer",
+    "title": "Titanic Rising",
+    "artist": "Weyes Blood",
+    "url": "https://cdn-images.dzcdn.net/images/cover/f2edcff8208b6c8aeb2dccff39209043/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/185277222",
+    "checked": "2026-10-03"
+  },
+  "Radiohead|The Bends": {
+    "source": "Deezer",
+    "title": "The Bends",
+    "artist": "Radiohead",
+    "url": "https://cdn-images.dzcdn.net/images/cover/0d2ccaf5f7b35af57f3d9c8f4504a6e6/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/14880317",
+    "checked": "2026-10-03"
+  },
+  "Daft Punk|Random Access Memories": {
+    "source": "Deezer",
+    "title": "Random Access Memories",
+    "artist": "Daft Punk",
+    "url": "https://cdn-images.dzcdn.net/images/cover/311bba0fc112d15f72c8b5a65f0456c1/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/6575789",
+    "checked": "2026-10-03"
+  },
+  "The Rolling Stones|Exile on Main St.": {
+    "source": "Deezer",
+    "title": "Exile On Main Street (2010 Re-Mastered)",
+    "artist": "The Rolling Stones",
+    "url": "https://cdn-images.dzcdn.net/images/cover/28e5ea6c9e305a2cb85a589b1260a88a/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/543353",
+    "checked": "2026-10-03"
+  },
+  "Death Grips|Money Store": {
+    "source": "Deezer",
+    "title": "The Money Store",
+    "artist": "Death Grips",
+    "url": "https://cdn-images.dzcdn.net/images/cover/8bc4926f2361aec49ce613f9f5844998/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/1678780",
+    "checked": "2026-10-03"
+  },
+  "Kanye West|The College Dropout": {
+    "source": "Deezer",
+    "title": "The College Dropout",
+    "artist": "Kanye West",
+    "url": "https://cdn-images.dzcdn.net/images/cover/069a5dba671436da9301aad36fc9a983/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/68440261",
+    "checked": "2026-10-03"
+  },
+  "Björk|Vespertine": {
+    "source": "Deezer",
+    "title": "Vespertine",
+    "artist": "Björk",
+    "url": "https://cdn-images.dzcdn.net/images/cover/4bd6b0232c2092faf145101453cb1051/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/537883642",
+    "checked": "2026-10-03"
+  },
+  "Bob Dylan|Blood on the Tracks": {
+    "source": "Deezer",
+    "title": "Blood On The Tracks",
+    "artist": "Bob Dylan",
+    "url": "https://cdn-images.dzcdn.net/images/cover/7ee9e4f89dba0f743a6b24e428e7f6ab/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/1399868",
+    "checked": "2026-10-03"
+  },
+  "DJ Shadow|Endtroducing.....": {
+    "source": "Deezer",
+    "title": "Endtroducing.....",
+    "artist": "DJ Shadow",
+    "url": "https://cdn-images.dzcdn.net/images/cover/fb1d7bedd053f8269b6f0bc8c4e9a4b2/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/388025577",
+    "checked": "2026-10-03"
+  },
+  "Tyler, the Creator|Flower Boy": {
+    "source": "Deezer",
+    "title": "Flower Boy",
+    "artist": "Tyler, The Creator",
+    "url": "https://cdn-images.dzcdn.net/images/cover/a7a16b8f63b1ec0e9fbd327619966737/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/44730061",
+    "checked": "2026-10-03"
+  },
+  "Michael Jackson|Off the Wall": {
+    "source": "Deezer",
+    "title": "Off the Wall",
+    "artist": "Michael Jackson",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9a1084ee1062fd9cd8dbeb1a8978351d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/1440807",
+    "checked": "2026-10-03"
+  },
+  "Metallica|Master of Puppets": {
+    "source": "Deezer",
+    "title": "Master Of Puppets (Remastered)",
+    "artist": "Metallica",
+    "url": "https://cdn-images.dzcdn.net/images/cover/291e2af9295ca885b154eee75dfa0432/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/51001312",
+    "checked": "2026-10-03"
+  },
+  "Bruce Springsteen|Born to Run": {
+    "source": "Deezer",
+    "title": "Born To Run",
+    "artist": "Bruce Springsteen",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9d240cdc757dceab4428aa434b11ed23/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/6983483",
+    "checked": "2026-10-03"
+  },
+  "The Who|Who's Next": {
+    "source": "Deezer",
+    "title": "Who's Next (Remastered 2022)",
+    "artist": "The Who",
+    "url": "https://cdn-images.dzcdn.net/images/cover/2b97186bc12523404cae635fd9ddf382/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/485379895",
+    "checked": "2026-10-03"
+  },
+  "George Harrison|All Things Must Pass": {
+    "source": "Deezer",
+    "title": "All Things Must Pass (Remastered 2014)",
+    "artist": "George Harrison",
+    "url": "https://cdn-images.dzcdn.net/images/cover/3ea1097e2b15aa767969b69fb73ad9b0/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/8548959",
+    "checked": "2026-10-03"
+  },
+  "Van Morrison|Astral Weeks": {
+    "source": "Deezer",
+    "title": "Astral Weeks",
+    "artist": "Van Morrison",
+    "url": "https://cdn-images.dzcdn.net/images/cover/69a5b84155a0fa886bc41a1b7e730046/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/345012",
+    "checked": "2026-10-03"
+  },
+  "Neil Young|After the Gold Rush": {
+    "source": "Deezer",
+    "title": "After the Gold Rush (2009 Remaster)",
+    "artist": "Neil Young",
+    "url": "https://cdn-images.dzcdn.net/images/cover/c70b87aafe4669ce22bc75436c7c0c8c/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/356691",
+    "checked": "2026-10-03"
+  },
+  "Simon & Garfunkel|Bridge Over Troubled Water": {
+    "source": "Deezer",
+    "title": "Bridge Over Troubled Water",
+    "artist": "Simon & Garfunkel",
+    "url": "https://cdn-images.dzcdn.net/images/cover/6f7036f2c3632d9e1df142f1078cb5c1/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/1208585",
+    "checked": "2026-10-03"
+  },
+  "Paul Simon|Graceland": {
+    "source": "Deezer",
+    "title": "Graceland (25th Anniversary Deluxe Edition)",
+    "artist": "Paul Simon",
+    "url": "https://cdn-images.dzcdn.net/images/cover/8a8c3843f9daf46b8a660b26ef56cb4d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/3095471",
+    "checked": "2026-10-03"
+  },
+  "Charles Mingus|Mingus Ah Um": {
+    "source": "Deezer",
+    "title": "Mingus Ah Um",
+    "artist": "Charles Mingus",
+    "url": "https://cdn-images.dzcdn.net/images/cover/e5e45ea5c46f139b45d51ea3b155014f/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/96117",
+    "checked": "2026-10-03"
+  },
+  "Herbie Hancock|Head Hunters": {
+    "source": "Deezer",
+    "title": "Head Hunters",
+    "artist": "Herbie Hancock",
+    "url": "https://cdn-images.dzcdn.net/images/cover/08a552af7a8c574a73fdaec9d9f8d4f6/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/111628",
+    "checked": "2026-10-03"
+  },
+  "John Coltrane|Giant Steps": {
+    "source": "Deezer",
+    "title": "Giant Steps (2020 Remaster)",
+    "artist": "John Coltrane",
+    "url": "https://cdn-images.dzcdn.net/images/cover/6e9b62644b725547f6fd79c4e1760c1b/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/173465852",
+    "checked": "2026-10-03"
+  },
+  "Neil Young|Harvest": {
+    "source": "Apple Music / iTunes",
+    "title": "Harvest",
+    "artist": "Neil Young",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/e0/4b/c4/e04bc4e6-9d3a-0bab-c953-f139c72fd337/093624924722.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/harvest/1015739190?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Aretha Franklin|I Never Loved a Man...": {
+    "source": "Deezer",
+    "title": "I Never Loved a Man the Way I Love You",
+    "artist": "Aretha Franklin",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9e9ba9115d0fb62879d1bb672ee67c07/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/102206",
+    "checked": "2026-10-03"
+  },
+  "Nina Simone|Pastel Blues": {
+    "source": "Deezer",
+    "title": "Pastel Blues",
+    "artist": "Nina Simone",
+    "url": "https://cdn-images.dzcdn.net/images/cover/61090513a8b756be9d25bd2d1bbab432/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/80676782",
+    "checked": "2026-10-03"
+  },
+  "J Dilla|Donuts": {
+    "source": "Deezer",
+    "title": "Donuts",
+    "artist": "J Dilla",
+    "url": "https://cdn-images.dzcdn.net/images/cover/20dca341e5524df8e34036fa076bf42f/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/54294542",
+    "checked": "2026-10-03"
+  },
+  "Beastie Boys|Paul's Boutique": {
+    "source": "Deezer",
+    "title": "Paul's Boutique (20th Anniversary Edition / Remastered)",
+    "artist": "Beastie Boys",
+    "url": "https://cdn-images.dzcdn.net/images/cover/4ae3582d658f93228eb5a42cba04ee64/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/301720",
+    "checked": "2026-10-03"
+  },
+  "GZA|Liquid Swords": {
+    "source": "Deezer",
+    "title": "Liquid Swords",
+    "artist": "Gza",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9c467dd368c77978dcd600291ba27491/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/162050",
+    "checked": "2026-10-03"
+  },
+  "The Roots|Things Fall Apart": {
+    "source": "Deezer",
+    "title": "Things Fall Apart",
+    "artist": "The Roots",
+    "url": "https://cdn-images.dzcdn.net/images/cover/007631825db54da10ec22539b330712c/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/8938827",
+    "checked": "2026-10-03"
+  },
+  "Marvin Gaye|Here, My Dear": {
+    "source": "Apple Music / iTunes",
+    "title": "Here, My Dear",
+    "artist": "Marvin Gaye",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/bc/ae/e3/bcaee340-68a6-2eba-16c0-be55f78c1ba0/00602547135636.rgb.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/here-my-dear/1440850217?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Massive Attack|Mezzanine": {
+    "source": "Deezer",
+    "title": "Mezzanine",
+    "artist": "Massive Attack",
+    "url": "https://cdn-images.dzcdn.net/images/cover/85abbdc3ed4a7b94ace97f868fe70f63/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/301773",
+    "checked": "2026-10-03"
+  },
+  "Fugees|The Score": {
+    "source": "Deezer",
+    "title": "The Score",
+    "artist": "Fugees",
+    "url": "https://cdn-images.dzcdn.net/images/cover/cbc404543f45cf93465906b61ec85687/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/93144412",
+    "checked": "2026-10-03"
+  },
+  "Boards of Canada|Music Has the Right to Children": {
+    "source": "Deezer",
+    "title": "Music Has The Right To Children",
+    "artist": "Boards of Canada",
+    "url": "https://cdn-images.dzcdn.net/images/cover/c3c2e2a739ed501d01791b16a3fd9ad3/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/2795271",
+    "checked": "2026-10-03"
+  },
+  "The Avalanches|Since I Left You": {
+    "source": "Deezer",
+    "title": "Since I Left You (20th Anniversary Deluxe Edition)",
+    "artist": "The Avalanches",
+    "url": "https://cdn-images.dzcdn.net/images/cover/1f5dd760cb176bc8edd318ad5aa21545/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/215948112",
+    "checked": "2026-10-03"
+  },
+  "Primal Scream|Screamadelica": {
+    "source": "Deezer",
+    "title": "Screamadelica",
+    "artist": "Primal Scream",
+    "url": "https://cdn-images.dzcdn.net/images/cover/04d6b8b96a11757f10a506bf3b068a63/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/101389",
+    "checked": "2026-10-03"
+  },
+  "Kraftwerk|Trans Europe Express": {
+    "source": "Deezer",
+    "title": "Trans-Europe Express (2009 Remaster)",
+    "artist": "Kraftwerk",
+    "url": "https://cdn-images.dzcdn.net/images/cover/8f20a7733da4467a7cd0f4813d9bc8d1/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/396602",
+    "checked": "2026-10-03"
+  },
+  "Metallica|Ride the Lightning": {
+    "source": "Deezer",
+    "title": "Ride The Lightning (Remastered)",
+    "artist": "Metallica",
+    "url": "https://cdn-images.dzcdn.net/images/cover/6d5f397660c6ec7a445f386edac05b9e/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/14581762",
+    "checked": "2026-10-03"
+  },
+  "Pixies|Surfer Rosa": {
+    "source": "Deezer",
+    "title": "Surfer Rosa (2007 Remaster)",
+    "artist": "Pixies",
+    "url": "https://cdn-images.dzcdn.net/images/cover/562e91cb88484ac64fbdd41ffcfe0324/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/10966644",
+    "checked": "2026-10-03"
+  },
+  "Slayer|Reign in Blood": {
+    "source": "Deezer",
+    "title": "Reign In Blood (Expanded)",
+    "artist": "Slayer",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9f3a4d7b906782502b53231fd546fa6b/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/6439870",
+    "checked": "2026-10-03"
+  },
+  "Pixies|Doolittle": {
+    "source": "Deezer",
+    "title": "Doolittle",
+    "artist": "Pixies",
+    "url": "https://cdn-images.dzcdn.net/images/cover/4ca682e61a245cb93065a0e4ec61e404/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/106387",
+    "checked": "2026-10-03"
+  },
+  "Pavement|Crooked Rain, Crooked Rain": {
+    "source": "Deezer",
+    "title": "Crooked Rain, Crooked Rain",
+    "artist": "Pavement",
+    "url": "https://cdn-images.dzcdn.net/images/cover/baccb0dd9a6c0591f650606601d46476/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/10965566",
+    "checked": "2026-10-03"
+  },
+  "Elliott Smith|Either/Or": {
+    "source": "Deezer",
+    "title": "Either/Or",
+    "artist": "Elliott Smith",
+    "url": "https://cdn-images.dzcdn.net/images/cover/a76de15cb985d03f50d1f73719494a88/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/11334390",
+    "checked": "2026-10-03"
+  },
+  "Modest Mouse|Moon & Antarctica": {
+    "source": "Deezer",
+    "title": "The Moon & Antarctica",
+    "artist": "Modest Mouse",
+    "url": "https://cdn-images.dzcdn.net/images/cover/47b1dc9efebec8792e18ed7b76862df9/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/6962249",
+    "checked": "2026-10-03"
+  },
+  "Broken Social Scene|You Forgot It in People": {
+    "source": "Deezer",
+    "title": "You Forgot It In People",
+    "artist": "Broken Social Scene",
+    "url": "https://cdn-images.dzcdn.net/images/cover/6600f39230a6ba37bc178941af56bd53/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/51166482",
+    "checked": "2026-10-03"
+  },
+  "Gang of Four|Entertainment!": {
+    "source": "Deezer",
+    "title": "Entertainment!",
+    "artist": "Gang of Four",
+    "url": "https://cdn-images.dzcdn.net/images/cover/8951d30640b23a8662e27b3157c62d64/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/10980010",
+    "checked": "2026-10-03"
+  },
+  "Patti Smith|Horses": {
+    "source": "Deezer",
+    "title": "Horses",
+    "artist": "Patti Smith",
+    "url": "https://cdn-images.dzcdn.net/images/cover/6d8164d4f569651063531577cc1e1b30/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/11184584",
+    "checked": "2026-10-03"
+  },
+  "New Order|Power, Corruption & Lies": {
+    "source": "Deezer",
+    "title": "Power Corruption and Lies",
+    "artist": "New Order",
+    "url": "https://cdn-images.dzcdn.net/images/cover/08d515a96171ce611eeea453018d5873/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/11253936",
+    "checked": "2026-10-03"
+  },
+  "Carole King|Tapestry": {
+    "source": "Deezer",
+    "title": "Tapestry",
+    "artist": "Carole King",
+    "url": "https://cdn-images.dzcdn.net/images/cover/e34d44b406921cbdc47251fe7fae37ac/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/12487266",
+    "checked": "2026-10-03"
+  },
+  "Amy Winehouse|Back to Black": {
+    "source": "Deezer",
+    "title": "Back To Black",
+    "artist": "Amy Winehouse",
+    "url": "https://cdn-images.dzcdn.net/images/cover/5772b495f0dcdf660d0fc88c4c38a3fa/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/217795",
+    "checked": "2026-10-03"
+  },
+  "Fiona Apple|When the Pawn...": {
+    "source": "Deezer",
+    "title": "When The Pawn...",
+    "artist": "Fiona Apple",
+    "url": "https://cdn-images.dzcdn.net/images/cover/7ef790b6de72f38e487c73d956894418/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/70982",
+    "checked": "2026-10-03"
+  },
+  "Tame Impala|Currents": {
+    "source": "Deezer",
+    "title": "Currents",
+    "artist": "Tame Impala",
+    "url": "https://cdn-images.dzcdn.net/images/cover/de5b9b704cd4ec36f8bf49beb3e17ba2/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/10709540",
+    "checked": "2026-10-03"
+  },
+  "Lorde|Melodrama": {
+    "source": "Deezer",
+    "title": "Melodrama",
+    "artist": "Lorde",
+    "url": "https://cdn-images.dzcdn.net/images/cover/0c424dbe627530cd06a6fd408baba3f3/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/42886601",
+    "checked": "2026-10-03"
+  },
+  "Lana Del Rey|Norman Fucking Rockwell!": {
+    "source": "Deezer",
+    "title": "Norman Fucking Rockwell!",
+    "artist": "Lana Del Rey",
+    "url": "https://cdn-images.dzcdn.net/images/cover/c0f4f022fa51f13e877aae2e758e241d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/108706862",
+    "checked": "2026-10-03"
+  },
+  "Billie Eilish|When We All Fall Asleep": {
+    "source": "Deezer",
+    "title": "WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?",
+    "artist": "Billie Eilish",
+    "url": "https://cdn-images.dzcdn.net/images/cover/6630083f454d48eadb6a9b53f035d734/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/91598612",
+    "checked": "2026-10-03"
+  },
+  "Buena Vista Social Club|Buena Vista Social Club": {
+    "source": "Deezer",
+    "title": "Buena Vista Social Club",
+    "artist": "Buena Vista Social Club",
+    "url": "https://cdn-images.dzcdn.net/images/cover/f1c80ecded74da97fb95413acb79d7c8/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/888988962",
+    "checked": "2026-10-03"
+  },
+  "Stan Getz & João Gilberto|Getz / Gilberto": {
+    "source": "Deezer",
+    "title": "Getz/Gilberto",
+    "artist": "Stan Getz",
+    "url": "https://cdn-images.dzcdn.net/images/cover/f75a005d8f7d647629c984549b034456/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/184476372",
+    "checked": "2026-10-03"
+  },
+  "Johnny Cash|At Folsom Prison": {
+    "source": "Deezer",
+    "title": "At Folsom Prison",
+    "artist": "Johnny Cash",
+    "url": "https://cdn-images.dzcdn.net/images/cover/3348de529f0c5405c0002434599f12ed/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/7452568",
+    "checked": "2026-10-03"
+  },
+  "Taylor Swift|Red": {
+    "source": "Deezer",
+    "title": "Red",
+    "artist": "Taylor Swift",
+    "url": "https://cdn-images.dzcdn.net/images/cover/d6f308f8329892e3f1eb105906aa77c2/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/130721292",
+    "checked": "2026-10-03"
+  },
+  "Rush|Moving Pictures": {
+    "source": "Deezer",
+    "title": "Moving Pictures (2011 Remaster)",
+    "artist": "Rush",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9ee330e0d51624845386572426b5ed80/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/942295",
+    "checked": "2026-10-03"
+  },
+  "Steely Dan|Aja": {
+    "source": "Deezer",
+    "title": "Aja",
+    "artist": "Steely Dan",
+    "url": "https://cdn-images.dzcdn.net/images/cover/69cc1f771bc7a8cf79affdcf14bae380/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/491146635",
+    "checked": "2026-10-03"
+  },
+  "Sigur Rós|Ágætis byrjun": {
+    "source": "Deezer",
+    "title": "Ágætis byrjun",
+    "artist": "Sigur Rós",
+    "url": "https://cdn-images.dzcdn.net/images/cover/ae60fc6b15e0a01a4d1dfb1e42104cb9/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/82417442",
+    "checked": "2026-10-03"
+  },
+  "Explosions in the Sky|The Earth Is Not a Cold Dead Place": {
+    "source": "Deezer",
+    "title": "The Earth Is Not a Cold Dead Place",
+    "artist": "Explosions in the Sky",
+    "url": "https://cdn-images.dzcdn.net/images/cover/cdb960386a57c3d4be7a25edd51302ea/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/10095614",
+    "checked": "2026-10-03"
+  },
+  "Solange|A Seat at the Table": {
+    "source": "Deezer",
+    "title": "A Seat at the Table",
+    "artist": "Solange",
+    "url": "https://cdn-images.dzcdn.net/images/cover/36b361c2c916b333a0b7c6f949c32099/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/14168162",
+    "checked": "2026-10-03"
+  },
+  "SZA|Ctrl": {
+    "source": "Deezer",
+    "title": "Ctrl",
+    "artist": "SZA",
+    "url": "https://cdn-images.dzcdn.net/images/cover/a1a3326c5d9176c763fc3fd847b86681/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/42724001",
+    "checked": "2026-10-03"
+  },
+  "King Crimson|In the Court of the Crimson King": {
+    "source": "Deezer",
+    "title": "In The Court Of The Crimson King (Expanded & Remastered Original Album Mix)",
+    "artist": "King Crimson",
+    "url": "https://cdn-images.dzcdn.net/images/cover/17b0fbba415a4da845de4543052cfc66/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/78808872",
+    "checked": "2026-10-03"
+  },
+  "Yes|Close to the Edge": {
+    "source": "Deezer",
+    "title": "Close to the Edge (Super Deluxe Edition)",
+    "artist": "Yes",
+    "url": "https://cdn-images.dzcdn.net/images/cover/122f59f4cf6fe89e904793b702525eb3/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/685035591",
+    "checked": "2026-10-03"
+  },
+  "Stevie Ray Vaughan|Texas Flood": {
+    "source": "Deezer",
+    "title": "Texas Flood (Live)",
+    "artist": "Stevie Ray Vaughan",
+    "url": "https://cdn-images.dzcdn.net/images/cover/30569d2e0802d1d8a10303cc049f6053/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/192522842",
+    "checked": "2026-10-03"
+  },
+  "Flying Lotus|Cosmogramma": {
+    "source": "Deezer",
+    "title": "Cosmogramma",
+    "artist": "Flying Lotus",
+    "url": "https://cdn-images.dzcdn.net/images/cover/2962f0ec63d2c920de4f2dac87a0c9b3/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/545327",
+    "checked": "2026-10-03"
+  },
+  "The Doors|The Doors": {
+    "source": "Deezer",
+    "title": "The Doors",
+    "artist": "The Doors",
+    "url": "https://cdn-images.dzcdn.net/images/cover/a58f4c70b9c51b8902be3f2e875155fe/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/340878",
+    "checked": "2026-10-03"
+  },
+  "Burial|Untrue": {
+    "source": "Deezer",
+    "title": "Untrue",
+    "artist": "Burial",
+    "url": "https://cdn-images.dzcdn.net/images/cover/4b2625e8eec6e7368b58180035915014/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/980871",
+    "checked": "2026-10-03"
+  },
+  "Dr. Dre|The Chronic": {
+    "source": "Deezer",
+    "title": "The Chronic",
+    "artist": "Dr. Dre",
+    "url": "https://cdn-images.dzcdn.net/images/cover/36cffacf94fdcc49921affe8a865f6f1/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/402935287",
+    "checked": "2026-10-03"
+  },
+  "Dizzee Rascal|Boy in da Corner": {
+    "source": "Deezer",
+    "title": "Boy In Da Corner",
+    "artist": "Dizzee Rascal",
+    "url": "https://cdn-images.dzcdn.net/images/cover/6692ca16df3f3195044467b93644066a/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/75530612",
+    "checked": "2026-10-03"
+  },
+  "Fiona Apple|Fetch the Bolt Cutters": {
+    "source": "Deezer",
+    "title": "Fetch The Bolt Cutters",
+    "artist": "Fiona Apple",
+    "url": "https://cdn-images.dzcdn.net/images/cover/f0ccd157f390a6aadc0f61e245138f1c/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/141631152",
+    "checked": "2026-10-03"
+  },
+  "Black Country, New Road|Ants From Up There": {
+    "source": "Apple Music / iTunes",
+    "title": "Ants From Up There",
+    "artist": "Black Country, New Road",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/8f/6a/c6/8f6ac6c6-5bcd-fa25-94f2-fd9922725215/5054429151442.png/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/ants-from-up-there/1586070259?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Big Thief|Dragon New Warm Mountain I Believe in You": {
+    "source": "Apple Music / iTunes",
+    "title": "Dragon New Warm Mountain I Believe In You",
+    "artist": "Big Thief",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/14/c8/ea/14c8ea65-2155-8d44-f0c5-6faa8f51f95d/191400040878.png/600x600bb.jpg",
+    "page": "https://music.apple.com/us/album/dragon-new-warm-mountain-i-believe-in-you/1591284600?uo=4",
+    "checked": "2026-10-03"
+  },
+  "Cocteau Twins|Heaven or Las Vegas": {
+    "source": "Deezer",
+    "title": "Heaven or Las Vegas",
+    "artist": "Cocteau Twins",
+    "url": "https://cdn-images.dzcdn.net/images/cover/be62b1479e0baf17d8f9beca911ee8cd/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/106054",
+    "checked": "2026-10-03"
+  },
+  "Nick Drake|Pink Moon": {
+    "source": "Deezer",
+    "title": "Pink Moon",
+    "artist": "Nick Drake",
+    "url": "https://cdn-images.dzcdn.net/images/cover/6829c0844fd6a12923e991503be7db41/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/231727202",
+    "checked": "2026-10-03"
+  },
+  "Jeff Buckley|Grace": {
+    "source": "Deezer",
+    "title": "Grace",
+    "artist": "Jeff Buckley",
+    "url": "https://cdn-images.dzcdn.net/images/cover/57dd4754a69acaaf3a8a82f7fd1b8ad3/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/11336428",
+    "checked": "2026-10-03"
+  },
+  "The Smashing Pumpkins|Siamese Dream": {
+    "source": "Deezer",
+    "title": "Siamese Dream (2011 - Remaster)",
+    "artist": "The Smashing Pumpkins",
+    "url": "https://cdn-images.dzcdn.net/images/cover/14fc556f659caee13ababa07f1ede592/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/1357582",
+    "checked": "2026-10-03"
+  },
+  "Pearl Jam|Ten": {
+    "source": "Deezer",
+    "title": "Ten",
+    "artist": "Pearl Jam",
+    "url": "https://cdn-images.dzcdn.net/images/cover/00ee8c40862fb4e258fcbeaa17d7199e/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/708674",
+    "checked": "2026-10-03"
+  },
+  "R.E.M.|Automatic for the People": {
+    "source": "Deezer",
+    "title": "Automatic For The People",
+    "artist": "R.E.M.",
+    "url": "https://cdn-images.dzcdn.net/images/cover/8f9e1252bb3ee900f342a2c83a378922/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/12752508",
+    "checked": "2026-10-03"
+  },
+  "Sufjan Stevens|Carrie & Lowell": {
+    "source": "Deezer",
+    "title": "Carrie & Lowell",
+    "artist": "Sufjan Stevens",
+    "url": "https://cdn-images.dzcdn.net/images/cover/122a6ace3852ad75a05aa435d17b38b3/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/9859372",
+    "checked": "2026-10-03"
+  },
+  "Radiohead|A Moon Shaped Pool": {
+    "source": "Deezer",
+    "title": "A Moon Shaped Pool",
+    "artist": "Radiohead",
+    "url": "https://cdn-images.dzcdn.net/images/cover/e9232e4391ed1206cc0bd6ab17822177/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/14879823",
+    "checked": "2026-10-03"
+  },
+  "The Flaming Lips|The Soft Bulletin": {
+    "source": "Deezer",
+    "title": "The Soft Bulletin",
+    "artist": "The Flaming Lips",
+    "url": "https://cdn-images.dzcdn.net/images/cover/187e05c677e47065a8f51af7b7293fb2/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/43048331",
+    "checked": "2026-10-03"
+  },
+  "Arctic Monkeys|Whatever People Say I Am...": {
+    "source": "Deezer",
+    "title": "Whatever People Say I Am, That's What I'm Not",
+    "artist": "Arctic Monkeys",
+    "url": "https://cdn-images.dzcdn.net/images/cover/f7a0a1ca91431861989efe5a22aad557/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/401340",
+    "checked": "2026-10-03"
+  },
+  "Bon Iver|For Emma, Forever Ago": {
+    "source": "Deezer",
+    "title": "For Emma, Forever Ago",
+    "artist": "Bon Iver",
+    "url": "https://cdn-images.dzcdn.net/images/cover/2af56dee5db12e4af6323afa26257ccf/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/7291105",
+    "checked": "2026-10-03"
+  },
+  "Fleet Foxes|Helplessness Blues": {
+    "source": "Deezer",
+    "title": "Helplessness Blues",
+    "artist": "Fleet Foxes",
+    "url": "https://cdn-images.dzcdn.net/images/cover/17965c2e5d1accbf02ff40a06bf47747/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/15541874",
+    "checked": "2026-10-03"
+  },
+  "Beach House|Teen Dream": {
+    "source": "Deezer",
+    "title": "Teen Dream",
+    "artist": "Beach House",
+    "url": "https://cdn-images.dzcdn.net/images/cover/73f49d02e25453df144353f4ccf8b161/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/6762694",
+    "checked": "2026-10-03"
+  },
+  "The xx|xx": {
+    "source": "Deezer",
+    "title": "xx",
+    "artist": "The xx",
+    "url": "https://cdn-images.dzcdn.net/images/cover/7037869230e2fbf86b91ec1b4c7e8b8d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/355921",
+    "checked": "2026-10-03"
+  },
+  "Taylor Swift|Folklore": {
+    "source": "Deezer",
+    "title": "folklore",
+    "artist": "Taylor Swift",
+    "url": "https://cdn-images.dzcdn.net/images/cover/290abe93bdda84bb8b170f30a4998c4c/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/162683632",
+    "checked": "2026-10-03"
+  },
+  "Freddie Gibbs & Madlib|Pinata": {
+    "source": "Deezer",
+    "title": "Piñata",
+    "artist": "Freddie Gibbs",
+    "url": "https://cdn-images.dzcdn.net/images/cover/0bcd3df972764ffcab992d3cd5760aa3/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/7498503",
+    "checked": "2026-10-03"
+  },
+  "Danny Brown|Atrocity Exhibition": {
+    "source": "Deezer",
+    "title": "Atrocity Exhibition",
+    "artist": "Danny Brown",
+    "url": "https://cdn-images.dzcdn.net/images/cover/fccdcc562c0de3c46ca7646001dc52d6/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/13868756",
+    "checked": "2026-10-03"
+  },
+  "Earl Sweatshirt|Some Rap Songs": {
+    "source": "Deezer",
+    "title": "Some Rap Songs",
+    "artist": "Earl Sweatshirt",
+    "url": "https://cdn-images.dzcdn.net/images/cover/c4c207293020a9bf35c9bf25236a9fce/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/79981842",
+    "checked": "2026-10-03"
+  },
+  "Rosalía|El Mal Querer": {
+    "source": "Deezer",
+    "title": "El Mal Querer",
+    "artist": "ROSALÍA",
+    "url": "https://cdn-images.dzcdn.net/images/cover/10440b4fc8b5b8f3392702a2ef213ab1/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/73227952",
+    "checked": "2026-10-03"
+  },
+  "Aphex Twin|Richard D. James Album": {
+    "source": "Deezer",
+    "title": "Richard D. James Album",
+    "artist": "Aphex Twin",
+    "url": "https://cdn-images.dzcdn.net/images/cover/3aa42e96e2c621d7e4caf305812a6398/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/2795201",
+    "checked": "2026-10-03"
+  },
+  "LCD Soundsystem|Sound of Silver": {
+    "source": "Deezer",
+    "title": "Sound of Silver",
+    "artist": "LCD Soundsystem",
+    "url": "https://cdn-images.dzcdn.net/images/cover/d5aec97cfc1581df6b32a267fe067827/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/300592",
+    "checked": "2026-10-03"
+  },
+  "Beyoncé|Renaissance": {
+    "source": "Deezer",
+    "title": "RENAISSANCE",
+    "artist": "Beyoncé",
+    "url": "https://cdn-images.dzcdn.net/images/cover/2242a8d11b770d4d617afc02553510a8/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/340077257",
+    "checked": "2026-10-03"
+  },
+  "The Weeknd|After Hours": {
+    "source": "Deezer",
+    "title": "After Hours",
+    "artist": "The Weeknd",
+    "url": "https://cdn-images.dzcdn.net/images/cover/f520bf0be2e3cfc476824e75d20a164a/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/137272602",
+    "checked": "2026-10-03"
+  },
+  "black midi|Hellfire": {
+    "source": "Deezer",
+    "title": "Hellfire",
+    "artist": "black midi",
+    "url": "https://cdn-images.dzcdn.net/images/cover/b7f72680b23b3ba603af8bc24476d26f/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/329841197",
+    "checked": "2026-10-03"
+  },
+  "Car Seat Headrest|Twin Fantasy": {
+    "source": "Deezer",
+    "title": "Twin Fantasy",
+    "artist": "Car Seat Headrest",
+    "url": "https://cdn-images.dzcdn.net/images/cover/0cb3d4d249f2699baae9a66b9730060f/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/56233712",
+    "checked": "2026-10-03"
+  },
+  "Pulp|Different Class": {
+    "source": "Deezer",
+    "title": "Different Class",
+    "artist": "Pulp",
+    "url": "https://cdn-images.dzcdn.net/images/cover/cf8eb9734663d0b36a12582d3ac10331/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/224907",
+    "checked": "2026-10-03"
+  },
+  "Soundgarden|Superunknown": {
+    "source": "Deezer",
+    "title": "Superunknown (20th Anniversary)",
+    "artist": "Soundgarden",
+    "url": "https://cdn-images.dzcdn.net/images/cover/101e0b71e12c887ee137ac4a14e0475d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/7816775",
+    "checked": "2026-10-03"
+  },
+  "Belle and Sebastian|If You're Feeling Sinister": {
+    "source": "Deezer",
+    "title": "If You're Feeling Sinister",
+    "artist": "Belle and Sebastian",
+    "url": "https://cdn-images.dzcdn.net/images/cover/93f2d604963d722e45c74628c653844d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/256643",
+    "checked": "2026-10-03"
+  },
+  "Modest Mouse|The Lonesome Crowded West": {
+    "source": "Deezer",
+    "title": "The Lonesome Crowded West",
+    "artist": "Modest Mouse",
+    "url": "https://cdn-images.dzcdn.net/images/cover/a83dfccff2ab4d4ee9bb9b117881a244/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/228054752",
+    "checked": "2026-10-03"
+  },
+  "Caetano Veloso|Transa": {
+    "source": "Deezer",
+    "title": "Transa",
+    "artist": "Caetano Veloso",
+    "url": "https://cdn-images.dzcdn.net/images/cover/83d1ac4fec7bdf3b8a635f78ed2b907d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/99744",
+    "checked": "2026-10-03"
+  },
+  "Joey Bada$$|1999": {
+    "source": "Deezer",
+    "title": "1999",
+    "artist": "Joey Bada$$",
+    "url": "https://cdn-images.dzcdn.net/images/cover/1a78ec1b3cd5e771cf56f2f18f3da22f/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/65371772",
+    "checked": "2026-10-03"
+  },
+  "Björk|Debut": {
+    "source": "Deezer",
+    "title": "Debut",
+    "artist": "Björk",
+    "url": "https://cdn-images.dzcdn.net/images/cover/8c922fd15bf105320d24d0a2b23bef7f/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/537882502",
+    "checked": "2026-10-03"
+  },
+  "Nick Drake|Bryter Layter": {
+    "source": "Deezer",
+    "title": "Bryter Layter",
+    "artist": "Nick Drake",
+    "url": "https://cdn-images.dzcdn.net/images/cover/8d2d8affb063f38d8e3e4914a225061e/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/482869875",
+    "checked": "2026-10-03"
+  },
+  "Depeche Mode|Violator": {
+    "source": "Deezer",
+    "title": "Violator (Deluxe)",
+    "artist": "Depeche Mode",
+    "url": "https://cdn-images.dzcdn.net/images/cover/2632e326fac7c48c2fbef198f295995a/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/14581030",
+    "checked": "2026-10-03"
+  },
+  "The Jesus and Mary Chain|Psychocandy": {
+    "source": "Deezer",
+    "title": "Psychocandy",
+    "artist": "The Jesus and Mary Chain",
+    "url": "https://cdn-images.dzcdn.net/images/cover/f6768645a19a5427a2cd5e3ddd2b853a/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/86521",
+    "checked": "2026-10-03"
+  },
+  "周杰倫|八度空間": {
+    "source": "Apple Music / iTunes",
+    "title": "八度空間",
+    "artist": "周杰倫",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/96/c8/a1/96c8a1d8-8077-b8a7-8600-80b2abf1fe20/JAY.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E5%85%AB%E5%BA%A6%E7%A9%BA%E9%96%93/536161722?uo=4",
+    "checked": "2026-10-03"
+  },
+  "周杰倫|范特西": {
+    "source": "Apple Music / iTunes",
+    "title": "范特西",
+    "artist": "周杰倫",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/a4/f2/f0/a4f2f0d4-cc80-d1a0-7f20-a0cc842a523c/JAY.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E8%8C%83%E7%89%B9%E8%A5%BF/535739206?uo=4",
+    "checked": "2026-10-03"
+  },
+  "周杰倫|葉惠美": {
+    "source": "Apple Music / iTunes",
+    "title": "葉惠美",
+    "artist": "周杰倫",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/45/8a/e4/458ae484-dc8b-5683-ce04-8d2948346462/JAY.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E8%91%89%E6%83%A0%E7%BE%8E/535824731?uo=4",
+    "checked": "2026-10-03"
+  },
+  "周杰倫|七里香": {
+    "source": "Apple Music / iTunes",
+    "title": "七里香",
+    "artist": "周杰倫",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/29/c1/2d/29c12de6-54b4-f549-9d9f-07d8a04221ea/JAY.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E4%B8%83%E9%87%8C%E9%A6%99/536114662?uo=4",
+    "checked": "2026-10-03"
+  },
+  "王菲|浮躁": {
+    "source": "Apple Music / iTunes",
+    "title": "浮躁",
+    "artist": "王菲",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/f6/31/d6/f631d6d6-1fd0-272a-3feb-de30b4e69ace/00602517665095.rgb.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E6%B5%AE%E8%BA%81/1443287350?uo=4",
+    "checked": "2026-10-03"
+  },
+  "王菲|寓言": {
+    "source": "Apple Music / iTunes",
+    "title": "寓言",
+    "artist": "王菲",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music1/v4/eb/1a/6c/eb1a6ce1-646b-b2a6-bc2e-be629e981b74/Untitled.png/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E5%AF%93%E8%A8%80/966489223?uo=4",
+    "checked": "2026-10-03"
+  },
+  "王菲|將愛": {
+    "source": "Apple Music / iTunes",
+    "title": "將愛",
+    "artist": "王菲",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/11/72/ee/1172ee39-e832-c10f-5aad-dea3d82889e3/Untitled.png/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E5%B0%87%E6%84%9B/966483493?uo=4",
+    "checked": "2026-10-03"
+  },
+  "陳奕迅|U87": {
+    "source": "Apple Music / iTunes",
+    "title": "U 87",
+    "artist": "陳奕迅",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/62/52/5c/62525cbe-f9cd-90ee-820e-db3f75d29c80/00602498308905.rgb.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/u-87/1443374875?uo=4",
+    "checked": "2026-10-03"
+  },
+  "陳奕迅|The Key": {
+    "source": "Apple Music / iTunes",
+    "title": "The Key",
+    "artist": "陳奕迅",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/1c/c0/d3/1cc0d357-4642-a5c6-4ad6-57add94791b3/00602567727873.rgb.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/the-key/1386714588?uo=4",
+    "checked": "2026-10-03"
+  },
+  "孫燕姿|風箏": {
+    "source": "Apple Music / iTunes",
+    "title": "風箏",
+    "artist": "孫燕姿",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/7b/e7/26/7be7268a-8048-fe91-9f70-e6f0ef401372/mzi.uwhxxsbl.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E9%A2%A8%E7%AE%8F/297994281?uo=4",
+    "checked": "2026-10-03"
+  },
+  "陶喆|黑色柳丁": {
+    "source": "Apple Music / iTunes",
+    "title": "黑色柳丁",
+    "artist": "陶喆",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/05/7a/97/057a9723-2dbd-873b-81e0-5090879b2942/825646245352.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E9%BB%91%E8%89%B2%E6%9F%B3%E4%B8%81/914664926?uo=4",
+    "checked": "2026-10-03"
+  },
+  "陶喆|太平盛世": {
+    "source": "Apple Music / iTunes",
+    "title": "太平盛世",
+    "artist": "陶喆",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/fe/ad/e7/feade7c8-826b-0379-fbf4-e59606db8e4c/825646245406.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E5%A4%AA%E5%B9%B3%E7%9B%9B%E4%B8%96/905206649?uo=4",
+    "checked": "2026-10-03"
+  },
+  "張懸|My Life Will...": {
+    "source": "Apple Music / iTunes",
+    "title": "My Life Will",
+    "artist": "張懸",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music/2c/65/a6/mzi.gfyizvei.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/my-life-will/300117892?uo=4",
+    "checked": "2026-10-03"
+  },
+  "張懸|城市": {
+    "source": "Apple Music / iTunes",
+    "title": "城市",
+    "artist": "張懸",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/80/90/6b/80906b73-db91-c6ab-5f40-5bc6a05ee217/mzi.dckjbaow.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E5%9F%8E%E5%B8%82/317557859?uo=4",
+    "checked": "2026-10-03"
+  },
+  "張懸|神的遊戲": {
+    "source": "Apple Music / iTunes",
+    "title": "神的遊戲",
+    "artist": "張懸",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/86/1e/44/861e443d-36e4-cb28-2182-6c5784e87276/886443553392.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E7%A5%9E%E7%9A%84%E9%81%8A%E6%88%B2/547978486?uo=4",
+    "checked": "2026-10-03"
+  },
+  "陳綺貞|太陽": {
+    "source": "Apple Music / iTunes",
+    "title": "太陽",
+    "artist": "陳綺貞",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/07/70/06/077006a5-18c5-0e56-0e0c-ba052672b07a/4719760090010_new.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E5%A4%AA%E9%99%BD/815493324?uo=4",
+    "checked": "2026-10-03"
+  },
+  "蘇打綠|小宇宙": {
+    "source": "Deezer",
+    "title": "小宇宙",
+    "artist": "蘇打綠",
+    "url": "https://cdn-images.dzcdn.net/images/cover/ed836a9dcba617ad1faec9f3b0f3bb24/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/94801302",
+    "checked": "2026-10-03"
+  },
+  "蘇打綠|冬 未了": {
+    "source": "Deezer",
+    "title": "冬 未了",
+    "artist": "蘇打綠",
+    "url": "https://cdn-images.dzcdn.net/images/cover/406b40c54ac0398c7d4ea4541b088f06/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/270079922",
+    "checked": "2026-10-03"
+  },
+  "蘇打綠|無與倫比的美麗": {
+    "source": "Deezer",
+    "title": "無與倫比的美麗",
+    "artist": "蘇打綠",
+    "url": "https://cdn-images.dzcdn.net/images/cover/e3513c16b6dad829c65f5848296afb23/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/95259242",
+    "checked": "2026-10-03"
+  },
+  "五月天|時光機": {
+    "source": "Apple Music / iTunes",
+    "title": "時光機",
+    "artist": "五月天",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/59/03/0a/59030ac6-3c18-c5f4-3770-ae08beaa2de2/dj.qlguzxkk.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E6%99%82%E5%85%89%E6%A9%9F/153785619?uo=4",
+    "checked": "2026-10-03"
+  },
+  "五月天|後青春期的詩": {
+    "source": "Apple Music / iTunes",
+    "title": "後 青春期的詩",
+    "artist": "五月天",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music69/v4/fd/ba/9e/fdba9e89-6336-d3e4-ee00-94184f9a5c2c/BD0016-_-.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E5%BE%8C-%E9%9D%92%E6%98%A5%E6%9C%9F%E7%9A%84%E8%A9%A9/1081381033?uo=4",
+    "checked": "2026-10-03"
+  },
+  "五月天|神的孩子都在跳舞": {
+    "source": "Apple Music / iTunes",
+    "title": "神的孩子都在跳舞",
+    "artist": "五月天",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music/07/f2/90/mzi.xhevnauo.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E7%A5%9E%E7%9A%84%E5%AD%A9%E5%AD%90%E9%83%BD%E5%9C%A8%E8%B7%B3%E8%88%9E/183919330?uo=4",
+    "checked": "2026-10-03"
+  },
+  "草東沒有派對|醜奴兒": {
+    "source": "Deezer",
+    "title": "醜奴兒",
+    "artist": "草東沒有派對",
+    "url": "https://cdn-images.dzcdn.net/images/cover/ff52602c1145c7a08ac9205acd65524a/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/416451687",
+    "checked": "2026-10-03"
+  },
+  "草東沒有派對|瓦合": {
+    "source": "Deezer",
+    "title": "瓦合",
+    "artist": "草東沒有派對",
+    "url": "https://cdn-images.dzcdn.net/images/cover/8d5ac9ba6dfbee94b3b5f17821b1e50b/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/436270407",
+    "checked": "2026-10-03"
+  },
+  "落日飛車|Cassa Nova": {
+    "source": "Apple Music / iTunes",
+    "title": "CASSA NOVA",
+    "artist": "落日飛車",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/47/24/0a/47240ae1-48d5-f598-16d6-fecbccd0c922/5021732419736.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/cassa-nova/1753852987?uo=4",
+    "checked": "2026-10-03"
+  },
+  "落日飛車|Soft Storm": {
+    "source": "Apple Music / iTunes",
+    "title": "SOFT STORM",
+    "artist": "落日飛車",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/51/79/bf/5179bf63-d6e4-af1c-19ee-5149f6699223/5021732417572.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/soft-storm/1752999086?uo=4",
+    "checked": "2026-10-03"
+  },
+  "告五人|我肯定在幾百年前就說過愛你": {
+    "source": "Apple Music / iTunes",
+    "title": "我肯定在幾百年前就說過愛你",
+    "artist": "告五人",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/10/ba/77/10ba77f4-47ae-8cb6-2913-cf49b78452b5/1..jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E6%88%91%E8%82%AF%E5%AE%9A%E5%9C%A8%E5%B9%BE%E7%99%BE%E5%B9%B4%E5%89%8D%E5%B0%B1%E8%AA%AA%E9%81%8E%E6%84%9B%E4%BD%A0/1546062804?uo=4",
+    "checked": "2026-10-03"
+  },
+  "蔡健雅|Goodbye & Hello": {
+    "source": "Apple Music / iTunes",
+    "title": "Goodbye & Hello",
+    "artist": "蔡健雅",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/32/d0/10/32d01050-5a87-e1a9-edbd-bf98c5a747c9/Goodbye_Hello_1400x1400.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/goodbye-hello/672617526?uo=4",
+    "checked": "2026-10-03"
+  },
+  "伍佰 & China Blue|浪人情歌": {
+    "source": "Apple Music / iTunes",
+    "title": "浪人情歌",
+    "artist": "伍佰 & China Blue",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/4e/4e/39/4e4e3900-6b96-f2c8-3b88-9ad466cbd395/4710149610546_cover.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E6%B5%AA%E4%BA%BA%E6%83%85%E6%AD%8C/151377144?uo=4",
+    "checked": "2026-10-03"
+  },
+  "羅大佑|之乎者也": {
+    "source": "Deezer",
+    "title": "之乎者也",
+    "artist": "羅大佑",
+    "url": "https://cdn-images.dzcdn.net/images/cover/8e01118cdee861a843a3dd5f48b95807/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/522363182",
+    "checked": "2026-10-03"
+  },
+  "Hikaru Utada|First Love": {
+    "source": "Deezer",
+    "title": "First Love",
+    "artist": "Hikaru Utada",
+    "url": "https://cdn-images.dzcdn.net/images/cover/e004947115457f462c63988ece2ba45a/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/52662432",
+    "checked": "2026-10-03"
+  },
+  "Hikaru Utada|Distance": {
+    "source": "Deezer",
+    "title": "Distance (Remastered 2018)",
+    "artist": "Hikaru Utada",
+    "url": "https://cdn-images.dzcdn.net/images/cover/6fc52621a13975c2c81bea67a063fea8/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/84749342",
+    "checked": "2026-10-03"
+  },
+  "Hikaru Utada|Deep River": {
+    "source": "Deezer",
+    "title": "Deep River (Remastered 2018)",
+    "artist": "Hikaru Utada",
+    "url": "https://cdn-images.dzcdn.net/images/cover/99acb6f67f1f32554bdf05341acfbeba/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/80828292",
+    "checked": "2026-10-03"
+  },
+  "Hikaru Utada|BAD MODE": {
+    "source": "Deezer",
+    "title": "BAD MODE",
+    "artist": "Hikaru Utada",
+    "url": "https://cdn-images.dzcdn.net/images/cover/6cf7293f5dd8ab148a1d7cd15e814235/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/286666042",
+    "checked": "2026-10-03"
+  },
+  "Sheena Ringo|Muzai Moratorium": {
+    "source": "Deezer",
+    "title": "Muzai Moratorium -Innocence Moratorium-",
+    "artist": "Sheena Ringo",
+    "url": "https://cdn-images.dzcdn.net/images/cover/998fe24a29474d982f666006703c1225/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/64184372",
+    "checked": "2026-10-03"
+  },
+  "Fishmans|LONG SEASON": {
+    "source": "Deezer",
+    "title": "Long Season",
+    "artist": "Fishmans",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9604576c3a23446a92b60e8fed75bc85/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/69856482",
+    "checked": "2026-10-03"
+  },
+  "Fishmans|Uchu Nippon Setagaya": {
+    "source": "Deezer",
+    "title": "Uchu Nippon Setagaya",
+    "artist": "Fishmans",
+    "url": "https://cdn-images.dzcdn.net/images/cover/893802a0dc787cb63bc6c49fad038282/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/69856912",
+    "checked": "2026-10-03"
+  },
+  "Nujabes|Modal Soul": {
+    "source": "Deezer",
+    "title": "Modal Soul",
+    "artist": "Nujabes",
+    "url": "https://cdn-images.dzcdn.net/images/cover/df84078a237cfcc1632b2e1e3796b9c6/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/584380342",
+    "checked": "2026-10-03"
+  },
+  "Nujabes|Metaphorical Music": {
+    "source": "Deezer",
+    "title": "Metaphorical Music",
+    "artist": "Nujabes",
+    "url": "https://cdn-images.dzcdn.net/images/cover/1101dad700ff330a9ca2c6915135af4e/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/584380142",
+    "checked": "2026-10-03"
+  },
+  "Ryuichi Sakamoto|async": {
+    "source": "Deezer",
+    "title": "async",
+    "artist": "Ryuichi Sakamoto",
+    "url": "https://cdn-images.dzcdn.net/images/cover/ee4d7f4427dcc9bf350203bbadbf92ea/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/140733492",
+    "checked": "2026-10-03"
+  },
+  "Haruomi Hosono|Hosono House": {
+    "source": "Deezer",
+    "title": "Hosono House Revisited",
+    "artist": "Haruomi Hosono",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9d50c50c7a6c3012f0cd39ec6d8a5930/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/638224141",
+    "checked": "2026-10-03"
+  },
+  "YELLOW MAGIC ORCHESTRA|Solid State Survivor": {
+    "source": "Deezer",
+    "title": "Solid State Survivor",
+    "artist": "Yellow Magic Orchestra",
+    "url": "https://cdn-images.dzcdn.net/images/cover/0c21a4f48e364a155a403c3f858c9955/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/49229592",
+    "checked": "2026-10-03"
+  },
+  "Ryuichi Sakamoto|12": {
+    "source": "Deezer",
+    "title": "12",
+    "artist": "Ryuichi Sakamoto",
+    "url": "https://cdn-images.dzcdn.net/images/cover/4b85d59a718b18287e9260b375c6d04d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/376111667",
+    "checked": "2026-10-03"
+  },
+  "Taeko Onuki|SUNSHOWER": {
+    "source": "Deezer",
+    "title": "SUNSHOWER",
+    "artist": "Taeko Onuki",
+    "url": "https://cdn-images.dzcdn.net/images/cover/d97de7a8655d9ebdbdad68a4578bce8c/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/830059601",
+    "checked": "2026-10-03"
+  },
+  "Taeko Onuki|MIGNONNE": {
+    "source": "Deezer",
+    "title": "Mignonne (Mastered by Bernie Grundman)",
+    "artist": "Taeko Onuki",
+    "url": "https://cdn-images.dzcdn.net/images/cover/5d70bdb7a85d3b118e3291bdc97e2df6/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/275619132",
+    "checked": "2026-10-03"
+  },
+  "Ichiko Aoba|0": {
+    "source": "Deezer",
+    "title": "0",
+    "artist": "Ichiko Aoba",
+    "url": "https://cdn-images.dzcdn.net/images/cover/0f0bf00af59bde01e05664f7b6336cb6/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/401025427",
+    "checked": "2026-10-03"
+  },
+  "Ichiko Aoba|Windswept Adan": {
+    "source": "Deezer",
+    "title": "Windswept Adan",
+    "artist": "Ichiko Aoba",
+    "url": "https://cdn-images.dzcdn.net/images/cover/d888de60084644369238dba86790eb07/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/506971601",
+    "checked": "2026-10-03"
+  },
+  "Cornelius|Point": {
+    "source": "Deezer",
+    "title": "Point",
+    "artist": "Cornelius",
+    "url": "https://cdn-images.dzcdn.net/images/cover/c872538b9cbe424f8ae88a319277c841/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/43972641",
+    "checked": "2026-10-03"
+  },
+  "toe|For Long Tomorrow": {
+    "source": "Deezer",
+    "title": "For Long Tomorrow",
+    "artist": "toe",
+    "url": "https://cdn-images.dzcdn.net/images/cover/b946c97c5fffefd6d1c09aacae177c90/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/277999942",
+    "checked": "2026-10-03"
+  },
+  "Cornelius|Fantasma": {
+    "source": "Deezer",
+    "title": "Fantasma (Remastered)",
+    "artist": "Cornelius",
+    "url": "https://cdn-images.dzcdn.net/images/cover/f662f09e16d62f38fa69031d21a2d9a3/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/43958381",
+    "checked": "2026-10-03"
+  },
+  "tricot|T H E": {
+    "source": "Deezer",
+    "title": "T H E",
+    "artist": "Tricot",
+    "url": "https://cdn-images.dzcdn.net/images/cover/53a5efaad6cba8cac3ac2652d7c10a73/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/277506422",
+    "checked": "2026-10-03"
+  },
+  "Lamp|For Lovers": {
+    "source": "Deezer",
+    "title": "For Lovers",
+    "artist": "Lamp",
+    "url": "https://cdn-images.dzcdn.net/images/cover/1f1e8acf2420b6d04240281b41185213/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/117715332",
+    "checked": "2026-10-03"
+  },
+  "Kenshi Yonezu|STRAY SHEEP": {
+    "source": "Deezer",
+    "title": "STRAY SHEEP",
+    "artist": "Kenshi Yonezu",
+    "url": "https://cdn-images.dzcdn.net/images/cover/193ef854b77c93245225cba6798ea39b/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/177754422",
+    "checked": "2026-10-03"
+  },
+  "Kenshi Yonezu|BOOTLEG": {
+    "source": "Deezer",
+    "title": "BOOTLEG",
+    "artist": "Kenshi Yonezu",
+    "url": "https://cdn-images.dzcdn.net/images/cover/72db2afbcd76bd009d83d71e94fe3e97/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/225933832",
+    "checked": "2026-10-03"
+  },
+  "King Gnu|CEREMONY": {
+    "source": "Deezer",
+    "title": "Ceremony",
+    "artist": "King Gnu",
+    "url": "https://cdn-images.dzcdn.net/images/cover/2932d3fe1499bed1227c32efdf766c3d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/161492972",
+    "checked": "2026-10-03"
+  },
+  "Vaundy|strobo": {
+    "source": "Deezer",
+    "title": "strobo",
+    "artist": "Vaundy",
+    "url": "https://cdn-images.dzcdn.net/images/cover/deffe7f5ee96e96294633f479e28c78d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/486929515",
+    "checked": "2026-10-03"
+  },
+  "Yurushika|That's Why I Gave Up on Music": {
+    "source": "Deezer",
+    "title": "だから僕は音楽を辞めた",
+    "artist": "ヨルシカ",
+    "url": "https://cdn-images.dzcdn.net/images/cover/db73b1831c08af3ecfa4c6b7f21a7cd9/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/812524821",
+    "checked": "2026-10-03"
+  },
+  "Sufjan Stevens|Illinois": {
+    "source": "Deezer",
+    "title": "Illinois",
+    "artist": "Sufjan Stevens",
+    "url": "https://cdn-images.dzcdn.net/images/cover/76f4c6ec0218b725a57390efeba5e6aa/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/6158892",
+    "checked": "2026-10-03"
+  },
+  "Sufjan Stevens|The Age of Adz": {
+    "source": "Deezer",
+    "title": "The Age of Adz",
+    "artist": "Sufjan Stevens",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9dd4b3ca48decea703f3fb1941339ae4/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/6156571",
+    "checked": "2026-10-03"
+  },
+  "Bon Iver|22, A Million": {
+    "source": "Deezer",
+    "title": "22, A Million",
+    "artist": "Bon Iver",
+    "url": "https://cdn-images.dzcdn.net/images/cover/bd132a0670b07c6aadc4a7ee0efc8f6f/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/14050108",
+    "checked": "2026-10-03"
+  },
+  "Bon Iver|Bon Iver, Bon Iver": {
+    "source": "Deezer",
+    "title": "Bon Iver, Bon Iver",
+    "artist": "Bon Iver",
+    "url": "https://cdn-images.dzcdn.net/images/cover/1457f0d27076538d484625fa706541b7/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/7511038",
+    "checked": "2026-10-03"
+  },
+  "Fleet Foxes|Shore": {
+    "source": "Deezer",
+    "title": "Shore",
+    "artist": "Fleet Foxes",
+    "url": "https://cdn-images.dzcdn.net/images/cover/ee816daf51d15c6617e175802c20ef3b/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/172368352",
+    "checked": "2026-10-03"
+  },
+  "Fleet Foxes|Fleet Foxes": {
+    "source": "Deezer",
+    "title": "Fleet Foxes",
+    "artist": "Fleet Foxes",
+    "url": "https://cdn-images.dzcdn.net/images/cover/b0fe57e221df539a2964ca5290787003/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/15541872",
+    "checked": "2026-10-03"
+  },
+  "Beach House|Bloom": {
+    "source": "Deezer",
+    "title": "Bloom",
+    "artist": "Beach House",
+    "url": "https://cdn-images.dzcdn.net/images/cover/0616ef61572cbc0fb5d35e039e3022a3/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/6760771",
+    "checked": "2026-10-03"
+  },
+  "Beach House|Depression Cherry": {
+    "source": "Deezer",
+    "title": "Depression Cherry",
+    "artist": "Beach House",
+    "url": "https://cdn-images.dzcdn.net/images/cover/399cffa2434760d22746a10a44c80bc2/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/11093204",
+    "checked": "2026-10-03"
+  },
+  "Tame Impala|Lonerism": {
+    "source": "Deezer",
+    "title": "Lonerism",
+    "artist": "Tame Impala",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9fe30ce99ef17cb1250bef071f15ccee/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/5946143",
+    "checked": "2026-10-03"
+  },
+  "Beach House|7": {
+    "source": "Deezer",
+    "title": "7",
+    "artist": "Beach House",
+    "url": "https://cdn-images.dzcdn.net/images/cover/67967f4e67760061fd06267a57a3dbdd/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/63205362",
+    "checked": "2026-10-03"
+  },
+  "Tame Impala|Innerspeaker": {
+    "source": "Deezer",
+    "title": "InnerSpeaker",
+    "artist": "Tame Impala",
+    "url": "https://cdn-images.dzcdn.net/images/cover/5bf6a2d836429e215be5f0213882ad1f/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/76298222",
+    "checked": "2026-10-03"
+  },
+  "Arctic Monkeys|AM": {
+    "source": "Deezer",
+    "title": "AM",
+    "artist": "Arctic Monkeys",
+    "url": "https://cdn-images.dzcdn.net/images/cover/64e54e307bd5e2bdb27ffeb662fd910d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/6899610",
+    "checked": "2026-10-03"
+  },
+  "Arctic Monkeys|Tranquility Base Hotel & Casino": {
+    "source": "Deezer",
+    "title": "Tranquility Base Hotel & Casino",
+    "artist": "Arctic Monkeys",
+    "url": "https://cdn-images.dzcdn.net/images/cover/b223decfaa57910ef709736e49eaf0de/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/63203772",
+    "checked": "2026-10-03"
+  },
+  "The Strokes|The New Abnormal": {
+    "source": "Deezer",
+    "title": "The New Abnormal",
+    "artist": "The Strokes",
+    "url": "https://cdn-images.dzcdn.net/images/cover/523ac3e61759f365b9306fc44dd53eea/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/139890932",
+    "checked": "2026-10-03"
+  },
+  "Vampire Weekend|Modern Vampires of the City": {
+    "source": "Deezer",
+    "title": "Modern Vampires of the City",
+    "artist": "Vampire Weekend",
+    "url": "https://cdn-images.dzcdn.net/images/cover/470b179cc499f76813311609e4e3b9b9/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/176532302",
+    "checked": "2026-10-03"
+  },
+  "Vampire Weekend|Contra": {
+    "source": "Deezer",
+    "title": "Contra",
+    "artist": "Vampire Weekend",
+    "url": "https://cdn-images.dzcdn.net/images/cover/59327de36493020190874f2725a8ae2d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/444895",
+    "checked": "2026-10-03"
+  },
+  "The National|Boxer": {
+    "source": "Deezer",
+    "title": "Boxer",
+    "artist": "The National",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9b1fade0c56f1a3f09cc447177c7ea64/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/106041",
+    "checked": "2026-10-03"
+  },
+  "The National|High Violet": {
+    "source": "Deezer",
+    "title": "High Violet (Expanded Edition)",
+    "artist": "The National",
+    "url": "https://cdn-images.dzcdn.net/images/cover/2066effddff6b4e7832ccc17dac50857/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/695272",
+    "checked": "2026-10-03"
+  },
+  "Wilco|Yankee Hotel Foxtrot": {
+    "source": "Deezer",
+    "title": "Yankee Hotel Foxtrot",
+    "artist": "Wilco",
+    "url": "https://cdn-images.dzcdn.net/images/cover/2cc429d96d3b86aa2f58c4ccf1c942a5/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/271542",
+    "checked": "2026-10-03"
+  },
+  "Yo La Tengo|I Can Hear the Heart Beating as One": {
+    "source": "Deezer",
+    "title": "I Can Hear The Heart Beating As One",
+    "artist": "Yo La Tengo",
+    "url": "https://cdn-images.dzcdn.net/images/cover/b8e95ff91aeb15b22841d9a257739c92/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/10965534",
+    "checked": "2026-10-03"
+  },
+  "Alvvays|Antisocialites": {
+    "source": "Deezer",
+    "title": "Antisocialites",
+    "artist": "Alvvays",
+    "url": "https://cdn-images.dzcdn.net/images/cover/d4a9dc44a626fc7afcd95f6f26542c83/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/47498782",
+    "checked": "2026-10-03"
+  },
+  "Alvvays|Blue Rev": {
+    "source": "Deezer",
+    "title": "Blue Rev",
+    "artist": "Alvvays",
+    "url": "https://cdn-images.dzcdn.net/images/cover/1f2e46e2b1b5dd7440d6907ec25a2e3e/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/327955317",
+    "checked": "2026-10-03"
+  },
+  "Japanese Breakfast|Jubilee": {
+    "source": "Deezer",
+    "title": "Jubilee",
+    "artist": "Japanese Breakfast",
+    "url": "https://cdn-images.dzcdn.net/images/cover/f0d5207d075adb652643a29ae8851e7b/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/210814152",
+    "checked": "2026-10-03"
+  },
+  "boygenius|the record": {
+    "source": "Deezer",
+    "title": "the record",
+    "artist": "Boygenius",
+    "url": "https://cdn-images.dzcdn.net/images/cover/c36d43e83edce2aebe1a0624c9b2bcdf/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/423868847",
+    "checked": "2026-10-03"
+  },
+  "Adrianne Lenker|songs": {
+    "source": "Deezer",
+    "title": "songs",
+    "artist": "Adrianne Lenker",
+    "url": "https://cdn-images.dzcdn.net/images/cover/47d9814838d91d12d636946ff45734f7/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/165298402",
+    "checked": "2026-10-03"
+  },
+  "Angel Olsen|All Mirrors": {
+    "source": "Deezer",
+    "title": "All Mirrors",
+    "artist": "Angel Olsen",
+    "url": "https://cdn-images.dzcdn.net/images/cover/72b740f7d3a08fc2ba7ddb3bcf7cbcc0/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/107831992",
+    "checked": "2026-10-03"
+  },
+  "Weyes Blood|And in the Darkness, Hearts Aglow": {
+    "source": "Deezer",
+    "title": "And In The Darkness, Hearts Aglow",
+    "artist": "Weyes Blood",
+    "url": "https://cdn-images.dzcdn.net/images/cover/58e330785becd7e10e63a4d41bf7d8d6/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/347469357",
+    "checked": "2026-10-03"
+  },
+  "FKA twigs|LP1": {
+    "source": "Deezer",
+    "title": "LP1",
+    "artist": "FKA twigs",
+    "url": "https://cdn-images.dzcdn.net/images/cover/c600c9333fec238b7ac9ee691817f7cc/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/8449021",
+    "checked": "2026-10-03"
+  },
+  "FKA twigs|MAGDALENE": {
+    "source": "Deezer",
+    "title": "MAGDALENE",
+    "artist": "FKA twigs",
+    "url": "https://cdn-images.dzcdn.net/images/cover/63593ab6be8e57a118b9b53784eda751/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/117709222",
+    "checked": "2026-10-03"
+  },
+  "Björk|Post": {
+    "source": "Deezer",
+    "title": "Post",
+    "artist": "Björk",
+    "url": "https://cdn-images.dzcdn.net/images/cover/ecc49678971301c36387b34ed9473c65/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/537882732",
+    "checked": "2026-10-03"
+  },
+  "Björk|Vulnicura": {
+    "source": "Deezer",
+    "title": "Vulnicura",
+    "artist": "Björk",
+    "url": "https://cdn-images.dzcdn.net/images/cover/09c295ba804da6f9e1de476cfff1d530/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/537831902",
+    "checked": "2026-10-03"
+  },
+  "Portishead|Third": {
+    "source": "Deezer",
+    "title": "Third",
+    "artist": "Portishead",
+    "url": "https://cdn-images.dzcdn.net/images/cover/5cca6e3c2dd802a4500dbfca8a220f66/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/455045",
+    "checked": "2026-10-03"
+  },
+  "Massive Attack|Blue Lines": {
+    "source": "Deezer",
+    "title": "Blue Lines (2012 Mix/Master)",
+    "artist": "Massive Attack",
+    "url": "https://cdn-images.dzcdn.net/images/cover/81ba5b6bf32dcbf2e2dae244a7cfab51/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/6014554",
+    "checked": "2026-10-03"
+  },
+  "Massive Attack|Protection": {
+    "source": "Deezer",
+    "title": "Protection",
+    "artist": "Massive Attack",
+    "url": "https://cdn-images.dzcdn.net/images/cover/cbfb07d6b6ab9cb8c705d6a24896f894/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/301776",
+    "checked": "2026-10-03"
+  },
+  "Air|Moon Safari": {
+    "source": "Deezer",
+    "title": "Moon Safari",
+    "artist": "Air",
+    "url": "https://cdn-images.dzcdn.net/images/cover/1ccd5dc034bd7ad4f59ab540378ae1f5/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/302924",
+    "checked": "2026-10-03"
+  },
+  "Boards of Canada|Geogaddi": {
+    "source": "Deezer",
+    "title": "Geogaddi",
+    "artist": "Boards of Canada",
+    "url": "https://cdn-images.dzcdn.net/images/cover/4ca5f60e46ddb9b147a585cbe823977c/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/2795621",
+    "checked": "2026-10-03"
+  },
+  "Four Tet|Rounds": {
+    "source": "Deezer",
+    "title": "Rounds",
+    "artist": "Four Tet",
+    "url": "https://cdn-images.dzcdn.net/images/cover/7b955054e94d2a68733a9d11438c5d5c/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/426722",
+    "checked": "2026-10-03"
+  },
+  "Four Tet|There Is Love in You": {
+    "source": "Deezer",
+    "title": "There Is Love in You (Expanded Edition)",
+    "artist": "Four Tet",
+    "url": "https://cdn-images.dzcdn.net/images/cover/cb75b2c107266c06eb2a5fb696a0811e/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/182526842",
+    "checked": "2026-10-03"
+  },
+  "Floating Points|Crush": {
+    "source": "Deezer",
+    "title": "Crush",
+    "artist": "Floating Points",
+    "url": "https://cdn-images.dzcdn.net/images/cover/ce5c846ef4e3b73616feb21cc5243c35/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/112709642",
+    "checked": "2026-10-03"
+  },
+  "Jon Hopkins|Immunity": {
+    "source": "Deezer",
+    "title": "Immunity",
+    "artist": "Jon Hopkins",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9c031c2d932d489dd98a1fdf0a08ebfb/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/444477505",
+    "checked": "2026-10-03"
+  },
+  "Jon Hopkins|Singularity": {
+    "source": "Deezer",
+    "title": "Singularity",
+    "artist": "Jon Hopkins",
+    "url": "https://cdn-images.dzcdn.net/images/cover/6eb75b1ba2ed9cd7631c1d8c12f75c87/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/57239862",
+    "checked": "2026-10-03"
+  },
+  "Jamie xx|In Colour": {
+    "source": "Deezer",
+    "title": "In Colour",
+    "artist": "Jamie xx",
+    "url": "https://cdn-images.dzcdn.net/images/cover/0e24b8c4e5ace3a84fce519f36f8c9d4/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/10484910",
+    "checked": "2026-10-03"
+  },
+  "The Avalanches|Wildflower": {
+    "source": "Deezer",
+    "title": "Wildflower",
+    "artist": "The Avalanches",
+    "url": "https://cdn-images.dzcdn.net/images/cover/5116d260ceeec96df9cd399f135188c5/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/13526551",
+    "checked": "2026-10-03"
+  },
+  "LCD Soundsystem|This Is Happening": {
+    "source": "Deezer",
+    "title": "This Is Happening",
+    "artist": "LCD Soundsystem",
+    "url": "https://cdn-images.dzcdn.net/images/cover/6d1c8c822d58041dfc7fd0bb5612cdf5/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/539508",
+    "checked": "2026-10-03"
+  },
+  "Daft Punk|Homework": {
+    "source": "Deezer",
+    "title": "Homework",
+    "artist": "Daft Punk",
+    "url": "https://cdn-images.dzcdn.net/images/cover/b870579c8650cd59b1cce656dde2ef17/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/301775",
+    "checked": "2026-10-03"
+  },
+  "Kendrick Lamar|DAMN.": {
+    "source": "Deezer",
+    "title": "DAMN.",
+    "artist": "Kendrick Lamar",
+    "url": "https://cdn-images.dzcdn.net/images/cover/7ce6b8452fae425557067db6e6a1cad5/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/39949511",
+    "checked": "2026-10-03"
+  },
+  "Kendrick Lamar|Mr. Morale & The Big Steppers": {
+    "source": "Deezer",
+    "title": "Mr. Morale & The Big Steppers",
+    "artist": "Kendrick Lamar",
+    "url": "https://cdn-images.dzcdn.net/images/cover/412361ce41f0bd2595978dbf0e035ad3/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/322019377",
+    "checked": "2026-10-03"
+  },
+  "Tyler, The Creator|CALL ME IF YOU GET LOST": {
+    "source": "Deezer",
+    "title": "CALL ME IF YOU GET LOST",
+    "artist": "Tyler, The Creator",
+    "url": "https://cdn-images.dzcdn.net/images/cover/2d740784396546039fe626ac2b92877b/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/239516692",
+    "checked": "2026-10-03"
+  },
+  "Little Simz|Sometimes I Might Be Introvert": {
+    "source": "Deezer",
+    "title": "Sometimes I Might Be Introvert",
+    "artist": "Little Simz",
+    "url": "https://cdn-images.dzcdn.net/images/cover/885b9bd8ed06098c8eddee790b81bca4/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/363782127",
+    "checked": "2026-10-03"
+  },
+  "Little Simz|NO THANK YOU": {
+    "source": "Deezer",
+    "title": "NO THANK YOU",
+    "artist": "Little Simz",
+    "url": "https://cdn-images.dzcdn.net/images/cover/853ec53d2c47f7c0170530db2ccc9353/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/384131297",
+    "checked": "2026-10-03"
+  },
+  "JID|The Forever Story": {
+    "source": "Deezer",
+    "title": "The Forever Story (Extended Version)",
+    "artist": "JID",
+    "url": "https://cdn-images.dzcdn.net/images/cover/52c49df999ccf2844238672acccf2b7b/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/371606587",
+    "checked": "2026-10-03"
+  },
+  "Denzel Curry|Melt My Eyez See Your Future": {
+    "source": "Deezer",
+    "title": "Melt My Eyez See Your Future",
+    "artist": "Denzel Curry",
+    "url": "https://cdn-images.dzcdn.net/images/cover/6f025fe60479db38c5187378a5d3aa03/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/303958517",
+    "checked": "2026-10-03"
+  },
+  "Mac Miller|Swimming": {
+    "source": "Deezer",
+    "title": "Swimming",
+    "artist": "MAC MILLER",
+    "url": "https://cdn-images.dzcdn.net/images/cover/5c5774a43a421d37f58ae170df87b9e8/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/69352202",
+    "checked": "2026-10-03"
+  },
+  "Mac Miller|Circles": {
+    "source": "Deezer",
+    "title": "Circles",
+    "artist": "MAC MILLER",
+    "url": "https://cdn-images.dzcdn.net/images/cover/f775144a9c375ada83e1e014920a4d9a/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/127033012",
+    "checked": "2026-10-03"
+  },
+  "Anderson .Paak|Malibu": {
+    "source": "Deezer",
+    "title": "Malibu",
+    "artist": "Anderson .Paak",
+    "url": "https://cdn-images.dzcdn.net/images/cover/dc2fac96693ccae66ea8e0a43069c716/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/11895474",
+    "checked": "2026-10-03"
+  },
+  "SZA|SOS": {
+    "source": "Deezer",
+    "title": "SOS",
+    "artist": "SZA",
+    "url": "https://cdn-images.dzcdn.net/images/cover/328d68300e654b21831b261e413780e0/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/383703577",
+    "checked": "2026-10-03"
+  },
+  "Solange|When I Get Home": {
+    "source": "Deezer",
+    "title": "When I Get Home",
+    "artist": "Solange",
+    "url": "https://cdn-images.dzcdn.net/images/cover/ac9324c12054d39cba9da1d04ac5c71d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/88985912",
+    "checked": "2026-10-03"
+  },
+  "D'Angelo|Black Messiah": {
+    "source": "Deezer",
+    "title": "Black Messiah",
+    "artist": "D'Angelo",
+    "url": "https://cdn-images.dzcdn.net/images/cover/b81cb52321c9061e01df7e6b86df5b87/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/9366536",
+    "checked": "2026-10-03"
+  },
+  "Erykah Badu|Baduizm": {
+    "source": "Deezer",
+    "title": "Baduizm",
+    "artist": "Erykah Badu",
+    "url": "https://cdn-images.dzcdn.net/images/cover/7f673442e11d2cc1fca831b64a88d328/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/212837",
+    "checked": "2026-10-03"
+  },
+  "Erykah Badu|Mama's Gun": {
+    "source": "Deezer",
+    "title": "Mama's Gun",
+    "artist": "Erykah Badu",
+    "url": "https://cdn-images.dzcdn.net/images/cover/362b626099fff89887b04c8ab35feba7/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/213094",
+    "checked": "2026-10-03"
+  },
+  "Nina Simone|I Put a Spell on You": {
+    "source": "Deezer",
+    "title": "I Put A Spell On You",
+    "artist": "Nina Simone",
+    "url": "https://cdn-images.dzcdn.net/images/cover/500185991bdc8910511f9381d0731f0a/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/79884472",
+    "checked": "2026-10-03"
+  },
+  "John Coltrane|Blue Train": {
+    "source": "Deezer",
+    "title": "Blue Train",
+    "artist": "John Coltrane",
+    "url": "https://cdn-images.dzcdn.net/images/cover/42888514a6c4258bec5487f9bfea7b44/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/100448982",
+    "checked": "2026-10-03"
+  },
+  "Miles Davis|In a Silent Way": {
+    "source": "Deezer",
+    "title": "In A Silent Way",
+    "artist": "Miles Davis",
+    "url": "https://cdn-images.dzcdn.net/images/cover/5f5da95b4937802ccb3d6529c84f0fe4/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/1210678",
+    "checked": "2026-10-03"
+  },
+  "Dave Brubeck Quartet|Time Out": {
+    "source": "Deezer",
+    "title": "Time Out",
+    "artist": "The Dave Brubeck Quartet",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9637fd8850fbe280dfe958d0f82b7b12/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/6774073",
+    "checked": "2026-10-03"
+  },
+  "Bill Evans Trio|Waltz for Debby": {
+    "source": "Deezer",
+    "title": "Waltz For Debby (Original Jazz Classics Remaster 2010)",
+    "artist": "Bill Evans",
+    "url": "https://cdn-images.dzcdn.net/images/cover/7cd6d98ec20d410759e3209ff5067f17/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/659120",
+    "checked": "2026-10-03"
+  },
+  "Charles Mingus|The Black Saint and the Sinner Lady": {
+    "source": "Deezer",
+    "title": "The Black Saint And The Sinner Lady",
+    "artist": "Charles Mingus",
+    "url": "https://cdn-images.dzcdn.net/images/cover/e949fad1ad63e16289d15be27f05278e/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/1427653",
+    "checked": "2026-10-03"
+  },
+  "Herbie Hancock|Maiden Voyage": {
+    "source": "Deezer",
+    "title": "Maiden Voyage (Remastered 1999/Rudy Van Gelder Edition)",
+    "artist": "Herbie Hancock",
+    "url": "https://cdn-images.dzcdn.net/images/cover/2c9afaaeb1914879c9ca57cf2215ce05/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/300266",
+    "checked": "2026-10-03"
+  },
+  "Alice Coltrane|Journey in Satchidananda": {
+    "source": "Deezer",
+    "title": "Journey in Satchidananda",
+    "artist": "Alice Coltrane",
+    "url": "https://cdn-images.dzcdn.net/images/cover/ad448d64f31f7f8cfbe63c1aeea0c3b6/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/5941909",
+    "checked": "2026-10-03"
+  },
+  "Pharoah Sanders|Karma": {
+    "source": "Deezer",
+    "title": "Karma",
+    "artist": "Pharoah Sanders",
+    "url": "https://cdn-images.dzcdn.net/images/cover/f5aa52c1a94cc4a7ade5a457deabf81d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/5942124",
+    "checked": "2026-10-03"
+  },
+  "Kamasi Washington|The Epic": {
+    "source": "Deezer",
+    "title": "The Epic",
+    "artist": "Kamasi Washington",
+    "url": "https://cdn-images.dzcdn.net/images/cover/0828af74d2577b1ec52cd3a2965b826b/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/9865160",
+    "checked": "2026-10-03"
+  },
+  "BADBADNOTGOOD|IV": {
+    "source": "Deezer",
+    "title": "IV",
+    "artist": "Badbadnotgood",
+    "url": "https://cdn-images.dzcdn.net/images/cover/be02219439c43bf65f7f1cc5a38454bc/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/292354382",
+    "checked": "2026-10-03"
+  },
+  "Yussef Dayes|Black Classical Music": {
+    "source": "Deezer",
+    "title": "Black Classical Music",
+    "artist": "Yussef Dayes",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9204d64de348be9590b960d45cdda69a/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/460408375",
+    "checked": "2026-10-03"
+  },
+  "Joy Division|Closer": {
+    "source": "Deezer",
+    "title": "Closer (Collector's Edition)",
+    "artist": "Joy Division",
+    "url": "https://cdn-images.dzcdn.net/images/cover/356c66c9003b456b4caa11f8d7f79bc7/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/86907",
+    "checked": "2026-10-03"
+  },
+  "Alice in Chains|Dirt": {
+    "source": "Deezer",
+    "title": "Dirt (2022 Remaster)",
+    "artist": "Alice in Chains",
+    "url": "https://cdn-images.dzcdn.net/images/cover/31752b79ecbbdc65a26593759c8e08f8/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/1399089",
+    "checked": "2026-10-03"
+  },
+  "Phoebe Bridgers|Punisher": {
+    "source": "Deezer",
+    "title": "Punisher",
+    "artist": "Phoebe Bridgers",
+    "url": "https://cdn-images.dzcdn.net/images/cover/9eb3062eebc26c7a131ad6984f53137c/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/139385112",
+    "checked": "2026-10-03"
+  },
+  "Tyler, the Creator|IGOR": {
+    "source": "Deezer",
+    "title": "IGOR",
+    "artist": "Tyler, The Creator",
+    "url": "https://cdn-images.dzcdn.net/images/cover/041ab5ceb6fb6ebf9512966835be9e1b/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/97140952",
+    "checked": "2026-10-03"
+  },
+  "Joey Bada$|1999": {
+    "source": "Deezer",
+    "title": "1999",
+    "artist": "Joey Bada$$",
+    "url": "https://cdn-images.dzcdn.net/images/cover/1a78ec1b3cd5e771cf56f2f18f3da22f/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/65371772",
+    "checked": "2026-10-03"
+  },
+  "Milton Nascimento & Lô Borges|Clube da Esquina": {
+    "source": "Deezer",
+    "title": "Clube Da Esquina",
+    "artist": "Milton Nascimento",
+    "url": "https://cdn-images.dzcdn.net/images/cover/8b76155248e45a194fb6adb70a63ca2c/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/104485932",
+    "checked": "2026-10-03"
+  },
+  "陳奕迅|認了吧": {
+    "source": "Deezer",
+    "title": "認了吧",
+    "artist": "Eason Chan",
+    "url": "https://cdn-images.dzcdn.net/images/cover/8c02b32a3dd136ee579639f624da2794/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/118679",
+    "checked": "2026-10-03"
+  },
+  "周杰倫|十一月的蕭邦": {
+    "source": "Deezer",
+    "title": "November's Chopin",
+    "artist": "Jay Chou",
+    "url": "https://cdn-images.dzcdn.net/images/cover/613d32d99f60954ffe1e4510dc2e3829/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/529057942",
+    "checked": "2026-10-03"
+  },
+  "孫燕姿|Stefanie": {
+    "source": "Deezer",
+    "title": "Sun Yan Zi - Stefanie",
+    "artist": "Sun Yan-Zi",
+    "url": "https://cdn-images.dzcdn.net/images/cover/94d7fc056b8aafc0e49ebd484f8aab7d/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/362228",
+    "checked": "2026-10-03"
+  },
+  "孫燕姿|孫燕姿": {
+    "source": "Deezer",
+    "title": "Sun Yan-Zi",
+    "artist": "Sun Yan-Zi",
+    "url": "https://cdn-images.dzcdn.net/images/cover/59e07d5d0d142c334896e73edbf94fa9/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/82844",
+    "checked": "2026-10-03"
+  },
+  "陳綺貞|華麗的冒險": {
+    "source": "Deezer",
+    "title": "華麗的冒險",
+    "artist": "Cheer Chen",
+    "url": "https://cdn-images.dzcdn.net/images/cover/2bb6d575d4f7413a5e55fd1d1e2a84f2/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/237557382",
+    "checked": "2026-10-03"
+  },
+  "陶喆|陶喆": {
+    "source": "Deezer",
+    "title": "David Tao",
+    "artist": "David Tao",
+    "url": "https://cdn-images.dzcdn.net/images/cover/f762d254faa5804c0a22f622415d0caf/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/68226021",
+    "checked": "2026-10-03"
+  },
+  "萬能青年旅店|萬能青年旅店": {
+    "source": "Deezer",
+    "title": "万能青年旅店",
+    "artist": "万能青年旅店",
+    "url": "https://cdn-images.dzcdn.net/images/cover/46bbb4fd0dbf37b097db0a521dde0d07/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/183708282",
+    "checked": "2026-10-03"
+  },
+  "deca joins|浴室": {
+    "source": "Deezer",
+    "title": "浴室 (2019 Reprise)",
+    "artist": "Deca Joins",
+    "url": "https://cdn-images.dzcdn.net/images/cover/e0aa8eb36cd69c85577f6bf94a85668a/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/156381952",
+    "checked": "2026-10-03"
+  },
+  "蔡健雅|若你碰到他": {
+    "source": "Deezer",
+    "title": "If You See Him",
+    "artist": "Tanya Chua",
+    "url": "https://cdn-images.dzcdn.net/images/cover/17439fb1da391287f52db8e5877f4506/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/14481802",
+    "checked": "2026-10-03"
+  },
+  "方大同|Soulboy": {
+    "source": "Deezer",
+    "title": "Soulboy",
+    "artist": "Khalil Fong",
+    "url": "https://cdn-images.dzcdn.net/images/cover/e4bc78858c16ccb33784f9b40094d506/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/363155",
+    "checked": "2026-10-03"
+  },
+  "方大同|愛愛愛": {
+    "source": "Deezer",
+    "title": "This Love",
+    "artist": "Khalil Fong",
+    "url": "https://cdn-images.dzcdn.net/images/cover/c3d0e5ca9d559c6283dbf281ea64baf8/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/364359",
+    "checked": "2026-10-03"
+  },
+  "林俊傑|第二天堂": {
+    "source": "Apple Music / iTunes",
+    "title": "第二天堂(江南)",
+    "artist": "林俊傑",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music49/v4/9b/98/eb/9b98ebae-69b1-8009-678c-65e94124e0a8/dj.cqtiyqmo.jpg/600x600bb.jpg",
+    "page": "https://music.apple.com/tw/album/%E7%AC%AC%E4%BA%8C%E5%A4%A9%E5%A0%82-%E6%B1%9F%E5%8D%97/1071753622?uo=4",
+    "checked": "2026-10-03"
+  },
+  "方大同|橙月": {
+    "source": "Deezer",
+    "title": "Orange Moon",
+    "artist": "Khalil Fong",
+    "url": "https://cdn-images.dzcdn.net/images/cover/c34f904f9cfef6c0c097a2ee6cd15070/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/1345905",
+    "checked": "2026-10-03"
+  },
+  "崔健|新長征路上的搖滾": {
+    "source": "Deezer",
+    "title": "新长征路上的摇滚",
+    "artist": "崔健",
+    "url": "https://cdn-images.dzcdn.net/images/cover/3af54aa28adec22d1c917ce7752a7093/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/258420262",
+    "checked": "2026-10-03"
+  },
+  "朴樹|生如夏花": {
+    "source": "Deezer",
+    "title": "Life Like Summer Flowers",
+    "artist": "Pu Shu",
+    "url": "https://cdn-images.dzcdn.net/images/cover/10996155b708921c3cc0809917cd38d2/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/613990",
+    "checked": "2026-10-03"
+  },
+  "李志|梵高先生": {
+    "source": "Deezer",
+    "title": "Mr. Van Gogh (梵高先生)",
+    "artist": "Li Zhi (李志)",
+    "url": "https://cdn-images.dzcdn.net/images/cover/fae30c9de12f0feb2804f8d073c64873/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/1604209",
+    "checked": "2026-10-03"
+  },
+  "趙雷|無法長大": {
+    "source": "Deezer",
+    "title": "无法长大",
+    "artist": "赵雷",
+    "url": "https://cdn-images.dzcdn.net/images/cover/fb5ca8e8a0c95b505792d699877a198b/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/998931051",
+    "checked": "2026-10-03"
+  },
+  "Sheena Ringo|Shoso Strip": {
+    "source": "Deezer",
+    "title": "Shouso Strip -Winning Strip-",
+    "artist": "Sheena Ringo",
+    "url": "https://cdn-images.dzcdn.net/images/cover/7f3d8c2859008d28143c57e10dec6899/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/64184242",
+    "checked": "2026-10-03"
+  },
+  "Justice|Cross": {
+    "source": "Deezer",
+    "title": "Justice",
+    "artist": "Justice",
+    "url": "https://cdn-images.dzcdn.net/images/cover/d779ba5bc3bb32475a78909d97cf8964/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/940424",
+    "checked": "2026-10-03"
+  },
+  "萬能青年旅店|冀西南林路行": {
+    "source": "verified album page",
+    "title": "冀西南林路行",
+    "artist": "萬能青年旅店",
+    "url": "https://cdn-images.dzcdn.net/images/cover/3f9172fce5cdecef84c9bfc208cc8f2c/500x500-000000-80-0-0.jpg",
+    "page": "https://www.deezer.com/album/193382352",
+    "checked": "2026-10-03"
+  },
+  "伍佰 & China Blue|樹枝孤鳥": {
+    "source": "verified album page",
+    "title": "樹枝孤鳥",
+    "artist": "伍佰 & China Blue",
+    "url": "https://wubai.com/wp-content/uploads/2011/05/MS028.jpg",
+    "page": "https://wubai.com/《樹枝孤鳥》專輯介紹/",
+    "checked": "2026-10-03"
+  },
+  "Tatsuro Yamashita|FOR YOU": {
+    "source": "verified album page",
+    "title": "FOR YOU",
+    "artist": "Tatsuro Yamashita",
+    "url": "https://upload.wikimedia.org/wikipedia/en/d/de/For_You_%28album_cover%29.png",
+    "page": "https://en.wikipedia.org/wiki/For_You_(Tatsuro_Yamashita_album)",
+    "checked": "2026-10-03"
+  },
+  "竇唯|黑夢": {
+    "source": "verified album page",
+    "title": "黑夢",
+    "artist": "竇唯",
+    "url": "https://upload.wikimedia.org/wikipedia/zh/3/39/Dou_wei_heimeng.jpg",
+    "page": "https://zh.wikipedia.org/wiki/黑梦_(专辑)",
+    "checked": "2026-10-03"
+  },
+  "Lamp|Yume": {
+    "source": "verified album page",
+    "title": "Yume",
+    "artist": "Lamp",
+    "url": "https://f4.bcbits.com/img/a1143588850_5.jpg",
+    "page": "https://botanicalhouse.bandcamp.com/album/dream-2014",
+    "checked": "2026-10-03"
+  },
+  "Godspeed You! Black Emperor|Lift Your Skinny Fists...": {
+    "source": "verified album page",
+    "title": "Lift Your Skinny Fists...",
+    "artist": "Godspeed You! Black Emperor",
+    "url": "http://constellation-records.myshopify.com/cdn/shop/files/CST012_00FrontCoverLP.jpg?v=1714587754",
+    "page": "https://cstrecords.com/products/godspeed-you-black-emperor-lift-your-skinny-fists-like-antennas-to-heaven",
+    "checked": "2026-10-03"
+  }
+}
