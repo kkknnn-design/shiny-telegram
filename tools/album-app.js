@@ -92,7 +92,6 @@ function renderAlbum(index) {
   document.getElementById('bioText').textContent=album.bio;document.getElementById('bioText').classList.remove('expanded');
   const toggle=document.getElementById('bioToggle');toggle.textContent='展开阅读';toggle.setAttribute('aria-expanded','false');
   requestAnimationFrame(()=>{const text=document.getElementById('bioText');toggle.hidden=text.scrollHeight<=text.clientHeight+1;});
-  document.getElementById('btnNetease').href='https://music.163.com/#/search/m/?s='+encodeURIComponent(album.a+' '+album.t)+'&type=10';
   document.getElementById('btnDetails').href=album.w||'https://music.apple.com/us/search?term='+encodeURIComponent(album.a+' '+album.t);
   const img=document.getElementById('coverImg'),fallback=document.getElementById('fallbackCover'),bg=document.getElementById('coverBg');
   img.style.display='none';img.removeAttribute('src');fallback.style.display='flex';fallback.style.background=getGradientCSS(album);
@@ -127,7 +126,7 @@ function renderCatalog() {
     const a=ALBUM_DB[i],tile=document.createElement('button');tile.type='button';tile.className='album-tile';tile.setAttribute('aria-label',a.a+' · '+a.t);
     const cover=document.createElement('span');cover.className='tile-cover';const image=document.createElement('img');image.src=a.localCover||a.c;image.alt=a.t+' 封面';image.loading='lazy';image.decoding='async';
     image.addEventListener('error',()=>{image.style.display='none';cover.style.background=getGradientCSS(a);});
-    const play=document.createElement('span');play.className='tile-play';play.textContent='↗';cover.append(image,play);tile.append(cover);
+    cover.append(image);tile.append(cover);
     for(const [cls,text] of [['tile-title',a.t],['tile-artist',a.a],['tile-year',a.y]]){const el=document.createElement('span');el.className=cls;el.textContent=text;tile.append(el);}
     tile.addEventListener('click',()=>{selectAlbum(i,true);renderCatalog();});grid.append(tile);
   }

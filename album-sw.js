@@ -1,4 +1,4 @@
-const CACHE = 'daily-album-white-v2';
+const CACHE = 'daily-album-white-v3';
 const ROOT = new URL('./', self.location.href);
 const CORE = ['album.html', 'album.webmanifest', 'album-assets/icon.svg', 'album-assets/icon-180.png', 'album-assets/icon-192.png', 'album-assets/icon-512.png'];
 self.addEventListener('install', event => {
