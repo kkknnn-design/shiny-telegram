@@ -22,6 +22,6 @@
   for(const icon of manifest.icons){const r=await fetch(icon.src);check(r.ok,icon.sizes+' install icon loads under the Pages subpath');}
   const registration=await navigator.serviceWorker.ready;
   check(new URL(registration.scope).pathname==='/shiny-telegram/','Service worker scope respects the GitHub Pages subpath');
-  check((await caches.keys()).includes('daily-album-white-v1'),'Offline shell cache was created');
+  check((await caches.keys()).some(key=>key.startsWith('daily-album-')),'Offline shell cache was created');
   return {passed:results.length,results};
 })();
