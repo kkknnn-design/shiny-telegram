@@ -13,10 +13,10 @@ head='''<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer"><meta name="theme-color" content="#faf9f7">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="每日专辑"><meta name="description" content="每天发现一张值得完整聆听的唱片，探索华语、日系、摇滚、电子、爵士与灵魂乐。">
+<meta name="apple-mobile-web-app-title" content="每日专辑"><meta name="description" content="每日专辑推荐，支持专辑搜索、风格筛选与浏览记录。">
 <link rel="icon" type="image/svg+xml" href="album-assets/icon.svg">
 <link rel="apple-touch-icon" href="album-assets/icon-180.png"><link rel="manifest" href="album.webmanifest">
-<title>每日专辑 · 今天，听点什么</title><style>'''
+<title>每日专辑</title><style>'''
 data_helpers='''
 const seen = new Set();
 const ALBUM_DB = ALBUMS.filter(a => {const key=a.t+'|'+a.a;if(seen.has(key))return false;seen.add(key);return true;});
@@ -45,6 +45,6 @@ sleeve=sleeve.rotate(12,resample=Image.Resampling.BICUBIC,center=(207*s,294*s))
 shadow=Image.new('RGBA',sleeve.size);shadow.putalpha(sleeve.getchannel('A').point(lambda v:int(v*.10)));shadow=shadow.filter(ImageFilter.GaussianBlur(10*s))
 image.paste(shadow,(0,10*s),shadow);image.paste(sleeve,(0,0),sleeve)
 for size in [180,192,512]:image.resize((size,size),Image.Resampling.LANCZOS).save(assets/f'icon-{size}.png')
-manifest={'id':'./album.html','name':'每日专辑 · 今天，听点什么','short_name':'每日专辑','description':'每天发现一张唱片，探索你的下一张最爱。','lang':'zh-CN','start_url':'./album.html','scope':'./','display':'standalone','background_color':'#faf9f7','theme_color':'#faf9f7','icons':[{'src':f'album-assets/icon-{size}.png','sizes':f'{size}x{size}','type':'image/png','purpose':'any maskable'} for size in [192,512]]}
+manifest={'id':'./album.html','name':'每日专辑','short_name':'每日专辑','description':'专辑推荐与曲库浏览','lang':'zh-CN','start_url':'./album.html','scope':'./','display':'standalone','background_color':'#faf9f7','theme_color':'#faf9f7','icons':[{'src':f'album-assets/icon-{size}.png','sizes':f'{size}x{size}','type':'image/png','purpose':'any maskable'} for size in [192,512]]}
 Path('album.webmanifest').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 print('Updated album.html and white vinyl icon assets.')

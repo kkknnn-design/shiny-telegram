@@ -3,10 +3,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer"><meta name="theme-color" content="#faf9f7">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="每日专辑"><meta name="description" content="每天发现一张值得完整聆听的唱片，探索华语、日系、摇滚、电子、爵士与灵魂乐。">
+<meta name="apple-mobile-web-app-title" content="每日专辑"><meta name="description" content="每日专辑推荐，支持专辑搜索、风格筛选与浏览记录。">
 <link rel="icon" type="image/svg+xml" href="album-assets/icon.svg">
 <link rel="apple-touch-icon" href="album-assets/icon-180.png"><link rel="manifest" href="album.webmanifest">
-<title>每日专辑 · 今天，听点什么</title><style>*{box-sizing:border-box} :root{--bg:#faf9f7;--card:#fff;--text:#262521;--muted:#77756e;--line:#e8e6e1;--accent:#d65d47}
+<title>每日专辑</title><style>*{box-sizing:border-box} :root{--bg:#faf9f7;--card:#fff;--text:#262521;--muted:#77756e;--line:#e8e6e1;--accent:#d65d47}
 body{margin:0;background:var(--bg);color:var(--text);font-family:'Segoe UI','Microsoft YaHei',sans-serif;-webkit-font-smoothing:antialiased}
 button,input,select{font:inherit} button,a,input,select{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit;text-decoration:none}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #d65d4780;outline-offset:4px}
@@ -29,15 +29,15 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 </style></head><body>
 <main class="app">
   <header class="header">
-    <a class="brand" href="album.html" aria-label="每日专辑首页"><img src="album-assets/icon.svg" alt=""><div><div class="brand-name">每日专辑</div><div class="brand-sub">A RECORD A DAY</div></div></a>
-    <div class="header-note"><span>给耳朵一点新鲜感</span><button class="btn-install" id="btnInstall" style="display:none">安装应用 ↗</button></div>
+    <a class="brand" href="album.html" aria-label="每日专辑首页"><img src="album-assets/icon.svg" alt=""><div class="brand-name">每日专辑</div></a>
+    <div class="header-note"><button class="btn-install" id="btnInstall" style="display:none">安装应用 ↗</button></div>
   </header>
   <section class="intro">
-    <div><div class="eyebrow">YOUR DAILY LISTENING RITUAL</div><h1>今天，听点什么。</h1><p>一张唱片，一段完整的时间。<br>从熟悉的经典，走向还没听过的声音。</p></div>
+    <div><h1>今日推荐</h1></div>
     <div class="issue" id="issueNumber">001<span>今日唱片 / DAILY PICK</span></div>
   </section>
   <article class="card" id="card" aria-label="专辑详情">
-    <div class="cover-section"><div class="cover-bg" id="coverBg"></div><div class="cover-img-wrap" id="coverWrap"><img id="coverImg" alt="" style="display:none"><div class="fallback-cover" id="fallbackCover"><div class="album-title"></div><div class="album-artist"></div></div></div><div class="cover-caption">SIDE A · TAKE YOUR TIME</div></div>
+    <div class="cover-section"><div class="cover-bg" id="coverBg"></div><div class="cover-img-wrap" id="coverWrap"><img id="coverImg" alt="" style="display:none"><div class="fallback-cover" id="fallbackCover"><div class="album-title"></div><div class="album-artist"></div></div></div></div>
     <div class="info-section">
       <div class="record-label" id="recordLabel">今日推荐 / SELECTED FOR TODAY</div>
       <div class="album-title-main" id="albumTitle" aria-live="polite"></div><div class="album-artist-main" id="albumArtist"></div><div class="meta-row" id="metaRow"></div><div class="ratings" id="ratings"></div>
@@ -6468,7 +6468,7 @@ function renderAlbum(index) {
   if(album.ry)scores.push(['RateYourMusic',album.ry.toFixed(2),'/ 5']);
   if(album.rs)scores.push(['Rolling Stone','#'+album.rs.r,album.rs.ry+' 版']);
   for(const [source,value,max] of scores){const item=document.createElement('div');item.className='rating-item';for(const [cls,text] of [['rating-source',source],['rating-score',value],['rating-max',max]]){const e=document.createElement('div');e.className=cls;e.textContent=text;item.append(e);}ratings.append(item);}
-  if(!scores.length){const n=document.createElement('div');n.className='rating-note';n.textContent='编辑选曲 · 试着完整听完，再给它你的评价。';ratings.append(n);}
+  if(!scores.length){const n=document.createElement('div');n.className='rating-note';n.textContent='编辑选曲 · 暂无已核实评分';ratings.append(n);}
   document.getElementById('bioTitle').textContent=album.country?'听赏笔记 / LISTENING NOTES':'艺术家与唱片 / ABOUT THE RECORD';
   document.getElementById('bioText').textContent=album.bio;document.getElementById('bioText').classList.remove('expanded');
   const toggle=document.getElementById('bioToggle');toggle.textContent='展开阅读';toggle.setAttribute('aria-expanded','false');

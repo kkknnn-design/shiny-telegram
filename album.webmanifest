@@ -1,8 +1,8 @@
 {
   "id": "./album.html",
-  "name": "每日专辑 · 今天，听点什么",
+  "name": "每日专辑",
   "short_name": "每日专辑",
-  "description": "每天发现一张唱片，探索你的下一张最爱。",
+  "description": "专辑推荐与曲库浏览",
   "lang": "zh-CN",
   "start_url": "./album.html",
   "scope": "./",

@@ -87,7 +87,7 @@ function renderAlbum(index) {
   if(album.ry)scores.push(['RateYourMusic',album.ry.toFixed(2),'/ 5']);
   if(album.rs)scores.push(['Rolling Stone','#'+album.rs.r,album.rs.ry+' 版']);
   for(const [source,value,max] of scores){const item=document.createElement('div');item.className='rating-item';for(const [cls,text] of [['rating-source',source],['rating-score',value],['rating-max',max]]){const e=document.createElement('div');e.className=cls;e.textContent=text;item.append(e);}ratings.append(item);}
-  if(!scores.length){const n=document.createElement('div');n.className='rating-note';n.textContent='编辑选曲 · 试着完整听完，再给它你的评价。';ratings.append(n);}
+  if(!scores.length){const n=document.createElement('div');n.className='rating-note';n.textContent='编辑选曲 · 暂无已核实评分';ratings.append(n);}
   document.getElementById('bioTitle').textContent=album.country?'听赏笔记 / LISTENING NOTES':'艺术家与唱片 / ABOUT THE RECORD';
   document.getElementById('bioText').textContent=album.bio;document.getElementById('bioText').classList.remove('expanded');
   const toggle=document.getElementById('bioToggle');toggle.textContent='展开阅读';toggle.setAttribute('aria-expanded','false');
