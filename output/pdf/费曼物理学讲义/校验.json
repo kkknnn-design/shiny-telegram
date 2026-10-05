@@ -19,5 +19,13 @@
     "bytes": 60376918,
     "sha256": "094346e1e67e38b8bd1a7d5cedbde67437ed63854ad265e4db151dbb78dde93a",
     "source": "https://raw.githubusercontent.com/whl1729/book/master/o3_physics/费恩曼物理学讲义 新千年版(第三卷).pdf"
+  },
+  {
+    "file": "费曼物理学讲义_第1卷_新千年版_Goodnotes导入版.pdf",
+    "pages": 588,
+    "bytes": 45417622,
+    "sha256": "9a52100bf227bd6fcb10ef64bd0b369faa414019c307bd6970ed62be069370c6",
+    "derived_from": "费曼物理学讲义_第1卷_新千年版_中文版.pdf",
+    "encrypted": false
   }
 ]
