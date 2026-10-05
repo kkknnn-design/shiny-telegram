@@ -58,5 +58,26 @@
     "pages": 434,
     "bytes": 26854058,
     "sha256": "b7656795ca6c7b011efe55f0fac9d67f11866fb7546814ef8638a74239fca66f"
+  },
+  {
+    "file": "费曼物理学讲义/费曼物理学讲义_第1卷_新千年版_中文版.pdf",
+    "pages": 588,
+    "bytes": 45323548,
+    "sha256": "4c596773d59cdf6e019bb4e87d6bd011d4197f2d3fe260232c917788f560f89e",
+    "source": "https://raw.githubusercontent.com/whl1729/book/master/o3_physics/费恩曼物理学讲义 新千年版(第一卷).pdf"
+  },
+  {
+    "file": "费曼物理学讲义/费曼物理学讲义_第2卷_1981年版_中文版.pdf",
+    "pages": 536,
+    "bytes": 35930480,
+    "sha256": "86949461e333ce936d9bb326296a46d8b8754dd4494515bbb1c6dc62de07bc95",
+    "source": "https://raw.githubusercontent.com/xuenhua/Books/main/费曼物理学讲义 第二卷_1981.pdf"
+  },
+  {
+    "file": "费曼物理学讲义/费曼物理学讲义_第3卷_新千年版_中文版.pdf",
+    "pages": 377,
+    "bytes": 60376918,
+    "sha256": "094346e1e67e38b8bd1a7d5cedbde67437ed63854ad265e4db151dbb78dde93a",
+    "source": "https://raw.githubusercontent.com/whl1729/book/master/o3_physics/费恩曼物理学讲义 新千年版(第三卷).pdf"
   }
 ]
