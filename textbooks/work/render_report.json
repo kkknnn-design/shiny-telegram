@@ -1,0 +1,70 @@
+{
+  "stats": [
+    {
+      "file": "01_C语言程序设计.md",
+      "title": "C 语言程序设计",
+      "formulas": 1
+    },
+    {
+      "file": "02_线性代数.md",
+      "title": "线性代数",
+      "formulas": 367
+    },
+    {
+      "file": "03_解析几何.md",
+      "title": "解析几何",
+      "formulas": 327
+    },
+    {
+      "file": "04_微积分与微分方程.md",
+      "title": "微积分与微分方程",
+      "formulas": 437
+    },
+    {
+      "file": "05_大学物理.md",
+      "title": "大学物理",
+      "formulas": 472
+    },
+    {
+      "file": "06_概率统计与实验数据处理.md",
+      "title": "概率统计与实验数据处理",
+      "formulas": 203
+    },
+    {
+      "file": "07_逻辑学.md",
+      "title": "逻辑学",
+      "formulas": 222
+    },
+    {
+      "file": "08_数字电子技术基础.md",
+      "title": "数字电子技术基础",
+      "formulas": 191
+    },
+    {
+      "file": "09_俄语.md",
+      "title": "俄语",
+      "formulas": 4
+    },
+    {
+      "file": "10_自动控制与仿真.md",
+      "title": "自动控制与仿真",
+      "formulas": 193
+    },
+    {
+      "file": "11_经济学与家庭财务.md",
+      "title": "经济学与家庭财务",
+      "formulas": 92
+    },
+    {
+      "file": "12_数学建模与优化.md",
+      "title": "数学建模与优化",
+      "formulas": 102
+    },
+    {
+      "file": "13_计算机科学基础.md",
+      "title": "计算机科学基础",
+      "formulas": 97
+    }
+  ],
+  "errors": []
+}

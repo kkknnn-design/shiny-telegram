@@ -1,0 +1,4082 @@
+{
+  "schema_version": 3,
+  "updated_at": "2026-10-17T22:16:53.299111+08:00",
+  "meaning": "逐项记录来源或课程延伸、具体知识、章节和实际写入状态。消息哈希不是覆盖证明；源稿/HTML与PDF完成度分开记录。",
+  "items": [
+    {
+      "id": "C-001",
+      "source_date": "10-07",
+      "knowledge": "中位数为半整数时 double 与浮点除法各自的作用",
+      "source_messages": [
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a1120e-825f-77d1-a222-c09edb846f6f"
+        }
+      ],
+      "source_thread": null,
+      "source_read_method": "history_text",
+      "textbook_section": "平均值与整数除法",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1835,
+      "evidence": "2.0",
+      "status": "integrated",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "C-002",
+      "source_date": "10-07",
+      "knowledge": "显示数量与零起点下标相差一，十列输出的换行条件",
+      "source_messages": [
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a11210-797a-7381-bf4f-f789507647df"
+        },
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a131b0-0b41-7632-adbc-9a5a398e8dc1"
+        }
+      ],
+      "source_thread": null,
+      "source_read_method": "history_text",
+      "textbook_section": "程序变量与显示格式",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1829,
+      "evidence": "已打印数量相差一",
+      "status": "integrated",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "C-003",
+      "source_date": "10-07",
+      "knowledge": "max_index 保存下标及内层搜索状态",
+      "source_messages": [
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a11211-e3e6-7393-ab6e-01f017157578"
+        },
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a131b0-0b41-7632-adbc-9a5a398e8dc1"
+        }
+      ],
+      "source_thread": null,
+      "source_read_method": "history_text",
+      "textbook_section": "选择排序的状态变化",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1791,
+      "evidence": "第二轮 i=1",
+      "status": "integrated",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "C-004",
+      "source_date": "10-07",
+      "knowledge": "重复值占据秩区间 L+1 到 L+E",
+      "source_messages": [
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a11218-db64-7c82-a6c8-770bab6e4b5d"
+        }
+      ],
+      "source_thread": null,
+      "source_read_method": "history_text",
+      "textbook_section": "顺序统计量与中位数",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1851,
+      "evidence": "L<k",
+      "status": "integrated",
+      "change": "reorganized_existing"
+    },
+    {
+      "id": "C-005",
+      "source_date": "10-07",
+      "knowledge": "两个 if 在不同候选迭代中给 x 与 y 赋值",
+      "source_messages": [
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a11218-db64-7c82-a6c8-770bab6e4b5d"
+        }
+      ],
+      "source_thread": null,
+      "source_read_method": "history_text",
+      "textbook_section": "顺序统计量与中位数",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1901,
+      "evidence": "每一轮的 i 却不同",
+      "status": "integrated",
+      "change": "clarified"
+    },
+    {
+      "id": "C-006",
+      "source_date": "10-07",
+      "knowledge": "英文注释、英文输出和 // 注释格式",
+      "source_messages": [
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a11214-1341-7f73-b822-290cadcc347e"
+        }
+      ],
+      "source_thread": null,
+      "source_read_method": "history_text",
+      "textbook_section": "选择排序及循环不变量",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1745,
+      "evidence": "Original numbers",
+      "status": "integrated",
+      "change": "preference_applied"
+    },
+    {
+      "id": "C-007",
+      "source_date": "10-07—10-13",
+      "knowledge": "指针数组的比较对象与交换对象不同",
+      "source_messages": [
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a1121c-0048-7fa1-a352-e94d030039c6"
+        }
+      ],
+      "source_thread": null,
+      "source_read_method": "history_text",
+      "textbook_section": "同一算法的两种存储方案",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1821,
+      "evidence": "比较 `*p[j]`",
+      "status": "integrated",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "C-008",
+      "source_date": "10-07—10-13",
+      "knowledge": "交换函数接收指针数组与两个位置",
+      "source_messages": [
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a131b0-0b41-7632-adbc-9a5a398e8dc1"
+        },
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a1121e-80ea-7bb3-9b63-f9f47aacfa7a"
+        }
+      ],
+      "source_thread": null,
+      "source_read_method": "history_text",
+      "textbook_section": "选择排序及循环不变量",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1732,
+      "evidence": "int *temp = p[i]",
+      "status": "integrated",
+      "change": "covered"
+    },
+    {
+      "id": "C-009",
+      "source_date": "10-07—10-13",
+      "knowledge": "局部数组与指针数组声明并不初始化元素",
+      "source_messages": [
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a131b0-0b41-7632-adbc-9a5a398e8dc1"
+        },
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a11222-4397-70d2-a0b2-c5aeeb2b4898"
+        }
+      ],
+      "source_thread": null,
+      "source_read_method": "history_text",
+      "textbook_section": "程序变量与显示格式",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1827,
+      "evidence": "声明本身不会生成随机数",
+      "status": "integrated",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "C-010",
+      "source_date": "10-07—10-13",
+      "knowledge": "第二个程序保持普通数组且不排序",
+      "source_messages": [
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a11226-d682-72c1-ab5d-b227fc9f1f3d"
+        }
+      ],
+      "source_thread": null,
+      "source_read_method": "history_text",
+      "textbook_section": "顺序统计量与中位数",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1868,
+      "evidence": "int x = 0, y = 0",
+      "status": "integrated",
+      "change": "covered"
+    },
+    {
+      "id": "C-011",
+      "source_date": "10-13",
+      "knowledge": "单指针相邻交换与双指针任意交换的边界",
+      "source_messages": [
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a131b6-6d1a-7100-afc5-1a759f6fa155"
+        }
+      ],
+      "source_thread": null,
+      "source_read_method": "history_text",
+      "textbook_section": "同一算法的两种存储方案",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1823,
+      "evidence": "只能操作当前位置及紧邻",
+      "status": "integrated",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "C-012",
+      "source_date": "10-13",
+      "knowledge": "下标式 pv[0] 仍是解引用，可传两个地址",
+      "source_messages": [
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a131b7-cf07-71d1-ba86-49ba8ed5c4fa"
+        }
+      ],
+      "source_thread": null,
+      "source_read_method": "history_text",
+      "textbook_section": "同一算法的两种存储方案",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1803,
+      "evidence": "left[0] = right[0]",
+      "status": "integrated",
+      "change": "covered"
+    },
+    {
+      "id": "C-013",
+      "source_date": "10-07—10-13",
+      "knowledge": "_CRT_SECURE_NO_WARNINGS 的工具链范围与位置",
+      "source_messages": [
+        {
+          "thread_id": "01a11207-26bb-7762-b3be-97f3458f0a78",
+          "message_id": "01a1121d-d793-7883-b8ca-ead71bac11d9"
+        }
+      ],
+      "source_thread": null,
+      "source_read_method": "history_text",
+      "textbook_section": "程序变量与显示格式",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1831,
+      "evidence": "不是 `#nowarning`",
+      "status": "integrated",
+      "change": "newly_explained"
+    },
+    {
+      "id": "C-014",
+      "source_date": "10-15",
+      "knowledge": "一维数组、数组地址和二维数组行的指针类型",
+      "source_messages": [],
+      "source_thread": "6ad09922-41a8-83ed-b388-acce6c2d9cae",
+      "source_read_method": "visible_chat_page_reply",
+      "textbook_section": "多维数组与行指针",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 911,
+      "evidence": "int (*row)[5] = An2",
+      "status": "integrated",
+      "change": "newly_added"
+    },
+    {
+      "id": "C-015",
+      "source_date": "10-15",
+      "knowledge": "二维下标分两次按行和按元素寻址",
+      "source_messages": [],
+      "source_thread": "6ad09922-41a8-83ed-b388-acce6c2d9cae",
+      "source_read_method": "visible_chat_page_reply",
+      "textbook_section": "多维数组与行指针",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 928,
+      "evidence": "*(*(An2 + i) + j)",
+      "status": "integrated",
+      "change": "newly_added"
+    },
+    {
+      "id": "C-016",
+      "source_date": "10-15",
+      "knowledge": "void * 的转换、运算限制与合法比较",
+      "source_messages": [],
+      "source_thread": "6ad09922-41a8-83ed-b388-acce6c2d9cae",
+      "source_read_method": "visible_chat_page_reply",
+      "textbook_section": "通用对象指针与地址比较",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 999,
+      "evidence": "void *pv3 = &An1[0]",
+      "status": "integrated",
+      "change": "newly_added"
+    },
+    {
+      "id": "C-017",
+      "source_date": "10-15",
+      "knowledge": "连续 == 并非连等；最终更正为 &An1[0]",
+      "source_messages": [],
+      "source_thread": "6ad09922-41a8-83ed-b388-acce6c2d9cae",
+      "source_read_method": "visible_chat_page_reply",
+      "textbook_section": "通用对象指针与地址比较",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1006,
+      "evidence": "(pv1 == pv2) == pv3",
+      "status": "integrated",
+      "change": "newly_added"
+    },
+    {
+      "id": "C-018",
+      "source_date": "10-15",
+      "knowledge": "字面量与新建可写字符数组的对象差别",
+      "source_messages": [],
+      "source_thread": "6ad09922-41a8-83ed-b388-acce6c2d9cae",
+      "source_read_method": "visible_chat_page_reply",
+      "textbook_section": "字面量、变量与字符存储",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1198,
+      "evidence": "只建立一个指向字面量的指针",
+      "status": "integrated",
+      "change": "newly_added"
+    },
+    {
+      "id": "C-019",
+      "source_date": "10-15",
+      "knowledge": "字符串字面量的 C/C++ 初始化规则差别",
+      "source_messages": [],
+      "source_thread": "6ad09922-41a8-83ed-b388-acce6c2d9cae",
+      "source_read_method": "visible_chat_page_reply",
+      "textbook_section": "字符数组与字符串字面量",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1214,
+      "evidence": "现代标准 C++",
+      "status": "integrated",
+      "change": "newly_added"
+    },
+    {
+      "id": "C-020",
+      "source_date": "10-15",
+      "knowledge": "结束符、部分初始化补零与恰好满容量的例外",
+      "source_messages": [],
+      "source_thread": "6ad09922-41a8-83ed-b388-acce6c2d9cae",
+      "source_read_method": "visible_chat_page_reply",
+      "textbook_section": "字符编码与零结尾表示",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1188,
+      "evidence": "char e[10]",
+      "status": "integrated",
+      "change": "newly_added"
+    },
+    {
+      "id": "C-021",
+      "source_date": "10-15",
+      "knowledge": "%c/%d/%x/%s 的参数与显示含义",
+      "source_messages": [],
+      "source_thread": "6ad09922-41a8-83ed-b388-acce6c2d9cae",
+      "source_read_method": "visible_chat_page_reply",
+      "textbook_section": "字符编码与零结尾表示",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1173,
+      "evidence": "ASCII 环境",
+      "status": "integrated",
+      "change": "newly_added"
+    },
+    {
+      "id": "C-022",
+      "source_date": "10-15",
+      "knowledge": "字符指针数组与双下标、const 写入限制",
+      "source_messages": [],
+      "source_thread": "6ad09922-41a8-83ed-b388-acce6c2d9cae",
+      "source_read_method": "visible_chat_page_reply",
+      "textbook_section": "字符串指针数组与双下标",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1222,
+      "evidence": "sarr[1][2]",
+      "status": "integrated",
+      "change": "newly_added"
+    },
+    {
+      "id": "C-023",
+      "source_date": "10-15",
+      "knowledge": "strlen、sizeof、size_t 与转义字符计数",
+      "source_messages": [],
+      "source_thread": "6ad09922-41a8-83ed-b388-acce6c2d9cae",
+      "source_read_method": "visible_chat_page_reply",
+      "textbook_section": "字符串长度与对象大小",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1244,
+      "evidence": "3 3 5 和 10 4 6",
+      "status": "integrated",
+      "change": "newly_added"
+    },
+    {
+      "id": "C-024",
+      "source_date": "10-15",
+      "knowledge": "ls 为变量名而非数字1s或关键字",
+      "source_messages": [],
+      "source_thread": "6ad09922-41a8-83ed-b388-acce6c2d9cae",
+      "source_read_method": "visible_chat_page_reply",
+      "textbook_section": "字符串长度与对象大小",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1253,
+      "evidence": "小写字母 l 和 s",
+      "status": "integrated",
+      "change": "newly_added"
+    },
+    {
+      "id": "C-025",
+      "source_date": "10-15",
+      "knowledge": "strcpy 复制结束符及容量、重叠前提",
+      "source_messages": [],
+      "source_thread": "6ad09922-41a8-83ed-b388-acce6c2d9cae",
+      "source_read_method": "visible_chat_page_reply",
+      "textbook_section": "字符串的逐字符复制",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1261,
+      "evidence": "区域不能重叠",
+      "status": "integrated",
+      "change": "newly_added"
+    },
+    {
+      "id": "C-026",
+      "source_date": "10-15",
+      "knowledge": "strncpy 不一定补结束符，旧尾部仍在",
+      "source_messages": [],
+      "source_thread": "6ad09922-41a8-83ed-b388-acce6c2d9cae",
+      "source_read_method": "visible_chat_page_reply",
+      "textbook_section": "定长复制与零填充",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1323,
+      "evidence": "DEFDEFG",
+      "status": "integrated",
+      "change": "newly_added"
+    },
+    {
+      "id": "C-027",
+      "source_date": "10-15",
+      "knowledge": "strcpy_s 三参、strncpy_s 四参与 _countof 扩展",
+      "source_messages": [],
+      "source_thread": "6ad09922-41a8-83ed-b388-acce6c2d9cae",
+      "source_read_method": "visible_chat_page_reply",
+      "textbook_section": "strcpy_s、strncpy_s 与微软扩展",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1343,
+      "evidence": "有四个",
+      "status": "integrated",
+      "change": "newly_added"
+    },
+    {
+      "id": "C-028",
+      "source_date": "教学衔接",
+      "knowledge": "从下标复制到指针移动、赋值条件及后缀自增",
+      "source_messages": [],
+      "source_thread": null,
+      "source_read_method": "curriculum_bridge",
+      "textbook_section": "从下标循环到指针循环",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\01_C语言程序设计.md",
+      "line": 1295,
+      "evidence": "copy_text_pointer",
+      "status": "integrated",
+      "change": "curriculum_bridge"
+    },
+    {
+      "id": "EXT-01-01",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "二维数组形参调整为行指针、列数决定步长",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "二维数组作为函数参数",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/01_C语言程序设计.md",
+      "line": 936,
+      "evidence": "int (*a)[5]",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-01-02",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "实参行数边界与调用者对象的实际修改",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "二维数组作为函数参数",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/01_C语言程序设计.md",
+      "line": 965,
+      "evidence": "把三改成四会越界",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-01-03",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "int ** 读取行地址，与连续二维数组不同",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "二维数组作为函数参数",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/01_C语言程序设计.md",
+      "line": 967,
+      "evidence": "一次解引用应当读出一个指针",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-01-04",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "不等长行的指针数组和逐行长度",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "二维数组作为函数参数",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/01_C语言程序设计.md",
+      "line": 976,
+      "evidence": "两行长度可以不同",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-01-05",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "变长数组参数的行宽匹配、正长度和编译器条件",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "二维数组作为函数参数",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/01_C语言程序设计.md",
+      "line": 981,
+      "evidence": "zero_matrix(size_t rows, size_t cols",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-01-06",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "strcmp 内容比较及返回值只有符号保证",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "内容比较、拼接与整行输入",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/01_C语言程序设计.md",
+      "line": 1360,
+      "evidence": "标准不要求恰好返回负一或一",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-01-07",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "strncmp 前缀相同不能推出字符串相同",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "内容比较、拼接与整行输入",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/01_C语言程序设计.md",
+      "line": 1368,
+      "evidence": "前三个字符相同",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-01-08",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "strcat/strncat 容量、结束符和不重叠条件",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "内容比较、拼接与整行输入",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/01_C语言程序设计.md",
+      "line": 1370,
+      "evidence": "strlen(dst) + strlen(src) + 1",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-01-09",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "fgets 容量、换行保存和长行残留",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "内容比较、拼接与整行输入",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/01_C语言程序设计.md",
+      "line": 1385,
+      "evidence": "一行过长",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-01-10",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "memmove 与 memcpy 的重叠条件及字符串结束符",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "内容比较、拼接与整行输入",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/01_C语言程序设计.md",
+      "line": 1387,
+      "evidence": "memmove",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-02-01",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "单竖线、det、矩阵括号与向量范数的对象区分",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.1 行列式记录方阵的退化程度",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/02_线性代数.md",
+      "line": 153,
+      "evidence": "|A|=\\det A",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-02-02",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "三阶按第一行展开及高阶不能套对角线法",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.1 行列式记录方阵的退化程度",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/02_线性代数.md",
+      "line": 169,
+      "evidence": "aei+bfg+cdh",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-02-03",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "矩阵幂、负号、逆矩阵幂的行列式公式及条件",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.3 由基本性质连成一组公式",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/02_线性代数.md",
+      "line": 222,
+      "evidence": "|A^{-m}|",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-02-04",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "块三角行列式中对角块必须方阵",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.3 由基本性质连成一组公式",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/02_线性代数.md",
+      "line": 233,
+      "evidence": "B、D 必须各自为方阵",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-02-05",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "相似变换保持行列式的推导",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.3 由基本性质连成一组公式",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/02_线性代数.md",
+      "line": 237,
+      "evidence": "|P^{-1}AP|",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-02-06",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "特征根按代数重数计入，和为迹、积为行列式",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.3 特征值与迹、行列式和矩阵多项式",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/02_线性代数.md",
+      "line": 430,
+      "evidence": "按代数重数计入",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-02-07",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "矩阵多项式、平移、数乘、幂和逆的特征值",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.3 特征值与迹、行列式和矩阵多项式",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/02_线性代数.md",
+      "line": 443,
+      "evidence": "f(A)v=f(\\lambda)v",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-02-08",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "零特征值不意味着零矩阵；多项式恒等式需要额外依据",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.3 特征值与迹、行列式和矩阵多项式",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/02_线性代数.md",
+      "line": 448,
+      "evidence": "仅凭“B 的特征值全零”",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-02-09",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "实对称矩阵不同特征值的向量正交证明",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.4 正交对角化与二次型",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/02_线性代数.md",
+      "line": 452,
+      "evidence": "不同特征值的特征向量正交",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-02-10",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "二次型正定、半正定、不定和正行列式反例",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.4 正交对角化与二次型",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/02_线性代数.md",
+      "line": 454,
+      "evidence": "只看 \\(|A|>0\\) 不足",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-03-01",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "圆锥曲线离心率分类与圆的极限例外",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.3 焦点、准线与离心率的统一关系",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/03_解析几何.md",
+      "line": 314,
+      "evidence": "有限位置的准线公式不再适用",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-03-02",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "椭圆和双曲线焦距、准线的参数区别",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.3 焦点、准线与离心率的统一关系",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/03_解析几何.md",
+      "line": 318,
+      "evidence": "x=\\pm\\frac{a^2}{c}",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-03-03",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "渐近线斜率推导、平移和实轴方向交换",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.3 焦点、准线与离心率的统一关系",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/03_解析几何.md",
+      "line": 326,
+      "evidence": "y-k=\\pm(b/a)(x-h)",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-03-04",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "抛物线四种开口形式及焦准符号",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.3 焦点、准线与离心率的统一关系",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/03_解析几何.md",
+      "line": 328,
+      "evidence": "焦点和准线符号同时改变",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-03-05",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "椭圆参数角不等于极角及抛物线参数",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.4 参数表示与曲线切线",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/03_解析几何.md",
+      "line": 336,
+      "evidence": "不等于位置向量",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-03-06",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "椭圆、双曲线、抛物线切线族与点在曲线上的前提",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.4 参数表示与曲线切线",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/03_解析几何.md",
+      "line": 344,
+      "evidence": "yy_0=p(x+x_0)",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-04-01",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "幂、指数、对数、三角和反三角导数族及定义域",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "3.7 基本导数与定义域",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/04_微积分与微分方程.md",
+      "line": 156,
+      "evidence": "(\\arcsin x)'",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-04-02",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "基本导数与复合内层因子及定义域同步变化",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "3.7 基本导数与定义域",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/04_微积分与微分方程.md",
+      "line": 164,
+      "evidence": "(\\arcsin2x)'",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-04-03",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "基本原函数族和不连通区间上的积分常数",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.4 基本原函数与常数",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/04_微积分与微分方程.md",
+      "line": 244,
+      "evidence": "各段原函数可有不同常数",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-04-04",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "含尺度参数的反正切与反正弦原函数",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.4 基本原函数与常数",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/04_微积分与微分方程.md",
+      "line": 249,
+      "evidence": "\\frac1a\\arctan\\frac xa",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-04-05",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "降幂和半角公式的正负与分母条件",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.5 三角结构、分部积分与递推",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/04_微积分与微分方程.md",
+      "line": 268,
+      "evidence": "正负由 \\(x/2\\) 所在象限确定",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-04-06",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "多项式乘指数积分的递推与完整例子",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.5 三角结构、分部积分与递推",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/04_微积分与微分方程.md",
+      "line": 273,
+      "evidence": "I_n=x^ne^x-nI_{n-1}",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-04-07",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "交错判别的单调趋零条件和下一项误差界",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "5.3 交错级数、绝对收敛与端点",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/04_微积分与微分方程.md",
+      "line": 318,
+      "evidence": "余量绝对值不超过下一项",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-04-08",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "条件收敛、绝对收敛与重排边界",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "5.3 交错级数、绝对收敛与端点",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/04_微积分与微分方程.md",
+      "line": 320,
+      "evidence": "条件收敛级数不能任意调换",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-04-09",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "幂级数半径、双端点检查和逐项运算",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "5.3 交错级数、绝对收敛与端点",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/04_微积分与微分方程.md",
+      "line": 326,
+      "evidence": "收敛区间为 \\([-1,1)\\)",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-04-10",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "拉格朗日余项上界、导数条件和数值误差",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "6.3 从有限展开到误差与常用函数族",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/04_微积分与微分方程.md",
+      "line": 387,
+      "evidence": "|R_m(x)|\\le",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-04-11",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "几何、广义二项式、反正切展开及复合阶数",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "6.3 从有限展开到误差与常用函数族",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/04_微积分与微分方程.md",
+      "line": 395,
+      "evidence": "(1+x)^\\alpha",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-05-01",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "两个初速度、任意普通恢复系数下的正碰速度",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "5.1 两物体均运动时的统一正碰公式",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/05_大学物理.md",
+      "line": 178,
+      "evidence": "(m_1-em_2)u_1",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-05-02",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "弹性、共速、等质量交换速度等特殊情形",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "5.1 两物体均运动时的统一正碰公式",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/05_大学物理.md",
+      "line": 183,
+      "evidence": "会交换速度",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-05-03",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "质心运动与相对运动的能量分解",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "5.1 两物体均运动时的统一正碰公式",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/05_大学物理.md",
+      "line": 186,
+      "evidence": "约化质量",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-05-04",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "动能损失公式、条件及数值交叉核验",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "5.1 两物体均运动时的统一正碰公式",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/05_大学物理.md",
+      "line": 194,
+      "evidence": "(1-e^2)(u_1-u_2)^2",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-05-05",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "斜碰法向恢复系数与切向冲量限制",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "5.1 两物体均运动时的统一正碰公式",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/05_大学物理.md",
+      "line": 200,
+      "evidence": "只能对接触法线方向",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-05-06",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "初值解、振幅相位和相位象限",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "11.1 简谐运动的一组等价描述",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/05_大学物理.md",
+      "line": 399,
+      "evidence": "A\\cos\\varphi=\\xi_0",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-05-07",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "周期、频率、角频率与速度位置关系",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "11.1 简谐运动的一组等价描述",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/05_大学物理.md",
+      "line": 406,
+      "evidence": "v^2=\\omega_0^2(A^2-\\xi^2)",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-05-08",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "机械能、速度和加速度最大值及方向丢失",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "11.1 简谐运动的一组等价描述",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/05_大学物理.md",
+      "line": 409,
+      "evidence": "平方的速度式没有方向信息",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-05-09",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "转动小振动与复摆周期还原单摆",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "11.1 简谐运动的一组等价描述",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/05_大学物理.md",
+      "line": 417,
+      "evidence": "复摆的质心距悬轴",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-06-01",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "伯努利与二项概率模型的条件与完整例子",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "3.4 从试验机制选择常见分布",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/06_概率统计与实验数据处理.md",
+      "line": 133,
+      "evidence": "固定试验次数",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-06-02",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "泊松次数、参数与固定观察时长",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "3.4 从试验机制选择常见分布",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/06_概率统计与实验数据处理.md",
+      "line": 140,
+      "evidence": "\\lambda=\\nu t",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-06-03",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "均匀密度、区间概率与单点概率区分",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "3.4 从试验机制选择常见分布",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/06_概率统计与实验数据处理.md",
+      "line": 142,
+      "evidence": "等概率的是等长区间",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-06-04",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "泊松零事件推导指数等待密度",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "3.4 从试验机制选择常见分布",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/06_概率统计与实验数据处理.md",
+      "line": 146,
+      "evidence": "P(T>t)=P(N(t)=0)",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-06-05",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "指数分布无记忆性和老化机制边界",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "3.4 从试验机制选择常见分布",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/06_概率统计与实验数据处理.md",
+      "line": 148,
+      "evidence": "它的无记忆性质",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-06-06",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "线性期望无需独立、协方差定义与线性方差",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.4 线性组合、协方差与常见矩",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/06_概率统计与实验数据处理.md",
+      "line": 211,
+      "evidence": "2ab\\operatorname{Cov}(X,Y)",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-06-07",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "零协方差不等于独立的离散反例",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.4 线性组合、协方差与常见矩",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/06_概率统计与实验数据处理.md",
+      "line": 213,
+      "evidence": "Y=X^2",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-06-08",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "相关系数条件、范围和因果边界",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.4 线性组合、协方差与常见矩",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/06_概率统计与实验数据处理.md",
+      "line": 216,
+      "evidence": "不能从相关直接推断因果",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-06-09",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "二项、泊松、均匀、指数均值方差及推导",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.4 线性组合、协方差与常见矩",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/06_概率统计与实验数据处理.md",
+      "line": 229,
+      "evidence": "E[N(N-1)]=\\lambda^2",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-06-10",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "次数改为比例时方差按平方缩放",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.4 线性组合、协方差与常见矩",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/06_概率统计与实验数据处理.md",
+      "line": 231,
+      "evidence": "方差除以九",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-07-01",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "前后件合取析取的四组蕴含分配式",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.2 条件句组合的同类等价式",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/07_逻辑学.md",
+      "line": 103,
+      "evidence": "(A\\lor B)\\to C",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-07-02",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "同或、异或、否定的成对联系",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.2 条件句组合的同类等价式",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/07_逻辑学.md",
+      "line": 117,
+      "evidence": "\\neg(A\\leftrightarrow B)",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-07-03",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "全称对合取、存在对析取的正确分配",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.2 量词分配的成立范围",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/07_逻辑学.md",
+      "line": 255,
+      "evidence": "\\forall x(P(x)\\land Q(x))",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-07-04",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "反向错误分配的二对象模型与单向推理",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.2 量词分配的成立范围",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/07_逻辑学.md",
+      "line": 263,
+      "evidence": "论域 \\(\\{1,2\\}\\)",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-07-05",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "同类量词交换和移出量词的自由变量、非空条件",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.2 量词分配的成立范围",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/07_逻辑学.md",
+      "line": 274,
+      "evidence": "没有 x 的自由出现",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-08-01",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "D、T、JK 特征方程和四种JK输入状态",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "11.1 从 D 触发器扩展到 T、JK 与带使能存储",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/08_数字电子技术基础.md",
+      "line": 235,
+      "evidence": "Q^+=J\\bar Q+\\bar KQ",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-08-02",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "使能寄存器与同步优先复位",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "11.1 从 D 触发器扩展到 T、JK 与带使能存储",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/08_数字电子技术基础.md",
+      "line": 242,
+      "evidence": "D=\\bar EQ+EX",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-08-03",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "同步与异步复位的时机区别",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "11.1 从 D 触发器扩展到 T、JK 与带使能存储",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/08_数字电子技术基础.md",
+      "line": 245,
+      "evidence": "异步复位在边沿之外",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-08-04",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "模四计数器方程、旧状态同时更新与使能",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "11.1 从 D 触发器扩展到 T、JK 与带使能存储",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/08_数字电子技术基础.md",
+      "line": 251,
+      "evidence": "两条 D 方程都使用边沿到来前的旧状态",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-09-01",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "в/на 去向、所在与 из/с 来源三向对应",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "2.2 去向、所在与来源的三向联系",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 53,
+      "evidence": "в университет",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-09-02",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "出差状态、出发和返回的三个格形式",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "2.2 去向、所在与来源的三向联系",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 57,
+      "evidence": "из командировки",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-09-03",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "Казань 阴性软音符词形与介词共同判格",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "2.2 去向、所在与来源的三向联系",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 59,
+      "evidence": "去喀山为 в Казань",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-09-04",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "неделя 与 год 不同时间搭配及 году/годе",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "7.1 星期与年份的时间搭配",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 131,
+      "evidence": "о прошлом годе",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-09-05",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "星期几用 в 加宾格及 во 的语音变体",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "7.1 星期与年份的时间搭配",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 133,
+      "evidence": "в среду",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-10-01",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "一阶任意初值阶跃解与63.2%时间常数",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.1 一阶与二阶环节的响应参数",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/10_自动控制与仿真.md",
+      "line": 82,
+      "evidence": "y(t)=KU+(y_0-KU)e^{-t/\\tau}",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-10-02",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "一阶2%带精确时间与二阶阻尼分类",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.1 一阶与二阶环节的响应参数",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/10_自动控制与仿真.md",
+      "line": 84,
+      "evidence": "3.912\\tau",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-10-03",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "欠阻尼阶跃解及固有频率、实际振荡频率",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.1 一阶与二阶环节的响应参数",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/10_自动控制与仿真.md",
+      "line": 95,
+      "evidence": "\\omega_d=\\omega_n",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-10-04",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "峰值时间、超调与调节时间近似的条件",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "4.1 一阶与二阶环节的响应参数",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/10_自动控制与仿真.md",
+      "line": 104,
+      "evidence": "M_p=e^{-\\pi\\zeta",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-10-05",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "S、T 恒等式与扰动、测量噪声通道推导",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "5.1 灵敏度、互补灵敏度与噪声通道",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/10_自动控制与仿真.md",
+      "line": 140,
+      "evidence": "Y=TR+SD-TN",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-11-01",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "普通年金现值和终值的求和推导",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.2 等额现金流的现值、终值与支付时点",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/11_经济学与家庭财务.md",
+      "line": 220,
+      "evidence": "P=A\\sum",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-11-02",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "先付年金时点差异、零利率极限",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "8.2 等额现金流的现值、终值与支付时点",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/11_经济学与家庭财务.md",
+      "line": 229,
+      "evidence": "先付年金",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-11-03",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "等额支付余额递推及中途余额闭式",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "9.1 余额递推与两种还款方式的公式联系",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/11_经济学与家庭财务.md",
+      "line": 259,
+      "evidence": "B_k=(1+i)B_{k-1}-A",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-11-04",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "等额本金一般期支付和总利息",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "9.1 余额递推与两种还款方式的公式联系",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/11_经济学与家庭财务.md",
+      "line": 273,
+      "evidence": "iP(n+1)/2",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-11-05",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "两种还款方式完整数例与三条核算恒等式",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "9.1 余额递推与两种还款方式的公式联系",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/11_经济学与家庭财务.md",
+      "line": 273,
+      "evidence": "总还本=P",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-12-01",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "充电电量受功率、容量、负荷等四重约束",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "6.1 价格、效率与约束共同决定最优动作",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/12_数学建模与优化.md",
+      "line": 109,
+      "evidence": "x_{\\max}",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-12-02",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "价格效率阈值的三种最优动作及退化成本口径",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "6.1 价格、效率与约束共同决定最优动作",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/12_数学建模与优化.md",
+      "line": 123,
+      "evidence": "p_1-\\rho p_2+c_{\\rm deg}",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-12-03",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "负荷上界先于容量饱和的完整算例",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "6.1 价格、效率与约束共同决定最优动作",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/12_数学建模与优化.md",
+      "line": 125,
+      "evidence": "0.2469",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-12-04",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "共同日前变量、分场景可行性与非预知约束",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "9.1 场景、信息时点与非预知约束",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/12_数学建模与优化.md",
+      "line": 183,
+      "evidence": "共同的 B 不能",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-12-05",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "期望与最坏费用目标的公式和排序反例",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "9.1 场景、信息时点与非预知约束",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/12_数学建模与优化.md",
+      "line": 187,
+      "evidence": "期望执行费用为3.5",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-13-01",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "NFA子集状态数2^n上界及空集合陷阱",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "10.2 子集构造、空转移与状态数上界",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/13_计算机科学基础.md",
+      "line": 143,
+      "evidence": "最多有 \\(2^n\\)",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-13-02",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "空转移闭包初态、读入更新和存在接受语义",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "10.2 子集构造、空转移与状态数上界",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/13_计算机科学基础.md",
+      "line": 145,
+      "evidence": "\\operatorname{cl}_\\varepsilon",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-13-03",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "子集构造按输入长度归纳的正确性",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "10.2 子集构造、空转移与状态数上界",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/13_计算机科学基础.md",
+      "line": 152,
+      "evidence": "沿输入长度归纳",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-13-04",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "DFA补语言需完整转移、NFA不可直接换终态",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "10.3 补、交与并的自动机构造",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/13_计算机科学基础.md",
+      "line": 156,
+      "evidence": "交换接受态与非接受态",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-13-05",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "乘积转移、交并接受条件与状态数乘积界",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "10.3 补、交与并的自动机构造",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/13_计算机科学基础.md",
+      "line": 163,
+      "evidence": "|Q_1||Q_2|",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-13-06",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补充对话所涉知识的自然延伸和同类公式",
+      "knowledge": "奇偶与后缀乘积机的完整运行验证",
+      "source_messages": [],
+      "source_read_method": "existing manuscript review plus independently derived extension",
+      "textbook_section": "10.3 补、交与并的自动机构造",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/13_计算机科学基础.md",
+      "line": 165,
+      "evidence": "输入1001依次",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_family_with_conditions_and_examples",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-20261016-01",
+      "revision": "2026-10-16-extension-01",
+      "source_date": "2026-10-15",
+      "knowledge": "公司所在与工作岗位的в/на固定搭配",
+      "source_messages": [
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "2ed40d42-87b7-4124-a153-93168db70c7e"
+        },
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "66a27c48-bdfc-4d27-835d-7edcf7063649"
+        }
+      ],
+      "source_read_method": "original attachment visually inspected and actual logged-in page body recovered",
+      "source_recovery_file": "work/source_recovery/6ad0dca3-2884-83eb-aa68-55e052f4e185.json",
+      "source_scope": "requested item 7",
+      "textbook_section": "2.1 в 与 на：搭配、地点和活动",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 39,
+      "evidence": "в международной компании",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "new_source_detail_with_grammar_explanation",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-20261016-02",
+      "revision": "2026-10-16-extension-01",
+      "source_date": "2026-10-15",
+      "knowledge": "展览活动与博物馆建筑的分层地点",
+      "source_messages": [
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "2ed40d42-87b7-4124-a153-93168db70c7e"
+        },
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "66a27c48-bdfc-4d27-835d-7edcf7063649"
+        }
+      ],
+      "source_read_method": "original attachment visually inspected and actual logged-in page body recovered",
+      "source_recovery_file": "work/source_recovery/6ad0dca3-2884-83eb-aa68-55e052f4e185.json",
+      "source_scope": "requested item 8",
+      "textbook_section": "2.1 в 与 на：搭配、地点和活动",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 41,
+      "evidence": "на выставке",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "new_source_detail_with_grammar_explanation",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-20261016-03",
+      "revision": "2026-10-16-extension-01",
+      "source_date": "2026-10-15",
+      "knowledge": "硕士学习阶段与城市所在的两个в短语",
+      "source_messages": [
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "2ed40d42-87b7-4124-a153-93168db70c7e"
+        },
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "66a27c48-bdfc-4d27-835d-7edcf7063649"
+        }
+      ],
+      "source_read_method": "original attachment visually inspected and actual logged-in page body recovered",
+      "source_recovery_file": "work/source_recovery/6ad0dca3-2884-83eb-aa68-55e052f4e185.json",
+      "source_scope": "requested item 9",
+      "textbook_section": "2.1 в 与 на：搭配、地点和活动",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 45,
+      "evidence": "в магистратуре",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "new_source_detail_with_grammar_explanation",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-20261016-04",
+      "revision": "2026-10-16-extension-01",
+      "source_date": "2026-10-15",
+      "knowledge": "场地与长椅的на地点形式",
+      "source_messages": [
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "2ed40d42-87b7-4124-a153-93168db70c7e"
+        },
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "66a27c48-bdfc-4d27-835d-7edcf7063649"
+        }
+      ],
+      "source_read_method": "original attachment visually inspected and actual logged-in page body recovered",
+      "source_recovery_file": "work/source_recovery/6ad0dca3-2884-83eb-aa68-55e052f4e185.json",
+      "source_scope": "requested item 10",
+      "textbook_section": "2.1 в 与 на：搭配、地点和活动",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 45,
+      "evidence": "на скамейке",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "new_source_detail_with_grammar_explanation",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-20261016-05",
+      "revision": "2026-10-16-extension-01",
+      "source_date": "2026-10-15",
+      "knowledge": "网站、布告板与系办公室附近的介词关系",
+      "source_messages": [
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "2ed40d42-87b7-4124-a153-93168db70c7e"
+        },
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "66a27c48-bdfc-4d27-835d-7edcf7063649"
+        }
+      ],
+      "source_read_method": "original attachment visually inspected and actual logged-in page body recovered",
+      "source_recovery_file": "work/source_recovery/6ad0dca3-2884-83eb-aa68-55e052f4e185.json",
+      "source_scope": "requested item 11",
+      "textbook_section": "2.1 в 与 на：搭配、地点和活动",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 45,
+      "evidence": "на сайте",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "new_source_detail_with_grammar_explanation",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-20261016-06",
+      "revision": "2026-10-16-extension-01",
+      "source_date": "2026-10-15",
+      "knowledge": "机场去向与加油站所在需分别确定宾格和前置格",
+      "source_messages": [
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "2ed40d42-87b7-4124-a153-93168db70c7e"
+        },
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "66a27c48-bdfc-4d27-835d-7edcf7063649"
+        }
+      ],
+      "source_read_method": "original attachment visually inspected and actual logged-in page body recovered",
+      "source_recovery_file": "work/source_recovery/6ad0dca3-2884-83eb-aa68-55e052f4e185.json",
+      "source_scope": "requested item 12",
+      "textbook_section": "2.2 去向、所在与来源的三向联系",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 55,
+      "evidence": "По дороге в аэропорт",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "new_source_detail_with_grammar_explanation",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-20261016-07",
+      "revision": "2026-10-16-extension-01",
+      "source_date": "2026-10-15",
+      "knowledge": "海边度假与露台地点、на море和в море的语境区别",
+      "source_messages": [
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "2ed40d42-87b7-4124-a153-93168db70c7e"
+        },
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "66a27c48-bdfc-4d27-835d-7edcf7063649"
+        }
+      ],
+      "source_read_method": "original attachment visually inspected and actual logged-in page body recovered",
+      "source_recovery_file": "work/source_recovery/6ad0dca3-2884-83eb-aa68-55e052f4e185.json",
+      "source_scope": "requested item 13",
+      "textbook_section": "2.1 в 与 на：搭配、地点和活动",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 47,
+      "evidence": "на море 常用于",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "new_source_detail_with_grammar_explanation",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-20261016-08",
+      "revision": "2026-10-16-extension-01",
+      "source_date": "2026-10-15",
+      "knowledge": "会议活动与走廊场所，отвечать на问题宾格的区别",
+      "source_messages": [
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "2ed40d42-87b7-4124-a153-93168db70c7e"
+        },
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "66a27c48-bdfc-4d27-835d-7edcf7063649"
+        }
+      ],
+      "source_read_method": "original attachment visually inspected and actual logged-in page body recovered",
+      "source_recovery_file": "work/source_recovery/6ad0dca3-2884-83eb-aa68-55e052f4e185.json",
+      "source_scope": "requested item 14",
+      "textbook_section": "2.1 в 与 на：搭配、地点和活动",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 43,
+      "evidence": "на собрании",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "new_source_detail_with_grammar_explanation",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-20261016-09",
+      "revision": "2026-10-16-extension-01",
+      "source_date": "2026-10-15",
+      "knowledge": "上周、出差、喀山在一句中的时间状态地点关系",
+      "source_messages": [
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "2ed40d42-87b7-4124-a153-93168db70c7e"
+        },
+        {
+          "thread_id": "6ad0dca3-2884-83eb-aa68-55e052f4e185",
+          "message_id": "66a27c48-bdfc-4d27-835d-7edcf7063649"
+        }
+      ],
+      "source_read_method": "original attachment visually inspected and actual logged-in page body recovered",
+      "source_recovery_file": "work/source_recovery/6ad0dca3-2884-83eb-aa68-55e052f4e185.json",
+      "source_scope": "requested item 15",
+      "textbook_section": "7.1 星期与年份的时间搭配",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 129,
+      "evidence": "На прошлой неделе я был",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "new_source_detail_with_grammar_explanation",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-02-11",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补齐行列式及同类公式",
+      "knowledge": "伴随矩阵转置、整体数乘和n−1次数",
+      "source_messages": [],
+      "source_read_method": "independent derivation from minors, adjugate identity and rank-nullity",
+      "textbook_section": "5.4 伴随矩阵的同类公式与秩",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/02_线性代数.md",
+      "line": 309,
+      "evidence": "k^{n-1}",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_formula_family",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-02-12",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补齐行列式及同类公式",
+      "knowledge": "伴随矩阵行列式及奇异情形不能用逆证明",
+      "source_messages": [],
+      "source_read_method": "independent derivation from minors, adjugate identity and rank-nullity",
+      "textbook_section": "5.4 伴随矩阵的同类公式与秩",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/02_线性代数.md",
+      "line": 315,
+      "evidence": "|\\operatorname{adj}(A)|",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_formula_family",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "EXT-02-13",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "trigger": "用户要求补齐行列式及同类公式",
+      "knowledge": "伴随矩阵的秩三分支、阶数条件及反例",
+      "source_messages": [],
+      "source_read_method": "independent derivation from minors, adjugate identity and rank-nullity",
+      "textbook_section": "5.4 伴随矩阵的同类公式与秩",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/02_线性代数.md",
+      "line": 321,
+      "evidence": "r(\\operatorname{adj}A)",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "extended_formula_family",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-LATE-01",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "conversation_knowledge",
+      "knowledge": "银行、宿舍、体育场、课堂和音乐会的具体в/на搭配",
+      "source_messages": [
+        {
+          "thread_id": "6ad0f762-6570-83ed-ac9d-21a644417495",
+          "message_id": "a7d4dcfd-09a4-4e13-8af3-30d7c26b5156"
+        },
+        {
+          "thread_id": "6ad0f762-6570-83ed-ac9d-21a644417495",
+          "message_id": "803025e2-6555-42f3-ac8d-a4a493eb0179"
+        }
+      ],
+      "source_read_method": "visible page excerpt plus original image",
+      "source_recovery_file": "work/source_recovery/6ad0f762-6570-83ed-ac9d-21a644417495.json",
+      "textbook_section": "2.3 地点名词的词尾与短语中心",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 67,
+      "evidence": "на стадионе",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "source_detail",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-LATE-02",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "conversation_knowledge",
+      "knowledge": "общежитие到общежитии的前置格及кафе形式不变",
+      "source_messages": [
+        {
+          "thread_id": "6ad0f762-6570-83ed-ac9d-21a644417495",
+          "message_id": "a7d4dcfd-09a4-4e13-8af3-30d7c26b5156"
+        },
+        {
+          "thread_id": "6ad0f762-6570-83ed-ac9d-21a644417495",
+          "message_id": "803025e2-6555-42f3-ac8d-a4a493eb0179"
+        }
+      ],
+      "source_read_method": "visible page excerpt plus original image",
+      "source_recovery_file": "work/source_recovery/6ad0f762-6570-83ed-ac9d-21a644417495.json",
+      "textbook_section": "2.3 地点名词的词尾与短语中心",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 63,
+      "evidence": "общежитие 的前置格",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "source_detail",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-LATE-03",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "conversation_knowledge",
+      "knowledge": "пойти和поехать按步行/交通方式选择",
+      "source_messages": [
+        {
+          "thread_id": "6ad0f762-6570-83ed-ac9d-21a644417495",
+          "message_id": "b4424202-7c80-4137-9f07-39526a7c2cb7"
+        },
+        {
+          "thread_id": "6ad0f762-6570-83ed-ac9d-21a644417495",
+          "message_id": "7ca350dd-357f-4330-8063-6be2843d0358"
+        }
+      ],
+      "source_read_method": "visible page excerpt plus original image",
+      "source_recovery_file": "work/source_recovery/6ad0f762-6570-83ed-ac9d-21a644417495.json",
+      "textbook_section": "8.2 运动动词的方式、方向与起动意义",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 171,
+      "evidence": "Он сел в такси и поехал",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "source_detail",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-LATE-04",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "conversation_knowledge",
+      "knowledge": "по-表示开始移动，出发不能保证到达",
+      "source_messages": [
+        {
+          "thread_id": "6ad0f762-6570-83ed-ac9d-21a644417495",
+          "message_id": "b4424202-7c80-4137-9f07-39526a7c2cb7"
+        }
+      ],
+      "source_read_method": "visible page excerpt plus original image",
+      "source_recovery_file": "work/source_recovery/6ad0f762-6570-83ed-ac9d-21a644417495.json",
+      "textbook_section": "8.2 运动动词的方式、方向与起动意义",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 171,
+      "evidence": "这种起动意义不等于已经到达",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "source_attachment",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-LATE-05",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "conversation_knowledge",
+      "knowledge": "运动动词过去时性数变化及я与说话人性别",
+      "source_messages": [
+        {
+          "thread_id": "6ad0f762-6570-83ed-ac9d-21a644417495",
+          "message_id": "b4424202-7c80-4137-9f07-39526a7c2cb7"
+        },
+        {
+          "thread_id": "6ad0f762-6570-83ed-ac9d-21a644417495",
+          "message_id": "7ca350dd-357f-4330-8063-6be2843d0358"
+        }
+      ],
+      "source_read_method": "visible page excerpt plus original image",
+      "source_recovery_file": "work/source_recovery/6ad0f762-6570-83ed-ac9d-21a644417495.json",
+      "textbook_section": "8.2 运动动词的方式、方向与起动意义",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 173,
+      "evidence": "пошёл、пошла、пошло、пошли",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "source_detail",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-LATE-06",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "conversation_knowledge",
+      "knowledge": "交通方式未交代时不将推测当唯一答案",
+      "source_messages": [
+        {
+          "thread_id": "6ad0f762-6570-83ed-ac9d-21a644417495",
+          "message_id": "b4424202-7c80-4137-9f07-39526a7c2cb7"
+        },
+        {
+          "thread_id": "6ad0f762-6570-83ed-ac9d-21a644417495",
+          "message_id": "7ca350dd-357f-4330-8063-6be2843d0358"
+        }
+      ],
+      "source_read_method": "visible page excerpt plus original image",
+      "source_recovery_file": "work/source_recovery/6ad0f762-6570-83ed-ac9d-21a644417495.json",
+      "textbook_section": "8.2 运动动词的方式、方向与起动意义",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 175,
+      "evidence": "目的地是剧院或电影院本身",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "source_correction",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-LATE-07",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "conversation_knowledge",
+      "knowledge": "к другу与на день рождения的支配关系",
+      "source_messages": [
+        {
+          "thread_id": "6ad0f762-6570-83ed-ac9d-21a644417495",
+          "message_id": "b4424202-7c80-4137-9f07-39526a7c2cb7"
+        },
+        {
+          "thread_id": "6ad0f762-6570-83ed-ac9d-21a644417495",
+          "message_id": "7ca350dd-357f-4330-8063-6be2843d0358"
+        }
+      ],
+      "source_read_method": "visible page excerpt plus original image",
+      "source_recovery_file": "work/source_recovery/6ad0f762-6570-83ed-ac9d-21a644417495.json",
+      "textbook_section": "8.2 运动动词的方式、方向与起动意义",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 181,
+      "evidence": "к другу 用与格",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "source_detail",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-LATE-08",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "knowledge": "-ие/-ия词尾、不可变格名词与短语中心的延伸",
+      "source_messages": [],
+      "source_read_method": "independently extended from new motion-verb lesson",
+      "source_recovery_file": "work/source_recovery/6ad0f762-6570-83ed-ac9d-21a644417495.json",
+      "textbook_section": "2.3 地点名词的词尾与短语中心",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 65,
+      "evidence": "на 支配的是 станция",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "curriculum_extension",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-LATE-09",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "knowledge": "идти/ходить、ехать/ездить方向性与体不能混淆",
+      "source_messages": [],
+      "source_read_method": "independently extended from new motion-verb lesson",
+      "source_recovery_file": "work/source_recovery/6ad0f762-6570-83ed-ac9d-21a644417495.json",
+      "textbook_section": "8.2 运动动词的方式、方向与起动意义",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 169,
+      "evidence": "四个基本动词都是未完成体",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "curriculum_extension",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-LATE-10",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "knowledge": "пойти/поехать全部将来人称及现在时区别",
+      "source_messages": [],
+      "source_read_method": "independently extended from new motion-verb lesson",
+      "source_recovery_file": "work/source_recovery/6ad0f762-6570-83ed-ac9d-21a644417495.json",
+      "textbook_section": "8.2 运动动词的方式、方向与起动意义",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 177,
+      "evidence": "мы пойдём",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "curriculum_extension",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-LATE-11",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "knowledge": "出发、到达、离开前缀族及往返经历的语境",
+      "source_messages": [],
+      "source_read_method": "independently extended from new motion-verb lesson",
+      "source_recovery_file": "work/source_recovery/6ad0f762-6570-83ed-ac9d-21a644417495.json",
+      "textbook_section": "8.2 运动动词的方式、方向与起动意义",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 179,
+      "evidence": "поехал、приехал、уехал",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "curriculum_extension",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "RU-LATE-12",
+      "revision": "2026-10-16-extension-01",
+      "source_kind": "curriculum_extension",
+      "knowledge": "домой、дома、из дома方向所在来源区别",
+      "source_messages": [],
+      "source_read_method": "independently extended from new motion-verb lesson",
+      "source_recovery_file": "work/source_recovery/6ad0f762-6570-83ed-ac9d-21a644417495.json",
+      "textbook_section": "8.2 运动动词的方式、方向与起动意义",
+      "source_file": "C:/Users/zheng/Documents/Codex/2026-10-15/wox/outputs/教材/09_俄语.md",
+      "line": 181,
+      "evidence": "домой 是表示",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "curriculum_extension",
+      "pdf_verified_at": "2026-10-15T17:32:10.050Z"
+    },
+    {
+      "id": "D17-05-01",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "05",
+      "source_kind": "conversation_attachment",
+      "knowledge": "由守恒能量得到速度、按方向选择正负分支",
+      "source_messages": [],
+      "source_thread": "6ad1cf65-7a10-83ed-9c7e-891a26dfdb38",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "11.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\05_大学物理.md",
+      "line": 427,
+      "evidence": "开平方出现的正负号",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad1cf65-7a10-83ed-9c7e-891a26dfdb38.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_C06D0818-0574-47C3-807D-3EBDAB40334A.jpeg",
+          "sha256": "d230541a5238fb203cd2b4ff4e97fe4eed998cb11cbd2614ff5ccbb509483d84"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_C49CDBE5-F32A-48B7-8393-66FD82F91B4A.jpeg",
+          "sha256": "45f2b15f4c4982b0d83daab54448a1c580c9a8b45b9552994a489d9648f3f04f"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_7AD9073D-1C6B-45A7-8157-511D5CDE0693.jpeg",
+          "sha256": "296563a779b1170e7196862cadfe70d70218d747c2ace6c6611c89d0301bfbec"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_5B518AEF-287D-4F46-ADED-B8722F3AF185.jpeg",
+          "sha256": "261b50f5618c7eea6ca4e3afeb027ed3b134ea9ac3df1120d017958b4ae53233"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_CE882238-DC8F-418E-9771-FCE42ED6B3CB.jpeg",
+          "sha256": "be91a413ad5251e8153ab47ab97f02c83baf129ba1317537c7a1049b4f535dff"
+        }
+      ],
+      "source_message_candidates": [
+        "f0b9e108-12ca-41e7-a0f1-98b1aba32c02",
+        "2226a439-05be-4dd2-9b14-b60b13068f99",
+        "329f7b85-9fba-4b22-a708-731a5f009103",
+        "12d171da-acde-47cd-89bb-9c995e21c4c6",
+        "e7480164-29b5-481c-a42f-75125c4ee4e2"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-05-02",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "05",
+      "source_kind": "conversation_attachment",
+      "knowledge": "归一化变量后的反正弦积分与端点瑕积分",
+      "source_messages": [],
+      "source_thread": "6ad1cf65-7a10-83ed-9c7e-891a26dfdb38",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "11.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\05_大学物理.md",
+      "line": 431,
+      "evidence": "端点处的收敛瑕积分",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad1cf65-7a10-83ed-9c7e-891a26dfdb38.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_C06D0818-0574-47C3-807D-3EBDAB40334A.jpeg",
+          "sha256": "d230541a5238fb203cd2b4ff4e97fe4eed998cb11cbd2614ff5ccbb509483d84"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_C49CDBE5-F32A-48B7-8393-66FD82F91B4A.jpeg",
+          "sha256": "45f2b15f4c4982b0d83daab54448a1c580c9a8b45b9552994a489d9648f3f04f"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_7AD9073D-1C6B-45A7-8157-511D5CDE0693.jpeg",
+          "sha256": "296563a779b1170e7196862cadfe70d70218d747c2ace6c6611c89d0301bfbec"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_5B518AEF-287D-4F46-ADED-B8722F3AF185.jpeg",
+          "sha256": "261b50f5618c7eea6ca4e3afeb027ed3b134ea9ac3df1120d017958b4ae53233"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_CE882238-DC8F-418E-9771-FCE42ED6B3CB.jpeg",
+          "sha256": "be91a413ad5251e8153ab47ab97f02c83baf129ba1317537c7a1049b4f535dff"
+        }
+      ],
+      "source_message_candidates": [
+        "f0b9e108-12ca-41e7-a0f1-98b1aba32c02",
+        "2226a439-05be-4dd2-9b14-b60b13068f99",
+        "329f7b85-9fba-4b22-a708-731a5f009103",
+        "12d171da-acde-47cd-89bb-9c995e21c4c6",
+        "e7480164-29b5-481c-a42f-75125c4ee4e2"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-05-03",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "05",
+      "source_kind": "source_correction",
+      "knowledge": "反正弦主值只覆盖半周期，转折后需换分支",
+      "source_messages": [],
+      "source_thread": "6ad1cf65-7a10-83ed-9c7e-891a26dfdb38",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "11.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\05_大学物理.md",
+      "line": 437,
+      "evidence": "只覆盖从右端到左端",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad1cf65-7a10-83ed-9c7e-891a26dfdb38.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_C06D0818-0574-47C3-807D-3EBDAB40334A.jpeg",
+          "sha256": "d230541a5238fb203cd2b4ff4e97fe4eed998cb11cbd2614ff5ccbb509483d84"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_C49CDBE5-F32A-48B7-8393-66FD82F91B4A.jpeg",
+          "sha256": "45f2b15f4c4982b0d83daab54448a1c580c9a8b45b9552994a489d9648f3f04f"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_7AD9073D-1C6B-45A7-8157-511D5CDE0693.jpeg",
+          "sha256": "296563a779b1170e7196862cadfe70d70218d747c2ace6c6611c89d0301bfbec"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_5B518AEF-287D-4F46-ADED-B8722F3AF185.jpeg",
+          "sha256": "261b50f5618c7eea6ca4e3afeb027ed3b134ea9ac3df1120d017958b4ae53233"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_CE882238-DC8F-418E-9771-FCE42ED6B3CB.jpeg",
+          "sha256": "be91a413ad5251e8153ab47ab97f02c83baf129ba1317537c7a1049b4f535dff"
+        }
+      ],
+      "source_message_candidates": [
+        "f0b9e108-12ca-41e7-a0f1-98b1aba32c02",
+        "2226a439-05be-4dd2-9b14-b60b13068f99",
+        "329f7b85-9fba-4b22-a708-731a5f009103",
+        "12d171da-acde-47cd-89bb-9c995e21c4c6",
+        "e7480164-29b5-481c-a42f-75125c4ee4e2"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-05-04",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "05",
+      "source_kind": "source_correction",
+      "knowledge": "初始位置、释放端点、平衡位置与振幅不可混用",
+      "source_messages": [],
+      "source_thread": "6ad1cf65-7a10-83ed-9c7e-891a26dfdb38",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "11.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\05_大学物理.md",
+      "line": 439,
+      "evidence": "符号的含义需要先明确",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad1cf65-7a10-83ed-9c7e-891a26dfdb38.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_C06D0818-0574-47C3-807D-3EBDAB40334A.jpeg",
+          "sha256": "d230541a5238fb203cd2b4ff4e97fe4eed998cb11cbd2614ff5ccbb509483d84"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_C49CDBE5-F32A-48B7-8393-66FD82F91B4A.jpeg",
+          "sha256": "45f2b15f4c4982b0d83daab54448a1c580c9a8b45b9552994a489d9648f3f04f"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_7AD9073D-1C6B-45A7-8157-511D5CDE0693.jpeg",
+          "sha256": "296563a779b1170e7196862cadfe70d70218d747c2ace6c6611c89d0301bfbec"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_5B518AEF-287D-4F46-ADED-B8722F3AF185.jpeg",
+          "sha256": "261b50f5618c7eea6ca4e3afeb027ed3b134ea9ac3df1120d017958b4ae53233"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_CE882238-DC8F-418E-9771-FCE42ED6B3CB.jpeg",
+          "sha256": "be91a413ad5251e8153ab47ab97f02c83baf129ba1317537c7a1049b4f535dff"
+        }
+      ],
+      "source_message_candidates": [
+        "f0b9e108-12ca-41e7-a0f1-98b1aba32c02",
+        "2226a439-05be-4dd2-9b14-b60b13068f99",
+        "329f7b85-9fba-4b22-a708-731a5f009103",
+        "12d171da-acde-47cd-89bb-9c995e21c4c6",
+        "e7480164-29b5-481c-a42f-75125c4ee4e2"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-05-05",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "05",
+      "source_kind": "curriculum_extension",
+      "knowledge": "一般势能允许运动区域与周期积分成立条件",
+      "source_messages": [],
+      "source_thread": null,
+      "source_read_method": "independent_derivation_in_course_sequence",
+      "textbook_section": "11.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\05_大学物理.md",
+      "line": 441,
+      "evidence": "相邻两个简单转折点",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "D17-05-06",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "05",
+      "source_kind": "conversation_attachment",
+      "knowledge": "动势能随时间的平方表达式与总能量",
+      "source_messages": [],
+      "source_thread": "6ad1cf65-7a10-83ed-9c7e-891a26dfdb38",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "11.3",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\05_大学物理.md",
+      "line": 452,
+      "evidence": "E_p&=E",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad1cf65-7a10-83ed-9c7e-891a26dfdb38.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_C06D0818-0574-47C3-807D-3EBDAB40334A.jpeg",
+          "sha256": "d230541a5238fb203cd2b4ff4e97fe4eed998cb11cbd2614ff5ccbb509483d84"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_C49CDBE5-F32A-48B7-8393-66FD82F91B4A.jpeg",
+          "sha256": "45f2b15f4c4982b0d83daab54448a1c580c9a8b45b9552994a489d9648f3f04f"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_7AD9073D-1C6B-45A7-8157-511D5CDE0693.jpeg",
+          "sha256": "296563a779b1170e7196862cadfe70d70218d747c2ace6c6611c89d0301bfbec"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_5B518AEF-287D-4F46-ADED-B8722F3AF185.jpeg",
+          "sha256": "261b50f5618c7eea6ca4e3afeb027ed3b134ea9ac3df1120d017958b4ae53233"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_CE882238-DC8F-418E-9771-FCE42ED6B3CB.jpeg",
+          "sha256": "be91a413ad5251e8153ab47ab97f02c83baf129ba1317537c7a1049b4f535dff"
+        }
+      ],
+      "source_message_candidates": [
+        "f0b9e108-12ca-41e7-a0f1-98b1aba32c02",
+        "2226a439-05be-4dd2-9b14-b60b13068f99",
+        "329f7b85-9fba-4b22-a708-731a5f009103",
+        "12d171da-acde-47cd-89bb-9c995e21c4c6",
+        "e7480164-29b5-481c-a42f-75125c4ee4e2"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-05-07",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "05",
+      "source_kind": "conversation_attachment",
+      "knowledge": "位移图、势能位置图与能量时间图区分",
+      "source_messages": [],
+      "source_thread": "6ad1cf65-7a10-83ed-9c7e-891a26dfdb38",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "11.3",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\05_大学物理.md",
+      "line": 457,
+      "evidence": "横轴不同",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad1cf65-7a10-83ed-9c7e-891a26dfdb38.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_C06D0818-0574-47C3-807D-3EBDAB40334A.jpeg",
+          "sha256": "d230541a5238fb203cd2b4ff4e97fe4eed998cb11cbd2614ff5ccbb509483d84"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_C49CDBE5-F32A-48B7-8393-66FD82F91B4A.jpeg",
+          "sha256": "45f2b15f4c4982b0d83daab54448a1c580c9a8b45b9552994a489d9648f3f04f"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_7AD9073D-1C6B-45A7-8157-511D5CDE0693.jpeg",
+          "sha256": "296563a779b1170e7196862cadfe70d70218d747c2ace6c6611c89d0301bfbec"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_5B518AEF-287D-4F46-ADED-B8722F3AF185.jpeg",
+          "sha256": "261b50f5618c7eea6ca4e3afeb027ed3b134ea9ac3df1120d017958b4ae53233"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1cf65-7a10-83ed-9c7e-891a26dfdb38_IMG_CE882238-DC8F-418E-9771-FCE42ED6B3CB.jpeg",
+          "sha256": "be91a413ad5251e8153ab47ab97f02c83baf129ba1317537c7a1049b4f535dff"
+        }
+      ],
+      "source_message_candidates": [
+        "f0b9e108-12ca-41e7-a0f1-98b1aba32c02",
+        "2226a439-05be-4dd2-9b14-b60b13068f99",
+        "329f7b85-9fba-4b22-a708-731a5f009103",
+        "12d171da-acde-47cd-89bb-9c995e21c4c6",
+        "e7480164-29b5-481c-a42f-75125c4ee4e2"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-05-08",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "05",
+      "source_kind": "curriculum_extension",
+      "knowledge": "能量周期T/2与两倍角频率",
+      "source_messages": [],
+      "source_thread": null,
+      "source_read_method": "independent_derivation_in_course_sequence",
+      "textbook_section": "11.3",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\05_大学物理.md",
+      "line": 457,
+      "evidence": "对应角频率",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "D17-05-09",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "05",
+      "source_kind": "curriculum_extension",
+      "knowledge": "等能位置和速度绝对值及一周期四个时刻",
+      "source_messages": [],
+      "source_thread": null,
+      "source_read_method": "independent_derivation_in_course_sequence",
+      "textbook_section": "11.3",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\05_大学物理.md",
+      "line": 465,
+      "evidence": "一个周期内共有四个",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "D17-05-10",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "05",
+      "source_kind": "curriculum_extension",
+      "knowledge": "周期平均动势能相等不同于瞬时相等",
+      "source_messages": [],
+      "source_thread": null,
+      "source_read_method": "independent_derivation_in_course_sequence",
+      "textbook_section": "11.3",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\05_大学物理.md",
+      "line": 465,
+      "evidence": "这是周期平均相等",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "D17-05-11",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "05",
+      "source_kind": "curriculum_extension",
+      "knowledge": "带单位完整示例选择首次到达的时间与负速度",
+      "source_messages": [],
+      "source_thread": null,
+      "source_read_method": "independent_derivation_in_course_sequence",
+      "textbook_section": "11.3",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\05_大学物理.md",
+      "line": 467,
+      "evidence": "t=\\pi/15",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "D17-05-12",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "05",
+      "source_kind": "curriculum_extension",
+      "knowledge": "能量相椭圆及演化方向，不是空间轨迹",
+      "source_messages": [],
+      "source_thread": null,
+      "source_read_method": "independent_derivation_in_course_sequence",
+      "textbook_section": "11.3",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\05_大学物理.md",
+      "line": 469,
+      "evidence": "相平面中的曲线",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "D17-05-13",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "05",
+      "source_kind": "curriculum_extension",
+      "knowledge": "竖直弹簧平衡平移与重力势能配方",
+      "source_messages": [],
+      "source_thread": null,
+      "source_read_method": "independent_derivation_in_course_sequence",
+      "textbook_section": "11.4",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\05_大学物理.md",
+      "line": 480,
+      "evidence": "y_{\\rm eq}",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "D17-05-14",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "05",
+      "source_kind": "curriculum_extension",
+      "knowledge": "自然长度释放的振幅及最大伸长",
+      "source_messages": [],
+      "source_thread": null,
+      "source_read_method": "independent_derivation_in_course_sequence",
+      "textbook_section": "11.4",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\05_大学物理.md",
+      "line": 487,
+      "evidence": "最低点伸长",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "D17-05-15",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "05",
+      "source_kind": "curriculum_extension",
+      "knowledge": "串并联等效劲度推导与轻连接点假设",
+      "source_messages": [],
+      "source_thread": null,
+      "source_read_method": "independent_derivation_in_course_sequence",
+      "textbook_section": "11.4",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\05_大学物理.md",
+      "line": 489,
+      "evidence": "中间连接点质量忽略",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "D17-07-01",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "07",
+      "source_kind": "conversation_attachment",
+      "knowledge": "整数后继、量词次序和量词否定已在原正文覆盖",
+      "source_messages": [],
+      "source_thread": "6ad22731-6000-83ed-8d54-e45b4e2cbe2f",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "8. 谓词",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\07_逻辑学.md",
+      "line": 221,
+      "evidence": "代入 \\(x=0\\)",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "verified_existing",
+      "source_recovery_file": "work/source_recovery/6ad22731-6000-83ed-8d54-e45b4e2cbe2f.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad22731-6000-83ed-8d54-e45b4e2cbe2f_IMG_D6118C21-19F5-4EDF-B2CE-8AF853E2A3C0.jpeg",
+          "sha256": "b8fc6e6da5294d3345daa85b2de1eb49ce0b94ebdb1629f6261e53bd18359202"
+        }
+      ],
+      "source_message_candidates": [
+        "10233fbe-5973-4eb7-b4c0-3ac3da31a4bb"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-07-02",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "07",
+      "source_kind": "conversation_attachment",
+      "knowledge": "受限全称蕴含、受限存在合取及空类已覆盖",
+      "source_messages": [],
+      "source_thread": "6ad22731-6000-83ed-8d54-e45b4e2cbe2f",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "8.1",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\07_逻辑学.md",
+      "line": 236,
+      "evidence": "存在见证必须同时满足身份与能力",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "verified_existing",
+      "source_recovery_file": "work/source_recovery/6ad22731-6000-83ed-8d54-e45b4e2cbe2f.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad22731-6000-83ed-8d54-e45b4e2cbe2f_IMG_D6118C21-19F5-4EDF-B2CE-8AF853E2A3C0.jpeg",
+          "sha256": "b8fc6e6da5294d3345daa85b2de1eb49ce0b94ebdb1629f6261e53bd18359202"
+        }
+      ],
+      "source_message_candidates": [
+        "10233fbe-5973-4eb7-b4c0-3ac3da31a4bb"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-07-03",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "07",
+      "source_kind": "curriculum_extension",
+      "knowledge": "二元素模型穷尽候选，分别选见证与统一见证的区别",
+      "source_messages": [],
+      "source_thread": null,
+      "source_read_method": "independent_derivation_in_course_sequence",
+      "textbook_section": "8.3",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\07_逻辑学.md",
+      "line": 280,
+      "evidence": "所有候选都失败",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "D17-07-04",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "07",
+      "source_kind": "curriculum_extension",
+      "knowledge": "三重量词中见证允许依赖哪些前置变量",
+      "source_messages": [],
+      "source_thread": null,
+      "source_read_method": "independent_derivation_in_course_sequence",
+      "textbook_section": "8.3",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\07_逻辑学.md",
+      "line": 290,
+      "evidence": "允许 y 同时依赖两个对象",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "D17-07-05",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "07",
+      "source_kind": "source_correction",
+      "knowledge": "非空有限全序集合必有最大元的明确条件",
+      "source_messages": [],
+      "source_thread": "6ad22731-6000-83ed-8d54-e45b4e2cbe2f",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "8. 谓词",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\07_逻辑学.md",
+      "line": 219,
+      "evidence": "非空有限集合中为假",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "clarified_condition",
+      "source_recovery_file": "work/source_recovery/6ad22731-6000-83ed-8d54-e45b4e2cbe2f.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad22731-6000-83ed-8d54-e45b4e2cbe2f_IMG_D6118C21-19F5-4EDF-B2CE-8AF853E2A3C0.jpeg",
+          "sha256": "b8fc6e6da5294d3345daa85b2de1eb49ce0b94ebdb1629f6261e53bd18359202"
+        }
+      ],
+      "source_message_candidates": [
+        "10233fbe-5973-4eb7-b4c0-3ac3da31a4bb"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-01",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "目的层宾格、乘电梯前置格、沿楼梯与格及同形区别",
+      "source_messages": [],
+      "source_thread": "6ad1b313-dca4-83ed-94d3-3a15602a1199",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "2.4",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 71,
+      "evidence": "по лестнице 表沿楼梯",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad1b313-dca4-83ed-94d3-3a15602a1199.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_DC83A94E-7344-4CD0-8013-4E78B7C731AB.jpeg",
+          "sha256": "537d5ed5948e2ea7da522f9e10af884f53555896b3fa54179817f82c72978797"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_FD18F630-E6A0-4206-A4CE-5F87FBE402B6.jpeg",
+          "sha256": "4b3664a85c02abc2d7df6de83ab11fbcb4aea34419a65250a014837d7349201d"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_653F75D7-BC15-4BDD-8E4B-2D5F041CD8AF.jpeg",
+          "sha256": "bd1bdc1d4d02e4b032033ed9cd187ba5fa2088466e404c3f9d32e79578cc5e6b"
+        }
+      ],
+      "source_message_candidates": [
+        "177a7a13-a3e1-4776-af99-5dbc1448bac7",
+        "c933dbfe-2317-47fb-9405-235ccc2901d1",
+        "767b2725-1d96-4607-982a-b9eee335efe3"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-02",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "поднимать/поднять及反身对的及物性、体、过程结果",
+      "source_messages": [],
+      "source_thread": "6ad1b313-dca4-83ed-94d3-3a15602a1199",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "2.4",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 73,
+      "evidence": "поднимать / поднять 是及物动词对",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad1b313-dca4-83ed-94d3-3a15602a1199.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_DC83A94E-7344-4CD0-8013-4E78B7C731AB.jpeg",
+          "sha256": "537d5ed5948e2ea7da522f9e10af884f53555896b3fa54179817f82c72978797"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_FD18F630-E6A0-4206-A4CE-5F87FBE402B6.jpeg",
+          "sha256": "4b3664a85c02abc2d7df6de83ab11fbcb4aea34419a65250a014837d7349201d"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_653F75D7-BC15-4BDD-8E4B-2D5F041CD8AF.jpeg",
+          "sha256": "bd1bdc1d4d02e4b032033ed9cd187ba5fa2088466e404c3f9d32e79578cc5e6b"
+        }
+      ],
+      "source_message_candidates": [
+        "177a7a13-a3e1-4776-af99-5dbc1448bac7",
+        "c933dbfe-2317-47fb-9405-235ccc2901d1",
+        "767b2725-1d96-4607-982a-b9eee335efe3"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-03",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "посылать/послать宾语、收件人与格及人的词义变体",
+      "source_messages": [],
+      "source_thread": "6ad1b313-dca4-83ed-94d3-3a15602a1199",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "2.4",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 75,
+      "evidence": "послать курьера",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad1b313-dca4-83ed-94d3-3a15602a1199.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_DC83A94E-7344-4CD0-8013-4E78B7C731AB.jpeg",
+          "sha256": "537d5ed5948e2ea7da522f9e10af884f53555896b3fa54179817f82c72978797"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_FD18F630-E6A0-4206-A4CE-5F87FBE402B6.jpeg",
+          "sha256": "4b3664a85c02abc2d7df6de83ab11fbcb4aea34419a65250a014837d7349201d"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_653F75D7-BC15-4BDD-8E4B-2D5F041CD8AF.jpeg",
+          "sha256": "bd1bdc1d4d02e4b032033ed9cd187ba5fa2088466e404c3f9d32e79578cc5e6b"
+        }
+      ],
+      "source_message_candidates": [
+        "177a7a13-a3e1-4776-af99-5dbc1448bac7",
+        "c933dbfe-2317-47fb-9405-235ccc2901d1",
+        "767b2725-1d96-4607-982a-b9eee335efe3"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-04",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "через银行应用宾格、по почте与格和属格中心关系",
+      "source_messages": [],
+      "source_thread": "6ad1b313-dca4-83ed-94d3-3a15602a1199",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "2.4",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 75,
+      "evidence": "через 接宾格",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad1b313-dca4-83ed-94d3-3a15602a1199.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_DC83A94E-7344-4CD0-8013-4E78B7C731AB.jpeg",
+          "sha256": "537d5ed5948e2ea7da522f9e10af884f53555896b3fa54179817f82c72978797"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_FD18F630-E6A0-4206-A4CE-5F87FBE402B6.jpeg",
+          "sha256": "4b3664a85c02abc2d7df6de83ab11fbcb4aea34419a65250a014837d7349201d"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_653F75D7-BC15-4BDD-8E4B-2D5F041CD8AF.jpeg",
+          "sha256": "bd1bdc1d4d02e4b032033ed9cd187ba5fa2088466e404c3f9d32e79578cc5e6b"
+        }
+      ],
+      "source_message_candidates": [
+        "177a7a13-a3e1-4776-af99-5dbc1448bac7",
+        "c933dbfe-2317-47fb-9405-235ccc2901d1",
+        "767b2725-1d96-4607-982a-b9eee335efe3"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-05",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "осмотреть参观与诊察、阳性有生命无生命宾格差异",
+      "source_messages": [],
+      "source_thread": "6ad1b313-dca4-83ed-94d3-3a15602a1199",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "2.4",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 77,
+      "evidence": "больного 是阳性有生命宾格",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad1b313-dca4-83ed-94d3-3a15602a1199.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_DC83A94E-7344-4CD0-8013-4E78B7C731AB.jpeg",
+          "sha256": "537d5ed5948e2ea7da522f9e10af884f53555896b3fa54179817f82c72978797"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_FD18F630-E6A0-4206-A4CE-5F87FBE402B6.jpeg",
+          "sha256": "4b3664a85c02abc2d7df6de83ab11fbcb4aea34419a65250a014837d7349201d"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_653F75D7-BC15-4BDD-8E4B-2D5F041CD8AF.jpeg",
+          "sha256": "bd1bdc1d4d02e4b032033ed9cd187ba5fa2088466e404c3f9d32e79578cc5e6b"
+        }
+      ],
+      "source_message_candidates": [
+        "177a7a13-a3e1-4776-af99-5dbc1448bac7",
+        "c933dbfe-2317-47fb-9405-235ccc2901d1",
+        "767b2725-1d96-4607-982a-b9eee335efe3"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-06",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "一至六格编号对应关系",
+      "source_messages": [],
+      "source_thread": "6ad1b313-dca4-83ed-94d3-3a15602a1199",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "2.4",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 79,
+      "evidence": "课堂标注",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad1b313-dca4-83ed-94d3-3a15602a1199.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_DC83A94E-7344-4CD0-8013-4E78B7C731AB.jpeg",
+          "sha256": "537d5ed5948e2ea7da522f9e10af884f53555896b3fa54179817f82c72978797"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_FD18F630-E6A0-4206-A4CE-5F87FBE402B6.jpeg",
+          "sha256": "4b3664a85c02abc2d7df6de83ab11fbcb4aea34419a65250a014837d7349201d"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_653F75D7-BC15-4BDD-8E4B-2D5F041CD8AF.jpeg",
+          "sha256": "bd1bdc1d4d02e4b032033ed9cd187ba5fa2088466e404c3f9d32e79578cc5e6b"
+        }
+      ],
+      "source_message_candidates": [
+        "177a7a13-a3e1-4776-af99-5dbc1448bac7",
+        "c933dbfe-2317-47fb-9405-235ccc2901d1",
+        "767b2725-1d96-4607-982a-b9eee335efe3"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-07",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "21个一般科学术语按概念关系说明意义和多义边界",
+      "source_messages": [],
+      "source_thread": "6ad21cbd-9afc-83eb-9c87-361f4831cc36",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "9.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 217,
+      "evidence": "категория 是用于归类",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad21cbd-9afc-83eb-9c87-361f4831cc36.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad21cbd-9afc-83eb-9c87-361f4831cc36_IMG_7968.jpeg",
+          "sha256": "14f7acee776666cccf293a3b9c90781f8d550ce6270b169bc29f1c092b18f846"
+        }
+      ],
+      "source_message_candidates": [
+        "fefdda1b-2283-4ebb-962c-56554a9137bd"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-08",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "Adj+N一致与N+属格N补语，системы同形对照",
+      "source_messages": [],
+      "source_thread": "6ad21cbd-9afc-83eb-9c87-361f4831cc36",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "9.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 225,
+      "evidence": "两个 системы 外形相同",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad21cbd-9afc-83eb-9c87-361f4831cc36.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad21cbd-9afc-83eb-9c87-361f4831cc36_IMG_7968.jpeg",
+          "sha256": "14f7acee776666cccf293a3b9c90781f8d550ce6270b169bc29f1c092b18f846"
+        }
+      ],
+      "source_message_candidates": [
+        "fefdda1b-2283-4ebb-962c-56554a9137bd"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-09",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "столовая和больной的名词化及形容词型变格",
+      "source_messages": [],
+      "source_thread": "6ad1b313-dca4-83ed-94d3-3a15602a1199",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "9.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 227,
+      "evidence": "столовая комната",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad1b313-dca4-83ed-94d3-3a15602a1199.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_DC83A94E-7344-4CD0-8013-4E78B7C731AB.jpeg",
+          "sha256": "537d5ed5948e2ea7da522f9e10af884f53555896b3fa54179817f82c72978797"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_FD18F630-E6A0-4206-A4CE-5F87FBE402B6.jpeg",
+          "sha256": "4b3664a85c02abc2d7df6de83ab11fbcb4aea34419a65250a014837d7349201d"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_653F75D7-BC15-4BDD-8E4B-2D5F041CD8AF.jpeg",
+          "sha256": "bd1bdc1d4d02e4b032033ed9cd187ba5fa2088466e404c3f9d32e79578cc5e6b"
+        }
+      ],
+      "source_message_candidates": [
+        "177a7a13-a3e1-4776-af99-5dbc1448bac7",
+        "c933dbfe-2317-47fb-9405-235ccc2901d1",
+        "767b2725-1d96-4607-982a-b9eee335efe3"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-10",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "окружность圆周与круг区域，长度和面积的区别",
+      "source_messages": [],
+      "source_thread": "6ad1b313-dca4-83ed-94d3-3a15602a1199",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "9.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 229,
+      "evidence": "длина окружности",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad1b313-dca4-83ed-94d3-3a15602a1199.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_DC83A94E-7344-4CD0-8013-4E78B7C731AB.jpeg",
+          "sha256": "537d5ed5948e2ea7da522f9e10af884f53555896b3fa54179817f82c72978797"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_FD18F630-E6A0-4206-A4CE-5F87FBE402B6.jpeg",
+          "sha256": "4b3664a85c02abc2d7df6de83ab11fbcb4aea34419a65250a014837d7349201d"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad1b313-dca4-83ed-94d3-3a15602a1199_IMG_653F75D7-BC15-4BDD-8E4B-2D5F041CD8AF.jpeg",
+          "sha256": "bd1bdc1d4d02e4b032033ed9cd187ba5fa2088466e404c3f9d32e79578cc5e6b"
+        }
+      ],
+      "source_message_candidates": [
+        "177a7a13-a3e1-4776-af99-5dbc1448bac7",
+        "c933dbfe-2317-47fb-9405-235ccc2901d1",
+        "767b2725-1d96-4607-982a-b9eee335efe3"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-11",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "信息传递句的от属格、к与格及反身被动表达",
+      "source_messages": [],
+      "source_thread": "6ad25723-e714-83ed-8e25-fb8e74bee65e",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "10.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 257,
+      "evidence": "к приёмнику 是趋向接收者",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad25723-e714-83ed-8e25-fb8e74bee65e.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8070.jpeg",
+          "sha256": "39f5629bdf719f52f076c1f5118d88dced435b70fe6cefdbf6f78d0453a4df55"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8069.jpeg",
+          "sha256": "272eede0dadac072ac89063b4c330e87e185f5e0d30f364ccea55e87dfb7ff90"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8068.jpeg",
+          "sha256": "97244e4e154c75448e7037b01140a71b52bb1d9488e615a65ed89c5dc7a08c3b"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_1C98CB1A-B1FC-4D2F-ADD0-3483E73C52A0.jpeg",
+          "sha256": "97a56d0b555f35176fa261f37d724e919d7ff0bcbae5dbfa0a64d5aac193a18e"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8066.jpeg",
+          "sha256": "d562e35942c0c4b442bc7592dac7031f26f2163dfd6abcfa6c2b1ae82dd7a0a4"
+        }
+      ],
+      "source_message_candidates": [
+        "68e35e8a-2040-4b50-9627-ef1df740e502",
+        "e6e901c3-ab92-4bf5-afeb-20d5d79a9b08",
+        "5d5912ca-a2db-46eb-ba60-08ae71bb803f",
+        "981dd2dd-705b-4f00-962b-486c8d172cf7"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-12",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "при взаимодействии объектов、обмен内容工具格及между",
+      "source_messages": [],
+      "source_thread": "6ad2520c-6fb0-83eb-b018-111f63194c93",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "10.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 259,
+      "evidence": "обмен информацией",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad2520c-6fb0-83eb-b018-111f63194c93.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad2520c-6fb0-83eb-b018-111f63194c93_IMG_F77E4A4D-8A47-41BE-B10C-6A8F86D55559.jpeg",
+          "sha256": "a8c6e6ea57fb593ea0ffe5c5d125c9f35557c8100d601385af8ef5320399e1db"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad2520c-6fb0-83eb-b018-111f63194c93_IMG_03718D4F-BCA4-418E-B387-90E6EC781369.jpeg",
+          "sha256": "4ae3429e7c9e7c87a0b197fb687eb19e9e521c410412c6c543c34e8e157d559a"
+        }
+      ],
+      "source_message_candidates": [
+        "bfe32b11-556d-4d35-948e-ce94a33364c6",
+        "44fd5942-687d-47db-8e95-2baf1e3a4292"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-13",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "представлять собой固定表达后接宾格",
+      "source_messages": [],
+      "source_thread": "6ad2520c-6fb0-83eb-b018-111f63194c93",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "10.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 261,
+      "evidence": "固定表达",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad2520c-6fb0-83eb-b018-111f63194c93.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad2520c-6fb0-83eb-b018-111f63194c93_IMG_F77E4A4D-8A47-41BE-B10C-6A8F86D55559.jpeg",
+          "sha256": "a8c6e6ea57fb593ea0ffe5c5d125c9f35557c8100d601385af8ef5320399e1db"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad2520c-6fb0-83eb-b018-111f63194c93_IMG_03718D4F-BCA4-418E-B387-90E6EC781369.jpeg",
+          "sha256": "4ae3429e7c9e7c87a0b197fb687eb19e9e521c410412c6c543c34e8e157d559a"
+        }
+      ],
+      "source_message_candidates": [
+        "bfe32b11-556d-4d35-948e-ce94a33364c6",
+        "44fd5942-687d-47db-8e95-2baf1e3a4292"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-14",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "科技文连续离散副词、取决于属格链、限制对比与并列",
+      "source_messages": [],
+      "source_thread": "6ad25723-e714-83ed-8e25-fb8e74bee65e",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "10.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 263,
+      "evidence": "в зависимости от настройки приёмника",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad25723-e714-83ed-8e25-fb8e74bee65e.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8070.jpeg",
+          "sha256": "39f5629bdf719f52f076c1f5118d88dced435b70fe6cefdbf6f78d0453a4df55"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8069.jpeg",
+          "sha256": "272eede0dadac072ac89063b4c330e87e185f5e0d30f364ccea55e87dfb7ff90"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8068.jpeg",
+          "sha256": "97244e4e154c75448e7037b01140a71b52bb1d9488e615a65ed89c5dc7a08c3b"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_1C98CB1A-B1FC-4D2F-ADD0-3483E73C52A0.jpeg",
+          "sha256": "97a56d0b555f35176fa261f37d724e919d7ff0bcbae5dbfa0a64d5aac193a18e"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8066.jpeg",
+          "sha256": "d562e35942c0c4b442bc7592dac7031f26f2163dfd6abcfa6c2b1ae82dd7a0a4"
+        }
+      ],
+      "source_message_candidates": [
+        "68e35e8a-2040-4b50-9627-ef1df740e502",
+        "e6e901c3-ab92-4bf5-afeb-20d5d79a9b08",
+        "5d5912ca-a2db-46eb-ba60-08ae71bb803f",
+        "981dd2dd-705b-4f00-962b-486c8d172cf7"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-15",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "原信息文概念—主体—信号—分类—功能的段落主线",
+      "source_messages": [],
+      "source_thread": "6ad25723-e714-83ed-8e25-fb8e74bee65e",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "10.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 265,
+      "evidence": "认识、交际和管理功能",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad25723-e714-83ed-8e25-fb8e74bee65e.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8070.jpeg",
+          "sha256": "39f5629bdf719f52f076c1f5118d88dced435b70fe6cefdbf6f78d0453a4df55"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8069.jpeg",
+          "sha256": "272eede0dadac072ac89063b4c330e87e185f5e0d30f364ccea55e87dfb7ff90"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8068.jpeg",
+          "sha256": "97244e4e154c75448e7037b01140a71b52bb1d9488e615a65ed89c5dc7a08c3b"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_1C98CB1A-B1FC-4D2F-ADD0-3483E73C52A0.jpeg",
+          "sha256": "97a56d0b555f35176fa261f37d724e919d7ff0bcbae5dbfa0a64d5aac193a18e"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8066.jpeg",
+          "sha256": "d562e35942c0c4b442bc7592dac7031f26f2163dfd6abcfa6c2b1ae82dd7a0a4"
+        }
+      ],
+      "source_message_candidates": [
+        "68e35e8a-2040-4b50-9627-ef1df740e502",
+        "e6e901c3-ab92-4bf5-afeb-20d5d79a9b08",
+        "5d5912ca-a2db-46eb-ba60-08ae71bb803f",
+        "981dd2dd-705b-4f00-962b-486c8d172cf7"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-09-16",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "09",
+      "source_kind": "conversation_attachment",
+      "knowledge": "问题式提纲与论点式提纲的形式及保持中心关系",
+      "source_messages": [],
+      "source_thread": "6ad25723-e714-83ed-8e25-fb8e74bee65e",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "10.3",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\09_俄语.md",
+      "line": 269,
+      "evidence": "тезисный план",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad25723-e714-83ed-8e25-fb8e74bee65e.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8070.jpeg",
+          "sha256": "39f5629bdf719f52f076c1f5118d88dced435b70fe6cefdbf6f78d0453a4df55"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8069.jpeg",
+          "sha256": "272eede0dadac072ac89063b4c330e87e185f5e0d30f364ccea55e87dfb7ff90"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8068.jpeg",
+          "sha256": "97244e4e154c75448e7037b01140a71b52bb1d9488e615a65ed89c5dc7a08c3b"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_1C98CB1A-B1FC-4D2F-ADD0-3483E73C52A0.jpeg",
+          "sha256": "97a56d0b555f35176fa261f37d724e919d7ff0bcbae5dbfa0a64d5aac193a18e"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8066.jpeg",
+          "sha256": "d562e35942c0c4b442bc7592dac7031f26f2163dfd6abcfa6c2b1ae82dd7a0a4"
+        }
+      ],
+      "source_message_candidates": [
+        "68e35e8a-2040-4b50-9627-ef1df740e502",
+        "e6e901c3-ab92-4bf5-afeb-20d5d79a9b08",
+        "5d5912ca-a2db-46eb-ba60-08ae71bb803f",
+        "981dd2dd-705b-4f00-962b-486c8d172cf7"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-13-01",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "13",
+      "source_kind": "curriculum_extension",
+      "knowledge": "信号、数据、信息、知识的操作性区分与领域条件",
+      "source_messages": [],
+      "source_thread": null,
+      "source_read_method": "independent_derivation_in_course_sequence",
+      "textbook_section": "1.1",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\13_计算机科学基础.md",
+      "line": 19,
+      "evidence": "在这一操作性区分中",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "D17-13-02",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "13",
+      "source_kind": "conversation_attachment",
+      "knowledge": "信源、编码、信道、接收与解释链路",
+      "source_messages": [],
+      "source_thread": "6ad25723-e714-83ed-8e25-fb8e74bee65e",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "1.1",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\13_计算机科学基础.md",
+      "line": 21,
+      "evidence": "信源、编码、信道",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad25723-e714-83ed-8e25-fb8e74bee65e.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8070.jpeg",
+          "sha256": "39f5629bdf719f52f076c1f5118d88dced435b70fe6cefdbf6f78d0453a4df55"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8069.jpeg",
+          "sha256": "272eede0dadac072ac89063b4c330e87e185f5e0d30f364ccea55e87dfb7ff90"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8068.jpeg",
+          "sha256": "97244e4e154c75448e7037b01140a71b52bb1d9488e615a65ed89c5dc7a08c3b"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_1C98CB1A-B1FC-4D2F-ADD0-3483E73C52A0.jpeg",
+          "sha256": "97a56d0b555f35176fa261f37d724e919d7ff0bcbae5dbfa0a64d5aac193a18e"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8066.jpeg",
+          "sha256": "d562e35942c0c4b442bc7592dac7031f26f2163dfd6abcfa6c2b1ae82dd7a0a4"
+        }
+      ],
+      "source_message_candidates": [
+        "68e35e8a-2040-4b50-9627-ef1df740e502",
+        "e6e901c3-ab92-4bf5-afeb-20d5d79a9b08",
+        "5d5912ca-a2db-46eb-ba60-08ae71bb803f",
+        "981dd2dd-705b-4f00-962b-486c8d172cf7"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-13-03",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "13",
+      "source_kind": "conversation_attachment",
+      "knowledge": "存储跨时间、通信跨位置及复制不等于搬移物体",
+      "source_messages": [],
+      "source_thread": "6ad25723-e714-83ed-8e25-fb8e74bee65e",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "1.1",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\13_计算机科学基础.md",
+      "line": 21,
+      "evidence": "跨时间保存记录",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad25723-e714-83ed-8e25-fb8e74bee65e.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8070.jpeg",
+          "sha256": "39f5629bdf719f52f076c1f5118d88dced435b70fe6cefdbf6f78d0453a4df55"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8069.jpeg",
+          "sha256": "272eede0dadac072ac89063b4c330e87e185f5e0d30f364ccea55e87dfb7ff90"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8068.jpeg",
+          "sha256": "97244e4e154c75448e7037b01140a71b52bb1d9488e615a65ed89c5dc7a08c3b"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_1C98CB1A-B1FC-4D2F-ADD0-3483E73C52A0.jpeg",
+          "sha256": "97a56d0b555f35176fa261f37d724e919d7ff0bcbae5dbfa0a64d5aac193a18e"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8066.jpeg",
+          "sha256": "d562e35942c0c4b442bc7592dac7031f26f2163dfd6abcfa6c2b1ae82dd7a0a4"
+        }
+      ],
+      "source_message_candidates": [
+        "68e35e8a-2040-4b50-9627-ef1df740e502",
+        "e6e901c3-ab92-4bf5-afeb-20d5d79a9b08",
+        "5d5912ca-a2db-46eb-ba60-08ae71bb803f",
+        "981dd2dd-705b-4f00-962b-486c8d172cf7"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-13-04",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "13",
+      "source_kind": "source_correction",
+      "knowledge": "接收者语义理解与非语义信息的边界，修正绝对化说法",
+      "source_messages": [],
+      "source_thread": "6ad25723-e714-83ed-8e25-fb8e74bee65e",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "1.1",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\13_计算机科学基础.md",
+      "line": 23,
+      "evidence": "无法理解语义",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad25723-e714-83ed-8e25-fb8e74bee65e.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8070.jpeg",
+          "sha256": "39f5629bdf719f52f076c1f5118d88dced435b70fe6cefdbf6f78d0453a4df55"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8069.jpeg",
+          "sha256": "272eede0dadac072ac89063b4c330e87e185f5e0d30f364ccea55e87dfb7ff90"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8068.jpeg",
+          "sha256": "97244e4e154c75448e7037b01140a71b52bb1d9488e615a65ed89c5dc7a08c3b"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_1C98CB1A-B1FC-4D2F-ADD0-3483E73C52A0.jpeg",
+          "sha256": "97a56d0b555f35176fa261f37d724e919d7ff0bcbae5dbfa0a64d5aac193a18e"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8066.jpeg",
+          "sha256": "d562e35942c0c4b442bc7592dac7031f26f2163dfd6abcfa6c2b1ae82dd7a0a4"
+        }
+      ],
+      "source_message_candidates": [
+        "68e35e8a-2040-4b50-9627-ef1df740e502",
+        "e6e901c3-ab92-4bf5-afeb-20d5d79a9b08",
+        "5d5912ca-a2db-46eb-ba60-08ae71bb803f",
+        "981dd2dd-705b-4f00-962b-486c8d172cf7"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-13-05",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "13",
+      "source_kind": "curriculum_extension",
+      "knowledge": "连续时间、采样离散时间、量化有限幅值的区分",
+      "source_messages": [],
+      "source_thread": null,
+      "source_read_method": "independent_derivation_in_course_sequence",
+      "textbook_section": "1.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\13_计算机科学基础.md",
+      "line": 27,
+      "evidence": "采样把时间位置离散化",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "D17-13-06",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "13",
+      "source_kind": "curriculum_extension",
+      "knowledge": "温度采样与理想舍入半格误差，不含传感器误差",
+      "source_messages": [],
+      "source_thread": null,
+      "source_read_method": "independent_derivation_in_course_sequence",
+      "textbook_section": "1.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\13_计算机科学基础.md",
+      "line": 29,
+      "evidence": "0.05",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail"
+    },
+    {
+      "id": "D17-13-07",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "13",
+      "source_kind": "conversation_attachment",
+      "knowledge": "采集表示存储传输处理解释的连续工作过程",
+      "source_messages": [],
+      "source_thread": "6ad25723-e714-83ed-8e25-fb8e74bee65e",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "1.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\13_计算机科学基础.md",
+      "line": 31,
+      "evidence": "采集产生记录",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad25723-e714-83ed-8e25-fb8e74bee65e.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8070.jpeg",
+          "sha256": "39f5629bdf719f52f076c1f5118d88dced435b70fe6cefdbf6f78d0453a4df55"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8069.jpeg",
+          "sha256": "272eede0dadac072ac89063b4c330e87e185f5e0d30f364ccea55e87dfb7ff90"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8068.jpeg",
+          "sha256": "97244e4e154c75448e7037b01140a71b52bb1d9488e615a65ed89c5dc7a08c3b"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_1C98CB1A-B1FC-4D2F-ADD0-3483E73C52A0.jpeg",
+          "sha256": "97a56d0b555f35176fa261f37d724e919d7ff0bcbae5dbfa0a64d5aac193a18e"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8066.jpeg",
+          "sha256": "d562e35942c0c4b442bc7592dac7031f26f2163dfd6abcfa6c2b1ae82dd7a0a4"
+        }
+      ],
+      "source_message_candidates": [
+        "68e35e8a-2040-4b50-9627-ef1df740e502",
+        "e6e901c3-ab92-4bf5-afeb-20d5d79a9b08",
+        "5d5912ca-a2db-46eb-ba60-08ae71bb803f",
+        "981dd2dd-705b-4f00-962b-486c8d172cf7"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    },
+    {
+      "id": "D17-13-08",
+      "revision": "2026-10-17-daily-01",
+      "book_code": "13",
+      "source_kind": "conversation_attachment",
+      "knowledge": "认识交际管理功能与温控反馈实例",
+      "source_messages": [],
+      "source_thread": "6ad25723-e714-83ed-8e25-fb8e74bee65e",
+      "source_read_method": "visually_read_original_attachment",
+      "textbook_section": "1.2",
+      "source_file": "C:\\Users\\zheng\\Documents\\Codex\\2026-10-15\\wox\\outputs\\教材\\13_计算机科学基础.md",
+      "line": 31,
+      "evidence": "不是互斥的三种数据格式",
+      "status": "integrated",
+      "pdf_status": "built_and_verified",
+      "change": "expanded_detail",
+      "source_recovery_file": "work/source_recovery/6ad25723-e714-83ed-8e25-fb8e74bee65e.json",
+      "source_attachments": [
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8070.jpeg",
+          "sha256": "39f5629bdf719f52f076c1f5118d88dced435b70fe6cefdbf6f78d0453a4df55"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8069.jpeg",
+          "sha256": "272eede0dadac072ac89063b4c330e87e185f5e0d30f364ccea55e87dfb7ff90"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8068.jpeg",
+          "sha256": "97244e4e154c75448e7037b01140a71b52bb1d9488e615a65ed89c5dc7a08c3b"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_1C98CB1A-B1FC-4D2F-ADD0-3483E73C52A0.jpeg",
+          "sha256": "97a56d0b555f35176fa261f37d724e919d7ff0bcbae5dbfa0a64d5aac193a18e"
+        },
+        {
+          "file": "work\\history\\attachments\\6ad25723-e714-83ed-8e25-fb8e74bee65e_IMG_8066.jpeg",
+          "sha256": "d562e35942c0c4b442bc7592dac7031f26f2163dfd6abcfa6c2b1ae82dd7a0a4"
+        }
+      ],
+      "source_message_candidates": [
+        "68e35e8a-2040-4b50-9627-ef1df740e502",
+        "e6e901c3-ab92-4bf5-afeb-20d5d79a9b08",
+        "5d5912ca-a2db-46eb-ba60-08ae71bb803f",
+        "981dd2dd-705b-4f00-962b-486c8d172cf7"
+      ],
+      "message_attachment_mapping": "unavailable; no exact per-message attachment claim"
+    }
+  ],
+  "unresolved": [
+    {
+      "source": "history attachments and content references",
+      "status": "not_fully_verified",
+      "detail": "今日C已从页面补读讲解正文，但原照片模糊字符仍未逐张转录；其余会话未返回正文的引用不算已读。"
+    },
+    {
+      "source": "6ad0f762-6570-83ed-ac9d-21a644417495",
+      "status": "board_not_fully_legible",
+      "detail": "两张淡字板书未逐字认定；旧回答误称逻辑学已纠正；运动动词课本截图和地点练习已实际核读。"
+    }
+  ],
+  "other_subject_audits": [
+    "work/math_rewrite_audit.md",
+    "work/science_rewrite_audit.md",
+    "work/language_cs_rewrite_audit.md"
+  ],
+  "extension_audit": {
+    "revision": "2026-10-16-extension-01",
+    "books_checked": 13,
+    "new_curriculum_items": 99,
+    "pdf_status": "built_and_verified",
+    "new_conversation_items": 16
+  },
+  "source_gaps": [
+    {
+      "revision": "2026-10-17-daily-01",
+      "threads": [
+        "6ad25723-e714-83ed-8e25-fb8e74bee65e",
+        "6ad2520c-6fb0-83eb-b018-111f63194c93",
+        "6ad22731-6000-83ed-8d54-e45b4e2cbe2f",
+        "6ad21cbd-9afc-83eb-9c87-361f4831cc36",
+        "6ad1cf65-7a10-83ed-9c7e-891a26dfdb38",
+        "6ad1b313-dca4-83ed-94d3-3a15602a1199"
+      ],
+      "issue": "旧回答均为引用占位；UI停在验证页。17张附件的可读部分已逐图核读，消息与图片对应关系未提供，按会话及附件哈希定位。",
+      "status": "unresolved_assistant_bodies_and_exact_message_attachment_mapping"
+    }
+  ]
+}

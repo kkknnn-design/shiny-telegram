@@ -1,0 +1,30 @@
+[
+  {
+    "file": "05_大学物理.md",
+    "characters": 18082,
+    "han_characters": 6971,
+    "display_formulas": 48,
+    "inline_formulas": 316
+  },
+  {
+    "file": "08_数字电子技术基础.md",
+    "characters": 9926,
+    "han_characters": 6078,
+    "display_formulas": 15,
+    "inline_formulas": 162
+  },
+  {
+    "file": "10_自动控制与仿真.md",
+    "characters": 10324,
+    "han_characters": 6061,
+    "display_formulas": 17,
+    "inline_formulas": 137
+  },
+  {
+    "file": "12_数学建模与优化.md",
+    "characters": 8802,
+    "han_characters": 6014,
+    "display_formulas": 15,
+    "inline_formulas": 70
+  }
+]

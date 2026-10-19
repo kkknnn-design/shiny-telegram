@@ -1,0 +1,16 @@
+{
+  "revision": "2026-10-17-daily-01",
+  "updated_at": "2026-10-17T22:21:21.827463+08:00",
+  "timezone": "Asia/Shanghai",
+  "source_status": "updated",
+  "html_status": "pending",
+  "pdf_status": "current_verified",
+  "combined_pdf_status": "current_verified",
+  "legacy_zip_status": "current_verified",
+  "renderer_status": "built_and_visually_verified",
+  "pending": [],
+  "blocker": null,
+  "curriculum_extension_items": 14,
+  "new_source_items": 30,
+  "completed_at": "2026-10-17T22:21:21.827463+08:00"
+}

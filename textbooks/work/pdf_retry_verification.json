@@ -1,0 +1,14 @@
+{
+  "revision": "2026-10-17-daily-01",
+  "verified_at": "2026-10-17T22:21:21.827463+08:00",
+  "books": 13,
+  "book_pages": 209,
+  "combined_pages": 211,
+  "formula_errors": [],
+  "boundary_issues": [],
+  "zip_crc": "passed",
+  "pdf_source_html_hashes": "matched",
+  "combined_sha256": "ce5afbc23bb3be51cd6374af811271b3b8b445ca075aec957dc0a7ffb37c19bc",
+  "full_zip_bytes": 35992159,
+  "reading_zip_bytes": 13138169
+}

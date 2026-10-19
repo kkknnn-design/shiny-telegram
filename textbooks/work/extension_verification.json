@@ -1,0 +1,724 @@
+{
+  "revision": "2026-10-16-extension-01",
+  "checks": [
+    {
+      "name": "碰撞例题：速度、动量与损失",
+      "passed": true,
+      "data": {
+        "v1": 0,
+        "v2": 1.5,
+        "loss": 2.25
+      }
+    },
+    {
+      "name": "贷款例题：两期余额归零",
+      "passed": true,
+      "data": {
+        "pay": 576.1904761904757,
+        "b1": 523.8095238095243,
+        "b2": 1.1368683772161603e-12
+      }
+    },
+    {
+      "name": "年金两种时点",
+      "passed": true,
+      "data": {
+        "ordinary": 331,
+        "due": 364.1
+      }
+    },
+    {
+      "name": "储能负荷上限",
+      "passed": true
+    },
+    {
+      "name": "条件句四组等价式穷尽8种赋值",
+      "passed": true
+    },
+    {
+      "name": "01_C语言程序设计.md：无自测练习答案标题",
+      "passed": true
+    },
+    {
+      "name": "01_C语言程序设计.md：代码围栏闭合",
+      "passed": true
+    },
+    {
+      "name": "01_C语言程序设计.md：离线版无公式错误占位",
+      "passed": true
+    },
+    {
+      "name": "02_线性代数.md：无自测练习答案标题",
+      "passed": true
+    },
+    {
+      "name": "02_线性代数.md：代码围栏闭合",
+      "passed": true
+    },
+    {
+      "name": "02_线性代数.md：离线版无公式错误占位",
+      "passed": true
+    },
+    {
+      "name": "03_解析几何.md：无自测练习答案标题",
+      "passed": true
+    },
+    {
+      "name": "03_解析几何.md：代码围栏闭合",
+      "passed": true
+    },
+    {
+      "name": "03_解析几何.md：离线版无公式错误占位",
+      "passed": true
+    },
+    {
+      "name": "04_微积分与微分方程.md：无自测练习答案标题",
+      "passed": true
+    },
+    {
+      "name": "04_微积分与微分方程.md：代码围栏闭合",
+      "passed": true
+    },
+    {
+      "name": "04_微积分与微分方程.md：离线版无公式错误占位",
+      "passed": true
+    },
+    {
+      "name": "05_大学物理.md：无自测练习答案标题",
+      "passed": true
+    },
+    {
+      "name": "05_大学物理.md：代码围栏闭合",
+      "passed": true
+    },
+    {
+      "name": "05_大学物理.md：离线版无公式错误占位",
+      "passed": true
+    },
+    {
+      "name": "06_概率统计与实验数据处理.md：无自测练习答案标题",
+      "passed": true
+    },
+    {
+      "name": "06_概率统计与实验数据处理.md：代码围栏闭合",
+      "passed": true
+    },
+    {
+      "name": "06_概率统计与实验数据处理.md：离线版无公式错误占位",
+      "passed": true
+    },
+    {
+      "name": "07_逻辑学.md：无自测练习答案标题",
+      "passed": true
+    },
+    {
+      "name": "07_逻辑学.md：代码围栏闭合",
+      "passed": true
+    },
+    {
+      "name": "07_逻辑学.md：离线版无公式错误占位",
+      "passed": true
+    },
+    {
+      "name": "08_数字电子技术基础.md：无自测练习答案标题",
+      "passed": true
+    },
+    {
+      "name": "08_数字电子技术基础.md：代码围栏闭合",
+      "passed": true
+    },
+    {
+      "name": "08_数字电子技术基础.md：离线版无公式错误占位",
+      "passed": true
+    },
+    {
+      "name": "09_俄语.md：无自测练习答案标题",
+      "passed": true
+    },
+    {
+      "name": "09_俄语.md：代码围栏闭合",
+      "passed": true
+    },
+    {
+      "name": "09_俄语.md：离线版无公式错误占位",
+      "passed": true
+    },
+    {
+      "name": "10_自动控制与仿真.md：无自测练习答案标题",
+      "passed": true
+    },
+    {
+      "name": "10_自动控制与仿真.md：代码围栏闭合",
+      "passed": true
+    },
+    {
+      "name": "10_自动控制与仿真.md：离线版无公式错误占位",
+      "passed": true
+    },
+    {
+      "name": "11_经济学与家庭财务.md：无自测练习答案标题",
+      "passed": true
+    },
+    {
+      "name": "11_经济学与家庭财务.md：代码围栏闭合",
+      "passed": true
+    },
+    {
+      "name": "11_经济学与家庭财务.md：离线版无公式错误占位",
+      "passed": true
+    },
+    {
+      "name": "12_数学建模与优化.md：无自测练习答案标题",
+      "passed": true
+    },
+    {
+      "name": "12_数学建模与优化.md：代码围栏闭合",
+      "passed": true
+    },
+    {
+      "name": "12_数学建模与优化.md：离线版无公式错误占位",
+      "passed": true
+    },
+    {
+      "name": "13_计算机科学基础.md：无自测练习答案标题",
+      "passed": true
+    },
+    {
+      "name": "13_计算机科学基础.md：代码围栏闭合",
+      "passed": true
+    },
+    {
+      "name": "13_计算机科学基础.md：离线版无公式错误占位",
+      "passed": true
+    },
+    {
+      "name": "C-001：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-002：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-003：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-004：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-005：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-006：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-007：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-008：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-009：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-010：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-011：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-012：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-013：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-014：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-015：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-016：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-017：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-018：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-019：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-020：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-021：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-022：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-023：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-024：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-025：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-026：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-027：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "C-028：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-01-01：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-01-02：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-01-03：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-01-04：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-01-05：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-01-06：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-01-07：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-01-08：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-01-09：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-01-10：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-02-01：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-02-02：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-02-03：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-02-04：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-02-05：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-02-06：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-02-07：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-02-08：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-02-09：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-02-10：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-03-01：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-03-02：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-03-03：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-03-04：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-03-05：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-03-06：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-04-01：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-04-02：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-04-03：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-04-04：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-04-05：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-04-06：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-04-07：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-04-08：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-04-09：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-04-10：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-04-11：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-05-01：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-05-02：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-05-03：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-05-04：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-05-05：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-05-06：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-05-07：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-05-08：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-05-09：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-06-01：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-06-02：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-06-03：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-06-04：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-06-05：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-06-06：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-06-07：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-06-08：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-06-09：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-06-10：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-07-01：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-07-02：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-07-03：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-07-04：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-07-05：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-08-01：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-08-02：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-08-03：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-08-04：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-09-01：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-09-02：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-09-03：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-09-04：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-09-05：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-10-01：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-10-02：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-10-03：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-10-04：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-10-05：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-11-01：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-11-02：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-11-03：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-11-04：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-11-05：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-12-01：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-12-02：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-12-03：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-12-04：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-12-05：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-13-01：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-13-02：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-13-03：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-13-04：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-13-05：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-13-06：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "RU-20261016-01：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "RU-20261016-02：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "RU-20261016-03：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "RU-20261016-04：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "RU-20261016-05：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "RU-20261016-06：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "RU-20261016-07：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "RU-20261016-08：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "RU-20261016-09：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-02-11：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-02-12：正文证据仍存在",
+      "passed": true
+    },
+    {
+      "name": "EXT-02-13：正文证据仍存在",
+      "passed": true
+    }
+  ],
+  "formula_count": 2158,
+  "mathjax_errors": [],
+  "katex_errors": [],
+  "pdf_checks": "not run: process blocked",
+  "c_compilation": "not run"
+}

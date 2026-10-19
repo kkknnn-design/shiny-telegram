@@ -1,0 +1,106 @@
+[
+  {
+    "file": "01_C语言程序设计.md",
+    "hanzi": 11576,
+    "sections": 52,
+    "bad_headings": [],
+    "math_pairs_ok": true,
+    "null_bytes": false
+  },
+  {
+    "file": "02_线性代数.md",
+    "hanzi": 5901,
+    "sections": 33,
+    "bad_headings": [],
+    "math_pairs_ok": true,
+    "null_bytes": false
+  },
+  {
+    "file": "03_解析几何.md",
+    "hanzi": 6041,
+    "sections": 37,
+    "bad_headings": [],
+    "math_pairs_ok": true,
+    "null_bytes": false
+  },
+  {
+    "file": "04_微积分与微分方程.md",
+    "hanzi": 7141,
+    "sections": 42,
+    "bad_headings": [],
+    "math_pairs_ok": true,
+    "null_bytes": false
+  },
+  {
+    "file": "05_大学物理.md",
+    "hanzi": 6971,
+    "sections": 14,
+    "bad_headings": [],
+    "math_pairs_ok": true,
+    "null_bytes": false
+  },
+  {
+    "file": "06_概率统计与实验数据处理.md",
+    "hanzi": 8327,
+    "sections": 39,
+    "bad_headings": [],
+    "math_pairs_ok": true,
+    "null_bytes": false
+  },
+  {
+    "file": "07_逻辑学.md",
+    "hanzi": 6032,
+    "sections": 15,
+    "bad_headings": [],
+    "math_pairs_ok": true,
+    "null_bytes": false
+  },
+  {
+    "file": "08_数字电子技术基础.md",
+    "hanzi": 6078,
+    "sections": 12,
+    "bad_headings": [],
+    "math_pairs_ok": true,
+    "null_bytes": false
+  },
+  {
+    "file": "09_俄语.md",
+    "hanzi": 6436,
+    "sections": 16,
+    "bad_headings": [],
+    "math_pairs_ok": true,
+    "null_bytes": false
+  },
+  {
+    "file": "10_自动控制与仿真.md",
+    "hanzi": 6061,
+    "sections": 14,
+    "bad_headings": [],
+    "math_pairs_ok": true,
+    "null_bytes": false
+  },
+  {
+    "file": "11_经济学与家庭财务.md",
+    "hanzi": 6129,
+    "sections": 13,
+    "bad_headings": [],
+    "math_pairs_ok": true,
+    "null_bytes": false
+  },
+  {
+    "file": "12_数学建模与优化.md",
+    "hanzi": 6014,
+    "sections": 15,
+    "bad_headings": [],
+    "math_pairs_ok": true,
+    "null_bytes": false
+  },
+  {
+    "file": "13_计算机科学基础.md",
+    "hanzi": 6233,
+    "sections": 15,
+    "bad_headings": [],
+    "math_pairs_ok": true,
+    "null_bytes": false
+  }
+]

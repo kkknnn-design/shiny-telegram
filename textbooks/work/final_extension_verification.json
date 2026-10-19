@@ -1,0 +1,18 @@
+{
+  "revision": "2026-10-16-extension-01",
+  "updated_at": "2026-10-15T17:25:37.266Z",
+  "books": 13,
+  "curriculum_items": 99,
+  "new_conversation_items": 16,
+  "mathjax_errors": [],
+  "katex_errors": [],
+  "formulas": 2158,
+  "archive_sha256": "6c9ad13b919324c3407a1768678ff4de7185d1a1baaa9412b099a5b948ff4c76",
+  "archive_bytes": 13109052,
+  "zip_crc": "passed",
+  "archive_sources_and_html_hashes": "match all 13 books",
+  "index_link_issues": [],
+  "previous_pdf_hashes": "unchanged",
+  "pdf_build": "blocked by environment; pending",
+  "c_compilation": "not performed"
+}

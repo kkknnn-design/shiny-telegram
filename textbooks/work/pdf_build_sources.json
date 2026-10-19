@@ -1,0 +1,80 @@
+{
+  "01_C语言程序设计.md": {
+    "source_sha256": "c25d229b98366dfa7c15bbca57361e037d3fa6d9f629ff0ae0070b4c5a5a51a9",
+    "pdf_sha256": "de888fac40399910c42195f617d7c29450565dcdc1f020db6a948570988aef9c",
+    "renderer_sha256": "ee2a0f680ae55a64e54b38f6e9e7c7b8b307f23437457861d1a7927f7af09a0b",
+    "built_at": "2026-10-16T01:30:26.891862+08:00"
+  },
+  "02_线性代数.md": {
+    "source_sha256": "cd09a6e5d6da54e3238713387fb78df431ac6a4d17dbe125917bd2cd70bed8e7",
+    "pdf_sha256": "818dee09675dcef3ec6248c9c79991dc572c44213137545b25110a6d7f4af1dc",
+    "renderer_sha256": "ee2a0f680ae55a64e54b38f6e9e7c7b8b307f23437457861d1a7927f7af09a0b",
+    "built_at": "2026-10-16T01:28:04.442744+08:00"
+  },
+  "03_解析几何.md": {
+    "source_sha256": "37655d1da64062a6c3bd70cdb0cf4a8b3a2c3a3e134328c9173d0e7ee69ce5f3",
+    "pdf_sha256": "b450cc899b16659e5bddc48d0bd083c47b0077c8aa0830e1552d4705a6be1c38",
+    "renderer_sha256": "ee2a0f680ae55a64e54b38f6e9e7c7b8b307f23437457861d1a7927f7af09a0b",
+    "built_at": "2026-10-16T01:28:07.919474+08:00"
+  },
+  "04_微积分与微分方程.md": {
+    "source_sha256": "96044ad1cb2993ecb810b99b23515f5aeac0adefde761d77ab8930d6b1e7d44b",
+    "pdf_sha256": "548630b36a0ec7274b2a30fcb9ba0138609cc12d22894f6fde8107649f012398",
+    "renderer_sha256": "ee2a0f680ae55a64e54b38f6e9e7c7b8b307f23437457861d1a7927f7af09a0b",
+    "built_at": "2026-10-16T01:28:13.340288+08:00"
+  },
+  "05_大学物理.md": {
+    "source_sha256": "0c898865173ef93bae20adadf681d5b86e1bb621381c2698f5fdbe6add58a98c",
+    "pdf_sha256": "abea8c7badd7e76967809eb6a6b557b86bf46fd0f80ce0ba0bd5f6dd973edc64",
+    "renderer_sha256": "ee2a0f680ae55a64e54b38f6e9e7c7b8b307f23437457861d1a7927f7af09a0b",
+    "built_at": "2026-10-17T22:18:32.000216+08:00"
+  },
+  "06_概率统计与实验数据处理.md": {
+    "source_sha256": "ab9b34df6b62eb076ce760aec7f01fe311276366ced0f09b965ac44c26b964e5",
+    "pdf_sha256": "5fdd86c92d01ced1b3eb86f0f3ad6c723fe6014191a4c2a0ea32d5caf491b2c4",
+    "renderer_sha256": "ee2a0f680ae55a64e54b38f6e9e7c7b8b307f23437457861d1a7927f7af09a0b",
+    "built_at": "2026-10-16T01:28:20.592502+08:00"
+  },
+  "07_逻辑学.md": {
+    "source_sha256": "da408ef9eadc381c97bd1f4ab387b2cfbbadf7d85e9598872df72bb80ebe302f",
+    "pdf_sha256": "3d4f965d4728fb9c2b724716494ae4043f1e7c2b952f60fb794236eb1b5837b8",
+    "renderer_sha256": "ee2a0f680ae55a64e54b38f6e9e7c7b8b307f23437457861d1a7927f7af09a0b",
+    "built_at": "2026-10-17T22:18:33.849648+08:00"
+  },
+  "08_数字电子技术基础.md": {
+    "source_sha256": "9b2e2378d80c8037ce370aebee419b5b6a89e086386aaa60cfba5a3fc946c221",
+    "pdf_sha256": "ea72896969274d6f6d15d5bfbcf7779502538223cfec785d33f30e23b8b319b6",
+    "renderer_sha256": "ee2a0f680ae55a64e54b38f6e9e7c7b8b307f23437457861d1a7927f7af09a0b",
+    "built_at": "2026-10-16T01:28:24.180808+08:00"
+  },
+  "09_俄语.md": {
+    "source_sha256": "e46e4b1bec03d71e6876a5b7f3283d8d5e625f0e7df0c0ce4e5b8512329cb654",
+    "pdf_sha256": "0cd729fe7ed1973399805d30c31e5f2b3d5e820694058de8d606c99ed0c85c55",
+    "renderer_sha256": "ee2a0f680ae55a64e54b38f6e9e7c7b8b307f23437457861d1a7927f7af09a0b",
+    "built_at": "2026-10-17T22:18:34.475508+08:00"
+  },
+  "10_自动控制与仿真.md": {
+    "source_sha256": "25e4c8f9bfb597927b97f0301cc54b4bfcd5862c8740da4a8208b64dcdf55e7b",
+    "pdf_sha256": "a84fa617d4cd4213f96a3b4b593f3cd57927f4f9f081a919d06aacb46d9c986b",
+    "renderer_sha256": "ee2a0f680ae55a64e54b38f6e9e7c7b8b307f23437457861d1a7927f7af09a0b",
+    "built_at": "2026-10-16T01:28:26.780973+08:00"
+  },
+  "11_经济学与家庭财务.md": {
+    "source_sha256": "90b5c7df399c9c91dd278e1b90c7ba7acb11cb0073948eb581703f1089979c04",
+    "pdf_sha256": "3dae39e4f1f04893b1a37087200cbd99d49ec1d7ae8ad3a041a3cc4a47e3e9fd",
+    "renderer_sha256": "ee2a0f680ae55a64e54b38f6e9e7c7b8b307f23437457861d1a7927f7af09a0b",
+    "built_at": "2026-10-16T01:28:27.849456+08:00"
+  },
+  "12_数学建模与优化.md": {
+    "source_sha256": "0007942260a6c2739b5ba3ef52e62974c25bbef307df9a3a3aaf493e0a79679c",
+    "pdf_sha256": "1b7637ff831291b47d32ab1343a25564bfddcc07adf3a3ba224f75cb9bebf792",
+    "renderer_sha256": "ee2a0f680ae55a64e54b38f6e9e7c7b8b307f23437457861d1a7927f7af09a0b",
+    "built_at": "2026-10-16T01:28:29.127140+08:00"
+  },
+  "13_计算机科学基础.md": {
+    "source_sha256": "2903992e4f8319ec91a42d6eec76c602a04a311b6952da9c7a3a9a548a08547e",
+    "pdf_sha256": "dcafae6f490751bf4045d6f8658298f2e8f57c07174547b231b2d80ba747e7ef",
+    "renderer_sha256": "ee2a0f680ae55a64e54b38f6e9e7c7b8b307f23437457861d1a7927f7af09a0b",
+    "built_at": "2026-10-17T22:18:35.359730+08:00"
+  }
+}
