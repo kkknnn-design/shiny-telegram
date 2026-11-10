@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CS2 灵敏度实验室</title>
+<style>
+:root{
+  --bg:#11110e; --panel:#191813; --panel2:#211f18; --line:#35322a; --line2:#4a463a;
+  --ink:#ece7d8; --mute:#8f8a76; --acc:#ff5b1f; --ok:#b9f03f; --bad:#ff3d5a;
+  --disp:"Bahnschrift","DIN Alternate","Microsoft YaHei UI","PingFang SC",sans-serif;
+  --body:"Microsoft YaHei UI","PingFang SC","HarmonyOS Sans SC","Noto Sans SC",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--ink); font-family:var(--body); font-size:15px; line-height:1.65;
+  background-color:var(--bg);
+  background-image:
+    linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px),
+    radial-gradient(900px 500px at 85% -5%,rgba(255,91,31,.13),transparent 70%);
+  background-size:40px 40px,40px 40px,100% 100%;
+  background-attachment:fixed;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 80px}
+.num{font-family:var(--disp);font-variant-numeric:tabular-nums;font-stretch:80%}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:64px 0 40px;border-bottom:1px solid var(--line);overflow:hidden}
+.hero .kick{font-family:var(--disp);letter-spacing:.32em;font-size:12px;color:var(--acc)}
+.hero h1{font-family:var(--disp);font-stretch:75%;font-weight:700;font-size:clamp(46px,9vw,104px);line-height:.95;margin:14px 0 18px;letter-spacing:-.01em}
+.hero h1 span{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.hero p{max-width:520px;color:var(--mute);margin:0}
+.steps{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.steps a{display:flex;align-items:center;gap:10px;padding:9px 16px 9px 10px;border:1px solid var(--line2);color:var(--ink);text-decoration:none;font-size:13px;background:rgba(25,24,19,.7);transition:.18s}
+.steps a:hover{border-color:var(--acc);transform:translateY(-2px)}
+.steps a b{font-family:var(--disp);background:var(--acc);color:#11110e;padding:1px 7px;font-size:13px}
+.reticle{position:absolute;right:-70px;top:-30px;width:440px;height:440px;opacity:.55;pointer-events:none}
+.reticle .spin{transform-origin:220px 220px;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero>*:not(.reticle){position:relative;animation:rise .7s both}
+.hero h1{animation-delay:.08s!important}.hero p{animation-delay:.16s!important}.hero .steps{animation-delay:.24s!important}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+
+/* ---------- sections ---------- */
+.sec{padding:56px 0 8px}
+.sec-head{display:grid;grid-template-columns:auto 1fr;column-gap:20px;align-items:end;margin-bottom:24px}
+.sec-head .no{grid-row:span 2;font-family:var(--disp);font-stretch:75%;font-weight:700;font-size:84px;line-height:.8;color:transparent;-webkit-text-stroke:1.5px var(--acc)}
+.sec-head h2{font-family:var(--disp);font-size:28px;margin:0;font-weight:700;letter-spacing:.04em}
+.sec-head p{margin:2px 0 0;color:var(--mute);font-size:14px}
+.panel{background:var(--panel);border:1px solid var(--line);padding:22px;position:relative;
+  clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,14px 100%,0 calc(100% - 14px))}
+.lab{font-family:var(--disp);font-size:11px;letter-spacing:.22em;color:var(--mute);text-transform:uppercase;display:block;margin-bottom:6px}
+
+input[type=number],select{
+  width:100%;background:#0d0d0b;border:1px solid var(--line2);color:var(--ink);padding:10px 12px;
+  font-family:var(--disp);font-size:24px;font-variant-numeric:tabular-nums;outline:none;border-radius:0;transition:border-color .15s}
+select{font-size:15px;font-family:var(--body);padding:9px 10px}
+input[type=number]:focus,select:focus{border-color:var(--acc)}
+input[type=range]{width:100%;accent-color:var(--acc);margin:12px 0 0}
+.chips{display:flex;gap:6px;margin:8px 0 20px;flex-wrap:wrap}
+.chip,.btn{font-family:var(--disp);cursor:pointer;border-radius:0;transition:.15s}
+.chip{background:none;border:1px solid var(--line2);color:var(--mute);padding:3px 11px;font-size:13px}
+.chip:hover,.chip.on{border-color:var(--acc);color:var(--acc)}
+.btn{background:var(--acc);border:1px solid var(--acc);color:#11110e;font-weight:700;font-size:15px;padding:10px 22px;letter-spacing:.06em}
+.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}
+.btn.ghost{background:none;color:var(--ink);border-color:var(--line2)}
+.btn.ghost:hover{border-color:var(--ink)}
+.btn.sm{font-size:13px;padding:6px 14px}
+.btn.best{box-shadow:0 0 0 3px rgba(185,240,63,.35)}
+
+/* ---------- calculator ---------- */
+.calc-grid{display:grid;grid-template-columns:300px 1fr;gap:18px}
+.big{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 28px}
+.big .v{font-family:var(--disp);font-stretch:78%;font-size:60px;line-height:1;font-variant-numeric:tabular-nums}
+.big .v small{font-size:18px;color:var(--mute);margin-left:6px;font-stretch:100%}
+.big .v.hot{color:var(--acc)}
+.minor{display:flex;gap:26px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line2);color:var(--mute);font-size:13px}
+.minor b{color:var(--ink);font-family:var(--disp);font-size:16px;font-weight:600;margin-left:6px}
+.gauge{margin-top:20px}
+.gauge svg{width:100%;height:auto;display:block;overflow:visible}
+.gauge rect{fill:#3a372d}.gauge rect.in{fill:#6b6654}
+.gauge .tk{stroke:var(--line2)}.gauge text{fill:var(--mute);font-family:var(--disp);font-size:11px}
+.gauge .me line{stroke:var(--acc);stroke-width:2}.gauge .me polygon{fill:var(--acc)}
+.gauge .me text{fill:var(--acc);font-size:13px;font-weight:700}
+.gauge-cap{font-size:12px;color:var(--mute);margin-top:4px}
+.verdict{margin-top:14px;padding:10px 14px;border-left:3px solid var(--acc);background:var(--panel2);font-size:14px}
+.verdict b{color:var(--acc)}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.tool h4{margin:0 0 4px;font-size:15px}
+.tool p{margin:0 0 12px;font-size:13px;color:var(--mute)}
+.tool-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.tool-row input{width:120px;font-size:20px;padding:7px 10px}
+.tool-row .arrow{color:var(--acc);font-family:var(--disp);font-size:20px}
+.tool-row output{font-family:var(--disp);font-size:28px;font-variant-numeric:tabular-nums;min-width:74px}
+
+/* ---------- finder ---------- */
+.fbar{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-bottom:14px;font-size:13px;color:var(--mute)}
+.fbar label{display:flex;align-items:center;gap:8px;cursor:pointer}
+.fbar select{width:auto}
+.fbar input[type=checkbox]{accent-color:var(--acc);width:16px;height:16px}
+.fbar .raw{margin-left:auto;font-family:var(--disp);letter-spacing:.06em}
+.raw i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--mute);margin-right:7px}
+.raw.ok i{background:var(--ok)}.raw.warn i{background:var(--acc)}
+.track{margin:0 0 14px;padding:16px 18px 10px;background:var(--panel);border:1px solid var(--line)}
+.track-top{display:flex;justify-content:space-between;font-size:13px;color:var(--mute);margin-bottom:22px}
+.track-top b{color:var(--ink);font-family:var(--disp)}
+.pips{display:inline-flex;gap:5px;margin-left:10px;vertical-align:middle}
+.pips i{width:22px;height:5px;background:var(--line2)}.pips i.on{background:var(--acc)}
+.tline{position:relative;height:6px;background:#0d0d0b;border:1px solid var(--line2)}
+.tline .win{position:absolute;top:-1px;bottom:-1px;background:rgba(255,91,31,.35);border-left:2px solid var(--acc);border-right:2px solid var(--acc);transition:left .5s,width .5s}
+.tline .mk{position:absolute;top:-22px;transform:translateX(-50%);font-family:var(--disp);font-size:12px;color:var(--ink);transition:left .5s;white-space:nowrap}
+.tline .mk::after{content:"";position:absolute;left:50%;top:17px;width:1px;height:14px;background:var(--ink)}
+.tline .mk.base{color:var(--mute);top:12px}.tline .mk.base::after{top:-9px;height:9px;background:var(--mute)}
+.track-ends{display:flex;justify-content:space-between;font-family:var(--disp);font-size:12px;color:var(--mute);margin-top:22px}
+
+.stage{position:relative;width:100%;aspect-ratio:16/9;background:#0b0b09;border:1px solid var(--line2);overflow:hidden;user-select:none}
+.stage:fullscreen{aspect-ratio:auto;width:100vw;height:100vh;border:0}
+.stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(11,11,9,.78);backdrop-filter:blur(3px);padding:20px;overflow:auto}
+.overlay[hidden]{display:none}
+.ov-card{max-width:640px;width:100%;text-align:center;animation:rise .35s both}
+.ov-card .kick{font-family:var(--disp);letter-spacing:.3em;font-size:12px;color:var(--acc)}
+.ov-card h3{font-family:var(--disp);font-stretch:80%;font-size:clamp(30px,5vw,54px);margin:8px 0 10px;line-height:1.05}
+.ov-card h3 em{font-style:normal;color:var(--acc);font-variant-numeric:tabular-nums}
+.ov-card p{color:#b9b4a0;margin:0 auto 18px;max-width:500px;font-size:14px}
+.ov-card .note{font-size:12px;color:var(--mute);margin-top:16px}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;text-align:left}
+.cmp-col{border:1px solid var(--line2);background:rgba(25,24,19,.9);padding:14px 16px;position:relative}
+.cmp-col.best{border-color:var(--ok)}
+.cmp-col.best::after{content:"数据更好";position:absolute;right:0;top:0;background:var(--ok);color:#11110e;font-size:11px;font-weight:700;padding:1px 8px}
+.cmp-col .t{font-family:var(--disp);font-size:13px;letter-spacing:.14em;color:var(--mute)}
+.cmp-col .s{font-family:var(--disp);font-stretch:80%;font-size:38px;line-height:1.1;font-variant-numeric:tabular-nums}
+.cmp-col dl{margin:8px 0 0;display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:13px}
+.cmp-col dt{color:var(--mute)}.cmp-col dd{margin:0;text-align:right;font-family:var(--disp);font-size:15px;font-variant-numeric:tabular-nums}
+.over{color:var(--acc)}.under{color:#6fc3ff}.fine{color:var(--ok)}
+
+.result{margin-top:18px;display:grid;grid-template-columns:auto 1fr;gap:10px 36px;align-items:center;border-color:var(--acc)}
+.result[hidden]{display:none}
+.result .rv{font-family:var(--disp);font-stretch:75%;font-size:112px;line-height:.9;color:var(--acc);font-variant-numeric:tabular-nums}
+.result .rm{color:var(--mute);font-size:14px}
+.result .rm b{color:var(--ink)}
+.cmd{display:flex;align-items:center;gap:10px;margin:12px 0;flex-wrap:wrap}
+.cmd code{background:#0d0d0b;border:1px solid var(--line2);padding:8px 14px;font-family:Consolas,"Cascadia Mono",monospace;font-size:16px;color:var(--ok)}
+table.hist{grid-column:1/-1;width:100%;border-collapse:collapse;font-size:13px;margin-top:6px}
+table.hist th,table.hist td{padding:6px 10px;border-bottom:1px solid var(--line);text-align:left}
+table.hist th{font-family:var(--disp);font-weight:400;letter-spacing:.14em;font-size:11px;color:var(--mute)}
+table.hist td{font-family:var(--disp);font-variant-numeric:tabular-nums}
+table.hist td.w{color:var(--ok)}
+
+/* ---------- calibration ---------- */
+.cal-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pad{height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;cursor:pointer;text-align:center;
+  background:repeating-linear-gradient(90deg,transparent 0 19px,rgba(255,255,255,.06) 19px 20px),#0d0d0b;border:1px dashed var(--line2);transition:border-color .15s}
+.pad:hover,.pad.live{border-color:var(--acc)}
+.pad .pv{font-family:var(--disp);font-size:44px;font-variant-numeric:tabular-nums;line-height:1}
+.pad .pm{font-size:13px;color:var(--mute)}
+.cal-out{font-size:14px}
+.cal-out .pv{font-family:var(--disp);font-size:44px;color:var(--acc);font-variant-numeric:tabular-nums;line-height:1.1}
+.cal-out p{margin:8px 0 12px;color:#b9b4a0}
+ol.how{margin:0 0 14px;padding-left:20px;color:#b9b4a0;font-size:14px}
+.corr{font-size:13px;color:var(--ok);margin-top:10px}
+
+.notes{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);color:var(--mute);font-size:13px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.notes b{color:var(--ink);display:block;margin-bottom:4px;font-size:14px}
+
+@media (max-width:820px){
+  .calc-grid,.tools,.cal-grid,.notes{grid-template-columns:1fr}
+  .big .v{font-size:44px}.reticle{opacity:.25}
+  .result{grid-template-columns:1fr}.result .rv{font-size:80px}
+  .fbar .raw{margin-left:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <svg class="reticle" viewBox="0 0 440 440" fill="none" stroke="#ff5b1f">
+    <circle cx="220" cy="220" r="60"/><circle cx="220" cy="220" r="120" stroke-opacity=".6"/>
+    <circle class="spin" cx="220" cy="220" r="185" stroke-dasharray="2 14" stroke-width="6" stroke-opacity=".7"/>
+    <path d="M220 10v130M220 300v130M10 220h130M300 220h130" stroke-opacity=".8"/>
+    <circle cx="220" cy="220" r="4" fill="#ff5b1f"/>
+  </svg>
+  <div class="kick">CS2 · SENSITIVITY LAB</div>
+  <h1>灵敏度<span>实验室</span></h1>
+  <p>算清楚你现在的灵敏度到底有多快，再用和游戏里一模一样的转角参数打几组靶，把「感觉差不多」收窄成一个确定的数字。</p>
+  <nav class="steps">
+    <a href="#calc"><b>01</b>算一算</a>
+    <a href="#finder"><b>02</b>打靶测定</a>
+    <a href="#cal"><b>03</b>校验 DPI</a>
+  </nav>
+</header>
+
+<!-- ================= 01 计算器 ================= -->
+<section class="sec" id="calc">
+  <div class="sec-head"><span class="no">01</span><h2>计算器</h2><p>灵敏度数值本身没法横向比较，要看 eDPI 和转一圈需要的鼠标距离。</p></div>
+  <div class="calc-grid">
+    <div class="panel">
+      <label class="lab" for="dpi">鼠标 DPI</label>
+      <input id="dpi" type="number" min="100" max="32000" step="50">
+      <div class="chips" id="dpiChips">
+        <button class="chip" data-v="400">400</button><button class="chip" data-v="800">800</button>
+        <button class="chip" data-v="1600">1600</button><button class="chip" data-v="3200">3200</button>
+      </div>
+      <label class="lab" for="sens">游戏内灵敏度</label>
+      <input id="sens" type="number" min="0.01" max="20" step="0.01">
+      <input id="sensR" type="range" min="0.1" max="5" step="0.01" aria-label="灵敏度滑块">
+      <p style="font-size:12px;color:var(--mute);margin:14px 0 0">不确定 DPI？到 <a href="#cal" style="color:var(--acc)">03 校验</a> 用尺子量一下。</p>
+    </div>
+    <div class="panel">
+      <div class="big">
+        <div><span class="lab">eDPI（DPI × 灵敏度）</span><div class="v" id="oEdpi"></div></div>
+        <div><span class="lab">转 360° 需要移动</span><div class="v hot" id="oCm"></div></div>
+      </div>
+      <div class="minor">
+        <span>180° 转身<b id="oHalf"></b></span>
+        <span>英寸 / 360°<b id="oIn"></b></span>
+        <span>每移动 1 cm 转<b id="oDeg"></b></span>
+      </div>
+      <div class="gauge"><div id="gauge"></div><div class="gauge-cap">灰柱：职业选手 eDPI 的大致分布（示意，非精确统计），亮色为主流区间 600–1100。</div></div>
+      <div class="verdict" id="verdict"></div>
+    </div>
+  </div>
+  <div class="tools">
+    <div class="panel tool">
+      <h4>换 DPI，保持手感</h4><p>改了鼠标 DPI，游戏里该填多少才和现在一样快。</p>
+      <div class="tool-row"><input id="newDpi" type="number" min="100" step="50" value="1600" aria-label="新 DPI"><span class="arrow">→</span><output id="oNewSens"></output><button class="btn ghost sm" id="applyDpi">应用</button></div>
+    </div>
+    <div class="panel tool">
+      <h4>按距离反推灵敏度</h4><p>想要「转一圈正好这么多厘米」，对应的灵敏度。</p>
+      <div class="tool-row"><input id="tCm" type="number" min="5" step="1" value="45" aria-label="目标 cm/360"><span style="color:var(--mute);font-size:13px">cm/360</span><span class="arrow">→</span><output id="oCmSens"></output><button class="btn ghost sm" id="applyCm">应用</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 02 打靶测定 ================= -->
+<section class="sec" id="finder">
+  <div class="sec-head"><span class="no">02</span><h2>打靶测定</h2><p>视角转动用的是 CS2 的参数（m_yaw 0.022、16:9 视野），这里的 1.10 和游戏里的 1.10 手感相同。</p></div>
+  <div class="fbar">
+    <label>靶子大小
+      <select id="optSize"><option value="1.2">大（练手）</option><option value="0.8">中（约等于中距离头部）</option><option value="0.5">小（远距离）</option></select>
+    </label>
+    <label><input type="checkbox" id="optFs">全屏测试</label>
+    <label><input type="checkbox" id="optSnd">音效</label>
+    <span class="raw" id="rawState"><i></i>原始输入：开始后检测</span>
+  </div>
+  <div class="track" id="track" hidden>
+    <div class="track-top"><span>搜索区间 <b id="trRange"></b></span><span>轮次<span class="pips" id="pips"></span></span></div>
+    <div class="tline"><div class="win" id="trWin"></div><span class="mk" id="trA">A</span><span class="mk" id="trB">B</span><span class="mk base" id="trBase">起点</span></div>
+    <div class="track-ends"><span id="trLo"></span><span id="trHi"></span></div>
+  </div>
+  <div class="stage" id="stage">
+    <canvas id="cv"></canvas>
+    <div class="overlay" id="overlay"></div>
+  </div>
+  <div class="panel result" id="result" hidden></div>
+</section>
+
+<!-- ================= 03 DPI 校验 ================= -->
+<section class="sec" id="cal">
+  <div class="sec-head"><span class="no">03</span><h2>校验 DPI</h2><p>可选。量一下鼠标真实的 DPI，顺便检查浏览器有没有偷偷缩放你的移动量。</p></div>
+  <div class="cal-grid">
+    <div class="panel">
+      <ol class="how">
+        <li>在鼠标垫旁放一把尺子，鼠标侧边对齐 0 刻度。</li>
+        <li>点击右侧区域锁定鼠标。</li>
+        <li><b style="color:var(--ink)">按住左键</b>，沿尺子直线移动下面填的距离，然后松开。</li>
+      </ol>
+      <label class="lab" for="calCm">移动距离（cm）</label>
+      <input id="calCm" type="number" min="2" max="60" step="1" value="10" style="width:140px">
+      <div class="cal-out" id="calOut"></div>
+    </div>
+    <div class="pad" id="pad"><div class="pv" id="padV">点击开始</div><div class="pm" id="padM">锁定鼠标后，按住左键移动</div></div>
+  </div>
+</section>
+
+<footer class="notes">
+  <div><b>没有「最好的」灵敏度</b>测定给的是一个适合你现在手感的起点。定下来后至少打一周再微调，频繁改动比数值不完美的伤害更大。</div>
+  <div><b>关于开镜</b>CS2 的 zoom_sensitivity_ratio 默认 1.0，绝大多数人不需要动。这里只测腰射灵敏度。</div>
+  <div><b>关于准确性</b>浏览器启用原始输入时，转角与游戏一致；网页画面大小和帧率仍和游戏不同，结果请回游戏里确认。</div>
+</footer>
+</div>
+
+<script>
+(() => {
+'use strict';
+const $ = s => document.querySelector(s);
+const YAW = 0.022, DEG = Math.PI / 180, VFOV = 73.74 * DEG, CM360 = 360 / YAW * 2.54;
+const ROUNDS = 4, COUNT = 12, WARM = 2, SPAN = 1.6, KEY = 'cs-sens-lab';
+const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+const fs = v => v >= 0.5 ? v.toFixed(2) : v.toFixed(3);         // 灵敏度显示精度
+const rs = v => +fs(v);
+const cmOf = sens => (CM360 / (S.dpi * sens)).toFixed(1);
+const locked = el => document.pointerLockElement === el || window.__simLock === el;
+
+/* ---------- 状态与存储 ---------- */
+const S = { dpi: 800, sens: 1.10, corr: 1, size: 0.8, fs: true, snd: true, last: null };
+try {
+  const o = JSON.parse(localStorage.getItem(KEY) || '{}');
+  for (const k of ['dpi', 'sens', 'corr', 'size']) if (typeof o[k] === 'number' && isFinite(o[k]) && o[k] > 0) S[k] = o[k];
+  for (const k of ['fs', 'snd']) if (typeof o[k] === 'boolean') S[k] = o[k];
+  if (o.last && typeof o.last.sens === 'number') S.last = o.last;
+} catch (e) {}
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+
+/* ================= 01 计算器 ================= */
+const elDpi = $('#dpi'), elSens = $('#sens'), elSensR = $('#sensR');
+function drawGauge(edpi) {
+  const W = 600, x0 = Math.log(300), x1 = Math.log(2400);
+  const X = e => (Math.log(clamp(e, 300, 2400)) - x0) / (x1 - x0) * W;
+  const N = 40, mu = Math.log(830), sg = 0.3;
+  let h = '';
+  for (let i = 0; i < N; i++) {
+    const l = x0 + (x1 - x0) * (i + .5) / N, e = Math.exp(l);
+    const bh = 4 + Math.exp(-((l - mu) ** 2) / (2 * sg * sg)) * 66;
+    h += `<rect class="${e >= 600 && e <= 1100 ? 'in' : ''}" x="${(i * W / N + 1).toFixed(1)}" y="${(92 - bh).toFixed(1)}" width="${(W / N - 2).toFixed(1)}" height="${bh.toFixed(1)}"/>`;
+  }
+  for (const t of [400, 600, 800, 1000, 1400, 2000]) {
+    const x = X(t).toFixed(1);
+    h += `<line class="tk" x1="${x}" y1="92" x2="${x}" y2="98"/><text x="${x}" y="111" text-anchor="middle">${t}</text><text x="${x}" y="124" text-anchor="middle">${(CM360 / t).toFixed(0)}cm</text>`;
+  }
+  const mx = X(edpi), anchor = mx < 60 ? 'start' : mx > W - 60 ? 'end' : 'middle';
+  h += `<g class="me"><line x1="${mx}" y1="16" x2="${mx}" y2="92"/><polygon points="${mx - 5},16 ${mx + 5},16 ${mx},24"/><text x="${mx}" y="11" text-anchor="${anchor}">你 ${Math.round(edpi)}</text></g>`;
+  $('#gauge').innerHTML = `<svg viewBox="0 0 ${W} 128" role="img" aria-label="你的 eDPI 在职业选手分布中的位置">${h}</svg>`;
+}
+function verdictOf(e) {
+  if (e < 500) return ['非常低', '需要很大的鼠标垫和整条手臂的动作，近距离转身会很吃力。'];
+  if (e < 650) return ['偏低', '大臂流，急停定位很稳，但转身和贴脸跟枪偏慢。'];
+  if (e <= 1100) return ['主流区间', '多数职业选手都在这个范围，稳定性和转身速度比较均衡。'];
+  if (e <= 1400) return ['偏高', '手腕流，转身快；远距离微调需要更细的手指控制。'];
+  return ['很高', '职业圈里少见，远距离的爆头线很难稳住，建议在 02 里往下试试。'];
+}
+function calc() {
+  const edpi = S.dpi * S.sens, cm = CM360 / edpi;
+  $('#oEdpi').textContent = Math.round(edpi);
+  $('#oCm').innerHTML = cm.toFixed(1) + '<small>cm</small>';
+  $('#oHalf').textContent = (cm / 2).toFixed(1) + ' cm';
+  $('#oIn').textContent = (cm / 2.54).toFixed(1) + ' in';
+  $('#oDeg').textContent = (360 / cm).toFixed(1) + '°';
+  drawGauge(edpi);
+  const [t, d] = verdictOf(edpi);
+  $('#verdict').innerHTML = `<b>${t}</b> · ${d}`;
+  const nd = +$('#newDpi').value, tc = +$('#tCm').value;
+  $('#oNewSens').textContent = nd > 0 ? fs(edpi / nd) : '—';
+  $('#oCmSens').textContent = tc > 0 ? fs(CM360 / (S.dpi * tc)) : '—';
+  document.querySelectorAll('#dpiChips .chip').forEach(c => c.classList.toggle('on', +c.dataset.v === S.dpi));
+  if (!F.active && !eng.running) ovIdle();
+}
+function setVals(dpi, sens, from) {
+  if (dpi > 0) S.dpi = dpi;
+  if (sens > 0) S.sens = sens;
+  if (from !== elDpi) elDpi.value = S.dpi;
+  if (from !== elSens) elSens.value = +S.sens.toFixed(3);
+  if (from !== elSensR) elSensR.value = S.sens;
+  save(); calc();
+}
+elDpi.addEventListener('input', () => setVals(+elDpi.value, 0, elDpi));
+elSens.addEventListener('input', () => setVals(0, +elSens.value, elSens));
+elSensR.addEventListener('input', () => setVals(0, +elSensR.value, elSensR));
+$('#dpiChips').addEventListener('click', e => { const c = e.target.closest('.chip'); if (c) setVals(+c.dataset.v, 0); });
+$('#newDpi').addEventListener('input', calc);
+$('#tCm').addEventListener('input', calc);
+$('#applyDpi').addEventListener('click', () => { const nd = +$('#newDpi').value; if (nd > 0) setVals(nd, rs(S.dpi * S.sens / nd)); });
+$('#applyCm').addEventListener('click', () => { const tc = +$('#tCm').value; if (tc > 0) setVals(0, rs(CM360 / (S.dpi * tc))); });
+
+/* ================= 输入：指针锁定 ================= */
+const stage = $('#stage'), cv = $('#cv'), ctx = cv.getContext('2d'), ov = $('#overlay'), pad = $('#pad');
+let rawState = 'unknown';
+function showRaw() {
+  const el = $('#rawState');
+  el.className = 'raw ' + (rawState === 'raw' ? 'ok' : rawState === 'os' ? 'warn' : '');
+  el.innerHTML = '<i></i>' + (rawState === 'raw' ? '原始输入：已启用，转角与游戏一致'
+    : rawState === 'os' ? '原始输入：不可用，受 Windows 指针速度/加速影响（建议用 Chrome 或 Edge）'
+    : '原始输入：无法确认（建议用 Chrome 或 Edge）');
+}
+const waitFor = (fn, ms) => new Promise((res, rej) => {
+  const t0 = performance.now();
+  (function tick() { if (fn()) res(); else if (performance.now() - t0 > ms) rej(new Error('timeout')); else setTimeout(tick, 20); })();
+});
+async function acquire(el, wantFs) {
+  if (!el.requestPointerLock) throw new Error('nolock');
+  if (!locked(el)) {
+    let p, fsP = null;
+    try { p = el.requestPointerLock({ unadjustedMovement: true }); } catch (e) { p = Promise.reject(e); }
+    if (wantFs && !document.fullscreenElement && stage.requestFullscreen) fsP = stage.requestFullscreen().catch(() => {});
+    try {
+      if (p && typeof p.then === 'function') { await p; rawState = 'raw'; } else rawState = 'unknown';
+    } catch (err) {
+      if (err && err.name === 'NotSupportedError') {
+        const p2 = el.requestPointerLock(); if (p2 && p2.then) await p2; rawState = 'os';
+      } else throw err;
+    }
+    if (fsP) await fsP;
+    await waitFor(() => locked(el), 1500);
+  }
+  showRaw();
+}
+const exitLock = () => { if (document.pointerLockElement) document.exitPointerLock(); else if (window.__simLock) { window.__simLock = null; } };
+
+/* ================= 02 渲染与靶场引擎 ================= */
+const eng = { yaw: 0, pitch: 0, sens: 1, running: false, paused: false, free: false, target: null, prev: null,
+  recs: [], idx: 0, opts: null, readyAt: 0, fx: [], lastTime: 0, lastT: 0, visible: true };
+const SEG = { floor: [], wall: [], mark: [] };
+(() => {
+  const R = 18, Y0 = -1.7, Y1 = 6;
+  for (let i = -R; i <= R; i += 2) {
+    SEG.floor.push([i, Y0, -R, i, Y0, R], [-R, Y0, i, R, Y0, i]);
+    SEG.wall.push([i, Y0, R, i, Y1, R], [i, Y0, -R, i, Y1, -R], [R, Y0, i, R, Y1, i], [-R, Y0, i, -R, Y1, i]);
+  }
+  for (const y of [0.3, 2.3, 4.3, Y1]) SEG.wall.push([-R, y, R, R, y, R], [-R, y, -R, R, y, -R], [R, y, -R, R, y, R], [-R, y, -R, -R, y, R]);
+  SEG.mark.push([-R, Y1, R, R, Y1, R], [-R, Y0, R, R, Y0, R]);
+})();
+const dirOf = (yaw, pitch) => { const y = yaw * DEG, p = pitch * DEG; return [Math.cos(p) * Math.sin(y), Math.sin(p), Math.cos(p) * Math.cos(y)]; };
+let cy = 1, sy = 0, cp = 1, sp = 0;
+function cam(x, y, z) {            // 世界坐标 → 相机坐标
+  const x1 = x * cy - z * sy, z1 = x * sy + z * cy;
+  return [x1, y * cp - z1 * sp, y * sp + z1 * cp];
+}
+function drawSegs(list, W, H, f) {
+  const NEAR = 0.1;
+  ctx.beginPath();
+  for (const s of list) {
+    let [ax, ay, az] = cam(s[0], s[1], s[2]), [bx, by, bz] = cam(s[3], s[4], s[5]);
+    if (az < NEAR && bz < NEAR) continue;
+    if (az < NEAR) { const t = (NEAR - az) / (bz - az); ax += (bx - ax) * t; ay += (by - ay) * t; az = NEAR; }
+    else if (bz < NEAR) { const t = (NEAR - bz) / (az - bz); bx += (ax - bx) * t; by += (ay - by) * t; bz = NEAR; }
+    ctx.moveTo(W / 2 + f * ax / az, H / 2 - f * ay / az);
+    ctx.lineTo(W / 2 + f * bx / bz, H / 2 - f * by / bz);
+  }
+  ctx.stroke();
+}
+function progress(t) { return ((eng.yaw - t.a0.yaw) * t.vx + (eng.pitch - t.a0.pitch) * t.vy) / t.len2; }
+function spawn() {
+  const from = eng.prev || { yaw: eng.yaw, pitch: eng.pitch };
+  let ty, tp, n = 0;
+  do {
+    ty = from.yaw + (Math.random() < .5 ? -1 : 1) * (8 + Math.random() * 32);
+    tp = from.pitch + (Math.random() * 2 - 1) * 7; n++;
+  } while ((Math.abs(ty) > 45 || tp < -8 || tp > 14) && n < 60);
+  ty = clamp(ty, -45, 45); tp = clamp(tp, -8, 14);
+  const a0 = { yaw: eng.yaw, pitch: eng.pitch }, vx = ty - a0.yaw, vy = tp - a0.pitch;
+  const len2 = Math.max(vx * vx + vy * vy, 1e-6);
+  eng.target = { yaw: ty, pitch: tp, dir: dirOf(ty, tp), r: S.size, spawn: performance.now(), a0, vx, vy, len2,
+    dist: Math.sqrt(len2), clicks: 0, landed: false, sFirst: 1, peak: 0, vs: 0, lastS: 0 };
+}
+function shoot() {
+  const t = eng.target; if (!t) return;
+  const now = performance.now(), f = dirOf(eng.yaw, eng.pitch);
+  t.clicks++;
+  if (!t.landed) { t.landed = true; t.sFirst = progress(t); }
+  if (f[0] * t.dir[0] + f[1] * t.dir[1] + f[2] * t.dir[2] < Math.cos(t.r * DEG)) {
+    eng.fx.push({ t0: now, kind: 'miss' }); beep(140, .09, 'sawtooth', .05); return;
+  }
+  const rec = { time: now - t.spawn, clicks: t.clicks, err: t.sFirst - 1 };
+  eng.prev = { yaw: t.yaw, pitch: t.pitch };
+  eng.fx.push({ t0: now, kind: 'hit', dir: t.dir });
+  eng.lastTime = rec.time; beep(980, .07, 'square', .04);
+  if (eng.free) { eng.recs.push(rec); if (eng.recs.length > 20) eng.recs.shift(); spawn(); return; }
+  if (eng.idx >= eng.opts.warm) eng.recs.push(rec);
+  eng.idx++;
+  if (eng.idx >= eng.opts.warm + eng.opts.count) {
+    eng.running = false; eng.target = null; exitLock();
+    eng.opts.onDone(summarize(eng.recs));
+  } else spawn();
+}
+function summarize(recs) {
+  const n = recs.length; if (!n) return null;
+  const avg = recs.reduce((a, r) => a + r.time, 0) / n, clicks = recs.reduce((a, r) => a + r.clicks, 0);
+  const bias = recs.reduce((a, r) => a + r.err, 0) / n * 100;
+  return { n, avg, acc: n / clicks, bias, score: avg + 200 * (clicks - n) / n };
+}
+function startSet(opts) {
+  Object.assign(eng, { opts, sens: opts.sens, free: !!opts.free, yaw: 0, pitch: 0, prev: null, recs: [], idx: 0,
+    target: null, fx: [], lastTime: 0, running: true, paused: false, readyAt: performance.now() + 1100 });
+}
+
+function frame(now) {
+  requestAnimationFrame(frame);
+  const dt = Math.min((now - eng.lastT) / 1000, .1); eng.lastT = now;
+  if (!eng.running) { if (!eng.visible) return; eng.yaw += dt * 2.5; eng.pitch += (2 - eng.pitch) * dt; }
+  const t = eng.target;
+  if (eng.running && !eng.paused) {
+    if (!t && now >= eng.readyAt) spawn();
+    else if (t && !t.landed && dt > 0) {       // 第一次「停手」的位置 → 过冲 / 欠冲
+      const s = progress(t), v = (s - t.lastS) * t.dist / dt;
+      t.lastS = s; t.vs = t.vs * .5 + v * .5;
+      if (t.vs > t.peak) t.peak = t.vs;
+      if (t.peak > 30 && t.vs < t.peak * .2) { t.landed = true; t.sFirst = s; }
+    }
+  }
+  render(now);
+}
+function render(now) {
+  const W = cv.width, H = cv.height, f = (H / 2) / Math.tan(VFOV / 2), u = Math.max(1, H / 640);
+  cy = Math.cos(eng.yaw * DEG); sy = Math.sin(eng.yaw * DEG); cp = Math.cos(eng.pitch * DEG); sp = Math.sin(eng.pitch * DEG);
+  const hy = H / 2 + f * Math.tan(eng.pitch * DEG);
+  ctx.fillStyle = '#0c0c0a'; ctx.fillRect(0, 0, W, H);
+  if (hy < H) { const g = ctx.createLinearGradient(0, Math.max(hy, 0), 0, H); g.addColorStop(0, '#12120f'); g.addColorStop(1, '#1a1914'); ctx.fillStyle = g; ctx.fillRect(0, Math.max(hy, 0), W, H); }
+  ctx.lineWidth = u; ctx.strokeStyle = '#2b2922'; drawSegs(SEG.floor, W, H, f);
+  ctx.strokeStyle = '#39362c'; drawSegs(SEG.wall, W, H, f);
+  ctx.lineWidth = 2 * u; ctx.strokeStyle = 'rgba(255,91,31,.55)'; drawSegs(SEG.mark, W, H, f);
+
+  const t = eng.target;
+  if (t) {
+    const D = 12, c = cam(t.dir[0] * D, t.dir[1] * D, t.dir[2] * D);
+    const sx = W / 2 + f * c[0] / c[2], sY = H / 2 - f * c[1] / c[2];
+    if (c[2] > 0.05 && sx > -40 && sx < W + 40 && sY > -40 && sY < H + 40) {
+      const r = Math.max(2.5 * u, f * Math.tan(t.r * DEG) * D / c[2]);
+      const b = cam(t.dir[0] * D, -1.7, t.dir[2] * D);
+      if (b[2] > 0.05) { ctx.strokeStyle = 'rgba(255,91,31,.28)'; ctx.lineWidth = u; ctx.beginPath(); ctx.moveTo(sx, sY + r); ctx.lineTo(W / 2 + f * b[0] / b[2], H / 2 - f * b[1] / b[2]); ctx.stroke(); }
+      ctx.fillStyle = 'rgba(255,91,31,.16)'; ctx.beginPath(); ctx.arc(sx, sY, r * 2.1, 0, 7); ctx.fill();
+      ctx.fillStyle = '#ff5b1f'; ctx.beginPath(); ctx.arc(sx, sY, r, 0, 7); ctx.fill();
+      ctx.fillStyle = '#ffd9c2'; ctx.beginPath(); ctx.arc(sx - r * .28, sY - r * .28, r * .32, 0, 7); ctx.fill();
+    } else {                                    // 靶子在视野外：边缘箭头
+      const a = Math.atan2(-c[1], c[0]), R = Math.min(W, H) * .42, px = W / 2 + Math.cos(a) * R, py = H / 2 + Math.sin(a) * R;
+      ctx.save(); ctx.translate(px, py); ctx.rotate(a); ctx.fillStyle = '#ff5b1f';
+      ctx.beginPath(); ctx.moveTo(14 * u, 0); ctx.lineTo(-8 * u, -9 * u); ctx.lineTo(-8 * u, 9 * u); ctx.closePath(); ctx.fill(); ctx.restore();
+    }
+  }
+  eng.fx = eng.fx.filter(e => now - e.t0 < 320);
+  for (const e of eng.fx) {
+    const k = (now - e.t0) / 320;
+    if (e.kind === 'hit') {
+      const c = cam(e.dir[0] * 12, e.dir[1] * 12, e.dir[2] * 12); if (c[2] < .05) continue;
+      ctx.strokeStyle = `rgba(185,240,63,${1 - k})`; ctx.lineWidth = 2 * u;
+      ctx.beginPath(); ctx.arc(W / 2 + f * c[0] / c[2], H / 2 - f * c[1] / c[2], (8 + 34 * k) * u, 0, 7); ctx.stroke();
+    } else {
+      ctx.strokeStyle = `rgba(255,61,90,${1 - k})`; ctx.lineWidth = 2 * u; const d = (9 + 6 * k) * u;
+      ctx.beginPath(); ctx.moveTo(W / 2 - d, H / 2 - d); ctx.lineTo(W / 2 + d, H / 2 + d); ctx.moveTo(W / 2 + d, H / 2 - d); ctx.lineTo(W / 2 - d, H / 2 + d); ctx.stroke();
+    }
+  }
+  if (!eng.running) return;
+  // 准星
+  const gap = 4 * u, len = 7 * u;
+  for (const [w, col] of [[4 * u, '#000'], [2 * u, '#3dff6e']]) {
+    ctx.strokeStyle = col; ctx.lineWidth = w; ctx.beginPath();
+    ctx.moveTo(W / 2 - gap - len, H / 2); ctx.lineTo(W / 2 - gap, H / 2); ctx.moveTo(W / 2 + gap, H / 2); ctx.lineTo(W / 2 + gap + len, H / 2);
+    ctx.moveTo(W / 2, H / 2 - gap - len); ctx.lineTo(W / 2, H / 2 - gap); ctx.moveTo(W / 2, H / 2 + gap); ctx.lineTo(W / 2, H / 2 + gap + len); ctx.stroke();
+  }
+  // HUD
+  const font = (px, wt = 600) => `${wt} ${px * u}px Bahnschrift,"Microsoft YaHei UI",sans-serif`;
+  ctx.textBaseline = 'top'; ctx.textAlign = 'left';
+  ctx.fillStyle = '#ff5b1f'; ctx.font = font(13); ctx.fillText(eng.opts.label, 20 * u, 18 * u);
+  ctx.fillStyle = '#ece7d8'; ctx.font = font(30, 700); ctx.fillText(fs(eng.sens), 20 * u, 36 * u);
+  ctx.fillStyle = '#8f8a76'; ctx.font = font(12, 400); ctx.fillText(cmOf(eng.sens) + ' cm/360', 20 * u, 72 * u);
+  ctx.textAlign = 'right';
+  if (eng.free) {
+    const s = summarize(eng.recs);
+    ctx.fillStyle = '#8f8a76'; ctx.font = font(12, 400); ctx.fillText('滚轮 ±0.01 调灵敏度 · Esc 结束', W - 20 * u, 18 * u);
+    if (s) { ctx.fillStyle = '#ece7d8'; ctx.font = font(15); ctx.fillText(`近 ${s.n} 个  ${Math.round(s.avg)} ms · 命中 ${Math.round(s.acc * 100)}% · ${biasText(s.bias)}`, W - 20 * u, 38 * u); }
+  } else {
+    const warm = eng.idx < eng.opts.warm;
+    ctx.fillStyle = warm ? '#8f8a76' : '#ece7d8'; ctx.font = font(30, 700);
+    ctx.fillText(warm ? '热身' : `${String(eng.idx - eng.opts.warm + 1).padStart(2, '0')} / ${eng.opts.count}`, W - 20 * u, 18 * u);
+    if (eng.lastTime) { ctx.fillStyle = '#b9f03f'; ctx.font = font(13); ctx.fillText(Math.round(eng.lastTime) + ' ms', W - 20 * u, 56 * u); }
+  }
+  if (!eng.target && !eng.paused) { ctx.textAlign = 'center'; ctx.fillStyle = '#ece7d8'; ctx.font = font(18); ctx.fillText('准备…', W / 2, H / 2 + 40 * u); }
+}
+new ResizeObserver(() => {
+  const d = Math.min(window.devicePixelRatio || 1, 2);
+  cv.width = Math.max(320, Math.round(stage.clientWidth * d)); cv.height = Math.max(180, Math.round(stage.clientHeight * d));
+}).observe(stage);
+new IntersectionObserver(es => { eng.visible = es[0].isIntersecting; }).observe(stage);
+
+/* ---------- 音效 ---------- */
+let ac = null;
+function beep(freq, dur, type, vol) {
+  if (!S.snd) return;
+  try {
+    ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+    const o = ac.createOscillator(), g = ac.createGain();
+    o.type = type; o.frequency.value = freq;
+    g.gain.setValueAtTime(vol, ac.currentTime); g.gain.exponentialRampToValueAtTime(1e-4, ac.currentTime + dur);
+    o.connect(g).connect(ac.destination); o.start(); o.stop(ac.currentTime + dur);
+  } catch (e) {}
+}
+
+/* ---------- 鼠标事件 ---------- */
+const cal = { on: false, x: 0, y: 0, dpi: 0 };
+document.addEventListener('mousemove', e => {
+  if (locked(cv)) {
+    if (!eng.running || eng.paused) return;
+    const k = eng.sens * YAW * S.corr;
+    eng.yaw += e.movementX * k;
+    eng.pitch = clamp(eng.pitch - e.movementY * k, -89, 89);
+  } else if (locked(pad) && cal.on) {
+    cal.x += e.movementX; cal.y += e.movementY;
+    $('#padV').textContent = Math.round(Math.hypot(cal.x, cal.y));
+  }
+});
+document.addEventListener('mousedown', e => {
+  if (e.button !== 0) return;
+  if (locked(cv)) { if (eng.running && !eng.paused) shoot(); }
+  else if (locked(pad)) { cal.on = true; cal.x = cal.y = 0; $('#padV').textContent = '0'; $('#padM').textContent = '移动中…到位后松开左键'; }
+});
+document.addEventListener('mouseup', e => { if (e.button === 0 && locked(pad) && cal.on) { cal.on = false; finishCal(); } });
+document.addEventListener('wheel', e => {
+  if (!locked(cv)) return;
+  e.preventDefault();
+  if (eng.running && eng.free && !eng.paused) eng.sens = clamp(+(eng.sens + (e.deltaY < 0 ? .01 : -.01)).toFixed(2), .05, 10);
+}, { passive: false });
+stage.addEventListener('contextmenu', e => e.preventDefault());
+function onLockChange() {
+  if (!locked(cv) && eng.running && !eng.paused) { eng.paused = true; eng.target = null; eng.free ? ovFreeEnd() : ovPause(); }
+  if (!locked(pad)) { pad.classList.remove('live'); if (cal.on) { cal.on = false; resetPad(); } }
+}
+document.addEventListener('pointerlockchange', onLockChange);
+
+/* ================= 测定流程 ================= */
+const F = { active: false, base: 1, lo0: 0, hi0: 0, lo: 0, hi: 0, round: 0, A: 0, B: 0, res: {}, queue: [], history: [] };
+let retry = null;
+function showOv(html) { ov.innerHTML = '<div class="ov-card">' + html + '</div>'; ov.hidden = false; }
+const hideOv = () => { ov.hidden = true; };
+const biasCls = b => b > 4 ? 'over' : b < -4 ? 'under' : 'fine';
+const biasText = b => { const r = Math.round(b) || 0; return (b > 4 ? '过冲 +' : b < -4 ? '欠冲 ' : '落点准 ' + (r > 0 ? '+' : '')) + r + '%'; };
+
+function ovIdle() {
+  showOv(`<div class="kick">RANGE READY</div><h3>靶场待命</h3>
+    <p>以计算器里的灵敏度 <b style="color:var(--ink)">${fs(S.sens)}</b> 为起点做 ${ROUNDS} 轮对比。每轮用一低一高两档各打一组靶，你选更顺手的那档，区间逐轮收窄。</p>
+    <div class="btns"><button class="btn" data-act="finder">开始测定</button><button class="btn ghost" data-act="free">自由试手感</button></div>
+    <div class="note">需要鼠标 · 建议 Chrome / Edge · 测试中按 Esc 暂停</div>`);
+}
+function ovError(fn) {
+  retry = fn;
+  showOv(`<div class="kick">POINTER LOCK</div><h3>没锁住鼠标</h3><p>浏览器拒绝了这次锁定（刚按过 Esc 时需要等一秒）。再点一次就好。</p>
+    <div class="btns"><button class="btn" data-act="retry">再试一次</button><button class="btn ghost" data-act="quit">退出</button></div>`);
+}
+function ovPreSet() {
+  const k = F.queue[0], v = F[k];
+  showOv(`<div class="kick">第 ${F.round} / ${ROUNDS} 轮 · ${F.queue.length === 2 ? '第一组' : '第二组'}</div>
+    <h3>${k} 组 <em>${fs(v)}</em></h3>
+    <p>${cmOf(v)} cm/360 · ${COUNT + WARM} 个靶，前 ${WARM} 个热身不计分。看到靶子就甩过去点掉，又快又准最好。</p>
+    <div class="btns"><button class="btn" data-act="go">开始 ${k} 组</button><button class="btn ghost" data-act="quit">退出测定</button></div>`);
+}
+function ovPause() {
+  showOv(`<div class="kick">PAUSED</div><h3>已暂停</h3><p>继续后当前这个靶会重新出现，不影响成绩。</p>
+    <div class="btns"><button class="btn" data-act="resume">继续</button><button class="btn ghost" data-act="quit">放弃本次测定</button></div>`);
+}
+function ovFreeEnd() {
+  const v = eng.sens, same = Math.abs(v - S.sens) < 1e-9;
+  showOv(`<div class="kick">FREE RANGE</div><h3>停在 <em>${fs(v)}</em></h3><p>${cmOf(v)} cm/360${same ? '，和计算器里的数值相同。' : '。觉得顺手可以直接写回计算器。'}</p>
+    <div class="btns">${same ? '' : '<button class="btn" data-act="applyFree">应用到计算器</button>'}<button class="btn ghost" data-act="resume">继续练</button><button class="btn ghost" data-act="quit">结束</button></div>`);
+}
+function col(k, r, best) {
+  return `<div class="cmp-col ${best ? 'best' : ''}"><div class="t">${k} 组</div><div class="s">${fs(F[k])}</div><dl>
+    <dt>平均用时</dt><dd>${Math.round(r.avg)} ms</dd><dt>命中率</dt><dd>${Math.round(r.acc * 100)}%</dd>
+    <dt>首次落点</dt><dd class="${biasCls(r.bias)}">${biasText(r.bias)}</dd></dl></div>`;
+}
+function ovCompare() {
+  const a = F.res.A, b = F.res.B, d = (b.score - a.score) / Math.min(a.score, b.score);
+  const sug = Math.abs(d) < .04 ? 'M' : d > 0 ? 'A' : 'B';
+  F.sug = sug;
+  const tip = sug === 'M' ? '两组数据几乎一样，凭手感选；拿不准就选「差不多」。'
+    : `数据上 ${sug} 组更好（综合用时少 ${Math.round(Math.abs(d) * 100)}%）。数据只是参考，以你的手感为准。`;
+  showOv(`<div class="kick">第 ${F.round} / ${ROUNDS} 轮 · 对比</div><h3>哪一组更顺手？</h3>
+    <div class="cmp">${col('A', a, sug === 'A')}${col('B', b, sug === 'B')}</div>
+    <p style="margin-bottom:14px">${tip}</p>
+    <div class="btns"><button class="btn ${sug === 'A' ? 'best' : 'ghost'}" data-act="pick" data-k="A">A 更顺手</button>
+    <button class="btn ${sug === 'M' ? 'best' : 'ghost'}" data-act="pick" data-k="M">差不多</button>
+    <button class="btn ${sug === 'B' ? 'best' : 'ghost'}" data-act="pick" data-k="B">B 更顺手</button></div>
+    <div class="note">过冲 = 第一下甩过头（灵敏度可能偏高）；欠冲 = 没甩到位（可能偏低）</div>`);
+}
+function drawTrack() {
+  const L0 = Math.log(F.lo0), span = Math.log(F.hi0) - L0, P = v => ((Math.log(v) - L0) / span * 100).toFixed(2) + '%';
+  $('#track').hidden = false;
+  $('#trWin').style.left = P(F.lo); $('#trWin').style.width = ((Math.log(F.hi) - Math.log(F.lo)) / span * 100).toFixed(2) + '%';
+  $('#trA').style.left = P(F.A); $('#trA').textContent = 'A ' + fs(F.A);
+  $('#trB').style.left = P(F.B); $('#trB').textContent = 'B ' + fs(F.B);
+  $('#trBase').style.left = P(F.base); $('#trBase').textContent = '起点 ' + fs(F.base);
+  $('#trLo').textContent = fs(F.lo0); $('#trHi').textContent = fs(F.hi0);
+  $('#trRange').textContent = fs(F.lo) + ' – ' + fs(F.hi);
+  $('#pips').innerHTML = Array.from({ length: ROUNDS }, (_, i) => `<i class="${i < F.round ? 'on' : ''}"></i>`).join('');
+}
+function setupRound() {
+  const L = Math.log(F.lo), H = Math.log(F.hi);
+  F.A = rs(Math.exp(L + (H - L) * .25)); F.B = rs(Math.exp(L + (H - L) * .75));
+  F.res = {}; F.queue = F.round % 2 ? ['A', 'B'] : ['B', 'A'];
+  drawTrack(); ovPreSet();
+}
+function startFinder(base) {
+  base = base || S.sens;
+  Object.assign(F, { active: true, base, lo0: base / SPAN, hi0: base * SPAN, lo: base / SPAN, hi: base * SPAN, round: 1, history: [] });
+  $('#result').hidden = true;
+  setupRound();
+}
+async function go() {
+  const k = F.queue[0];
+  try { await acquire(cv, S.fs); } catch (e) { return ovError(go); }
+  hideOv();
+  startSet({ sens: F[k], label: `第 ${F.round} 轮 · ${k} 组`, count: COUNT, warm: WARM,
+    onDone: r => { F.res[k] = r; F.queue.shift(); F.queue.length ? ovPreSet() : ovCompare(); } });
+}
+function pick(k) {
+  F.history.push({ round: F.round, A: F.A, B: F.B, ra: F.res.A, rb: F.res.B, pick: k });
+  const mid = Math.sqrt(F.lo * F.hi);
+  if (k === 'A') F.hi = mid; else if (k === 'B') F.lo = mid; else { F.lo = F.A; F.hi = F.B; }
+  if (F.round >= ROUNDS) return finishFinder();
+  F.round++; setupRound();
+}
+function finishFinder() {
+  const rec = rs(Math.sqrt(F.lo * F.hi));
+  F.active = false; F.A = F.B = rec; drawTrack();
+  $('#trA').textContent = '推荐 ' + fs(rec); $('#trB').textContent = '';
+  S.last = { sens: rec, base: F.base, dpi: S.dpi, edge: rec < F.lo0 * 1.1 || rec > F.hi0 / 1.1 }; save();
+  renderResult(F.history);
+  showOv(`<div class="kick">COMPLETE</div><h3>推荐 <em>${fs(rec)}</em></h3><p>${cmOf(rec)} cm/360 · eDPI ${Math.round(S.dpi * rec)}。下面有控制台指令和每一轮的记录。</p>
+    <div class="btns"><button class="btn" data-act="showResult">查看结果</button><button class="btn ghost" data-act="refine">以它为起点再测一遍</button></div>`);
+}
+function renderResult(history) {
+  const L = S.last; if (!L) return;
+  const diff = (L.sens / L.base - 1) * 100;
+  const cmp = Math.abs(diff) < 1.5 ? '和你原来的数值基本一致，说明原来的就挺合适' : `比原来的 ${fs(L.base)} ${diff > 0 ? '高' : '低'} ${Math.abs(diff).toFixed(0)}%`;
+  let rows = '';
+  for (const h of history || []) {
+    const c = (r, w) => `<td class="${w ? 'w' : ''}">${Math.round(r.avg)} ms · ${Math.round(r.acc * 100)}% · ${biasText(r.bias)}</td>`;
+    rows += `<tr><td>${h.round}</td><td>${fs(h.A)}</td>${c(h.ra, h.pick === 'A')}<td>${fs(h.B)}</td>${c(h.rb, h.pick === 'B')}<td>${h.pick === 'M' ? '差不多' : h.pick}</td></tr>`;
+  }
+  $('#result').innerHTML = `<div class="rv">${fs(L.sens)}</div>
+    <div><span class="lab">测定结果</span>
+      <div class="rm"><b>${(CM360 / (L.dpi * L.sens)).toFixed(1)} cm/360</b> · eDPI <b>${Math.round(L.dpi * L.sens)}</b> · ${cmp}。</div>
+      <div class="cmd"><code id="cmdText">sensitivity ${fs(L.sens)}</code><button class="btn sm" id="copyCmd">复制指令</button><button class="btn ghost sm" id="applyRes">应用到计算器</button></div>
+      <div class="rm">在 CS2 里按 <b>~</b> 打开控制台粘贴，或在 设置 → 键盘/鼠标 里直接填。精度约 ±3%，回游戏打几局死斗确认。</div>
+      ${L.edge ? '<div class="rm" style="color:var(--acc);margin-top:8px">你每轮都选了同一侧，结果贴着搜索区间的边缘，真正合适的值可能还在外面。建议点「应用到计算器」，然后再测定一遍。</div>' : ''}
+    </div>
+    ${rows ? `<table class="hist"><tr><th>轮</th><th>A</th><th>A 成绩</th><th>B</th><th>B 成绩</th><th>你的选择</th></tr>${rows}</table>` : ''}`;
+  $('#result').hidden = false;
+  $('#copyCmd').onclick = async ev => {
+    const txt = $('#cmdText').textContent;
+    try { await navigator.clipboard.writeText(txt); ev.target.textContent = '已复制 ✓'; }
+    catch (e) { const r = document.createRange(); r.selectNodeContents($('#cmdText')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); ev.target.textContent = '已选中，Ctrl+C'; }
+  };
+  $('#applyRes').onclick = () => setVals(0, L.sens);
+}
+const leaveFs = () => { if (document.fullscreenElement) document.exitFullscreen().catch(() => {}); };
+const ACT = {
+  finder: () => startFinder(),
+  refine: () => { if (S.last) setVals(0, S.last.sens); startFinder(); },
+  go, pick: b => pick(b.dataset.k),
+  retry: () => retry && retry(),
+  free: async function free() {
+    try { await acquire(cv, S.fs); } catch (e) { return ovError(free); }
+    hideOv(); startSet({ sens: S.sens, label: '自由练习', free: true });
+  },
+  resume: async function resume() {
+    try { await acquire(cv, S.fs); } catch (e) { return ovError(resume); }
+    hideOv(); eng.paused = false; eng.target = null; eng.readyAt = performance.now() + 700;
+  },
+  applyFree: () => { setVals(0, eng.sens); ACT.quit(); },
+  quit: () => { eng.running = false; eng.paused = false; eng.target = null; F.active = false; exitLock(); leaveFs(); $('#track').hidden = true; ovIdle(); },
+  showResult: () => { leaveFs(); ovIdle(); setTimeout(() => $('#result').scrollIntoView({ behavior: 'smooth', block: 'center' }), 150); }
+};
+ov.addEventListener('click', e => { const b = e.target.closest('[data-act]'); if (b && ACT[b.dataset.act]) ACT[b.dataset.act](b); });
+
+/* ---------- 选项 ---------- */
+const optSize = $('#optSize'), optFs = $('#optFs'), optSnd = $('#optSnd');
+optSize.value = String(S.size); if (!optSize.value) { optSize.value = '0.8'; S.size = 0.8; }
+optFs.checked = S.fs; optSnd.checked = S.snd;
+optSize.addEventListener('change', () => { S.size = +optSize.value; save(); });
+optFs.addEventListener('change', () => { S.fs = optFs.checked; save(); });
+optSnd.addEventListener('change', () => { S.snd = optSnd.checked; save(); });
+
+/* ================= 03 DPI 校验 ================= */
+function resetPad() { $('#padV').textContent = '点击开始'; $('#padM').textContent = '锁定鼠标后，按住左键移动'; }
+pad.addEventListener('click', async () => {
+  if (locked(pad)) return;
+  try { await acquire(pad, false); pad.classList.add('live'); $('#padV').textContent = '就绪'; $('#padM').textContent = '按住左键 → 沿尺子直线移动 → 松开'; }
+  catch (e) { $('#padM').textContent = '没锁住鼠标，等一秒再点一次'; }
+});
+function finishCal() {
+  const counts = Math.hypot(cal.x, cal.y), cm = +$('#calCm').value;
+  exitLock(); pad.classList.remove('live');
+  if (counts < 50 || !(cm > 0)) { $('#padV').textContent = '太短了'; $('#padM').textContent = '点击重新测量'; return; }
+  cal.dpi = counts / (cm / 2.54);
+  $('#padV').textContent = Math.round(counts) + ' 计数'; $('#padM').textContent = '点击可重新测量';
+  renderCal();
+}
+function renderCal() {
+  const out = $('#calOut');
+  let h = '';
+  if (cal.dpi) {
+    const ratio = cal.dpi / S.dpi, dpr = window.devicePixelRatio || 1, off = (ratio - 1) * 100;
+    let msg;
+    if (Math.abs(off) < 5) msg = `和你填的 ${S.dpi} 基本一致（差 ${off >= 0 ? '+' : ''}${off.toFixed(1)}%），不用改。`;
+    else if (Math.abs(dpr - 1) > .05 && (Math.abs(ratio * dpr - 1) < .06 || Math.abs(ratio / dpr - 1) < .06))
+      msg = `和你填的 ${S.dpi} 差 ${off.toFixed(0)}%，正好对应系统缩放 ${Math.round(dpr * 100)}% —— 多半是浏览器按缩放换算了移动量。DPI 没问题的话，点「修正网页手感」。`;
+    else msg = `和你填的 ${S.dpi} 差 ${off >= 0 ? '+' : ''}${off.toFixed(0)}%。常见原因：驱动里的 DPI 不是你以为的那档、鼠标实际 DPI 有偏差，或尺子没量准（多量两次）。`;
+    h += `<span class="lab" style="margin-top:18px">实测 DPI</span><div class="pv">${Math.round(cal.dpi)}</div><p>${msg}</p>`;
+    if (Math.abs(off) >= 5) h += `<div class="btns" style="justify-content:flex-start"><button class="btn sm" id="calUse">把 DPI 改成 ${Math.round(cal.dpi / 10) * 10}</button><button class="btn ghost sm" id="calFix">DPI 没错，修正网页手感</button></div>`;
+  }
+  if (Math.abs(S.corr - 1) > .001) h += `<div class="corr">网页手感修正已启用 ×${S.corr.toFixed(3)} <button class="chip" id="calClear" style="margin-left:8px">取消</button></div>`;
+  out.innerHTML = h;
+  const b = id => document.getElementById(id);
+  if (b('calUse')) b('calUse').onclick = () => { setVals(Math.round(cal.dpi / 10) * 10, 0); renderCal(); };
+  if (b('calFix')) b('calFix').onclick = () => { S.corr = S.dpi / cal.dpi; save(); renderCal(); };
+  if (b('calClear')) b('calClear').onclick = () => { S.corr = 1; save(); renderCal(); };
+}
+
+/* ---------- 启动 ---------- */
+elDpi.value = S.dpi; elSens.value = +S.sens.toFixed(3); elSensR.value = S.sens;
+calc(); renderCal();
+if (S.last) renderResult(null);
+requestAnimationFrame(frame);
+window.__sensLab = { S, eng, F, ACT };
+})();
+</script>
+</body>
+</html>
