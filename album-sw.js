@@ -1,6 +1,6 @@
-const CACHE = 'daily-album-white-v3';
+const CACHE = 'daily-album-liner-v4';
 const ROOT = new URL('./', self.location.href);
-const CORE = ['album.html', 'album.webmanifest', 'album-assets/icon.svg', 'album-assets/icon-180.png', 'album-assets/icon-192.png', 'album-assets/icon-512.png'];
+const CORE = ['album.html', 'album.webmanifest', 'album-assets/notes.js', 'album-assets/icon.svg', 'album-assets/icon-180.png', 'album-assets/icon-192.png', 'album-assets/icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(CORE.map(p => new URL(p,ROOT).href))).then(() => self.skipWaiting()));
 });

@@ -11,9 +11,9 @@ app=Path('tools/album-app.js').read_text(encoding='utf-8')
 head='''<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="referrer" content="no-referrer"><meta name="theme-color" content="#faf9f7">
+<meta name="referrer" content="no-referrer"><meta name="theme-color" content="#f3eee4">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="每日专辑"><meta name="description" content="每日专辑推荐，支持专辑搜索、风格筛选与浏览记录。">
+<meta name="apple-mobile-web-app-title" content="每日专辑"><meta name="description" content="每日专辑推荐：四百张唱片的首发封面、创作背景与聆听赏析，支持搜索、风格筛选与浏览记录。">
 <link rel="icon" type="image/svg+xml" href="album-assets/icon.svg">
 <link rel="apple-touch-icon" href="album-assets/icon-180.png"><link rel="manifest" href="album.webmanifest">
 <title>每日专辑</title><style>'''
@@ -21,7 +21,7 @@ data_helpers='''
 const seen = new Set();
 const ALBUM_DB = ALBUMS.filter(a => {const key=a.t+'|'+a.a;if(seen.has(key))return false;seen.add(key);return true;});
 '''
-Path('album.html').write_text(head+style+'</style></head><body>\n'+body+'\n<script>\n'+catalog+data_helpers+app+'\n</script></body></html>\n',encoding='utf-8')
+Path('album.html').write_text(head+style+'</style></head><body>\n'+body+'\n<script src="album-assets/notes.js"></script>\n<script>\n'+catalog+data_helpers+app+'\n</script></body></html>\n',encoding='utf-8')
 
 assets=Path('album-assets');assets.mkdir(exist_ok=True)
 svg='''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

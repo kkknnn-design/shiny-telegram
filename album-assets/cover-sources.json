@@ -1,11 +1,11 @@
 {
   "Radiohead|OK Computer": {
-    "source": "Apple Music / iTunes",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
     "title": "OK Computer",
     "artist": "Radiohead",
-    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/07/60/ba/0760ba0f-148c-b18f-d0ff-169ee96f3af5/634904078164.png/600x600bb.jpg",
-    "page": "https://music.apple.com/us/album/ok-computer/1097861387?uo=4",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/b1392450-e666-3926-a536-22c65f834433/front-500",
+    "page": "https://musicbrainz.org/release-group/b1392450-e666-3926-a536-22c65f834433",
+    "checked": "2026-11-11"
   },
   "Kendrick Lamar|To Pimp a Butterfly": {
     "source": "Apple Music / iTunes",
@@ -24,9 +24,12 @@
     "checked": "2026-10-03"
   },
   "Nirvana|Nevermind": {
-    "source": "existing Wikimedia artwork",
-    "url": "https://upload.wikimedia.org/wikipedia/en/b/b7/NirvanaNevermindalbumcover.jpg",
-    "checked": "2026-10-03"
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Nevermind",
+    "artist": "Nirvana",
+    "url": "https://coverartarchive.org/release-group/1b022e01-4da6-387b-8658-8678046e4cef/front-500",
+    "page": "https://musicbrainz.org/release-group/1b022e01-4da6-387b-8658-8678046e4cef",
+    "checked": "2026-11-11"
   },
   "Marvin Gaye|What's Going On": {
     "source": "Apple Music / iTunes",
@@ -133,20 +136,20 @@
     "checked": "2026-10-03"
   },
   "The Clash|London Calling": {
-    "source": "Apple Music / iTunes",
-    "title": "London Calling (Expanded Edition)",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "London Calling",
     "artist": "The Clash",
-    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/93/cb/20/93cb201b-154b-7b74-a10b-48fbef9b3281/888880348937.jpg/600x600bb.jpg",
-    "page": "https://music.apple.com/us/album/london-calling-expanded-edition/267986379?uo=4",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/8d73e45e-7ca1-3cb4-ae28-6da76196c17c/front-500",
+    "page": "https://musicbrainz.org/release-group/8d73e45e-7ca1-3cb4-ae28-6da76196c17c",
+    "checked": "2026-11-11"
   },
   "Björk|Homogenic": {
-    "source": "Apple Music / iTunes",
-    "title": "Homogenic (Live)",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Homogenic",
     "artist": "Björk",
-    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/12/38/d0/1238d076-0a43-5758-1876-5ab6d256d648/5016958995157.png/600x600bb.jpg",
-    "page": "https://music.apple.com/us/album/homogenic-live/1726654860?uo=4",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/810272e0-aef1-3d85-b2d3-e512e87fc38c/front-500",
+    "page": "https://musicbrainz.org/release-group/810272e0-aef1-3d85-b2d3-e512e87fc38c",
+    "checked": "2026-11-11"
   },
   "Radiohead|Kid A": {
     "source": "Apple Music / iTunes",
@@ -157,12 +160,12 @@
     "checked": "2026-10-03"
   },
   "Kate Bush|Hounds of Love": {
-    "source": "Apple Music / iTunes",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
     "title": "Hounds of Love",
     "artist": "Kate Bush",
-    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/2c/3e/c9/2c3ec991-0f6e-bec3-7eff-750f50c5b3a6/cover.jpg/600x600bb.jpg",
-    "page": "https://music.apple.com/us/album/hounds-of-love/1675375084?uo=4",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/017f2a37-a78f-3578-9611-fa40408e5d90/front-500",
+    "page": "https://musicbrainz.org/release-group/017f2a37-a78f-3578-9611-fa40408e5d90",
+    "checked": "2026-11-11"
   },
   "Wu-Tang Clan|Enter the Wu-Tang (36 Chambers)": {
     "source": "Apple Music / iTunes",
@@ -221,12 +224,12 @@
     "checked": "2026-10-03"
   },
   "Madvillain|Madvillainy": {
-    "source": "Apple Music / iTunes",
-    "title": "Madvillainy Instrumentals",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Madvillainy",
     "artist": "Madvillain",
-    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/18/b4/9a/18b49ad5-6407-7169-27f4-d1c8bcb5504b/s05.nqwebndj.jpg/600x600bb.jpg",
-    "page": "https://music.apple.com/us/album/madvillainy-instrumentals/41655332?uo=4",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/ab570ccb-b06b-3746-8147-4903163ba895/front-500",
+    "page": "https://musicbrainz.org/release-group/ab570ccb-b06b-3746-8147-4903163ba895",
+    "checked": "2026-11-11"
   },
   "The Cure|Disintegration": {
     "source": "Apple Music / iTunes",
@@ -245,12 +248,12 @@
     "checked": "2026-10-03"
   },
   "Aphex Twin|Selected Ambient Works 85-92": {
-    "source": "Apple Music / iTunes",
-    "title": "Selected Ambient Works 85-92",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Selected Ambient Works 85–92",
     "artist": "Aphex Twin",
-    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/5f/b3/e0/5fb3e08d-c2cd-3da4-6ad7-c5dc61803683/cover.jpg/600x600bb.jpg",
-    "page": "https://music.apple.com/us/album/selected-ambient-works-85-92/1668862636?uo=4",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/6842c81d-ea77-3dfd-abf7-4323add3f4d4/front-500",
+    "page": "https://musicbrainz.org/release-group/6842c81d-ea77-3dfd-abf7-4323add3f4d4",
+    "checked": "2026-11-11"
   },
   "John Coltrane|A Love Supreme": {
     "source": "Apple Music / iTunes",
@@ -293,14 +296,20 @@
     "checked": "2026-10-03"
   },
   "Frank Ocean|Channel Orange": {
-    "source": "existing Wikimedia artwork",
-    "url": "https://upload.wikimedia.org/wikipedia/en/2/28/Channel_ORANGE.jpg",
-    "checked": "2026-10-03"
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "channel ORANGE",
+    "artist": "Frank Ocean",
+    "url": "https://coverartarchive.org/release-group/f8f4167d-897c-4b25-a171-638374d1dfa4/front-500",
+    "page": "https://musicbrainz.org/release-group/f8f4167d-897c-4b25-a171-638374d1dfa4",
+    "checked": "2026-11-11"
   },
   "The Strokes|Is This It": {
-    "source": "existing Wikimedia artwork",
-    "url": "https://upload.wikimedia.org/wikipedia/en/0/09/The_Strokes_-_Is_This_It_cover.png",
-    "checked": "2026-10-03"
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Is This It",
+    "artist": "The Strokes",
+    "url": "https://coverartarchive.org/release-group/efea26d1-a016-30f6-b8e2-bc8c02336b0a/front-500",
+    "page": "https://musicbrainz.org/release-group/efea26d1-a016-30f6-b8e2-bc8c02336b0a",
+    "checked": "2026-11-11"
   },
   "Lauryn Hill|The Miseducation of Lauryn Hill": {
     "source": "Apple Music / iTunes",
@@ -335,9 +344,12 @@
     "checked": "2026-10-03"
   },
   "Frank Ocean|Blond": {
-    "source": "existing Wikimedia artwork",
-    "url": "https://upload.wikimedia.org/wikipedia/en/a/a0/Blonde_-_Frank_Ocean.jpeg",
-    "checked": "2026-10-03"
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Blonde",
+    "artist": "Frank Ocean",
+    "url": "https://coverartarchive.org/release-group/0da340a0-6ad7-4fc2-a272-6f94393a7831/front-500",
+    "page": "https://musicbrainz.org/release-group/0da340a0-6ad7-4fc2-a272-6f94393a7831",
+    "checked": "2026-11-11"
   },
   "Miles Davis|Bitches Brew": {
     "source": "Apple Music / iTunes",
@@ -348,12 +360,12 @@
     "checked": "2026-10-03"
   },
   "The Notorious B.I.G.|Ready to Die": {
-    "source": "Apple Music / iTunes",
-    "title": "Ready To Die the Remaster",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Ready to Die",
     "artist": "The Notorious B.I.G.",
-    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/f8/6a/3d/f86a3db0-d518-cd49-c0c9-25e767ae0a6d/075679456861.jpg/600x600bb.jpg",
-    "page": "https://music.apple.com/us/album/ready-to-die-the-remaster/204669415?uo=4",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/5afcfeac-118a-35e6-af0d-35ec9003354d/front-500",
+    "page": "https://musicbrainz.org/release-group/5afcfeac-118a-35e6-af0d-35ec9003354d",
+    "checked": "2026-11-11"
   },
   "Pink Floyd|The Dark Side of the Moon": {
     "source": "Deezer",
@@ -652,12 +664,12 @@
     "checked": "2026-10-03"
   },
   "Paul Simon|Graceland": {
-    "source": "Deezer",
-    "title": "Graceland (25th Anniversary Deluxe Edition)",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Graceland",
     "artist": "Paul Simon",
-    "url": "https://cdn-images.dzcdn.net/images/cover/8a8c3843f9daf46b8a660b26ef56cb4d/500x500-000000-80-0-0.jpg",
-    "page": "https://www.deezer.com/album/3095471",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/19847822-1430-3380-9cf1-bc45545b34ac/front-500",
+    "page": "https://musicbrainz.org/release-group/19847822-1430-3380-9cf1-bc45545b34ac",
+    "checked": "2026-11-11"
   },
   "Charles Mingus|Mingus Ah Um": {
     "source": "Deezer",
@@ -676,12 +688,12 @@
     "checked": "2026-10-03"
   },
   "John Coltrane|Giant Steps": {
-    "source": "Deezer",
-    "title": "Giant Steps (2020 Remaster)",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Giant Steps",
     "artist": "John Coltrane",
-    "url": "https://cdn-images.dzcdn.net/images/cover/6e9b62644b725547f6fd79c4e1760c1b/500x500-000000-80-0-0.jpg",
-    "page": "https://www.deezer.com/album/173465852",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/2cdca11d-3e45-3152-93e5-4d2a4ddb1bc6/front-500",
+    "page": "https://musicbrainz.org/release-group/2cdca11d-3e45-3152-93e5-4d2a4ddb1bc6",
+    "checked": "2026-11-11"
   },
   "Neil Young|Harvest": {
     "source": "Apple Music / iTunes",
@@ -788,12 +800,11 @@
     "checked": "2026-10-03"
   },
   "Kraftwerk|Trans Europe Express": {
-    "source": "Deezer",
-    "title": "Trans-Europe Express (2009 Remaster)",
-    "artist": "Kraftwerk",
-    "url": "https://cdn-images.dzcdn.net/images/cover/8f20a7733da4467a7cd0f4813d9bc8d1/500x500-000000-80-0-0.jpg",
-    "page": "https://www.deezer.com/album/396602",
-    "checked": "2026-10-03"
+    "source": "Wikipedia infobox (original release artwork)",
+    "title": "Trans Europe Express",
+    "url": "https://upload.wikimedia.org/wikipedia/en/5/57/Trans-Europe_Express_German.png",
+    "page": "https://en.wikipedia.org/wiki/Trans-Europe_Express_%28album%29",
+    "checked": "2026-11-11"
   },
   "Metallica|Ride the Lightning": {
     "source": "Deezer",
@@ -804,12 +815,12 @@
     "checked": "2026-10-03"
   },
   "Pixies|Surfer Rosa": {
-    "source": "Deezer",
-    "title": "Surfer Rosa (2007 Remaster)",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Surfer Rosa",
     "artist": "Pixies",
-    "url": "https://cdn-images.dzcdn.net/images/cover/562e91cb88484ac64fbdd41ffcfe0324/500x500-000000-80-0-0.jpg",
-    "page": "https://www.deezer.com/album/10966644",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/74e36cbc-a747-3ebf-a60e-51e656c87741/front-500",
+    "page": "https://musicbrainz.org/release-group/74e36cbc-a747-3ebf-a60e-51e656c87741",
+    "checked": "2026-11-11"
   },
   "Slayer|Reign in Blood": {
     "source": "Deezer",
@@ -844,12 +855,12 @@
     "checked": "2026-10-03"
   },
   "Modest Mouse|Moon & Antarctica": {
-    "source": "Deezer",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
     "title": "The Moon & Antarctica",
     "artist": "Modest Mouse",
-    "url": "https://cdn-images.dzcdn.net/images/cover/47b1dc9efebec8792e18ed7b76862df9/500x500-000000-80-0-0.jpg",
-    "page": "https://www.deezer.com/album/6962249",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/a8e26959-b3b2-3440-a74a-0dc06cd6310d/front-500",
+    "page": "https://musicbrainz.org/release-group/a8e26959-b3b2-3440-a74a-0dc06cd6310d",
+    "checked": "2026-11-11"
   },
   "Broken Social Scene|You Forgot It in People": {
     "source": "Deezer",
@@ -1036,12 +1047,12 @@
     "checked": "2026-10-03"
   },
   "Stevie Ray Vaughan|Texas Flood": {
-    "source": "Deezer",
-    "title": "Texas Flood (Live)",
-    "artist": "Stevie Ray Vaughan",
-    "url": "https://cdn-images.dzcdn.net/images/cover/30569d2e0802d1d8a10303cc049f6053/500x500-000000-80-0-0.jpg",
-    "page": "https://www.deezer.com/album/192522842",
-    "checked": "2026-10-03"
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Texas Flood",
+    "artist": "Stevie Ray Vaughan and Double Trouble",
+    "url": "https://coverartarchive.org/release-group/ee31030f-a226-309b-b29c-3b51deb771df/front-500",
+    "page": "https://musicbrainz.org/release-group/ee31030f-a226-309b-b29c-3b51deb771df",
+    "checked": "2026-11-11"
   },
   "Flying Lotus|Cosmogramma": {
     "source": "Deezer",
@@ -1060,12 +1071,12 @@
     "checked": "2026-10-03"
   },
   "Burial|Untrue": {
-    "source": "Deezer",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
     "title": "Untrue",
     "artist": "Burial",
-    "url": "https://cdn-images.dzcdn.net/images/cover/4b2625e8eec6e7368b58180035915014/500x500-000000-80-0-0.jpg",
-    "page": "https://www.deezer.com/album/980871",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/fddedc4f-7a2e-3d7d-9ec5-1705c416f3f4/front-500",
+    "page": "https://musicbrainz.org/release-group/fddedc4f-7a2e-3d7d-9ec5-1705c416f3f4",
+    "checked": "2026-11-11"
   },
   "Dr. Dre|The Chronic": {
     "source": "Deezer",
@@ -1332,12 +1343,12 @@
     "checked": "2026-10-03"
   },
   "Modest Mouse|The Lonesome Crowded West": {
-    "source": "Deezer",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
     "title": "The Lonesome Crowded West",
     "artist": "Modest Mouse",
-    "url": "https://cdn-images.dzcdn.net/images/cover/a83dfccff2ab4d4ee9bb9b117881a244/500x500-000000-80-0-0.jpg",
-    "page": "https://www.deezer.com/album/228054752",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/041884b1-1ac5-3c8b-93cc-ac928c78c4a0/front-500",
+    "page": "https://musicbrainz.org/release-group/041884b1-1ac5-3c8b-93cc-ac928c78c4a0",
+    "checked": "2026-11-11"
   },
   "Caetano Veloso|Transa": {
     "source": "Deezer",
@@ -1372,12 +1383,12 @@
     "checked": "2026-10-03"
   },
   "Depeche Mode|Violator": {
-    "source": "Deezer",
-    "title": "Violator (Deluxe)",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Violator",
     "artist": "Depeche Mode",
-    "url": "https://cdn-images.dzcdn.net/images/cover/2632e326fac7c48c2fbef198f295995a/500x500-000000-80-0-0.jpg",
-    "page": "https://www.deezer.com/album/14581030",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/71f1482e-e63f-3b2c-811b-939f62708f2a/front-500",
+    "page": "https://musicbrainz.org/release-group/71f1482e-e63f-3b2c-811b-939f62708f2a",
+    "checked": "2026-11-11"
   },
   "The Jesus and Mary Chain|Psychocandy": {
     "source": "Deezer",
@@ -1484,12 +1495,12 @@
     "checked": "2026-10-03"
   },
   "張懸|My Life Will...": {
-    "source": "Apple Music / iTunes",
-    "title": "My Life Will",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "My Life Will...",
     "artist": "張懸",
-    "url": "https://is1-ssl.mzstatic.com/image/thumb/Music/2c/65/a6/mzi.gfyizvei.jpg/600x600bb.jpg",
-    "page": "https://music.apple.com/tw/album/my-life-will/300117892?uo=4",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/bbed9dea-b5df-3337-82b9-b380b98dc458/front-500",
+    "page": "https://musicbrainz.org/release-group/bbed9dea-b5df-3337-82b9-b380b98dc458",
+    "checked": "2026-11-11"
   },
   "張懸|城市": {
     "source": "Apple Music / iTunes",
@@ -1964,12 +1975,12 @@
     "checked": "2026-10-03"
   },
   "Vampire Weekend|Contra": {
-    "source": "Deezer",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
     "title": "Contra",
     "artist": "Vampire Weekend",
-    "url": "https://cdn-images.dzcdn.net/images/cover/59327de36493020190874f2725a8ae2d/500x500-000000-80-0-0.jpg",
-    "page": "https://www.deezer.com/album/444895",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/6799fd76-db3d-43bd-aa91-dffae5c4d65b/front-500",
+    "page": "https://musicbrainz.org/release-group/6799fd76-db3d-43bd-aa91-dffae5c4d65b",
+    "checked": "2026-11-11"
   },
   "The National|Boxer": {
     "source": "Deezer",
@@ -1980,12 +1991,12 @@
     "checked": "2026-10-03"
   },
   "The National|High Violet": {
-    "source": "Deezer",
-    "title": "High Violet (Expanded Edition)",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "High Violet",
     "artist": "The National",
-    "url": "https://cdn-images.dzcdn.net/images/cover/2066effddff6b4e7832ccc17dac50857/500x500-000000-80-0-0.jpg",
-    "page": "https://www.deezer.com/album/695272",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/1ce57f6a-62c8-4017-ad38-3339f542faae/front-500",
+    "page": "https://musicbrainz.org/release-group/1ce57f6a-62c8-4017-ad38-3339f542faae",
+    "checked": "2026-11-11"
   },
   "Wilco|Yankee Hotel Foxtrot": {
     "source": "Deezer",
@@ -2268,12 +2279,12 @@
     "checked": "2026-10-03"
   },
   "Mac Miller|Circles": {
-    "source": "Deezer",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
     "title": "Circles",
-    "artist": "MAC MILLER",
-    "url": "https://cdn-images.dzcdn.net/images/cover/f775144a9c375ada83e1e014920a4d9a/500x500-000000-80-0-0.jpg",
-    "page": "https://www.deezer.com/album/127033012",
-    "checked": "2026-10-03"
+    "artist": "Mac Miller",
+    "url": "https://coverartarchive.org/release-group/1a19e11b-106c-45fc-8452-387216ed18f7/front-500",
+    "page": "https://musicbrainz.org/release-group/1a19e11b-106c-45fc-8452-387216ed18f7",
+    "checked": "2026-11-11"
   },
   "Anderson .Paak|Malibu": {
     "source": "Deezer",
@@ -2356,12 +2367,11 @@
     "checked": "2026-10-03"
   },
   "Bill Evans Trio|Waltz for Debby": {
-    "source": "Deezer",
-    "title": "Waltz For Debby (Original Jazz Classics Remaster 2010)",
-    "artist": "Bill Evans",
-    "url": "https://cdn-images.dzcdn.net/images/cover/7cd6d98ec20d410759e3209ff5067f17/500x500-000000-80-0-0.jpg",
-    "page": "https://www.deezer.com/album/659120",
-    "checked": "2026-10-03"
+    "source": "Wikipedia infobox (original release artwork)",
+    "title": "Waltz for Debby",
+    "url": "https://upload.wikimedia.org/wikipedia/en/c/c9/Bill_Evans_Trio_-_Waltz_for_Debby.png",
+    "page": "https://en.wikipedia.org/wiki/Waltz_for_Debby_%281962_album%29",
+    "checked": "2026-11-11"
   },
   "Charles Mingus|The Black Saint and the Sinner Lady": {
     "source": "Deezer",
@@ -2404,12 +2414,12 @@
     "checked": "2026-10-03"
   },
   "BADBADNOTGOOD|IV": {
-    "source": "Deezer",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
     "title": "IV",
-    "artist": "Badbadnotgood",
-    "url": "https://cdn-images.dzcdn.net/images/cover/be02219439c43bf65f7f1cc5a38454bc/500x500-000000-80-0-0.jpg",
-    "page": "https://www.deezer.com/album/292354382",
-    "checked": "2026-10-03"
+    "artist": "BADBADNOTGOOD",
+    "url": "https://coverartarchive.org/release-group/16297acb-896e-48e4-8390-f9ca95c4f0d9/front-500",
+    "page": "https://musicbrainz.org/release-group/16297acb-896e-48e4-8390-f9ca95c4f0d9",
+    "checked": "2026-11-11"
   },
   "Yussef Dayes|Black Classical Music": {
     "source": "Deezer",
@@ -2628,28 +2638,28 @@
     "checked": "2026-10-03"
   },
   "伍佰 & China Blue|樹枝孤鳥": {
-    "source": "verified album page",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
     "title": "樹枝孤鳥",
     "artist": "伍佰 & China Blue",
-    "url": "https://wubai.com/wp-content/uploads/2011/05/MS028.jpg",
-    "page": "https://wubai.com/《樹枝孤鳥》專輯介紹/",
-    "checked": "2026-10-03"
+    "url": "https://coverartarchive.org/release-group/c92b6146-4d83-354a-8eda-61f92b9e9335/front-500",
+    "page": "https://musicbrainz.org/release-group/c92b6146-4d83-354a-8eda-61f92b9e9335",
+    "checked": "2026-11-11"
   },
   "Tatsuro Yamashita|FOR YOU": {
-    "source": "verified album page",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
     "title": "FOR YOU",
-    "artist": "Tatsuro Yamashita",
-    "url": "https://upload.wikimedia.org/wikipedia/en/d/de/For_You_%28album_cover%29.png",
-    "page": "https://en.wikipedia.org/wiki/For_You_(Tatsuro_Yamashita_album)",
-    "checked": "2026-10-03"
+    "artist": "山下達郎",
+    "url": "https://coverartarchive.org/release-group/1bc1ba12-6114-3ef9-89e6-3f4c8f5e0bb3/front-500",
+    "page": "https://musicbrainz.org/release-group/1bc1ba12-6114-3ef9-89e6-3f4c8f5e0bb3",
+    "checked": "2026-11-11"
   },
   "竇唯|黑夢": {
-    "source": "verified album page",
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
     "title": "黑夢",
-    "artist": "竇唯",
-    "url": "https://upload.wikimedia.org/wikipedia/zh/3/39/Dou_wei_heimeng.jpg",
-    "page": "https://zh.wikipedia.org/wiki/黑梦_(专辑)",
-    "checked": "2026-10-03"
+    "artist": "窦唯",
+    "url": "https://coverartarchive.org/release-group/8043919f-01c8-3a48-be8c-ded6b3411399/front-500",
+    "page": "https://musicbrainz.org/release-group/8043919f-01c8-3a48-be8c-ded6b3411399",
+    "checked": "2026-11-11"
   },
   "Lamp|Yume": {
     "source": "verified album page",
@@ -2666,5 +2676,533 @@
     "url": "http://constellation-records.myshopify.com/cdn/shop/files/CST012_00FrontCoverLP.jpg?v=1714587754",
     "page": "https://cstrecords.com/products/godspeed-you-black-emperor-lift-your-skinny-fists-like-antennas-to-heaven",
     "checked": "2026-10-03"
+  },
+  "The Beatles|Rubber Soul": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Rubber Soul",
+    "artist": "The Beatles",
+    "url": "https://coverartarchive.org/release-group/dca03435-8adb-30a5-ba82-5a162267ff38/front-500",
+    "page": "https://musicbrainz.org/release-group/dca03435-8adb-30a5-ba82-5a162267ff38",
+    "checked": "2026-11-11"
+  },
+  "The Rolling Stones|Sticky Fingers": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Sticky Fingers",
+    "artist": "The Rolling Stones",
+    "url": "https://coverartarchive.org/release-group/4a4213d0-f224-3d51-bcca-476f61162681/front-500",
+    "page": "https://musicbrainz.org/release-group/4a4213d0-f224-3d51-bcca-476f61162681",
+    "checked": "2026-11-11"
+  },
+  "Pink Floyd|Wish You Were Here": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Wish You Were Here",
+    "artist": "Pink Floyd",
+    "url": "https://coverartarchive.org/release-group/1a272023-10d3-38ee-bab3-317b55fcc21d/front-500",
+    "page": "https://musicbrainz.org/release-group/1a272023-10d3-38ee-bab3-317b55fcc21d",
+    "checked": "2026-11-11"
+  },
+  "David Bowie|Low": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Low",
+    "artist": "David Bowie",
+    "url": "https://coverartarchive.org/release-group/f6a51281-56c4-3538-b915-65a9d4eb29b5/front-500",
+    "page": "https://musicbrainz.org/release-group/f6a51281-56c4-3538-b915-65a9d4eb29b5",
+    "checked": "2026-11-11"
+  },
+  "Joni Mitchell|Hejira": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Hejira",
+    "artist": "Joni Mitchell",
+    "url": "https://coverartarchive.org/release-group/039f2ae4-36dd-3608-9103-67ce7f6c9288/front-500",
+    "page": "https://musicbrainz.org/release-group/039f2ae4-36dd-3608-9103-67ce7f6c9288",
+    "checked": "2026-11-11"
+  },
+  "Leonard Cohen|Songs of Leonard Cohen": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Songs of Leonard Cohen",
+    "artist": "Leonard Cohen",
+    "url": "https://coverartarchive.org/release-group/34291a49-8df9-304e-bd39-16b11d829d5f/front-500",
+    "page": "https://musicbrainz.org/release-group/34291a49-8df9-304e-bd39-16b11d829d5f",
+    "checked": "2026-11-11"
+  },
+  "Ramones|Ramones": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Ramones",
+    "artist": "Ramones",
+    "url": "https://coverartarchive.org/release-group/7de1e321-4a53-3feb-b83e-f1dab88bf952/front-500",
+    "page": "https://musicbrainz.org/release-group/7de1e321-4a53-3feb-b83e-f1dab88bf952",
+    "checked": "2026-11-11"
+  },
+  "Sex Pistols|Never Mind the Bollocks, Here's the Sex Pistols": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Never Mind the Bollocks Here’s the Sex Pistols",
+    "artist": "Sex Pistols",
+    "url": "https://coverartarchive.org/release-group/e959a4b3-6306-3c45-9df6-e7241dae9ea3/front-500",
+    "page": "https://musicbrainz.org/release-group/e959a4b3-6306-3c45-9df6-e7241dae9ea3",
+    "checked": "2026-11-11"
+  },
+  "U2|The Joshua Tree": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "The Joshua Tree",
+    "artist": "U2",
+    "url": "https://coverartarchive.org/release-group/6f3e9fa6-be7a-3de8-a2b2-2072ece8a54d/front-500",
+    "page": "https://musicbrainz.org/release-group/6f3e9fa6-be7a-3de8-a2b2-2072ece8a54d",
+    "checked": "2026-11-11"
+  },
+  "The Stone Roses|The Stone Roses": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "The Stone Roses",
+    "artist": "The Stone Roses",
+    "url": "https://coverartarchive.org/release-group/88b86fe0-26f5-3949-817a-8082145e704d/front-500",
+    "page": "https://musicbrainz.org/release-group/88b86fe0-26f5-3949-817a-8082145e704d",
+    "checked": "2026-11-11"
+  },
+  "Oasis|(What's the Story) Morning Glory?": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "(What’s the Story) Morning Glory?",
+    "artist": "Oasis",
+    "url": "https://coverartarchive.org/release-group/cc7e6348-cc55-31fa-aeb2-748a46a81cb3/front-500",
+    "page": "https://musicbrainz.org/release-group/cc7e6348-cc55-31fa-aeb2-748a46a81cb3",
+    "checked": "2026-11-11"
+  },
+  "Blur|Parklife": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Parklife",
+    "artist": "Blur",
+    "url": "https://coverartarchive.org/release-group/67461c8e-d864-3910-9bf4-39e44357aac9/front-500",
+    "page": "https://musicbrainz.org/release-group/67461c8e-d864-3910-9bf4-39e44357aac9",
+    "checked": "2026-11-11"
+  },
+  "The White Stripes|Elephant": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Elephant",
+    "artist": "The White Stripes",
+    "url": "https://coverartarchive.org/release-group/d85b9684-4277-3565-b89b-115c8b4b7fd3/front-500",
+    "page": "https://musicbrainz.org/release-group/d85b9684-4277-3565-b89b-115c8b4b7fd3",
+    "checked": "2026-11-11"
+  },
+  "Interpol|Turn On the Bright Lights": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Turn On the Bright Lights",
+    "artist": "Interpol",
+    "url": "https://coverartarchive.org/release-group/e7227840-5ef2-3813-af26-15dab34e1a51/front-500",
+    "page": "https://musicbrainz.org/release-group/e7227840-5ef2-3813-af26-15dab34e1a51",
+    "checked": "2026-11-11"
+  },
+  "Queens of the Stone Age|Songs for the Deaf": {
+    "source": "Wikipedia infobox (original release artwork)",
+    "title": "Songs for the Deaf",
+    "artist": "Queens of the Stone Age",
+    "url": "https://upload.wikimedia.org/wikipedia/en/0/01/Queens_of_the_Stone_Age_-_Songs_for_the_Deaf.png",
+    "page": "https://en.wikipedia.org/wiki/Songs_for_the_Deaf",
+    "checked": "2026-11-11"
+  },
+  "Tool|Lateralus": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Lateralus",
+    "artist": "Tool",
+    "url": "https://coverartarchive.org/release-group/02f79295-21e1-34cc-82f2-63219eec4f0a/front-500",
+    "page": "https://musicbrainz.org/release-group/02f79295-21e1-34cc-82f2-63219eec4f0a",
+    "checked": "2026-11-11"
+  },
+  "Mitski|Be the Cowboy": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Be the Cowboy",
+    "artist": "Mitski",
+    "url": "https://coverartarchive.org/release-group/18564a20-d557-4f7c-81e7-8d1d40a1be55/front-500",
+    "page": "https://musicbrainz.org/release-group/18564a20-d557-4f7c-81e7-8d1d40a1be55",
+    "checked": "2026-11-11"
+  },
+  "Talk Talk|Spirit of Eden": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Spirit of Eden",
+    "artist": "Talk Talk",
+    "url": "https://coverartarchive.org/release-group/fd29e2cd-9bd7-32c6-adf9-ce80ab1cadfc/front-500",
+    "page": "https://musicbrainz.org/release-group/fd29e2cd-9bd7-32c6-adf9-ce80ab1cadfc",
+    "checked": "2026-11-11"
+  },
+  "Tom Waits|Rain Dogs": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Rain Dogs",
+    "artist": "Tom Waits",
+    "url": "https://coverartarchive.org/release-group/fb25a883-2270-3ec4-8c62-85c7ed857e6f/front-500",
+    "page": "https://musicbrainz.org/release-group/fb25a883-2270-3ec4-8c62-85c7ed857e6f",
+    "checked": "2026-11-11"
+  },
+  "Nick Cave & the Bad Seeds|The Boatman's Call": {
+    "source": "Wikipedia infobox (original release artwork)",
+    "title": "The Boatman's Call",
+    "artist": "Nick Cave & the Bad Seeds",
+    "url": "https://upload.wikimedia.org/wikipedia/en/3/31/Nick_cave_and_the_bad_seeds-the_boatman%27s_call.jpg",
+    "page": "https://en.wikipedia.org/wiki/The_Boatman%27s_Call",
+    "checked": "2026-11-11"
+  },
+  "Can|Tago Mago": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Tago Mago",
+    "artist": "Can",
+    "url": "https://coverartarchive.org/release-group/13d08c0e-14e2-30b2-9ad7-5f501761a8ea/front-500",
+    "page": "https://musicbrainz.org/release-group/13d08c0e-14e2-30b2-9ad7-5f501761a8ea",
+    "checked": "2026-11-11"
+  },
+  "Brian Eno|Ambient 1: Music for Airports": {
+    "source": "Wikipedia infobox (original release artwork)",
+    "title": "Ambient 1: Music for Airports",
+    "artist": "Brian Eno",
+    "url": "https://upload.wikimedia.org/wikipedia/en/4/46/Music_for_Airports.jpg",
+    "page": "https://en.wikipedia.org/wiki/Ambient_1%3A_Music_for_Airports",
+    "checked": "2026-11-11"
+  },
+  "Public Enemy|It Takes a Nation of Millions to Hold Us Back": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "It Takes a Nation of Millions to Hold Us Back",
+    "artist": "Public Enemy",
+    "url": "https://coverartarchive.org/release-group/01921d99-9d15-3fce-8734-46e58327cfb7/front-500",
+    "page": "https://musicbrainz.org/release-group/01921d99-9d15-3fce-8734-46e58327cfb7",
+    "checked": "2026-11-11"
+  },
+  "De La Soul|3 Feet High and Rising": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "3 Feet High and Rising",
+    "artist": "De La Soul",
+    "url": "https://coverartarchive.org/release-group/5243f39c-c344-3989-a0f6-2a2f75a9d827/front-500",
+    "page": "https://musicbrainz.org/release-group/5243f39c-c344-3989-a0f6-2a2f75a9d827",
+    "checked": "2026-11-11"
+  },
+  "JAY-Z|The Blueprint": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "The Blueprint",
+    "artist": "Jay‐Z",
+    "url": "https://coverartarchive.org/release-group/11ae8c9c-27c1-3308-9761-edb87c8f54ea/front-500",
+    "page": "https://musicbrainz.org/release-group/11ae8c9c-27c1-3308-9761-edb87c8f54ea",
+    "checked": "2026-11-11"
+  },
+  "OutKast|Stankonia": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Stankonia",
+    "artist": "OutKast",
+    "url": "https://coverartarchive.org/release-group/00d2cd53-21c9-3738-b683-56847b7b0040/front-500",
+    "page": "https://musicbrainz.org/release-group/00d2cd53-21c9-3738-b683-56847b7b0040",
+    "checked": "2026-11-11"
+  },
+  "A Tribe Called Quest|Midnight Marauders": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Midnight Marauders",
+    "artist": "A Tribe Called Quest",
+    "url": "https://coverartarchive.org/release-group/c2afedfb-034a-3683-ad47-e4404cd7c485/front-500",
+    "page": "https://musicbrainz.org/release-group/c2afedfb-034a-3683-ad47-e4404cd7c485",
+    "checked": "2026-11-11"
+  },
+  "Sade|Love Deluxe": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Love Deluxe",
+    "artist": "Sade",
+    "url": "https://coverartarchive.org/release-group/e4a67add-6aab-390c-bb82-53939fb9cd0a/front-500",
+    "page": "https://musicbrainz.org/release-group/e4a67add-6aab-390c-bb82-53939fb9cd0a",
+    "checked": "2026-11-11"
+  },
+  "Beyoncé|Lemonade": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Lemonade",
+    "artist": "Beyoncé",
+    "url": "https://coverartarchive.org/release-group/c1f22e07-7bdf-4a4f-8b50-7747c1091ef6/front-500",
+    "page": "https://musicbrainz.org/release-group/c1f22e07-7bdf-4a4f-8b50-7747c1091ef6",
+    "checked": "2026-11-11"
+  },
+  "Curtis Mayfield|Super Fly": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Super Fly (and more)",
+    "artist": "Curtis Mayfield",
+    "url": "https://coverartarchive.org/release-group/08eefe50-665d-4a91-96d3-707cbd1016a7/front-500",
+    "page": "https://musicbrainz.org/release-group/08eefe50-665d-4a91-96d3-707cbd1016a7",
+    "checked": "2026-11-11"
+  },
+  "Sly & the Family Stone|There's a Riot Goin' On": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "There’s a Riot Goin’ On",
+    "artist": "Sly & the Family Stone",
+    "url": "https://coverartarchive.org/release-group/d8b8448a-2634-3e92-ac86-cf55e018f825/front-500",
+    "page": "https://musicbrainz.org/release-group/d8b8448a-2634-3e92-ac86-cf55e018f825",
+    "checked": "2026-11-11"
+  },
+  "Funkadelic|Maggot Brain": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Maggot Brain",
+    "artist": "Funkadelic",
+    "url": "https://coverartarchive.org/release-group/a334e612-e736-3b4f-82b4-c4dfb774983c/front-500",
+    "page": "https://musicbrainz.org/release-group/a334e612-e736-3b4f-82b4-c4dfb774983c",
+    "checked": "2026-11-11"
+  },
+  "Otis Redding|Otis Blue": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Otis Blue / Otis Redding Sings Soul",
+    "artist": "Otis Redding",
+    "url": "https://coverartarchive.org/release-group/2c8fd4f3-1523-3604-97dd-18ba222e2f3b/front-500",
+    "page": "https://musicbrainz.org/release-group/2c8fd4f3-1523-3604-97dd-18ba222e2f3b",
+    "checked": "2026-11-11"
+  },
+  "The Chemical Brothers|Dig Your Own Hole": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Dig Your Own Hole",
+    "artist": "The Chemical Brothers",
+    "url": "https://coverartarchive.org/release-group/69f4aa7f-d760-3890-bd2a-902fb9abe40b/front-500",
+    "page": "https://musicbrainz.org/release-group/69f4aa7f-d760-3890-bd2a-902fb9abe40b",
+    "checked": "2026-11-11"
+  },
+  "The Knife|Silent Shout": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Silent Shout",
+    "artist": "The Knife",
+    "url": "https://coverartarchive.org/release-group/02c05025-e031-30a0-afee-d92cea9d79dd/front-500",
+    "page": "https://musicbrainz.org/release-group/02c05025-e031-30a0-afee-d92cea9d79dd",
+    "checked": "2026-11-11"
+  },
+  "SOPHIE|Oil of Every Pearl's Un-Insides": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "OIL OF EVERY PEARL’S UN‐INSIDES",
+    "artist": "SOPHIE",
+    "url": "https://coverartarchive.org/release-group/e11aa3a6-9820-483c-98f8-603b5823178b/front-500",
+    "page": "https://musicbrainz.org/release-group/e11aa3a6-9820-483c-98f8-603b5823178b",
+    "checked": "2026-11-11"
+  },
+  "Charli xcx|BRAT": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "BRAT",
+    "artist": "Charli xcx",
+    "url": "https://coverartarchive.org/release-group/e0fdb431-0109-420d-8a37-f99eaeb4d671/front-500",
+    "page": "https://musicbrainz.org/release-group/e0fdb431-0109-420d-8a37-f99eaeb4d671",
+    "checked": "2026-11-11"
+  },
+  "Thelonious Monk|Brilliant Corners": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Brilliant Corners",
+    "artist": "Thelonious Monk",
+    "url": "https://coverartarchive.org/release-group/764d0d9e-68b1-39fe-b1d1-eda104926777/front-500",
+    "page": "https://musicbrainz.org/release-group/764d0d9e-68b1-39fe-b1d1-eda104926777",
+    "checked": "2026-11-11"
+  },
+  "Sonny Rollins|Saxophone Colossus": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Saxophone Colossus",
+    "artist": "Sonny Rollins",
+    "url": "https://coverartarchive.org/release-group/cf29d6a2-a18a-3bb6-a861-495148baee1f/front-500",
+    "page": "https://musicbrainz.org/release-group/cf29d6a2-a18a-3bb6-a861-495148baee1f",
+    "checked": "2026-11-11"
+  },
+  "Eric Dolphy|Out to Lunch!": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Out to Lunch!",
+    "artist": "Eric Dolphy",
+    "url": "https://coverartarchive.org/release-group/bc6c2573-bc7d-346a-8880-0e34b8fb7e50/front-500",
+    "page": "https://musicbrainz.org/release-group/bc6c2573-bc7d-346a-8880-0e34b8fb7e50",
+    "checked": "2026-11-11"
+  },
+  "Ornette Coleman|The Shape of Jazz to Come": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "The Shape of Jazz to Come",
+    "artist": "Ornette Coleman",
+    "url": "https://coverartarchive.org/release-group/5879cfca-e1d0-3ef4-8014-3b284832ed18/front-500",
+    "page": "https://musicbrainz.org/release-group/5879cfca-e1d0-3ef4-8014-3b284832ed18",
+    "checked": "2026-11-11"
+  },
+  "Keith Jarrett|The Köln Concert": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "The Köln Concert",
+    "artist": "Keith Jarrett",
+    "url": "https://coverartarchive.org/release-group/516d4629-7bf3-3ac3-907a-ed9a022db840/front-500",
+    "page": "https://musicbrainz.org/release-group/516d4629-7bf3-3ac3-907a-ed9a022db840",
+    "checked": "2026-11-11"
+  },
+  "Fela Kuti|Zombie": {
+    "source": "Wikipedia infobox (original release artwork)",
+    "title": "Zombie",
+    "artist": "Fela Kuti",
+    "url": "https://upload.wikimedia.org/wikipedia/en/f/f5/FelaZombie.jpg",
+    "page": "https://en.wikipedia.org/wiki/Zombie_%28album%29",
+    "checked": "2026-11-11"
+  },
+  "Serge Gainsbourg|Histoire de Melody Nelson": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Histoire de Melody Nelson",
+    "artist": "Serge Gainsbourg",
+    "url": "https://coverartarchive.org/release-group/431ae137-315a-3faa-8005-c959fc0d57e9/front-500",
+    "page": "https://musicbrainz.org/release-group/431ae137-315a-3faa-8005-c959fc0d57e9",
+    "checked": "2026-11-11"
+  },
+  "Antônio Carlos Jobim|Wave": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Wave",
+    "artist": "Antônio Carlos Jobim",
+    "url": "https://coverartarchive.org/release-group/935fccc4-064a-339c-ba4c-b0acee6ff5eb/front-500",
+    "page": "https://musicbrainz.org/release-group/935fccc4-064a-339c-ba4c-b0acee6ff5eb",
+    "checked": "2026-11-11"
+  },
+  "Bob Marley & The Wailers|Exodus": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Exodus",
+    "artist": "Bob Marley & The Wailers",
+    "url": "https://coverartarchive.org/release-group/c5650313-60f3-34d3-92e4-300545133792/front-500",
+    "page": "https://musicbrainz.org/release-group/c5650313-60f3-34d3-92e4-300545133792",
+    "checked": "2026-11-11"
+  },
+  "Madonna|Ray of Light": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Ray of Light",
+    "artist": "Madonna",
+    "url": "https://coverartarchive.org/release-group/cb93e87f-5d21-3447-a6e8-22d44f9b0d7a/front-500",
+    "page": "https://musicbrainz.org/release-group/cb93e87f-5d21-3447-a6e8-22d44f9b0d7a",
+    "checked": "2026-11-11"
+  },
+  "Nick Drake|Five Leaves Left": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Five Leaves Left",
+    "artist": "Nick Drake",
+    "url": "https://coverartarchive.org/release-group/b9c4fc17-0dc5-3aa5-b1b9-08e1446e5bea/front-500",
+    "page": "https://musicbrainz.org/release-group/b9c4fc17-0dc5-3aa5-b1b9-08e1446e5bea",
+    "checked": "2026-11-11"
+  },
+  "Joanna Newsom|Ys": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Ys",
+    "artist": "Joanna Newsom",
+    "url": "https://coverartarchive.org/release-group/34315f68-08a5-3637-8da7-deaad8f45514/front-500",
+    "page": "https://musicbrainz.org/release-group/34315f68-08a5-3637-8da7-deaad8f45514",
+    "checked": "2026-11-11"
+  },
+  "王菲|天空": {
+    "source": "Wikipedia infobox (original release artwork)",
+    "title": "天空",
+    "artist": "王菲",
+    "url": "https://upload.wikimedia.org/wikipedia/en/8/84/FayeWong_Sky.jpg",
+    "page": "https://en.wikipedia.org/wiki/Sky_%28Faye_Wong_album%29",
+    "checked": "2026-11-11"
+  },
+  "Beyond|樂與怒": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "樂與怒",
+    "artist": "Beyond",
+    "url": "https://coverartarchive.org/release-group/4f019b75-7e4f-3428-a2a7-0091661b201e/front-500",
+    "page": "https://musicbrainz.org/release-group/4f019b75-7e4f-3428-a2a7-0091661b201e",
+    "checked": "2026-11-11"
+  },
+  "唐朝|唐朝": {
+    "source": "Wikipedia infobox (original release artwork)",
+    "title": "唐朝",
+    "artist": "唐朝",
+    "url": "https://upload.wikimedia.org/wikipedia/en/a/a6/TangDynasty1992.jpg",
+    "page": "https://en.wikipedia.org/wiki/Tang_Dynasty_%28album%29",
+    "checked": "2026-11-11"
+  },
+  "張楚|孤獨的人是可恥的": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "孤独的人是可耻的",
+    "artist": "张楚",
+    "url": "https://coverartarchive.org/release-group/2f725990-0429-48f1-aa36-7399ee7a723f/front-500",
+    "page": "https://musicbrainz.org/release-group/2f725990-0429-48f1-aa36-7399ee7a723f",
+    "checked": "2026-11-11"
+  },
+  "何勇|垃圾場": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "垃圾场",
+    "artist": "何勇",
+    "url": "https://coverartarchive.org/release-group/0ecdd739-d429-48a3-94bd-b90ebacaf3f0/front-500",
+    "page": "https://musicbrainz.org/release-group/0ecdd739-d429-48a3-94bd-b90ebacaf3f0",
+    "checked": "2026-11-11"
+  },
+  "羅大佑|愛人同志": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "愛人同志",
+    "artist": "羅大佑",
+    "url": "https://coverartarchive.org/release-group/af8f3eb8-3fdb-3215-8fb7-c7545fe2cd70/front-500",
+    "page": "https://musicbrainz.org/release-group/af8f3eb8-3fdb-3215-8fb7-c7545fe2cd70",
+    "checked": "2026-11-11"
+  },
+  "宋冬野|安和橋北": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "安和桥北",
+    "artist": "宋冬野",
+    "url": "https://coverartarchive.org/release-group/1686bccc-303c-4f98-8076-39b6ddc29f68/front-500",
+    "page": "https://musicbrainz.org/release-group/1686bccc-303c-4f98-8076-39b6ddc29f68",
+    "checked": "2026-11-11"
+  },
+  "刺猬|生之響往": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "生之响往",
+    "artist": "刺猬",
+    "url": "https://coverartarchive.org/release-group/a097d832-4e08-4ff2-a8d8-6a8afd67cdd6/front-500",
+    "page": "https://musicbrainz.org/release-group/a097d832-4e08-4ff2-a8d8-6a8afd67cdd6",
+    "checked": "2026-11-11"
+  },
+  "張國榮|寵愛": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "寵愛",
+    "artist": "張國榮",
+    "url": "https://coverartarchive.org/release-group/ca8f2049-3762-3773-b1b9-1c73c8bb413e/front-500",
+    "page": "https://musicbrainz.org/release-group/ca8f2049-3762-3773-b1b9-1c73c8bb413e",
+    "checked": "2026-11-11"
+  },
+  "Happy End|Kazemachi Roman": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "風街ろまん",
+    "artist": "はっぴいえんど",
+    "url": "https://coverartarchive.org/release-group/14cfc058-73ac-3028-8661-5e87c101c029/front-500",
+    "page": "https://musicbrainz.org/release-group/14cfc058-73ac-3028-8661-5e87c101c029",
+    "checked": "2026-11-11"
+  },
+  "Eiichi Ohtaki|A LONG VACATION": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "A LONG VACATION",
+    "artist": "大滝詠一",
+    "url": "https://coverartarchive.org/release-group/72f4f65e-18be-4d99-8dae-72a652deb98c/front-500",
+    "page": "https://musicbrainz.org/release-group/72f4f65e-18be-4d99-8dae-72a652deb98c",
+    "checked": "2026-11-11"
+  },
+  "Mariya Takeuchi|VARIETY": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Variety",
+    "artist": "竹内まりや",
+    "url": "https://coverartarchive.org/release-group/956911dd-1831-457d-a57d-f5feb507baad/front-500",
+    "page": "https://musicbrainz.org/release-group/956911dd-1831-457d-a57d-f5feb507baad",
+    "checked": "2026-11-11"
+  },
+  "Fishmans|Kuchu Camp": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "空中キャンプ",
+    "artist": "フィッシュマンズ",
+    "url": "https://coverartarchive.org/release-group/4babbe1a-f3d0-3611-a2ec-798a36c1c9a3/front-500",
+    "page": "https://musicbrainz.org/release-group/4babbe1a-f3d0-3611-a2ec-798a36c1c9a3",
+    "checked": "2026-11-11"
+  },
+  "NUMBER GIRL|SAPPUKEI": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "SAPPUKEI",
+    "artist": "NUMBER GIRL",
+    "url": "https://coverartarchive.org/release-group/e03980e4-3194-3a71-b4af-93a6d0d6f139/front-500",
+    "page": "https://musicbrainz.org/release-group/e03980e4-3194-3a71-b4af-93a6d0d6f139",
+    "checked": "2026-11-11"
+  },
+  "Sheena Ringo|Kalk Samen Kuri no Hana": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "加爾基 精液 栗ノ花",
+    "artist": "椎名林檎",
+    "url": "https://coverartarchive.org/release-group/e1dd240c-7bf2-3216-82c2-5f2d5d7707a5/front-500",
+    "page": "https://musicbrainz.org/release-group/e1dd240c-7bf2-3216-82c2-5f2d5d7707a5",
+    "checked": "2026-11-11"
+  },
+  "Miki Matsubara|POCKET PARK": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "POCKET PARK",
+    "artist": "松原みき",
+    "url": "https://coverartarchive.org/release-group/eb4c739a-f1da-470e-86f3-4640b0f66243/front-500",
+    "page": "https://musicbrainz.org/release-group/eb4c739a-f1da-470e-86f3-4640b0f66243",
+    "checked": "2026-11-11"
+  },
+  "cero|Obscure Ride": {
+    "source": "Cover Art Archive (MusicBrainz release group, original release)",
+    "title": "Obscure Ride",
+    "artist": "cero",
+    "url": "https://coverartarchive.org/release-group/c186af9e-fa50-4e0f-ac10-8c38324c4d2a/front-500",
+    "page": "https://musicbrainz.org/release-group/c186af9e-fa50-4e0f-ac10-8c38324c4d2a",
+    "checked": "2026-11-11"
   }
 }

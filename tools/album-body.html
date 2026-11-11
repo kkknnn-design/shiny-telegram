@@ -1,28 +1,49 @@
 <main class="app">
-  <header class="header">
-    <a class="brand" href="album.html" aria-label="每日专辑首页"><img src="album-assets/icon.svg" alt=""><div class="brand-name">每日专辑</div></a>
-    <div class="header-note"><button class="btn-install" id="btnInstall" style="display:none">安装应用</button></div>
+  <header class="masthead">
+    <a class="brand" href="album.html" aria-label="每日专辑首页"><img src="album-assets/icon.svg" alt=""><span><b>每日专辑</b><i>One record, every day</i></span></a>
+    <div class="mast-tools"><span class="mast-date" id="mastDate"></span><button class="tool" id="btnInstall" hidden>安装应用</button><button class="tool tool-icon" id="btnTheme" aria-label="切换深色 / 浅色" title="切换深色 / 浅色">◐</button></div>
   </header>
-  <section class="intro">
-    <div><h1>今日推荐</h1></div>
-    <div class="issue" id="issueNumber">001<span>今日唱片 / DAILY PICK</span></div>
-  </section>
-  <article class="card" id="card" aria-label="专辑详情">
-    <div class="cover-section"><div class="cover-bg" id="coverBg"></div><div class="cover-img-wrap" id="coverWrap"><img id="coverImg" alt="" style="display:none"><div class="fallback-cover" id="fallbackCover"><div class="album-title"></div><div class="album-artist"></div></div></div></div>
-    <div class="info-section">
-      <div class="record-label" id="recordLabel">今日推荐 / SELECTED FOR TODAY</div>
-      <div class="album-title-main" id="albumTitle" aria-live="polite"></div><div class="album-artist-main" id="albumArtist"></div><div class="meta-row" id="metaRow"></div><div class="ratings" id="ratings"></div>
-      <div class="bio-section"><div class="bio-title" id="bioTitle">关于这张唱片</div><div class="bio-text" id="bioText"></div><button class="bio-toggle" id="bioToggle" aria-expanded="false">展开阅读</button></div>
-      <div class="actions"><button class="btn btn-primary" id="btnRefresh">换一张唱片</button><button class="btn" id="btnToday">回到今日推荐</button></div>
-      <div class="listen-row"><a id="btnDetails" href="#" target="_blank" rel="noopener">了解更多</a></div>
+
+  <article class="feature" id="card" aria-label="专辑详情">
+    <div class="feature-art">
+      <div class="sleeve" id="coverWrap"><div class="disc" aria-hidden="true"></div><div class="jacket"><img id="coverImg" alt="" style="display:none"><div class="fallback-cover" id="fallbackCover"><div class="album-title"></div><div class="album-artist"></div></div></div></div>
+      <p class="art-caption" id="coverSource"></p>
+    </div>
+    <div class="feature-info">
+      <div class="kicker"><span id="recordLabel">今日推荐</span><span class="issue" id="issueNumber"></span></div>
+      <h1 id="albumTitle" aria-live="polite"></h1>
+      <p class="artist" id="albumArtist"></p>
+      <div class="meta-row" id="metaRow"></div>
+      <div class="ratings" id="ratings"></div>
+      <p class="lede" id="bioText"></p>
+      <div class="actions"><button class="btn btn-primary" id="btnRefresh">换一张唱片</button><button class="btn" id="btnToday">回到今日推荐</button><a class="link-more" id="btnDetails" href="#" target="_blank" rel="noopener">了解更多</a></div>
+      <p class="keys-hint"><kbd>空格</kbd> / <kbd>→</kbd> 换一张　<kbd>T</kbd> 回到今日　<kbd>/</kbd> 搜索</p>
     </div>
   </article>
-  <section class="library" aria-label="探索曲库">
-    <div class="section-head"><h2>唱片架 <span style="font-family:Georgia;font-style:italic;margin-left:8px">The collection</span></h2><span id="catalogCount" aria-live="polite"></span></div>
-    <div class="search-row"><label class="search-wrap"><span aria-hidden="true">⌕</span><input type="search" id="albumSearch" placeholder="搜索专辑、艺术家或年份" aria-label="搜索专辑、艺术家或年份"></label><select class="genre-select" id="genreFilter" aria-label="筛选音乐风格"><option>全部</option><option>华语</option><option>日系</option><option>摇滚</option><option>流行</option><option>独立</option><option>民谣</option><option>电子</option><option>爵士</option><option>嘻哈</option><option>R&B</option><option>灵魂乐</option></select></div>
-    <div class="catalog-grid" id="catalogGrid"></div><p class="catalog-empty" id="catalogEmpty" hidden>没有找到这张唱片。试试艺术家名，或换一个风格。</p><div class="more-row"><button class="btn-more" id="btnMore">再看一些</button></div>
+
+  <section class="liner" id="liner" aria-label="唱片内页">
+    <header class="liner-head"><h2>唱片内页</h2><span>Liner notes</span><i></i><small id="linerMeta"></small></header>
+    <div class="liner-cols">
+      <section><h3><em>01</em>创作背景</h3><p id="noteBg"></p></section>
+      <section><h3><em>02</em>聆听赏析</h3><p id="noteRv"></p></section>
+    </div>
+    <section class="tracks" id="tracksBox"><h3><em>03</em>先听这几首</h3><ol id="keyTracks"></ol></section>
   </section>
-  <section class="history"><div class="history-title">最近听过 / RECENT PICKS</div><div class="history-list" id="historyList"></div></section>
-  <footer class="footer"><span id="footerDate"></span><span id="coverSource"></span><span>评分为原曲库收录时的记录 · 新增唱片为编辑选曲</span></footer>
+
+  <section class="library" aria-label="探索曲库">
+    <div class="section-head"><h2>唱片架<span>The collection</span></h2><span class="count" id="catalogCount" aria-live="polite"></span></div>
+    <div class="search-row">
+      <label class="search-wrap"><span aria-hidden="true">⌕</span><input type="search" id="albumSearch" placeholder="搜索专辑、艺术家或年份" aria-label="搜索专辑、艺术家或年份" autocomplete="off"></label>
+      <select class="sort-select" id="sortOrder" aria-label="排序方式"><option value="default">默认顺序</option><option value="new">年份：新 → 旧</option><option value="old">年份：旧 → 新</option><option value="az">按艺术家</option></select>
+      <select class="sr-only" id="genreFilter" aria-label="筛选音乐风格" tabindex="-1"><option>全部</option><option>华语</option><option>日系</option><option>摇滚</option><option>流行</option><option>独立</option><option>民谣</option><option>电子</option><option>爵士</option><option>嘻哈</option><option>R&B</option><option>灵魂乐</option><option>金属</option><option>朋克</option><option>氛围</option></select>
+    </div>
+    <div class="chips" id="genreChips" role="group" aria-label="音乐风格"></div>
+    <div class="catalog-grid" id="catalogGrid"></div>
+    <p class="catalog-empty" id="catalogEmpty" hidden>没有找到这张唱片。试试艺术家名，或换一个风格。</p>
+    <div class="more-row"><button class="btn-more" id="btnMore">再看一些</button></div>
+  </section>
+
+  <section class="history"><div class="history-title">最近翻过 / RECENTLY PLAYED</div><div class="history-list" id="historyList"></div></section>
+  <footer class="footer"><span id="footerDate"></span><span>评分为曲库收录时的记录，新增唱片为编辑选曲 · 封面均核对为首发版本 · 文字为原创导读</span></footer>
   <div class="mobile-tip" id="mobileTip" style="display:none"><strong>把每日专辑放到主屏幕</strong><br>iPhone：Safari 分享 → 添加到主屏幕<br>Android：浏览器菜单 → 安装应用 / 添加到主屏幕<span id="hostHint" style="display:none"><br>应用安装需通过线上 HTTPS 地址访问。</span></div>
 </main>
