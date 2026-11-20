@@ -9,6 +9,8 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.platypus import BaseDocTemplate,PageTemplate,Frame,Paragraph,Spacer,PageBreak,Preformatted,XPreformatted,Table,TableStyle,Flowable,KeepTogether
 from reportlab.platypus.tableofcontents import TableOfContents
+from reportlab.platypus import Image as RLImage
+from reportlab.lib.utils import ImageReader
 from reportlab.graphics.shapes import Drawing,Group,Rect,Line,String
 from reportlab.graphics.shapes import Path as GraphicsPath
 from reportlab.graphics.svgpath import SvgPath
@@ -33,8 +35,11 @@ styles={
  'code':ParagraphStyle('code',fontName='Code',fontSize=8.3,leading=12.5,backColor=colors.HexColor('#f4f5f6'),borderPadding=7,spaceBefore=8,spaceAfter=10),
  'table':ParagraphStyle('table',fontName='Song',fontSize=8.8,leading=13,autoLeading='max',wordWrap='CJK'),
  'small':ParagraphStyle('small',fontName='Song',fontSize=9,leading=15,textColor=colors.HexColor('#5a6b79'),wordWrap='CJK',spaceAfter=6),
+ 'caption':ParagraphStyle('caption',fontName='Song',fontSize=9.5,leading=15,alignment=TA_CENTER,textColor=colors.HexColor('#425a6c'),spaceBefore=3,spaceAfter=10),
  'center':ParagraphStyle('center',fontName='Song',fontSize=11,leading=20,alignment=TA_CENTER,spaceAfter=9),
- 'h4':ParagraphStyle('h4',fontName='Song',fontSize=11.5,leading=19,spaceBefore=8,spaceAfter=5,keepWithNext=True)
+ 'h4':ParagraphStyle('h4',fontName='Song',fontSize=11.5,leading=19,spaceBefore=8,spaceAfter=5,keepWithNext=True),
+ # 条目：悬挂缩进，编号或圆点突出在左侧，续行与条目文字对齐（2026-10-28 增补）
+ 'list':ParagraphStyle('list',fontName='Song',fontSize=11,leading=19,autoLeading='max',wordWrap='CJK',alignment=TA_JUSTIFY,leftIndent=36,firstLineIndent=-14,spaceAfter=3,allowWidows=0,allowOrphans=0)
 }
 FIDX={k.replace('\r\n','\n').replace('\r','\n'):v for k,v in json.loads((ROOT/'work/formulas/index.json').read_text(encoding='utf-8')).items()}
 RASTER_INDEX=ROOT/'work/formula_rasters_v1/index.json'
@@ -163,13 +168,25 @@ def code_text(s):
 def paragraph(s,style='body'):
  return formatted_paragraph(inline(s),styles[style])
 
+def _mark_inline_images(p):
+ # \u62c6\u5206\u65f6 reportlab \u4f1a\u628a\u540e\u968f\u7a7a\u683c\u5e76\u5165\u5360\u4f4d\u7b26\uff08'\ufffc '\uff09\uff0c\u91cd\u65b0\u6298\u884c\u82e5\u5728\u4e24\u8005\u4e4b\u95f4\u65ad\u5f00\uff0c
+ # \u4e24\u6bb5\u90fd\u5e26\u540c\u4e00\u56fe\u7247\u5f15\u7528\uff0c\u516c\u5f0f\u5c31\u88ab\u753b\u4e24\u6b21\uff1b\u56e0\u6b64\u4e00\u5f8b\u91cd\u7f6e\u4e3a\u5355\u4e2a\u5360\u4f4d\u5b57\u7b26\u3002
+ for frag in p.frags:
+  if getattr(getattr(frag,'cbDefn',None),'kind',None)=='img':
+   frag.text='\ufffc'
+class CJKParagraph(Paragraph):
+ # \u8de8\u9875\u62c6\u5206\u540e\u7684\u540e\u534a\u6bb5\u4f1a\u91cd\u65b0\u6392\u884c\uff1b\u4e0d\u7ed9\u5b83\u8865\u5360\u4f4d\u5b57\u7b26\uff0c\u6298\u884c\u5904\u7684\u884c\u5185\u516c\u5f0f\u4f1a\u88ab\u753b\u4e24\u6b21\u3002
+ def split(self,availWidth,availHeight):
+  parts=Paragraph.split(self,availWidth,availHeight)
+  for q in parts:
+   if isinstance(q,Paragraph):
+    _mark_inline_images(q);q.__class__=CJKParagraph
+  return parts
 def formatted_paragraph(markup,style):
  # Give inline images an object-replacement character for CJK line breaking.
  # Their actual width/drawing still comes from cbDefn; no glyph is printed.
- p=Paragraph(markup,style)
- for frag in p.frags:
-  if not frag.text and getattr(getattr(frag,'cbDefn',None),'kind',None)=='img':
-   frag.text='\ufffc'
+ p=CJKParagraph(markup,style)
+ _mark_inline_images(p)
  return p
 def story_for(text,title):
  lines=text.splitlines();subtitle=next((x for x in lines[1:] if x.strip() and not x.startswith('#')),'中文学习教材')
@@ -209,11 +226,20 @@ def story_for(text,title):
    data=[[formatted_paragraph(inline(c,widths[j]-10),styles['table']) for j,c in enumerate(row+['']*(n-len(row)))] for row in rows]
    t=Table(data,colWidths=widths,repeatRows=1,hAlign='CENTER')
    t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),colors.HexColor('#edf1f4')),('GRID',(0,0),(-1,-1),.35,colors.HexColor('#bdc8d0')),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),5),('RIGHTPADDING',(0,0),(-1,-1),5),('TOPPADDING',(0,0),(-1,-1),5),('BOTTOMPADDING',(0,0),(-1,-1),5)]));story.extend([t,Spacer(1,6)]);continue
+  fig=re.fullmatch(r'!\[(.*?)\]\((.+?)\)',s)
+  if fig:
+   # 插图：按 300dpi 原尺寸排入，宽不超过版心 92%，高不超过 85mm，下附居中图题
+   src=OUT/fig.group(2);iw,ih=ImageReader(str(src)).getSize();w=min(CW*.92,iw/300*72);h=w*ih/iw
+   if h>85*mm:h=85*mm;w=h*iw/ih
+   img=RLImage(str(src),width=w,height=h);img.hAlign='CENTER'
+   story.append(KeepTogether([Spacer(1,4),img,Paragraph(html.escape(fig.group(1)),styles['caption'])]));i+=1;continue
   if s=='---':story.append(Spacer(1,7));i+=1;continue
   if s.startswith('>'):story.append(paragraph(s.lstrip('> '),'quote'));i+=1;continue
-  if s.startswith('- '):story.append(paragraph('• '+s[2:]));i+=1;continue
+  if s.startswith('- '):story.append(paragraph('• '+s[2:],'list'));i+=1;continue
+  num=re.match(r'^(\d+)\.\s+(.*)',s)
+  if num:story.append(paragraph(num.group(1)+'. '+num.group(2),'list'));i+=1;continue
   para=[s];i+=1
-  while i<len(lines) and lines[i].strip() and not re.match(r'^(#{1,4} |\||```|\\\[|\$\$|> |- )',lines[i].strip()):para.append(lines[i].strip());i+=1
+  while i<len(lines) and lines[i].strip() and not re.match(r'^(#{1,4} |\||```|\\\[|\$\$|> |- |\d+\.\s|!\[)',lines[i].strip()):para.append(lines[i].strip());i+=1
   story.append(paragraph(' '.join(para)))
  return story
 if __name__=='__main__':

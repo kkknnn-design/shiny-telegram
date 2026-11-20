@@ -9,7 +9,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-180.png">
-<link rel="stylesheet" href="library.css?v=b6af35ad">
+<link rel="stylesheet" href="library.css?v=7a357bb2">
 <script>try{var s=JSON.parse(localStorage.getItem('lib-settings')||'{}'),r=document.documentElement;r.setAttribute('data-theme',s.theme||'auto');if(s.font)r.setAttribute('data-font',s.font);if(s.size)r.style.setProperty('--fs',s.size+'px')}catch(e){}</script>
 </head>
 <body>
@@ -20,7 +20,7 @@
 <button class="tb" id="setBtn" aria-label="阅读设置" style="font-family:var(--serif);font-size:17px">Aa</button>
 </div><div class="progress"><i id="prog"></i></div></header>
 <main id="book" class="book">
-<section class="cover"><div class="eyebrow">个人学科教材 · 持续更新版</div><h1>C 语言程序设计</h1><div class="subtitle">程序与类型 → 控制流与函数 → 指针与数组 → 字符串 → 动态内存 → 排序与中位数 → 网格寻路</div><div class="note">中文正文：宋体　数学公式：KaTeX 数学字体<br>按知识依赖重组 · 配有概念、推导与讲解型例题<br>版本：2026-11-19-daily-01 · 扩充修订阅读版<br>历史图片未重读的细节不作为已核实原题</div></section><section class="toc"><h2>本册目录</h2><ul><li><a href="#section-0">第一章 程序、数据与表达式</a></li><li><a href="#section-1">第二章 控制流</a></li><li><a href="#section-2">第三章 函数与程序结构</a></li><li><a href="#section-3">第四章 递归与数的表示</a></li><li><a href="#section-4">第五章 指针与间接访问</a></li><li><a href="#section-5">第六章 数组与存储边界</a></li><li><a href="#section-6">第七章 类型限定与数值表示</a></li><li><a href="#section-7">第八章 字符串与字符指针</a></li><li><a href="#section-8">第九章 字符串处理函数</a></li><li><a href="#section-9">第十章 动态内存</a></li><li><a href="#section-10">第十一章 交换与按位运算</a></li><li><a href="#section-11">第十二章 伪随机数与排序</a></li><li><a href="#section-12">第十三章 中位数与顺序统计</a></li><li><a href="#section-13">第十四章 网格最短路径与波算法</a></li><li><a href="#section-14">第十五章 结构体、共用体与枚举</a></li><li><a href="#section-15">第十六章 文件与命令行参数</a></li><li><a href="#section-16">附录 术语与阅读资料</a></li></ul><p class="meta">阅读方法：依目录顺序阅读；每个例题的条件、计算与解释均在正文中展开。</p></section><p>程序构造、内存表示与算法</p>
+<section class="cover"><div class="eyebrow">个人学科教材 · 持续更新版</div><h1>C 语言程序设计</h1><div class="subtitle">程序与类型 → 控制流与函数 → 指针与数组 → 字符串 → 动态内存 → 排序与中位数 → 网格寻路</div><div class="note">中文正文：宋体　数学公式：KaTeX 数学字体<br>按知识依赖重组 · 配有概念、推导与讲解型例题<br>版本：2026-11-19-daily-02 · 扩充修订阅读版<br>历史图片未重读的细节不作为已核实原题</div></section><section class="toc"><h2>本册目录</h2><ul><li><a href="#section-0">第一章 程序、数据与表达式</a></li><li><a href="#section-1">第二章 控制流</a></li><li><a href="#section-2">第三章 函数与程序结构</a></li><li><a href="#section-3">第四章 递归与数的表示</a></li><li><a href="#section-4">第五章 指针与间接访问</a></li><li><a href="#section-5">第六章 数组与存储边界</a></li><li><a href="#section-6">第七章 类型限定与数值表示</a></li><li><a href="#section-7">第八章 字符串与字符指针</a></li><li><a href="#section-8">第九章 字符串处理函数</a></li><li><a href="#section-9">第十章 动态内存</a></li><li><a href="#section-10">第十一章 交换与按位运算</a></li><li><a href="#section-11">第十二章 伪随机数与排序</a></li><li><a href="#section-12">第十三章 中位数与顺序统计</a></li><li><a href="#section-13">第十四章 网格最短路径与波算法</a></li><li><a href="#section-14">第十五章 结构体、共用体与枚举</a></li><li><a href="#section-15">第十六章 文件与命令行参数</a></li><li><a href="#section-16">附录 术语与阅读资料</a></li></ul><p class="meta">阅读方法：依目录顺序阅读；每个例题的条件、计算与解释均在正文中展开。</p></section><p>程序构造、内存表示与算法</p>
 <p>本册从可以运行的小程序开始，逐步引入类型、控制流、函数、指针和数组，再用字符串处理、动态内存与排序把这些机制结合起来。每段代码的解释围绕执行时的对象变化展开；变量的名字不能代替类型和存储关系。</p>
 <p>编排参考 K&amp;R《C 程序设计语言》第 1 章的示例引入方法，以及第 5 章从地址到数组、从字符存储到复制函数的展开方式。示例按当前课程重写，采用显式返回类型与必要的边界检查。</p>
 <h2 id="section-0">第一章 程序、数据与表达式</h2>
@@ -35,6 +35,7 @@ int main(void)
     return 0;
 }
 </code></pre>
+<figure class="fig"><img src="img/01-afe1efb557.png" width="1564" height="428" loading="lazy" decoding="async" alt="图 1-1　从源文件到可执行文件"><figcaption>图 1-1　从源文件到可执行文件</figcaption></figure>
 <ul>
 <li><code>#include &lt;stdio.h&gt;</code>：引入标准输入输出功能。</li>
 <li><code>int main(void)</code>：程序入口；<code>void</code> 表示这里不接收参数。</li>
@@ -95,6 +96,7 @@ double r3 = (double)(a / b);// 已丢掉小数，仍为 3.0
 </code></pre>
 <p>整除（целочисленное деление）向零截断：-7 / 2 是 -3，-7 % 2 是 -1。转换（приведение типа）不会把已经丢失的小数补回来。除数不能为 0，INT_MIN / -1 在结果无法表示时也不合法。</p>
 <p><strong>scanf：地址和格式必须匹配</strong></p>
+<figure class="fig"><img src="img/01-57b3f3e57f.png" width="1200" height="425" loading="lazy" decoding="async" alt="图 1-2　scanf 从输入流中取数并写入变量"><figcaption>图 1-2　scanf 从输入流中取数并写入变量</figcaption></figure>
 <pre><code class="language-c">int age;
 double height;
 char grade;
@@ -152,6 +154,7 @@ if (scanf(&quot; %c&quot;, &amp;grade) != 1)
 <p>Visual Studio 按 Ctrl+F5 时，编译运行的是当前窗口中打开的解决方案，而不是眼睛正看着的那份代码。同时开着两个项目窗口时，很容易把代码粘贴进一个项目，却在另一个窗口按下运行。运行结束后，输出窗口末尾会显示所运行的可执行文件路径，例如以 <code>wave4\x64\Debug\wave4.exe</code> 结尾，据此可以核对跑的是哪个项目。编辑器标签上带星号表示修改尚未保存；若出现“存在生成错误，是否继续运行上次成功生成的版本”的提示，选择“是”运行的是旧程序。</p>
 <h3 id="s1-2">基本类型的大小与取值范围</h3>
 <p>C 标准只规定了各种整数类型的最小范围和大小顺序（<code>char</code> ≤ <code>short</code> ≤ <code>int</code> ≤ <code>long</code> ≤ <code>long long</code>），具体占多少字节由编译器和平台决定。实际范围应查 <code>&lt;limits.h&gt;</code>（整数）和 <code>&lt;float.h&gt;</code>（浮点数）中的常量，不要凭记忆硬写。下面的程序打印本机的实际值：</p>
+<figure class="fig"><img src="img/01-94e2c595dd.png" width="1200" height="587" loading="lazy" decoding="async" alt="图 1-3　常见类型在 Windows x64（MSVC）下的大小"><figcaption>图 1-3　常见类型在 Windows x64（MSVC）下的大小</figcaption></figure>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 #include &lt;limits.h&gt;
 #include &lt;float.h&gt;
@@ -295,6 +298,7 @@ printf(&quot;[%6.2f] [%-6d] [%06d] [%e] [%g] [%%]\n&quot;,
 <p><code>%6.2f</code> 表示总宽度六、保留两位小数，不足部分在左边补空格；<code>%-6d</code> 左对齐，空格补在右边；<code>%06d</code> 用零补齐。宽度只是最小宽度，数据更长时不会被截断。</p>
 <h3 id="s1-4">运算符的优先级、结合性与类型转换</h3>
 <p>一个表达式中有多个运算符时，先算哪一个由优先级决定；优先级相同时，由结合性决定从左到右还是从右到左。下表从高到低列出常用运算符：</p>
+<figure class="fig"><img src="img/01-428ae752b1.png" width="1328" height="675" loading="lazy" decoding="async" alt="图 1-4　按优先级和结合性得到的表达式树"><figcaption>图 1-4　按优先级和结合性得到的表达式树</figcaption></figure>
 <div class="tbl"><table>
 <thead>
 <tr>
@@ -466,6 +470,7 @@ if (n &lt; 1);          /* if 的语句体是空语句；设后文有标签 err 
 <p>只有 printf 属于 if。把两条语句放进 <code>{ }</code> 之后，二者才同时依赖条件。这类写法通常能通过编译，有的编译器只给出警告，所以分支内总写花括号可以从结构上避免这两种错误。</p>
 <h3 id="s2-2">循环迭代</h3>
 <p>循环（цикл）：</p>
+<figure class="fig"><img src="img/01-f6284cb0b7.png" width="1200" height="578" loading="lazy" decoding="async" alt="图 2-1　if–else 与 for 循环的流程"><figcaption>图 2-1　if–else 与 for 循环的流程</figcaption></figure>
 <pre><code class="language-c">int n = 25;
 
 while (n &gt; 0)
@@ -578,6 +583,7 @@ switch (x)
 
 printf(&quot;D&quot;);
 </code></pre>
+<figure class="fig"><img src="img/01-a724d8f08a.png" width="1296" height="584" loading="lazy" decoding="async" alt="图 2-2　switch 的跳转与贯穿"><figcaption>图 2-2　switch 的跳转与贯穿</figcaption></figure>
 <p>执行路线：</p>
 <pre><code class="language-text">x == 1
 → 进入 case 1
@@ -668,6 +674,7 @@ int main(void)
     return 0;
 }
 </code></pre>
+<figure class="fig"><img src="img/01-f695e450f4.png" width="1247" height="736" loading="lazy" decoding="async" alt="图 3-1　函数调用时的栈帧"><figcaption>图 3-1　函数调用时的栈帧</figcaption></figure>
 <p>正在执行 <code>f</code> 时，可用简化图理解调用栈（стек вызовов）：</p>
 <pre><code class="language-text">较新的调用
 ┌────────────────┐
@@ -934,6 +941,7 @@ int UNIQUE(tmp) = 0, UNIQUE(tmp) = 1;   /* int tmp0 = 0, tmp1 = 1; */
 <p>有些任务可以分解成一个规模更小的同类任务。递归函数正是把这种分解写进函数调用中。分解必须趋近一个可以直接处理的终止情形；调用返回时，尚未完成的工作再依次继续。进制转换同时展示了递归与迭代两种组织计算的方法。</p>
 <h3 id="s4-1">递归计算</h3>
 <p>递归（рекурсия）是函数直接或间接调用自己。</p>
+<figure class="fig"><img src="img/01-af49bbaf45.png" width="1425" height="625" loading="lazy" decoding="async" alt="图 4-1　递归的递推与回归：fact(3)"><figcaption>图 4-1　递归的递推与回归：fact(3)</figcaption></figure>
 <pre><code class="language-c">void f(int n)
 {
     if (n &gt; 0)
@@ -1155,6 +1163,7 @@ int *p = &amp;x;
 *p == x;   // 值相等
 </code></pre>
 <p><strong>同一个 <code>*</code> 的两种语法作用</strong></p>
+<figure class="fig"><img src="img/01-d1b39981ef.png" width="1331" height="532" loading="lazy" decoding="async" alt="图 5-1　指针保存另一个对象的地址（地址为示意值）"><figcaption>图 5-1　指针保存另一个对象的地址（地址为示意值）</figcaption></figure>
 <pre><code class="language-c">int *p = &amp;x;
 </code></pre>
 <p>这里的 <code>*</code> 是声明的一部分：声明 <code>p</code> 是“指向 <code>int</code> 的指针”。</p>
@@ -1234,6 +1243,7 @@ main_x 仍然是 6
 </code></pre>
 <p>最终输出 <code>6</code>。</p>
 <p><strong>指针参数</strong></p>
+<figure class="fig"><img src="img/01-45dc94f93a.png" width="1200" height="460" loading="lazy" decoding="async" alt="图 5-2　值传递与指针传递的交换函数"><figcaption>图 5-2　值传递与指针传递的交换函数</figcaption></figure>
 <pre><code class="language-c">void f(int *p)
 {
     *p = *p * 2;
@@ -1289,6 +1299,7 @@ change(&amp;x, &amp;x);
 <h3 id="s5-3">指针的算术运算</h3>
 <pre><code class="language-text">p + 1 的实际字节位移 = sizeof(*p)
 </code></pre>
+<figure class="fig"><img src="img/01-e552fa4614.png" width="1518" height="520" loading="lazy" decoding="async" alt="图 5-3　指针加一按所指类型的大小前进"><figcaption>图 5-3　指针加一按所指类型的大小前进</figcaption></figure>
 <p>在常见的 <code>sizeof(int) == 4</code> 的环境中：</p>
 <pre><code class="language-text">int *pa: 1000 → pa + 1 → 1004
 char *pc: 1000 → pc + 1 → 1001
@@ -1307,6 +1318,7 @@ p++;
 <p>当许多同类型数据需要统一处理时，逐个命名变量会使程序失去一般性。数组把这些对象按顺序存放，下标把一个整数映射到其中的元素。指针和数组由这种连续关系联系起来，但二者的类型、赋值规则和存储需求并不相同。</p>
 <h3 id="s6-1">数组的连续存储与遍历</h3>
 <p><strong>数组元素连续存放</strong></p>
+<figure class="fig"><img src="img/01-906dd6ead1.png" width="1451" height="492" loading="lazy" decoding="async" alt="图 6-1　一维数组的连续存储"><figcaption>图 6-1　一维数组的连续存储</figcaption></figure>
 <pre><code class="language-c">int A[5] = {10, 20, 30, 40, 50};
 </code></pre>
 <pre><code class="language-text">        A[0]  A[1]  A[2]  A[3]  A[4]
@@ -1394,6 +1406,7 @@ printf(&quot;%d %d\n&quot;, p[0], p[1]); // 8 2
 <p><code>p[0]</code> 与 <code>*p</code> 等价；<code>p[1]</code> 与 <code>*(p + 1)</code> 等价。这里的下标以 p 当前指向的位置为起点，不一定以原数组 a[0] 为起点。</p>
 <h3 id="s6-3">多维数组与行指针</h3>
 <p>二维数组可以看作“以一维数组为元素的数组”。声明 <code>int An2[3][5];</code> 建立三个元素，每个元素又是含五个 int 的数组。因此 An2 在多数表达式中转换为指向第一行的指针，而不是直接转换为 int 指针。</p>
+<figure class="fig"><img src="img/01-c99ccc6c79.png" width="1574" height="607" loading="lazy" decoding="async" alt="图 6-2　二维数组按行连续存放"><figcaption>图 6-2　二维数组按行连续存放</figcaption></figure>
 <pre><code class="language-c">int An1[5] = {10, 20, 30, 40, 50};
 int An2[3][5] = {{1, 2, 3, 4, 5},
                  {6, 7, 8, 9, 10},
@@ -1553,6 +1566,7 @@ void fun(int n)
 <h3 id="s7-1">const 限定与指针比较</h3>
 <p>const 相关内容是围绕学习中的问题补充的系统说明。俄语：константный указатель（常量指针）；указатель на константу（指向常量的指针）。</p>
 <p><strong>先分开两个问题</strong></p>
+<figure class="fig"><img src="img/01-af68b3c46f.png" width="1200" height="375" loading="lazy" decoding="async" alt="图 7-1　const 位置不同，限制对象不同"><figcaption>图 7-1　const 位置不同，限制对象不同</figcaption></figure>
 <ol>
 <li>能不能让 p 改为指向另一个对象？</li>
 <li>能不能通过 *p 修改当前对象？</li>
@@ -1621,6 +1635,7 @@ int close_enough(double a, double b,
 <p>字符串在 C 中以字符数组保存，用零字符标记结尾。这种表示使字符串可以沿用数组和指针的操作，同时要求程序始终明确字符内容和存储容量的区别。</p>
 <h3 id="s8-1">字符编码与零结尾表示</h3>
 <p><code>char</code> 保存字符编码。ASCII 环境下，<code>&#39;A&#39;</code> 的值为十进制 65、十六进制 41；这三个写法表达同一个数值。输出格式决定显示方式，不能由此认为所有 C 实现都必须使用 ASCII。</p>
+<figure class="fig"><img src="img/01-710e83293a.png" width="1346" height="468" loading="lazy" decoding="async" alt="图 8-1　字符串以零字符结尾"><figcaption>图 8-1　字符串以零字符结尾</figcaption></figure>
 <pre><code class="language-c">char ch = &#39;A&#39;;
 printf(&quot;%c %d %x\n&quot;, ch, (int)ch, (unsigned int)(unsigned char)ch);
 /* ASCII 环境：A 65 41 */
@@ -1657,6 +1672,7 @@ printf(&quot;%c\n&quot;, sarr[1][2]);          // F
 sarr2[0] = &quot;hello&quot;;                 // 可以改保存的地址
 /* sarr2[0][0] = &#39;X&#39;; 不允许通过 const char * 写字符 */
 </code></pre>
+<figure class="fig"><img src="img/01-2bd2d47509.png" width="1200" height="379" loading="lazy" decoding="async" alt="图 8-2　字符串指针数组与二维字符数组"><figcaption>图 8-2　字符串指针数组与二维字符数组</figcaption></figure>
 <p>sarr 是数组，每个元素为 char 指针。<code>sarr[1]</code> 取第二个指针；<code>sarr[1][2]</code> 再取该指针指向位置之后的第三个字符，等价于 <code>*(*(sarr + 1) + 2)</code>。它不同于 <code>char (*p)[5]</code>：后者是一个指向五元素字符数组的指针。</p>
 <h3 id="s8-5">字符串长度与对象大小</h3>
 <p>strlen 声明在 <code>&lt;string.h&gt;</code>，返回第一个结束符之前的字节数，不包含结束符。它要求输入已经是有效字符串，不能用它先判断一个无结束符数组是否安全。sizeof 是运算符，计算对象或类型的字节大小。</p>
@@ -1844,6 +1860,7 @@ char *join_bad(const char *a, const char *b)
 <p>调用者拿到的地址指向一块已经结束生命周期的存储，使用它是未定义行为；而且 100 是写死的，a、b 稍长就越界。若最大长度事先确定且不大，例如日期 &quot;2026-10-22&quot;、学号或一行命令，用固定数组配合容量检查完全可以。长度事先未知、数据很大、或者结果要交给函数外使用时，才需要动态内存。</p>
 <h3 id="s10-2">堆与 malloc、calloc</h3>
 <p>动态分配的存储来自一片称为堆（куча）的区域。课堂板书用一条长线表示这片区域：调用 <code>malloc(N)</code> 时，系统从空闲（свободно）部分划出 N 个字节标记为已占用（занято），再把这块存储的起始地址交给用户（передаём пользователю）。动态内存的操作只有两类：分配（выделение）与释放（освобождение）。</p>
+<figure class="fig"><img src="img/01-4e8f505f3e.png" width="954" height="769" loading="lazy" decoding="async" alt="图 10-1　程序运行时的内存分区（示意）"><figcaption>图 10-1　程序运行时的内存分区（示意）</figcaption></figure>
 <pre><code class="language-c">#include &lt;stdlib.h&gt;
 
 void *malloc(size_t size);
@@ -1924,6 +1941,7 @@ if (fgets(tmp, sizeof tmp, stdin) != NULL) {
 <p>fgets 最多读 255 个字符，绝不越界；超长部分留在输入流中，需要时按第九章的方法另行处理。临时数组随函数结束而消失，长期保存的副本只占实际需要的大小。其二，边读边扩大：先分配一个小缓冲区，逐个字符读入，满了就换一块两倍大的，把旧内容搬过去，直到读到换行。这一步由下一节的 realloc 完成。后一种做法程序本身不设上限，但存储并非无限：真正的上限是系统剩余的可用内存。缓冲区不断加倍，总有一次申请失败，代码必须能处理这种情况。</p>
 <h3 id="s10-5">realloc 与容量调整</h3>
 <p><code>realloc(memblock, newsize)</code> 把一块已分配的存储调整为 newsize 字节。课堂例子中，buf 只有 100 字节，却要放入 105 个字节，于是板书从 strncpy 调用里的 buf 和 105 各引一条箭头，分别连到 realloc 的 memblock 与 newsize：先把 buf 扩成 105 字节，再写入。</p>
+<figure class="fig"><img src="img/01-aa4b52d190.png" width="1523" height="535" loading="lazy" decoding="async" alt="图 10-2　realloc 可能搬到新位置"><figcaption>图 10-2　realloc 可能搬到新位置</figcaption></figure>
 <p>realloc 内部有两种情况。若原块后面恰有足够的空闲字节，就原地延长，返回的地址与原地址相同；若后面已被占用，就另找一块足够大的存储，把原有内容复制过去，释放原块，返回新地址。板书在返回值下写 возможно == buf（可能等于 buf），说的正是这一点：调用者事先不知道是哪种情况，所以必须使用返回值，不能假定地址不变。扩大时原有内容保留，新增部分与 malloc 一样是不确定值；缩小时只保留前 newsize 个字节。<code>realloc(NULL, n)</code> 等价于 <code>malloc(n)</code>。</p>
 <p>realloc 也可能失败，失败时返回空指针，原块保持不变、仍归调用者所有（板书：проверить на NULL）。因此不能直接写 <code>buf = realloc(buf, 105);</code>：一旦失败，buf 被改成空指针，原块的地址随之丢失，既无法继续使用其中内容，也无法释放。稳妥的写法先把结果放进临时变量：</p>
 <pre><code class="language-c">char *tmp = realloc(buf, 105);
@@ -1989,6 +2007,7 @@ int main(void)
 <p><strong>复制与追加的选择。</strong> 这里用 strncpy_s 而不用 strncat_s，是因为两者含义不同：复制从目标开头写，覆盖原内容；追加先在目标中寻找结束符，从那里接着写。malloc 得到的 buf 中只有 <code>buf[1]</code> 确定，其他字节不确定，strncat_s 可能在某个碰巧为零的位置之后接上 &quot;Hello!&quot;，前面留下乱码，也可能在容量内找不到结束符而返回 <code>EINVAL</code>。若先执行 <code>buf[0] = &#39;\0&#39;;</code>，或一开始用 calloc 分配，二者效果才相同。要把新内容放入一块刚分配的存储，用复制；要在已有字符串后面接内容，用追加，并且前提是目标已经是合法字符串。同理，<code>buf = &quot;Hi&quot;;</code> 也不能代替复制：它只是让 buf 改指向字面量，原来分配的地址随之丢失，再也无法释放。</p>
 <h3 id="s10-6">动态二维数组的三种组织方式</h3>
 <p>第六章的 <code>int a[10][15]</code> 要求行数和列数在编译时写定。行列数来自用户输入或文件时，只能在堆上申请；同时又希望保留 <code>a[i][j]</code> 这种自然的写法。课堂板书给出三种组织方式，区别在于“第几行第几列”怎样换算成内存位置。</p>
+<figure class="fig"><img src="img/01-f750cf5e56.png" width="1200" height="335" loading="lazy" decoding="async" alt="图 10-3　动态二维数组的三种组织方式"><figcaption>图 10-3　动态二维数组的三种组织方式</figcaption></figure>
 <p><strong>方式一：行指针表 <code>int **</code>。</strong> 先申请一列指针，再为每一行单独申请一段整数，把各行地址存进那一列：</p>
 <pre><code class="language-c">int **table, rn, cn;
 rn = 10; cn = 15;
@@ -2434,6 +2453,7 @@ sorted: 4 8 22 35
 <p>从大到小排序时，第 i 轮在尚未排列的区间 i…n−1 中找最大值下标，再与第 i 个位置交换。外层循环固定“这一轮排好哪里”，内层循环负责“在剩余部分找谁最大”。</p>
 <p>循环不变量：第 i 轮开始前，前 i 个位置已经按降序放好了最大的 i 个值。完成这一轮后，这个性质扩展到 i+1 个位置。这个解释说明算法为何正确，而不仅是解释每行语法。</p>
 <p><strong>小例子。</strong> 3、8、2、6：第 0 轮找到 8，交换后是 8、3、2、6；第 1 轮从 3、2、6 中找 6，得到 8、6、2、3；第 2 轮得到 8、6、3、2。最后一个数自然就位，所以只需 n−1 轮。</p>
+<figure class="fig"><img src="img/01-9bd13009ec.png" width="1231" height="584" loading="lazy" decoding="async" alt="图 12-1　选择排序（降序）的每一轮"><figcaption>图 12-1　选择排序（降序）的每一轮</figcaption></figure>
 <p>下面是用指针数组实现降序访问的完整课堂程序。注释和输出使用英文。随机数缩放沿用课堂公式，它适合演示，不保证 0…1000 每个值严格等概率。</p>
 <pre><code class="language-c">#define _CRT_SECURE_NO_WARNINGS
 #include &lt;stdio.h&gt;
@@ -2584,6 +2604,7 @@ void selection_sort_desc(int a[], int n)
 </code></pre>
 <p>内层循环的上限 <code>n - 1 - i</code> 很重要：第 <code>i</code> 趟结束后，末尾的 <code>i + 1</code> 个元素已经是最大的若干个并且有序，再比较它们是浪费；同时 <code>j + 1</code> 最大为 <code>n - 1 - i</code>，不会越界。</p>
 <p><strong>插入排序</strong>像整理手中的扑克牌：把数组分成前面已排好序的部分和后面未处理的部分，每次取出未处理部分的第一个元素，在已排序部分中从后向前寻找它的位置，比它大的元素依次后移一格，最后把它放入空出的位置：</p>
+<figure class="fig"><img src="img/01-4439ccf969.png" width="1285" height="460" loading="lazy" decoding="async" alt="图 12-2　插入排序的一步"><figcaption>图 12-2　插入排序的一步</figcaption></figure>
 <pre><code class="language-c">void insertion_sort(int a[], int n)
 {
     int i, j, key;
@@ -2631,6 +2652,7 @@ void selection_sort_desc(int a[], int n)
 <p>三者的时间复杂度都是 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1.0641em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>：数据量增加十倍，运行时间大约增加一百倍。处理大量数据时应使用 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">lo<span style="margin-right:0.0139em;">g</span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> 的算法，例如标准库的 <code>qsort</code>（见本章最后一节）。</p>
 <h3 id="s12-9">二分查找</h3>
 <p>在有序数组中查找一个值，不必从头逐个比较。二分查找每次取当前范围的中间元素：若等于目标，找到；若小于目标，目标只可能在右半部分；若大于目标，只可能在左半部分。每比较一次，范围缩小一半：</p>
+<figure class="fig"><img src="img/01-810fd9bc3d.png" width="1425" height="570" loading="lazy" decoding="async" alt="图 12-3　二分查找的范围逐次减半"><figcaption>图 12-3　二分查找的范围逐次减半</figcaption></figure>
 <pre><code class="language-c">int binary_search(const int a[], int n, int target)
 {
     int lo = 0, hi = n - 1;
@@ -2732,6 +2754,7 @@ int main(void)
 <h3 id="s14-1">场地模型与邻域偏移表</h3>
 <p>场地是 10×10 的格子（клетка）。每格有权重（вес），表示经过该格的代价；部分格子是障碍（препятствие），不能进入。基础题中每格权重都是 1，代价就等于步数；加强题把权重改为 1.00 到 5.00 之间的随机小数，此时步数少的路线不一定便宜。</p>
 <p>从一格可以走到相邻的 8 格：上下左右与 4 个斜角。若当前格为 (r, c)，第 k 个邻格的行列变化写在两个平行数组里：</p>
+<figure class="fig"><img src="img/01-e4c582681f.png" width="1228" height="618" loading="lazy" decoding="async" alt="图 14-1　八邻域与偏移表"><figcaption>图 14-1　八邻域与偏移表</figcaption></figure>
 <pre><code class="language-c">int dr[8] = {-1, -1, -1,  0, 0,  1, 1, 1};
 int dc[8] = {-1,  0,  1, -1, 1, -1, 0, 1};
 </code></pre>
@@ -2883,6 +2906,7 @@ while (changed) {
 <p><strong>容差 0.000001 的作用。</strong> 第七章说明，大多数小数在 double 中只能近似存储，例如 <code>0.1 + 0.2</code> 实际比 0.3 略大。两条真实代价同为 6.50 的路线，求和次序不同，可能分别得到 6.500000000000001 和 6.499999999999999。若直接比较 <code>nd &lt; dist</code>，后到的路线会被误判为“更小”，导致多扫一轮，并使路线选择依赖舍入误差的方向。要求新值至少小 0.000001 才更新，舍入误差（约 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">15</span></span></span></span></span></span></span></span></span></span></span></span> 量级）造成的假更小被挡住；而本题权重精确到 0.01，两条代价不同的路线至少相差 0.01，真正的改进仍能通过。容差取在“远大于舍入误差、远小于真实差距”的范围内即可，0.0001 同样可用。去掉容差后最小代价通常仍然正确，它主要防止无意义的更新。</p>
 <h3 id="s14-5">由代价表恢复路径</h3>
 <p>放波结束后，若起点的 dist 仍为 −1，说明障碍把起点与终点完全隔开，不存在路径。否则从起点出发，每一步走向满足</p>
+<figure class="fig"><img src="img/01-807fecb4b9.png" width="1200" height="587" loading="lazy" decoding="async" alt="图 14-2　波算法：逐层扩展与沿步数递减回溯路径（示范场地）"><figcaption>图 14-2　波算法：逐层扩展与沿步数递减回溯路径（示范场地）</figcaption></figure>
 <div class="math-block"><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mopen">(</span><span class="mord text"><span class="mord cjk_fallback">下一格</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mopen">(</span><span class="mord text"><span class="mord cjk_fallback">当前格</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0269em;">w</span><span class="mopen">(</span><span class="mord text"><span class="mord cjk_fallback">当前格</span></span><span class="mclose">)</span></span></span></span></span></div>
 <p>的邻格。基础题中权重全为 1，这一条就是“走向比自己小 1 的格子”：起点为 7 时依次走 6、5、4、3、2、1，到达写 0 的终点。</p>
 <pre><code class="language-c">r = sr;
@@ -3553,6 +3577,7 @@ qsort(cls, 3, sizeof cls[0], cmp_score);
 <p>排序时整个结构体一起移动，姓名、学号与成绩始终保持对应。上例中第一个学生加十分后为 88.5，按成绩降序排列的结果是 Wang 91.0、Li 88.5、Zhao 85.0。</p>
 <h3 id="s15-3">链表</h3>
 <p>数组的长度在定义时就固定了，在中间插入或删除元素需要移动后面的所有元素。链表是另一种存放一列数据的方式：每个结点用 <code>malloc</code> 单独分配，除了数据外还保存下一个结点的地址，结点之间通过指针连成一串。</p>
+<figure class="fig"><img src="img/01-a36a2462eb.png" width="1518" height="607" loading="lazy" decoding="async" alt="图 15-1　单链表与在中间插入结点"><figcaption>图 15-1　单链表与在中间插入结点</figcaption></figure>
 <pre><code class="language-c">struct Node {
     int value;
     struct Node *next;
@@ -3625,6 +3650,7 @@ printf(&quot;NULL\n&quot;);
 <p>使用链表时最常见的错误有三种：忘记检查 <code>malloc</code> 是否返回 <code>NULL</code>；修改指针的顺序不对，导致后面的结点丢失；释放后继续使用结点（悬空指针）或者忘记释放（内存泄漏），这与第十章动态内存的规则相同。</p>
 <h3 id="s15-4">双向链表与柔性数组成员</h3>
 <p>单向链表只能从头往后走：要删除某个结点，必须先找到它前面的结点，才能修改前者的 <code>next</code>；要在末尾追加，也得从头走到尾。双向链表（двусвязный список）在每个结点中再存一个指向前一个结点的指针，并同时保存首、尾两个指针，这样在已知结点地址时，删除和尾部追加都只需修改几个指针。下面以课堂上保存城市名的程序为例。</p>
+<figure class="fig"><img src="img/01-4a8c59c101.png" width="1425" height="378" loading="lazy" decoding="async" alt="图 15-2　双向链表"><figcaption>图 15-2　双向链表</figcaption></figure>
 <pre><code class="language-c">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;string.h&gt;
@@ -3751,6 +3777,7 @@ SPb &lt;-&gt; Beijing &lt;-&gt; The Hague
 <h3 id="s15-5">二叉搜索树</h3>
 <p>链表查找要从头逐个比较，元素有 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个时最坏比较 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 次。若在插入时就按大小安排位置，查找可以快得多，二叉搜索树（двоичное дерево поиска）就是这样的结构。每个结点最多有左、右两个子结点；对任一结点，左子树中的键都小于它，右子树中的键都大于它。</p>
 <p><strong>插入规则。</strong> 新键从根开始比较：比当前结点大往右（направо），小往左（налево），相等则忽略（игнорируем），一直走到某个空位置，把新结点放在那里。依次插入 5、8、15、3、7、11：5 成为根；8 大于 5，成为 5 的右子；15 大于 5、大于 8，成为 8 的右子；3 小于 5，成为 5 的左子；7 大于 5、小于 8，成为 8 的左子；11 大于 5、大于 8、小于 15，成为 15 的左子。</p>
+<figure class="fig"><img src="img/01-e352cc59b6.png" width="1065" height="630" loading="lazy" decoding="async" alt="图 15-3　二叉搜索树的插入"><figcaption>图 15-3　二叉搜索树的插入</figcaption></figure>
 <p>插入可以只用循环，不用递归。结点中除左右指针外再存父结点指针 <code>parent</code>，它的作用与双向链表中的 <code>pPrev</code> 相同，使后面的遍历也能只用循环沿树上下移动。</p>
 <pre><code class="language-c">struct TNode {
     int key;
@@ -4107,6 +4134,7 @@ tree_free(&amp;root);
 <p>文件被反复创建、删除和加长之后，空闲簇会变得零散，新文件只能拆开放进各处空隙，同一文件的簇不再相邻，这称为碎片化（фрагментация）。读这样的文件时，机械硬盘的磁头要来回寻道，速度变慢。碎片整理（дефрагментация）把同一文件的簇搬到一起连续存放。固态硬盘没有机械磁头，碎片对它的影响很小，一般不需要整理。</p>
 <h3 id="s16-2">目录树与路径</h3>
 <p>目录（каталог，也称文件夹）中可以存放文件和下一级目录，所以整个磁盘的组织是一棵树（дерево）：盘符 <code>C:</code> 是根，目录是分支，文件是叶子。从根沿分支走到某个文件所经过的目录序列，就是该文件的路径（путь）。下面的讨论都以这棵示意目录树为例，其中 <code>b</code>、<code>d</code>、<code>i</code> 是目录，<code>g</code>、<code>k</code>、<code>l</code> 是文件：</p>
+<figure class="fig"><img src="img/01-70a52e6fd0.png" width="1378" height="627" loading="lazy" decoding="async" alt="图 16-1　目录树与相对路径"><figcaption>图 16-1　目录树与相对路径</figcaption></figure>
 <pre><code class="language-text">C:
 ├── a
 ├── b
@@ -4381,6 +4409,7 @@ struct Node *tree_load(FILE *f)
 <p>这两个函数与建树、打印、释放函数一起，于 2026-11-19 用 MSVC（/W4）编译运行，无警告，输出与上文一致。</p>
 <h3 id="s16-7">文件定位与随机访问</h3>
 <p>每个打开的文件都有一个文件位置指示器，记录下一次读写从第几个字节开始（从 0 开始计数）；每读写一次，它自动向后移动所读写的字节数。俄语课程称这一部分为定位（позиционирование）。查看和移动位置的函数是</p>
+<figure class="fig"><img src="img/01-07096f8ef0.png" width="1471" height="480" loading="lazy" decoding="async" alt="图 16-2　fseek 的三种起点"><figcaption>图 16-2　fseek 的三种起点</figcaption></figure>
 <pre><code class="language-c">long ftell(FILE *stream);
 int  fseek(FILE *stream, long offset, int origin);
 void rewind(FILE *stream);
@@ -4408,6 +4437,7 @@ if (fread(&amp;x, sizeof x, 1, fp) == 1)
 <p>使用定位函数有两点限制。第一，标准只保证二进制流上的任意字节偏移有意义；对文本流，<code>fseek</code> 的偏移量只能是 0，或者是先前 <code>ftell</code> 返回的值配合 <code>SEEK_SET</code>，因为 Windows 文本方式下的 <code>&quot;\r\n&quot;</code> 转换使程序看到的字符数与文件中的字节数不一致。第二，<code>ftell</code> 返回 <code>long</code>，在 Windows 上 <code>long</code> 只有 32 位，最大值为 <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">31</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">2147483647</span></span></span></span> 字节，约 2 GB，更大的文件要用 64 位版本：Visual Studio 中为 <code>_ftelli64</code> 与 <code>_fseeki64</code>，POSIX 系统中为 <code>ftello</code> 与 <code>fseeko</code>。另外，以 <code>&quot;r+&quot;</code> 等读写方式打开时，从写转为读或从读转为写之前，必须先调用 <code>fseek</code>、<code>rewind</code> 或 <code>fflush</code>（写转读时），否则行为未定义。</p>
 <h3 id="s16-8">命令行参数</h3>
 <p><code>main</code> 函数还可以写成带参数的形式，从命令行接收参数：</p>
+<figure class="fig"><img src="img/01-c416723524.png" width="1492" height="584" loading="lazy" decoding="async" alt="图 16-3　命令行参数 argc 与 argv"><figcaption>图 16-3　命令行参数 argc 与 argv</figcaption></figure>
 <pre><code class="language-c">int main(int argc, char *argv[])
 {
     int i;
@@ -4429,7 +4459,7 @@ if (fread(&amp;x, sizeof x, 1, fp) == 1)
 <div class="book-end">— 全书完 —<br><a href="02.html">下一册 · 线性代数</a></div>
 </main>
 <nav id="toc" class="drawer" aria-label="目录">
-<header><div class="k">01 · 118 页 · 版本 2026-10-17-daily-01</div><h2>C 语言程序设计</h2>
+<header><div class="k">01 · 126 页 · 版本 2026-10-17-daily-01</div><h2>C 语言程序设计</h2>
 <div class="links"><a class="chip" href="./">书架</a><a class="chip" href="#">回到封面</a><a class="chip" href="../textbooks/outputs/%E6%95%99%E6%9D%90/01_C%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1.pdf">PDF 版</a></div></header>
 <ol><li class="l2"><a href="#section-0">第一章 程序、数据与表达式</a></li><li class="l3"><a href="#s1-1">程序结构与标准输入输出</a></li><li class="l3"><a href="#s1-2">基本类型的大小与取值范围</a></li><li class="l3"><a href="#s1-3">常量、转义字符与格式说明</a></li><li class="l3"><a href="#s1-4">运算符的优先级、结合性与类型转换</a></li><li class="l2"><a href="#section-1">第二章 控制流</a></li><li class="l3"><a href="#s2-1">条件选择</a></li><li class="l3"><a href="#s2-2">循环迭代</a></li><li class="l3"><a href="#s2-3">多路选择</a></li><li class="l2"><a href="#section-2">第三章 函数与程序结构</a></li><li class="l3"><a href="#s3-1">函数接口与返回值</a></li><li class="l3"><a href="#s3-2">作用域、存储期与调用栈</a></li><li class="l3"><a href="#s3-3">预处理：头文件、宏与条件编译</a></li><li class="l2"><a href="#section-3">第四章 递归与数的表示</a></li><li class="l3"><a href="#s4-1">递归计算</a></li><li class="l3"><a href="#s4-2">进制转换</a></li><li class="l2"><a href="#section-4">第五章 指针与间接访问</a></li><li class="l3"><a href="#s5-1">指针、地址与间接访问</a></li><li class="l3"><a href="#s5-2">函数参数的值传递</a></li><li class="l3"><a href="#s5-3">指针的算术运算</a></li><li class="l2"><a href="#section-5">第六章 数组与存储边界</a></li><li class="l3"><a href="#s6-1">数组的连续存储与遍历</a></li><li class="l3"><a href="#s6-2">数组类型、指针类型与声明</a></li><li class="l3"><a href="#s6-3">多维数组与行指针</a></li><li class="l3"><a href="#s6-4">二维数组作为函数参数</a></li><li class="l3"><a href="#s6-5">通用对象指针与地址比较</a></li><li class="l3"><a href="#s6-6">下标与合法访问范围</a></li><li class="l3"><a href="#s6-7">变长数组的长度约束</a></li><li class="l2"><a href="#section-6">第七章 类型限定与数值表示</a></li><li class="l3"><a href="#s7-1">const 限定与指针比较</a></li><li class="l3"><a href="#s7-2">浮点数表示与数值比较</a></li><li class="l2"><a href="#section-7">第八章 字符串与字符指针</a></li><li class="l3"><a href="#s8-1">字符编码与零结尾表示</a></li><li class="l3"><a href="#s8-2">字面量、变量与字符存储</a></li><li class="l3"><a href="#s8-3">字符数组与字符串字面量</a></li><li class="l3"><a href="#s8-4">字符串指针数组与双下标</a></li><li class="l3"><a href="#s8-5">字符串长度与对象大小</a></li><li class="l2"><a href="#section-8">第九章 字符串处理函数</a></li><li class="l3"><a href="#s9-1">字符串的逐字符复制</a></li><li class="l3"><a href="#s9-2">从下标循环到指针循环</a></li><li class="l3"><a href="#s9-3">定长复制与零填充</a></li><li class="l3"><a href="#s9-4">strcpy_s、strncpy_s 与微软扩展</a></li><li class="l3"><a href="#s9-5">拼接与目标容量</a></li><li class="l3"><a href="#s9-6">内容比较与整行输入</a></li><li class="l2"><a href="#section-9">第十章 动态内存</a></li><li class="l3"><a href="#s10-1">固定数组的三个限制</a></li><li class="l3"><a href="#s10-2">堆与 malloc、calloc</a></li><li class="l3"><a href="#s10-3">free 与配对规则</a></li><li class="l3"><a href="#s10-4">按需分配字符串</a></li><li class="l3"><a href="#s10-5">realloc 与容量调整</a></li><li class="l3"><a href="#s10-6">动态二维数组的三种组织方式</a></li><li class="l3"><a href="#s10-7">堆的检查</a></li><li class="l3"><a href="#s10-8">栈上的动态分配：_alloca 与 _malloca</a></li><li class="l2"><a href="#section-10">第十一章 交换与按位运算</a></li><li class="l3"><a href="#s11-1">间接修改与指针形参</a></li><li class="l3"><a href="#s11-2">对象交换与地址交换</a></li><li class="l3"><a href="#s11-3">按位异或与整数运算边界</a></li><li class="l2"><a href="#section-11">第十二章 伪随机数与排序</a></li><li class="l3"><a href="#s12-1">伪随机数与区间映射</a></li><li class="l3"><a href="#s12-2">指针数组的间接排序</a></li><li class="l3"><a href="#s12-3">选择排序及循环不变量</a></li><li class="l3"><a href="#s12-4">选择排序的状态变化</a></li><li class="l3"><a href="#s12-5">同一算法的两种存储方案</a></li><li class="l3"><a href="#s12-6">程序变量与显示格式</a></li><li class="l3"><a href="#s12-7">平均值与整数除法</a></li><li class="l3"><a href="#s12-8">冒泡排序与插入排序</a></li><li class="l3"><a href="#s12-9">二分查找</a></li><li class="l3"><a href="#s12-10">函数指针与 qsort</a></li><li class="l2"><a href="#section-12">第十三章 中位数与顺序统计</a></li><li class="l3"><a href="#s13-1">顺序统计量与中位数</a></li><li class="l2"><a href="#section-13">第十四章 网格最短路径与波算法</a></li><li class="l3"><a href="#s14-1">场地模型与邻域偏移表</a></li><li class="l3"><a href="#s14-2">随机场地的生成</a></li><li class="l3"><a href="#s14-3">标记值与数组的分工</a></li><li class="l3"><a href="#s14-4">波的传播与松弛</a></li><li class="l3"><a href="#s14-5">由代价表恢复路径</a></li><li class="l3"><a href="#s14-6">压缩存储：用一个数组记录全部状态</a></li><li class="l3"><a href="#s14-7">单位权重时的单数组写法</a></li><li class="l3"><a href="#s14-8">定宽输出与两张表</a></li><li class="l3"><a href="#s14-9">按圈扩展：只让当前波前传播</a></li><li class="l3"><a href="#s14-10">队列与逐层扩展</a></li><li class="l3"><a href="#s14-11">课程延伸：Dijkstra 算法</a></li><li class="l2"><a href="#section-14">第十五章 结构体、共用体与枚举</a></li><li class="l3"><a href="#s15-1">结构体的定义与使用</a></li><li class="l3"><a href="#s15-2">指向结构体的指针与参数传递</a></li><li class="l3"><a href="#s15-3">链表</a></li><li class="l3"><a href="#s15-4">双向链表与柔性数组成员</a></li><li class="l3"><a href="#s15-5">二叉搜索树</a></li><li class="l3"><a href="#s15-6">共用体与枚举</a></li><li class="l2"><a href="#section-15">第十六章 文件与命令行参数</a></li><li class="l3"><a href="#s16-1">文件在磁盘上的存储</a></li><li class="l3"><a href="#s16-2">目录树与路径</a></li><li class="l3"><a href="#s16-3">当前工作目录：getcwd 与 chdir</a></li><li class="l3"><a href="#s16-4">文件的打开与关闭</a></li><li class="l3"><a href="#s16-5">文本文件的读写</a></li><li class="l3"><a href="#s16-6">二进制文件</a></li><li class="l3"><a href="#s16-7">文件定位与随机访问</a></li><li class="l3"><a href="#s16-8">命令行参数</a></li><li class="l2"><a href="#section-16">附录 术语与阅读资料</a></li></ol>
 </nav>
@@ -4441,6 +4471,6 @@ if (fread(&amp;x, sizeof x, 1, fp) == 1)
 <div id="scrim" class="scrim"></div>
 <div id="toast" class="toast" role="status"></div>
 <button id="totop" class="totop" aria-label="回到顶部"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg></button>
-<script src="reader.js?v=b6af35ad"></script>
+<script src="reader.js?v=7a357bb2"></script>
 </body>
 </html>

@@ -53,6 +53,23 @@
   drawer.addEventListener('click', function (e) { if (e.target.closest('a')) closeAll(); });
   totop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
+  // ---------- 点图放大：全屏查看插图，可双指缩放、横向滑动 ----------
+  var viewer = document.createElement('div');
+  viewer.className = 'viewer'; viewer.setAttribute('role', 'dialog'); viewer.setAttribute('aria-label', '查看插图');
+  viewer.innerHTML = '<div class="vbody"><img alt=""></div><div class="vcap"></div><button class="vclose" aria-label="关闭">×</button>';
+  document.body.appendChild(viewer);
+  var vimg = viewer.querySelector('img'), vcap = viewer.querySelector('.vcap');
+  function closeViewer() { viewer.classList.remove('on'); document.documentElement.classList.remove('noscroll'); }
+  book.addEventListener('click', function (e) {
+    var img = e.target.closest('img'); if (!img) return;
+    vimg.src = img.currentSrc || img.src; vimg.alt = img.alt;
+    var cap = img.closest('figure'); cap = cap && cap.querySelector('figcaption');
+    vcap.textContent = cap ? cap.textContent : img.alt;
+    viewer.classList.add('on'); document.documentElement.classList.add('noscroll');
+  });
+  viewer.addEventListener('click', function (e) { if (e.target === viewer || e.target.closest('.vclose') || e.target.classList.contains('vbody')) closeViewer(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeViewer(); });
+
   // ---------- 进度与当前章节 ----------
   var heads = Array.prototype.slice.call(book.querySelectorAll('h2[id],h3[id]'));
   var links = {};

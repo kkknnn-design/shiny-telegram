@@ -55,6 +55,24 @@ def png_size(data: bytes):
     return None
 
 
+
+def web_png(data: bytes, max_w=1200) -> bytes:
+    """网页版插图：宽度超过 max_w 像素时缩小，并转为调色板 PNG；PDF 仍使用原图。"""
+    if data[:8] != b'\x89PNG\r\n\x1a\n':
+        return data
+    try:
+        from PIL import Image
+        import io
+    except ImportError:
+        return data
+    im = Image.open(io.BytesIO(data)).convert('RGB')
+    if im.width > max_w:
+        im = im.resize((max_w, round(im.height * max_w / im.width)), Image.LANCZOS)
+    im = im.quantize(256, method=Image.Quantize.FASTOCTREE)  # 插图颜色少，调色板 PNG 体积约为原来的一半以下
+    buf = io.BytesIO(); im.save(buf, 'PNG', optimize=True)
+    return buf.getvalue() if buf.tell() < len(data) else data
+
+
 class Builder:
     def __init__(self):
         self.fonts_done = False
@@ -93,7 +111,7 @@ class Builder:
     def take_images(self, body: str, code: str) -> str:
         def repl(m):
             mime, b64 = m.group(1), m.group(2)
-            data = base64.b64decode(b64)
+            data = web_png(base64.b64decode(b64))
             ext = {'png': 'png', 'jpeg': 'jpg', 'jpg': 'jpg', 'webp': 'webp', 'gif': 'gif', 'svg+xml': 'svg'}[mime]
             rel = f'img/{code}-{short_hash(data)}.{ext}'
             self.put(rel, data)
@@ -107,7 +125,7 @@ class Builder:
             if not src.is_file():
                 print('  警告：找不到插图', src)
                 return m.group(0)
-            data = src.read_bytes()
+            data = web_png(src.read_bytes())
             rel = f'img/{code}-{short_hash(data)}{src.suffix.lower()}'
             self.put(rel, data)
             size = png_size(data)

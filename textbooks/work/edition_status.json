@@ -1,16 +1,17 @@
 {
-  "revision": "2026-10-17-daily-01",
-  "updated_at": "2026-10-17T22:21:21.827463+08:00",
+  "revision": "2026-11-19-daily-02",
+  "updated_at": "2026-11-19T23:30:00+08:00",
   "timezone": "Asia/Shanghai",
   "source_status": "updated",
-  "html_status": "pending",
-  "pdf_status": "current_verified",
-  "combined_pdf_status": "current_verified",
-  "legacy_zip_status": "current_verified",
-  "renderer_status": "built_and_visually_verified",
+  "html_status": "all_11_regenerated",
+  "pdf_status": "all_11_current_01_04_05_09_13_rebuilt_2026-11-19",
+  "combined_pdf_status": "current_11_books_458_pages",
+  "legacy_zip_status": "current_verified_12_books",
+  "renderer_status": "build_pdf_list_support_added_2026-10-28",
   "pending": [],
   "blocker": null,
-  "curriculum_extension_items": 14,
-  "new_source_items": 30,
-  "completed_at": "2026-10-17T22:21:21.827463+08:00"
+  "curriculum_extension_items": 0,
+  "new_source_items": 25,
+  "completed_at": "2026-11-19T23:30:00+08:00",
+  "qa_note": "qa_pack.py 未运行（缺 pypdf）；PyMuPDF 对 01（118 页）、04（40 页）、05（91 页）、09（39 页）、13（22 页）边界检查 0 越界；新增页渲染目视核对；formulas/errors.json 为空（6176 条）；脚本核对五册原有行无删改；预处理器与二叉树存文件代码经 MSVC /W4 编译运行"
 }

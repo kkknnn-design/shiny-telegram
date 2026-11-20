@@ -151,3 +151,14 @@ button{font:inherit;color:inherit}
 .totop.on{opacity:1;pointer-events:auto}
 .totop svg{width:18px;height:18px}
 @media print{.topbar,.drawer,.sheet,.scrim,.totop,.toast{display:none!important}}
+
+/* 插图全屏查看 */
+.book img{cursor:zoom-in}
+.viewer{position:fixed;inset:0;z-index:50;background:#0d0f13;display:none;flex-direction:column}
+.viewer.on{display:flex}
+.viewer .vbody{flex:1;overflow:auto;display:flex;padding:calc(56px + env(safe-area-inset-top)) 8px 8px;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom}
+.viewer img{display:block;margin:auto;background:#fff;border-radius:6px;width:100%;max-width:1200px;height:auto}
+@media (orientation:landscape){.viewer img{width:auto;max-width:100%;max-height:calc(100vh - 120px)}}
+.viewer .vcap{color:#e5e7eb;font-size:14px;text-align:center;padding:10px 16px calc(14px + env(safe-area-inset-bottom));line-height:1.5}
+.viewer .vclose{position:absolute;top:calc(8px + env(safe-area-inset-top));right:12px;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:24px;line-height:1;cursor:pointer}
+html.noscroll,html.noscroll body{overflow:hidden}

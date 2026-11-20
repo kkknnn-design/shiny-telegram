@@ -4,7 +4,7 @@ import {createRequire} from 'node:module';
 import crypto from 'node:crypto';
 const root=path.resolve(import.meta.dirname,'..');
 const req=createRequire(path.join(root,'work/math/package.json'));
-const sharp=req('C:/Users/zheng/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/sharp');
+const sharp=req('sharp');
 const input=path.join(root,'work/formulas');
 const output=path.join(root,'work/formula_rasters_v1');
 await fs.mkdir(output,{recursive:true});
