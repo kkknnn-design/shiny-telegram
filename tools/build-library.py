@@ -18,6 +18,9 @@ from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC_DIR = ROOT / 'textbooks' / 'outputs' / '教材'
+REVIEW_DIR = ROOT / 'textbooks' / 'outputs' / '复习资料'
+REVIEW_LIST = REVIEW_DIR / '清单.json'
+REVIEW_COLORS = ['#b45309', '#0f766e', '#7c3aed', '#be123c']
 MANIFEST = ROOT / 'textbooks' / 'outputs' / '教材清单.json'
 ASSETS = ROOT / 'tools' / 'library'
 OUT = ROOT / 'library'
@@ -165,6 +168,8 @@ def transform_body(body: str):
 
 
 def reader_page(b, body, toc, v, next_book):
+    kline = (f'考试复习 · {html.escape(b["course"])} · {html.escape(b["date"])}' if b.get('review')
+             else f'{b["code"]} · {b["pages"]} 页 · 版本 {html.escape(b["rev"])}')
     items = ''.join(
         f'<li class="l{lvl}"><a href="#{hid}">{inner}</a></li>' for lvl, hid, inner in toc)
     nxt = (f'<a href="{next_book["href"]}">下一册 · {html.escape(next_book["title"])}</a>' if next_book
@@ -195,7 +200,7 @@ def reader_page(b, body, toc, v, next_book):
 <div class="book-end">— 全书完 —<br>{nxt}</div>
 </main>
 <nav id="toc" class="drawer" aria-label="目录">
-<header><div class="k">{b["code"]} · {b["pages"]} 页 · 版本 {html.escape(b["rev"])}</div><h2>{html.escape(b["title"])}</h2>
+<header><div class="k">{kline}</div><h2>{html.escape(b["title"])}</h2>
 <div class="links"><a class="chip" href="./">书架</a><a class="chip" href="#">回到封面</a><a class="chip" href="{b["pdf"]}">PDF 版</a></div></header>
 <ol>{items}</ol>
 </nav>
@@ -213,7 +218,16 @@ def reader_page(b, body, toc, v, next_book):
 '''
 
 
-def shelf_page(books, meta, v):
+def shelf_page(books, extras, meta, v):
+    review_cards = []
+    for b in extras:
+        review_cards.append(f'''<a class="book-card" href="{b["href"]}">
+<div class="cover-art review" style="background:{b["color"]}"><div class="no">考试复习 · {html.escape(b["course"])}</div>
+<div class="ttl">{html.escape(b["title"])}</div><div class="rule"></div><div class="sub">{html.escape(b["sub"])}</div>
+<div class="bar"><i data-bar="{b["code"]}"></i></div></div>
+<div class="card-meta"><span>{html.escape(b["date"])} · {b["chapters"]} 节</span><span data-pct="{b["code"]}"></span></div></a>''')
+    review_section = (f'<section id="review"><h2 class="section-title">考试复习</h2><div class="grid">{"".join(review_cards)}</div></section>'
+                      if review_cards else '')
     cards = []
     for b in books:
         cards.append(f'''<a class="book-card" href="{b["href"]}">
@@ -221,7 +235,7 @@ def shelf_page(books, meta, v):
 <div class="ttl">{html.escape(b["title"])}</div><div class="rule"></div><div class="sub">{html.escape(b["sub"])}</div>
 <div class="bar"><i data-bar="{b["code"]}"></i></div></div>
 <div class="card-meta"><span>{b["pages"]} 页 · {b["chapters"]} 章</span><span data-pct="{b["code"]}"></span></div></a>''')
-    data = [{k: b[k] for k in ('code', 'title', 'sub', 'route', 'href', 'color')} | {'toc': [[hid, t] for _, hid, t in b['toc_text']]} for b in books]
+    data = [{k: b[k] for k in ('code', 'title', 'sub', 'route', 'href', 'color')} | {'toc': [[hid, t] for _, hid, t in b['toc_text']]} for b in books + extras]
     data_json = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
     combined = '../textbooks/outputs/' + quote('各学科教材合集.pdf')
     total_pages = sum(b['pages'] for b in books)
@@ -246,7 +260,7 @@ def shelf_page(books, meta, v):
 <div class="search">{ICON_SEARCH}<input id="q" type="search" placeholder="搜索书名或章节，如：特征值" autocomplete="off" enterkeyhint="search"></div>
 <a class="continue" id="continue" hidden href="#"><div class="mini"></div><div class="info"><div class="t">继续阅读</div><div class="b"></div><div class="c"></div></div><div class="go">打开 ›</div></a>
 <ul class="results" id="results" hidden></ul>
-<section id="shelf"><h2 class="section-title">全部教材</h2><div class="grid">
+<section id="shelf">{review_section}<h2 class="section-title">全部教材</h2><div class="grid">
 {"".join(cards)}
 </div></section>
 <footer class="foot">阅读位置、字号与主题保存在本机浏览器。读过的册会缓存，断网也能打开。<br>
@@ -290,39 +304,53 @@ def make_icons(builder):
     return True
 
 
+def load_doc(builder, entry, src_dir, pdf_rel, color, review=False):
+    """读入一份 KaTeX 预渲染的离线 HTML（教材分册或复习资料），返回书架与阅读页需要的数据。"""
+    src = src_dir / entry['html']
+    if not src.exists():
+        print('跳过（缺少 HTML）：', entry['html'])
+        return None
+    raw = src.read_text(encoding='utf-8')
+    if not review:  # 复习资料与教材共用同一套 KaTeX 字体，只从教材取一次
+        builder.take_fonts(re.search(r'<style>(.*?)</style>', raw, flags=re.S).group(1))
+    body = raw[raw.index('<body>') + len('<body>'):]
+    body = re.sub(r'</body>\s*</html>\s*$', '', body).strip()
+    sub = re.search(r'<div class="subtitle">(.*?)</div>', body, flags=re.S)
+    sub_text = entry.get('sub') or (text_of(sub.group(1)) if sub else '')
+    if not sub_text or sub_text.startswith('#'):
+        # 部分分册封面副标题误写成了 Markdown 标题“# 书名”，改用学习路线
+        sub_text = entry.get('route', '')
+        if sub:
+            body = body.replace(sub.group(0), f'<div class="subtitle">{html.escape(sub_text)}</div>', 1)
+    code = entry['code']
+    body = builder.take_images(body, code)
+    body, toc = transform_body(body)
+    return {
+        'code': code, 'title': entry['title'], 'route': entry.get('route', ''), 'sub': sub_text,
+        'pages': entry.get('pages', 0), 'rev': entry.get('source_revision', entry.get('date', '')),
+        'href': f'{code.lower()}.html', 'color': color, 'review': review,
+        'course': entry.get('course', ''), 'date': entry.get('date', ''),
+        'pdf': '../textbooks/outputs/' + quote(pdf_rel),
+        'body': body, 'toc': toc, 'chapters': sum(1 for t in toc if t[0] == '2'),
+        'toc_text': [(lvl, hid, text_of(inner)) for lvl, hid, inner in toc],
+    }
+
+
 def main():
     meta = json.loads(MANIFEST.read_text(encoding='utf-8'))
     builder = Builder()
     books = []
     for i, entry in enumerate(meta['books']):
-        src = SRC_DIR / entry['html']
-        if not src.exists():
-            print('跳过（缺少 HTML）：', entry['html'])
-            continue
-        raw = src.read_text(encoding='utf-8')
-        style = re.search(r'<style>(.*?)</style>', raw, flags=re.S).group(1)
-        builder.take_fonts(style)
-        body = raw[raw.index('<body>') + len('<body>'):]
-        body = re.sub(r'</body>\s*</html>\s*$', '', body).strip()
-        sub = re.search(r'<div class="subtitle">(.*?)</div>', body, flags=re.S)
-        sub_text = text_of(sub.group(1)) if sub else ''
-        if not sub_text or sub_text.startswith('#'):
-            # 部分分册封面副标题误写成了 Markdown 标题“# 书名”，改用学习路线
-            sub_text = entry.get('route', '')
-            if sub:
-                body = body.replace(sub.group(0), f'<div class="subtitle">{html.escape(sub_text)}</div>', 1)
-        body = builder.take_images(body, entry['code'])
-        body, toc = transform_body(body)
-        code = entry['code']
-        books.append({
-            'code': code, 'title': entry['title'], 'route': entry.get('route', ''),
-            'sub': sub_text,
-            'pages': entry.get('pages', 0), 'rev': entry.get('source_revision', ''),
-            'href': f'{code}.html', 'color': COLORS.get(code, FALLBACK[i % len(FALLBACK)]),
-            'pdf': '../textbooks/outputs/' + quote('教材/' + entry['file']),
-            'body': body, 'toc': toc, 'chapters': sum(1 for t in toc if t[0] == '2'),
-            'toc_text': [(lvl, hid, text_of(inner)) for lvl, hid, inner in toc],
-        })
+        doc = load_doc(builder, entry, SRC_DIR, '教材/' + entry['file'], COLORS.get(entry['code'], FALLBACK[i % len(FALLBACK)]))
+        if doc:
+            books.append(doc)
+    # 考试复习资料（textbooks/outputs/复习资料/清单.json，由 tools/build-review.mjs 生成 HTML 与 PDF）
+    extras = []
+    if REVIEW_LIST.exists():
+        for i, entry in enumerate(json.loads(REVIEW_LIST.read_text(encoding='utf-8'))['items']):
+            doc = load_doc(builder, entry, REVIEW_DIR, '复习资料/' + entry['file'], REVIEW_COLORS[i % len(REVIEW_COLORS)], review=True)
+            if doc:
+                extras.append(doc)
 
     css = (ASSETS / 'library.css').read_text(encoding='utf-8') + '\n/* KaTeX（取自教材离线 HTML） */\n' + builder.katex_css + '\n'
     builder.put('library.css', css)
@@ -331,11 +359,13 @@ def main():
     has_png = make_icons(builder)
 
     v = short_hash(b''.join(builder.files[k] for k in sorted(builder.files)) +
-                   ''.join(b['body'] for b in books).encode('utf-8'), 8)
+                   ''.join(b['body'] for b in books + extras).encode('utf-8'), 8)
     for idx, b in enumerate(books):
         nxt = books[idx + 1] if idx + 1 < len(books) else None
         builder.put(b['href'], reader_page(b, b['body'], b['toc'], v, nxt))
-    builder.put('index.html', shelf_page(books, meta, v))
+    for b in extras:
+        builder.put(b['href'], reader_page(b, b['body'], b['toc'], v, None))
+    builder.put('index.html', shelf_page(books, extras, meta, v))
 
     icons = [{'src': 'icon.svg', 'sizes': 'any', 'type': 'image/svg+xml'}]
     if has_png:
@@ -371,12 +401,17 @@ self.addEventListener('fetch', e => {{
 '''
     builder.put('sw.js', sw)
 
+    # 逐个覆盖并删除多余文件，而不是整个删除目录：预览服务器或 OneDrive 同步可能正占用目录
+    wanted = {(OUT / rel).resolve() for rel in builder.files}
     if OUT.exists():
-        shutil.rmtree(OUT)
+        for old in OUT.rglob('*'):
+            if old.is_file() and old.resolve() not in wanted:
+                old.unlink()
     for rel, data in builder.files.items():
         p = OUT / rel
         p.parent.mkdir(parents=True, exist_ok=True)
-        p.write_bytes(data)
+        if not p.exists() or p.read_bytes() != data:
+            p.write_bytes(data)
     total = sum(len(d) for d in builder.files.values())
     print(f'已生成 {len(books)} 册 → {OUT}（{len(builder.files)} 个文件，{total / 1e6:.1f} MB，版本 {v}）')
     for b in books:

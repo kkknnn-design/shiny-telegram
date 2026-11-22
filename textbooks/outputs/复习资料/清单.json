@@ -1,0 +1,15 @@
+{
+  "note": "考前复习资料。源稿为 Markdown（source），由 node tools/build-review.mjs 生成 html 与 file（PDF），再由 python tools/build-library.py 放进线上书架的“考试复习”栏目。",
+  "items": [
+    {
+      "code": "R1",
+      "title": "热力学小测复习",
+      "sub": "理想气体与热力学第一定律 · 伊罗多夫 §2.1–2.2",
+      "course": "大学物理",
+      "date": "2026-11-22",
+      "source": "热力学小测复习.md",
+      "html": "热力学小测复习.html",
+      "file": "热力学小测复习.pdf"
+    }
+  ]
+}
