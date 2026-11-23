@@ -168,6 +168,18 @@ html.noscroll,html.noscroll body{overflow:hidden}
 .cover-art.review::before{content:"";position:absolute;right:12px;top:0;width:14px;height:28px;background:#f3d9a4;clip-path:polygon(0 0,100% 0,100% 100%,50% 76%,0 100%);z-index:1}
 .cover-art.review .no{letter-spacing:.05em}
 
+/* 小屏：3–4 列的说明性表格逐行显示为卡片（由 reader.js 加 .stack 与 data-label） */
+@media (max-width:600px){
+  .book table.stack,.book table.stack tbody,.book table.stack tr,.book table.stack td{display:block;width:100%}
+  .book table.stack{min-width:0;border:0}
+  .book table.stack thead{display:none}
+  .book table.stack tr{border:1px solid var(--line);border-radius:8px;margin:0 0 10px;padding:6px 10px;background:var(--card)}
+  .book table.stack td{border:0;padding:3px 0}
+  .book table.stack td::before{content:attr(data-label);display:block;font-size:.78em;color:var(--muted);margin-bottom:1px}
+  .book table.stack td:first-child{font-size:1.04em}
+  .book table.stack td:first-child::before{display:none}
+}
+
 /* KaTeX（取自教材离线 HTML） */
 @font-face{font-display:swap;font-family:KaTeX_AMS;font-style:normal;font-weight:400;src:url(fonts/KaTeX_AMS-400-normal.woff2) format("woff2")}
 @font-face{font-display:swap;font-family:KaTeX_Caligraphic;font-style:normal;font-weight:700;src:url(fonts/KaTeX_Caligraphic-700-normal.woff2) format("woff2")}

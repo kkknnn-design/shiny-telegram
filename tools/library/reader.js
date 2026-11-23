@@ -136,6 +136,25 @@
   });
 
   // ---------- 行内长公式：超出版心时改为可横向滑动 ----------
+  // ---------- 小屏表格：3–4 列且含长文字的表改为逐行卡片；列数更多的表保持横向滑动 ----------
+  (function prepareTables() {
+    book.querySelectorAll('table').forEach(function (t) {
+      var head = t.querySelectorAll('thead th');
+      var cols = head.length || (t.rows[0] ? t.rows[0].cells.length : 0);
+      if (cols >= 3 && cols <= 4) {
+        var longText = [].some.call(t.querySelectorAll('td'), function (td) { return td.textContent.trim().length > 14; });
+        if (longText && head.length) {
+          t.classList.add('stack');
+          [].forEach.call(t.querySelectorAll('tbody tr'), function (tr) {
+            [].forEach.call(tr.cells, function (td, j) { if (head[j]) td.setAttribute('data-label', head[j].textContent.trim()); });
+          });
+          return;
+        }
+      }
+      if (cols >= 5) t.style.minWidth = (cols * 64) + 'px';
+    });
+  })();
+
   function fitInlineMath() {
     var w = book.clientWidth - 36;
     book.querySelectorAll('.k-scroll').forEach(function (s) { s.classList.remove('k-scroll'); });
