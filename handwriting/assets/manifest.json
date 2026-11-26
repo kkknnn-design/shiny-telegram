@@ -1,0 +1,40 @@
+{
+  "_doc": "Each image lists its text rows top-to-bottom; each row is space-separated units exactly as written (single letters, letter pairs, or whole words). Exclude = variants that read badly.",
+  "images": [
+    {
+      "file": "sample.jpg",
+      "rows": [
+        "а б в г д е ё ж з и й к л м н о п р",
+        "с т у ф х ц ч ш щ ъ ы ь э ю я",
+        "а б в г д е ё ж з и й к л м н о п р",
+        "с т у ф х ц ч ш щ ъ ы ь э ю я",
+        "а б в г д е ё ж з и й к л м н о п р",
+        "с т у ф х ц ч ш щ ъ ы ь э ю я",
+        "А Б В Г Д Е Ё Ж З И К Л М Н О П Р",
+        "С Т У Ф Х Ц Ч Ш Щ Э Ю Я",
+        "0 1 2 3 4 5 6 7 8 9",
+        "0 1 2 3 4 5 6 7 8 9",
+        ". , ? : ; « » — ( ) -",
+        "ни ра ко ст ен но ие пр ой ки ны ро их из",
+        "те со ос ов во на ме ци ик от об ог ль ак",
+        "ти ре то за ан ет ка ер ес ем ск ол им ма",
+        "он че ия ук аз ин ор ли ых не ей ит ся ми",
+        "ва ые по",
+        "ни ра ко ст ен но ие пр ой ки ны ро их из",
+        "те со ос ов во на ме ци ик от об ог ль",
+        "ак ти ре то за ан ет ка ер ес ем ск ол",
+        "им ма он че ия ук аз ин ор ли ых не ей",
+        "ит ся ми ва ые по"
+      ],
+      "exclude": [
+        {"unit": "ы", "row": 3, "why": "reads like и"},
+        {"unit": "ых", "row": 14, "why": "reads like пх"},
+        {"unit": "ых", "row": 19, "why": "small ь loop, reads like их at page size"},
+        {"unit": "ны", "row": 11, "why": "small ь loop, reads like нн at page size"},
+        {"unit": "ые", "row": 15, "why": "loop filled, reads like не"},
+        {"unit": "ны", "row": 16, "why": "reads like нп"},
+        {"unit": "ей", "row": 19, "why": "breve missing"}
+      ]
+    }
+  ]
+}
