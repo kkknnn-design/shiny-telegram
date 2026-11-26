@@ -10,7 +10,8 @@ import cv2
 import numpy as np
 
 NAT = Path(__file__).resolve().parent.parent / "assets" / "natural"
-# app chrome on these screenshots: collapse button, "..." handle, page counter, home bar
+# app chrome on the notes-app screenshots (z*.jpg): collapse button, "..." handle, page counter, home bar.
+# Paper photos (p*.jpg, cleaned by prep_photo.py) have no chrome, so it is not masked there.
 CHROME = [(0, 0, 80, 55), (730, 0, 830, 30), (15, 990, 130, 1040), (540, 1045, 1000, 1080)]
 
 
@@ -25,7 +26,7 @@ def darkness(path):
     d = 255 - g
     d[cv2.dilate(red.astype(np.uint8), np.ones((5, 5), np.uint8)) > 0] = 0
     H, W = d.shape
-    for x0, y0, x1, y1 in CHROME:
+    for x0, y0, x1, y1 in ([] if Path(path).name.startswith("p") else CHROME):
         if x1 <= W and y1 <= H:
             d[y0:y1, x0:x1] = 0
     return d
@@ -485,7 +486,13 @@ def chunk_sheet(nat, path, n=90, seed=3):
     rng = np.random.default_rng(seed)
     keys = [k for k in nat if 2 <= len(k) <= 6 and not any(is_cjk(c) for c in k)]
     pick = rng.choice(len(keys), size=min(n, len(keys)), replace=False)
-    font = ImageFont.truetype("C:/Windows/Fonts/arial.ttf", 16)
+    font = None
+    for f in ("C:/Windows/Fonts/arial.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", "DejaVuSans.ttf", "Arial.ttf"):
+        try:
+            font = ImageFont.truetype(f, 16); break
+        except OSError:
+            pass
+    font = font or ImageFont.load_default()
     tiles = []
     for i in pick:
         v = nat[keys[i]][0]
